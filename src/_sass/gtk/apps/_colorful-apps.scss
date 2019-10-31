@@ -1,0 +1,142 @@
+// /***** color-palette *****/
+$canvas_red:         #FF5252;
+$canvas_light_red:   #FF1744;
+$canvas_pink:        #D81B60;
+$canvas_purple:      #9C27B0;
+$canvas_deep_purple: #673AB7;
+$canvas_indigo:      #3949AB;
+$canvas_blue:        #2962FF;
+$canvas_light_blue:  #0288D1;
+$canvas_cyan:        #5D7DFB;
+$canvas_dark_cyan:   #4769d2;
+$canvas_teal:        #188c75;
+$canvas_green:       #4CAF50;
+$canvas_light_green: #7CB342;
+$canvas_sea_green:   #6ab878;
+$canvas_lime:        #C0CA33;
+$canvas_yellow:      #FFD600;
+$canvas_dark_yellow: #F57F17;
+$canvas_amber:       #FF6F00;
+$canvas_orange:      #FF6D00;
+$canvas_deep_orange: #F4511E;
+$canvas_brown:       #6D4C41;
+$canvas_grey:        #424242;
+$canvas_dark_grey:   #323232;
+$canvas_blue_grey:   #37474F;
+$canvas_green_grey:  #3b4342;
+// /***** color-palette *****/
+
+//
+// Gedit
+//
+window.org-gnome-gedit {
+  > paned.titlebar {
+
+    // > separator { background-image: image($canvas_deep_purple); }
+
+    headerbar {
+      background-color: $canvas_deep_purple;
+
+      // button { @extend %header_theme_button; }
+    }
+  }
+}
+
+//
+// Gnome Contacts
+//
+headerbar.titlebar.contacts-left-header-bar,
+headerbar.titlebar.contacts-right-header-bar {
+  background-color: $canvas_indigo;
+
+  // button { @extend %header_theme_button; }
+}
+
+//
+// Gnome Calender
+//
+window.org-gnome-Calendar {
+  headerbar.titlebar {
+    background-color: $canvas_amber;
+
+    // button { @extend %header_theme_button; }
+  }
+}
+
+//
+// Gnome Tweak Tool
+//
+headerbar.titlebar.tweak-titlebar-left,
+headerbar.titlebar.tweak-titlebar-right {
+  background-color: $canvas_dark_cyan;
+
+  // button { @extend %header_theme_button; }
+}
+
+// headerbar.titlebar.tweak-titlebar-right {
+//   box-shadow: -1px 0 $canvas_dark_cyan;
+// }
+
+//
+// Gnome Builder
+//
+window.workbench.org-gnome-Builder {
+  headerbar {
+    background-color: $canvas_blue;
+
+    // button { @extend %header_theme_button; }
+  }
+}
+
+//
+// Gnome-system-monitor
+//
+window#gnome-system-monitor {
+  headerbar.titlebar {
+    background-color: $canvas_teal;
+
+    // button { @extend %header_theme_button; }
+  }
+}
+
+//
+// Gnome-Todo
+//
+window.org-gnome-Todo {
+  headerbar.titlebar {
+    background-color: $canvas_deep_orange;
+
+    // button { @extend %header_theme_button; }
+  }
+}
+
+//
+// Dconf-editor
+//
+window.dconf-editor {
+  headerbar.titlebar {
+    background-color: $canvas_purple;
+
+    // button { @extend %header_theme_button; }
+  }
+}
+
+//
+// Gnome-Logs
+//
+headerbar.titlebar.event_toolbar {
+  background-color: $canvas_dark_yellow;
+
+  // button { @extend %header_theme_button; }
+}
+
+//
+// Geary
+//
+window#GearyMainWindow {
+  headerbar {
+    background-color: $canvas_green;
+
+    // button { @extend %header_theme_button; }
+  }
+}
