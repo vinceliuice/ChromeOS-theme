@@ -1326,6 +1326,10 @@ searchbar > revealer > box {
   color: white;
 }
 
+.titlebar entry:focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), white 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
 .titlebar entry:disabled {
   box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   background-color: rgba(255, 255, 255, 0.04);
@@ -4801,26 +4805,13 @@ button.title label {
 /*********
  * Geary *
  *********/
-.geary-titlebar-left:dir(ltr) {
-  margin-right: 5px;
-  padding-right: 0;
-}
-
-.geary-titlebar-left:dir(rtl) {
-  margin-left: 5px;
-  padding-left: 0;
-}
-
-.geary-titlebar-right:dir(ltr) {
-  margin-left: -5px;
-}
-
-.geary-titlebar-right:dir(rtl) {
-  margin-right: -5px;
-}
-
-window.org-gnome-gedit > paned.titlebar headerbar {
+window.org-gnome-gedit > paned.titlebar {
   background-color: #673AB7;
+}
+
+window.org-gnome-gedit > paned.titlebar > separator {
+  background-image: image(#673AB7);
+  border-top: 1px solid transparent;
 }
 
 headerbar.titlebar.contacts-left-header-bar,
@@ -4832,9 +4823,36 @@ window.org-gnome-Calendar headerbar.titlebar {
   background-color: #FF6F00;
 }
 
-headerbar.titlebar.tweak-titlebar-left,
-headerbar.titlebar.tweak-titlebar-right {
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right {
+  background-color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet.titlebar > separator {
+  background-color: #6D4C41;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
   background-color: #4769d2;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
+  border-top-left-radius: 4px;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:not(:only-child) {
+  border-top-right-radius: 4px;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:only-child, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:only-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > separator {
+  background-color: #4769d2;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 window.workbench.org-gnome-Builder headerbar {
@@ -4857,8 +4875,12 @@ headerbar.titlebar.event_toolbar {
   background-color: #F57F17;
 }
 
-window#GearyMainWindow headerbar {
+window#GearyMainWindow > .titlebar {
   background-color: #4CAF50;
+}
+
+window.background.budgie-setting-window.csd > headerbar.titlebar {
+  background-color: #37474F;
 }
 
 /*********

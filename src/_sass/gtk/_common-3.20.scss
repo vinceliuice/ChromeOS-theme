@@ -1091,6 +1091,15 @@ searchbar > revealer > box {
     background-color: $titlebar-fill;
     color: $titlebar-text;
 
+    @if $topbar == 'dark' {
+      &:focus {
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      white 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+      }
+    }
+
     &:disabled {
       box-shadow: inset 0 -1px $titlebar-track-disabled;
       background-color: $titlebar-fill;
