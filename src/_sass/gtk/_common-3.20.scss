@@ -106,7 +106,7 @@ textview {
   }
 }
 
-// iconview { @extend .view; }
+iconview { @extend .view; }
 
 .rubberband,
 rubberband {
@@ -121,7 +121,7 @@ flowbox {
     padding: 4px;
     border-radius: $corner-radius;
 
-    &:selected { @extend %selected_items; }
+    &:selected { @extend %selected_items_primary; }
   }
 }
 
@@ -1044,8 +1044,10 @@ searchbar > revealer > box {
   background-color: $titlebar;
   color: $titlebar-text;
 
-  @if $topbar == 'light' {
-    box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $frame;
+  @if $topbar == 'dark' and $variant == 'light' {
+    box-shadow: inset 0 1px highlight($titlebar);
+  } @else {
+    box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $divider;
   }
 
   &:disabled { color: $titlebar-text-disabled; }
@@ -3435,6 +3437,11 @@ button.titlebutton {
 
 %selected_items {
   background-color: $overlay-selected;
+}
+
+%selected_items_primary {
+  color: $primary;
+  background-color: rgba($primary-light, 0.2);
 }
 
 .monospace { font-family: monospace; }

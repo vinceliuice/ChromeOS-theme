@@ -84,24 +84,24 @@
   color: rgba(0, 0, 0, 0.87);
 }
 
-.view {
+.view, iconview {
   background-color: #2C2C2C;
   color: white;
 }
 
-.view:hover {
+.view:hover, iconview:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.view:selected:hover {
+.view:selected:hover, iconview:selected:hover {
   box-shadow: inset 0 0 0 9999px rgba(138, 180, 248, 0.08);
 }
 
-.view:disabled {
+.view:disabled, iconview:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.view:hover, .view:selected {
+.view:hover, iconview:hover, .view:selected, iconview:selected {
   border-radius: 6px;
 }
 
@@ -1276,6 +1276,7 @@ searchbar > revealer > box {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #353535;
   color: white;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(255, 255, 255, 0.12);
 }
 
 .titlebar:disabled {
@@ -1939,6 +1940,7 @@ popover.background > toolbar {
 
 popover.background > list,
 popover.background > .view,
+popover.background > iconview,
 popover.background > toolbar {
   border-style: none;
   box-shadow: none;
@@ -1947,6 +1949,7 @@ popover.background > toolbar {
 
 popover.background list,
 popover.background .view:not(:selected),
+popover.background iconview:not(:selected),
 popover.background toolbar {
   background-color: #3C3C3C;
 }
@@ -2419,7 +2422,7 @@ switch:checked slider {
 /*************************
  * Check and Radio items *
  *************************/
-.view.content-view.check:not(list),
+.view.content-view.check:not(list), iconview.content-view.check:not(list),
 .content-view .tile check:not(list) {
   min-height: 40px;
   min-width: 40px;
@@ -2431,18 +2434,18 @@ switch:checked slider {
   -gtk-icon-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-.view.content-view.check:not(list):hover, .view.content-view.check:not(list):active,
+.view.content-view.check:not(list):hover, iconview.content-view.check:not(list):hover, .view.content-view.check:not(list):active, iconview.content-view.check:not(list):active,
 .content-view .tile check:not(list):hover,
 .content-view .tile check:not(list):active {
   -gtk-icon-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 3px rgba(0, 0, 0, 0.14), 0 1px 6px rgba(0, 0, 0, 0.12);
 }
 
-.view.content-view.check:not(list),
+.view.content-view.check:not(list), iconview.content-view.check:not(list),
 .content-view .tile check:not(list) {
   -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox-unchecked-dark.png"), url("assets/selectionmode-checkbox-unchecked-dark@2.png"));
 }
 
-.view.content-view.check:not(list):checked,
+.view.content-view.check:not(list):checked, iconview.content-view.check:not(list):checked,
 .content-view .tile check:not(list):checked {
   -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox-checked-dark.png"), url("assets/selectionmode-checkbox-checked-dark@2.png"));
 }
@@ -2657,6 +2660,7 @@ treeview.view radio:checked:disabled,
 treeview.view radio:indeterminate:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
+
 
 treeview.view radio:checked {
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg"));
@@ -3749,10 +3753,15 @@ messagedialog.csd decoration {
   background-color: #2C2C2C;
 }
 
-.view selection, .view:selected, flowbox flowboxchild:selected, label selection, spinbutton:not(.vertical) selection,
+.view selection, iconview selection, .view:selected, iconview:selected, label selection, spinbutton:not(.vertical) selection,
 entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, row:selected, calendar:selected, .nautilus-window flowboxchild:selected .icon-item-background, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active, .nemo-window .nemo-window-pane widget.entry:selected {
+.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active, .nemo-window .nemo-window-pane widget.entry:selected {
   background-color: alpha(currentColor, 0.06);
+}
+
+flowbox flowboxchild:selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window iconview selection, .nautilus-window .view:selected, .nautilus-window iconview:selected {
+  color: #8AB4F8;
+  background-color: rgba(138, 180, 248, 0.2);
 }
 
 .monospace {
@@ -4652,19 +4661,19 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-.side-panel .view {
+.side-panel .view, .side-panel iconview {
   background-image: image(#2C2C2C);
 }
 
-.side-panel .view:hover {
+.side-panel .view:hover, .side-panel iconview:hover {
   background-image: image(#3d3d3d);
 }
 
-.side-panel .view:selected {
+.side-panel .view:selected, .side-panel iconview:selected {
   background-image: image(#8AB4F8);
 }
 
-.side-panel .view:selected:hover {
+.side-panel .view:selected:hover, .side-panel iconview:selected:hover {
   background-image: image(rgba(129, 169, 232, 0.9896));
 }
 
@@ -4805,84 +4814,6 @@ button.title label {
 /*********
  * Geary *
  *********/
-window.org-gnome-gedit > paned.titlebar {
-  background-color: #673AB7;
-}
-
-window.org-gnome-gedit > paned.titlebar > separator {
-  background-image: image(#673AB7);
-  border-top: 1px solid transparent;
-}
-
-headerbar.titlebar.contacts-left-header-bar,
-headerbar.titlebar.contacts-right-header-bar {
-  background-color: #3949AB;
-}
-
-window.org-gnome-Calendar headerbar.titlebar {
-  background-color: #FF6F00;
-}
-
-window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
-window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right {
-  background-color: #6D4C41;
-}
-
-window.background.csd > hdyleaflet.titlebar > separator {
-  background-color: #6D4C41;
-}
-
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
-  background-color: #4769d2;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-}
-
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
-  border-top-left-radius: 4px;
-}
-
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:not(:only-child) {
-  border-top-right-radius: 4px;
-}
-
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:only-child, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:only-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-}
-
-window.background.csd > headerbar.titlebar > hdyleaflet > separator {
-  background-color: #4769d2;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-}
-
-window.workbench.org-gnome-Builder headerbar {
-  background-color: #2962FF;
-}
-
-window#gnome-system-monitor headerbar.titlebar {
-  background-color: #188c75;
-}
-
-window.org-gnome-Todo headerbar.titlebar {
-  background-color: #F4511E;
-}
-
-window.dconf-editor headerbar.titlebar {
-  background-color: #9C27B0;
-}
-
-headerbar.titlebar.event_toolbar {
-  background-color: #F57F17;
-}
-
-window#GearyMainWindow > .titlebar {
-  background-color: #4CAF50;
-}
-
-window.background.budgie-setting-window.csd > headerbar.titlebar {
-  background-color: #37474F;
-}
-
 /*********
  * Tilix *
  *********/
@@ -5606,8 +5537,9 @@ na-tray-applet {
   border-radius: 6px;
 }
 
-.caja-desktop.view .entry,
-.caja-navigation-window .view .entry {
+.caja-desktop.view .entry, iconview.caja-desktop .entry,
+.caja-navigation-window .view .entry,
+.caja-navigation-window iconview .entry {
   border: none;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.04);
@@ -5615,19 +5547,20 @@ na-tray-applet {
   color: white;
 }
 
-.caja-desktop.view .entry:selected,
-.caja-navigation-window .view .entry:selected {
+.caja-desktop.view .entry:selected, iconview.caja-desktop .entry:selected,
+.caja-navigation-window .view .entry:selected,
+.caja-navigation-window iconview .entry:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
-.caja-desktop.view .entry {
+.caja-desktop.view .entry, iconview.caja-desktop .entry {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12);
   caret-color: currentColor;
 }
 
-.caja-desktop.view .entry:selected {
+.caja-desktop.view .entry:selected, iconview.caja-desktop .entry:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
@@ -6003,6 +5936,23 @@ MsdOsdWindow.background.osd .progressbar {
   color: white;
 }
 
+.budgie-panel menubar,
+.budgie-panel .menubar {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.budgie-panel menubar > menuitem,
+.budgie-panel .menubar > menuitem {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.budgie-panel menubar > menuitem > window.background.popup > decoration,
+.budgie-panel menubar > menuitem > window.background.popup > menu,
+.budgie-panel .menubar > menuitem > window.background.popup > decoration,
+.budgie-panel .menubar > menuitem > window.background.popup > menu {
+  border-radius: 0 0 4px 4px;
+}
+
 .budgie-panel #tasklist-button {
   padding: 0 4px;
 }
@@ -6352,7 +6302,7 @@ XfdesktopIconView.view .rubberband {
   border-style: none;
 }
 
-.thunar .sidebar .view:not(:selected) {
+.thunar .sidebar .view:not(:selected), .thunar .sidebar iconview:not(:selected) {
   background-color: transparent;
 }
 
@@ -6447,7 +6397,7 @@ XfdesktopIconView.view .rubberband {
   border-style: none;
 }
 
-.nemo-window scrolledwindow.frame .view:not(:selected) {
+.nemo-window scrolledwindow.frame .view:not(:selected), .nemo-window scrolledwindow.frame iconview:not(:selected) {
   background-color: transparent;
 }
 
@@ -6455,7 +6405,7 @@ XfdesktopIconView.view .rubberband {
   margin-top: -6px;
 }
 
-.nemo-window .nemo-inactive-pane .view:not(:selected) {
+.nemo-window .nemo-inactive-pane .view:not(:selected), .nemo-window .nemo-inactive-pane iconview:not(:selected) {
   background-color: #2C2C2C;
 }
 

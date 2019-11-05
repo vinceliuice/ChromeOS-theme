@@ -257,6 +257,19 @@ button.raven-trigger {
     }
   }
 
+  // Budgie styled Gtk Menus
+  menubar,
+  .menubar {
+    color: on($panel, secondary);
+
+    > menuitem {
+      color: on($panel, secondary);
+
+      > window.background.popup > decoration,
+      > window.background.popup > menu { border-radius: 0 0 $window-radius $window-radius; }
+    }
+  }
+
   // Tasklist
   #tasklist-button {
     padding: 0 4px;

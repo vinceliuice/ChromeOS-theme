@@ -169,7 +169,14 @@
   &:selected {
     background-color: transparent;
 
-    .icon-item-background { @extend %selected_items; }
+    .icon-item-background { @extend %selected_items_primary; }
+  }
+}
+
+.nautilus-window .view {
+  selection,
+  &:selected {
+    @extend %selected_items_primary;
   }
 }
 
