@@ -2672,15 +2672,13 @@ actionbar > revealer > box {
   background-color: $base;
   background-clip: border-box;
 
-  button:not(.suggested-action):not(.destructive-action) { @extend %button_basic.flat; }
-
-  .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }
-}
-
-actionbar {
   .background.csd & {
     border-radius: 0 0 $window-radius $window-radius;
   }
+
+  button:not(.suggested-action):not(.destructive-action) { @extend %button_basic.flat; }
+
+  .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }
 }
 
 scrolledwindow {

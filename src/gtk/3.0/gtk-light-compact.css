@@ -3060,12 +3060,12 @@ actionbar > revealer > box {
   background-clip: border-box;
 }
 
-actionbar > revealer > box .linked:not(.vertical) > entry:not(:only-child) {
-  border-radius: 6px 6px 0 0;
+.background.csd actionbar > revealer > box {
+  border-radius: 0 0 4px 4px;
 }
 
-.background.csd actionbar {
-  border-radius: 0 0 4px 4px;
+actionbar > revealer > box .linked:not(.vertical) > entry:not(:only-child) {
+  border-radius: 6px 6px 0 0;
 }
 
 scrolledwindow viewport.frame {
