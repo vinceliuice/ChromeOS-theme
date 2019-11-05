@@ -50,6 +50,13 @@
   }
 
   .toolbar button { @extend %button_basic.flat; }
+
+  .view {
+    selection,
+    &:selected {
+      @extend %selected_items_primary;
+    }
+  }
 }
 
 // For Places Sidebar diskfull indicators

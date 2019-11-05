@@ -3759,7 +3759,7 @@ entry selection, modelbutton.flat:selected,
   background-color: alpha(currentColor, 0.06);
 }
 
-flowbox flowboxchild:selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window iconview selection, .nautilus-window .view:selected, .nautilus-window iconview:selected {
+flowbox flowboxchild:selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window iconview selection, .nautilus-window .view:selected, .nautilus-window iconview:selected, .nemo-window .view selection, .nemo-window iconview selection, .nemo-window .view:selected, .nemo-window iconview:selected {
   color: #1A73E8;
   background-color: rgba(138, 180, 248, 0.2);
 }
