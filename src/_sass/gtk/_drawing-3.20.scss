@@ -265,4 +265,9 @@
   background-repeat: $_gradient_repeat;
   background-origin: content-box;
   background-position: $_bg_pos;
+  margin: 0 4px;
+
+  @if ($p == left) or ($p == right) {
+    margin: 4px 0;
+  }
 }

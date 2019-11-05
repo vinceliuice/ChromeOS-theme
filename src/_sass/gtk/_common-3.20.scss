@@ -40,8 +40,16 @@
  * Base States *
  ***************/
 .background {
-  background-color: $background;
+  background-color: rgba($background, 0.9999);
   color: $text;
+
+  &.csd { // Set csd windows botttom border radius
+    border-radius: 0 0 $window-radius $window-radius;
+  }
+
+  &.maximized, &.solid-csd { // No radius when windows maximized
+    border-radius: 0;
+  }
 }
 
 /*
@@ -2669,6 +2677,12 @@ actionbar > revealer > box {
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }
 }
 
+actionbar {
+  .background.csd & {
+    border-radius: 0 0 $window-radius $window-radius;
+  }
+}
+
 scrolledwindow {
   viewport.frame { // avoid double borders when viewport inside scrolled window
     border-style: none;
@@ -2919,6 +2933,25 @@ filechooser {
       @extend %button_basic.flat;
       @extend %circular_button;
     }
+  }
+
+  stack.view {
+    background-color: transparent;
+
+    scrolledwindow {
+      background-color: $base;
+      border-radius: 0 0 $window-radius $window-radius;
+
+      treeview.view {
+        @extend .view;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .csd & placessidebar {
+    background: none;
+    border-bottom-left-radius: $window-radius;
   }
 }
 
@@ -3364,7 +3397,7 @@ colorchooser .popover.osd {
  **********************/
 decoration {
   transition: $transition-shadow;
-  border-radius: $window-radius $window-radius 0 0;
+  border-radius: $window-radius;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
   // FIXME rationalize shadows
