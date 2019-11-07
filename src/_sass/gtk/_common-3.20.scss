@@ -2788,7 +2788,7 @@ row {
 
   &:selected {
     @extend %selected_items;
-    color: inherit;; // for overlays
+    color: inherit; // for overlays
 
     image,
     label { color: $text; }
