@@ -458,11 +458,28 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
   }
 }
 
+
 /************************
  * Gnome Control Center *
  ************************/
-
 window.background.csd {
+  > headerbar.titlebar > hdyleaflet {
+    > headerbar {
+      &:first-child:not(:only-child) {
+        border-top-left-radius: $window-radius;
+      }
+
+      &:last-child:not(:only-child) {
+        border-top-right-radius: $window-radius;
+      }
+
+      &:first-child:only-child, &:last-child:only-child {
+        border-top-right-radius: $window-radius;
+        border-top-left-radius: $window-radius;
+      }
+    }
+  }
+
   > stack {
     border-radius: 0 0 $window-radius $window-radius;
   }
@@ -499,10 +516,10 @@ dialog.background.csd {
   }
 }
 
+
 /************************
  * Gnome system monitor *
  ************************/
-
 window#gnome-system-monitor.background.csd {
   > box.vertical > stack {
     background-color: $base;
@@ -525,10 +542,10 @@ window#gnome-system-monitor.background.csd {
   }
 }
 
+
 /************************
  * Gnome Sound Recorder *
  ************************/
-
 stack {
   > grid.vertical {
     > scrolledwindow {
@@ -546,10 +563,10 @@ stack {
   }
 }
 
+
 /******************
  * Gnome Contacts *
  ******************/
-
 window.background.csd {
   > overlay > grid.horizontal {
     > overlay > stack > box.horizontal > grid.horizontal {

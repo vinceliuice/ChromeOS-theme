@@ -270,7 +270,7 @@ entry {
       &.right { @include undershoot(right); }
     }
 
-    selection { @extend %selected_items; }
+    selection { @extend %selected_items_primary; }
 
     // entry error and warning style
     @each $e_type, $e_color in (error, $error),
@@ -1122,6 +1122,13 @@ searchbar > revealer > box {
       &:hover, &:active { color: $titlebar-text; }
 
       &:disabled { color: $titlebar-text-disabled; }
+    }
+
+    @if $topbar == 'dark' and $variant == 'light' {
+      selection {
+        color: $titlebar;
+        background-color: white;
+      }
     }
   }
 
@@ -3231,6 +3238,10 @@ tooltip {
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: $tooltip;
     color: on($tooltip);
+  }
+
+  &.background.csd {
+    border-radius: $corner-radius;
   }
 
   // padding: 4px; /* not working */

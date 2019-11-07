@@ -1363,6 +1363,11 @@ searchbar > revealer > box {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.titlebar entry selection {
+  color: #188ae4;
+  background-color: white;
+}
+
 .titlebar .linked:not(.vertical) > entry:not(:only-child) {
   border-radius: 6px 6px 0 0;
 }
@@ -3644,6 +3649,10 @@ tooltip.background {
   color: white;
 }
 
+tooltip.background.csd {
+  border-radius: 6px;
+}
+
 tooltip decoration {
   background-color: transparent;
 }
@@ -3824,13 +3833,13 @@ messagedialog.csd decoration {
   background-color: #0c7cd4;
 }
 
-.view selection, iconview selection, filechooser stack.view scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, .view:selected, iconview:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, label selection, spinbutton:not(.vertical) selection,
-entry selection, modelbutton.flat:selected,
+.view selection, iconview selection, filechooser stack.view scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, .view:selected, iconview:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, label selection, modelbutton.flat:selected,
 .menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active, .nemo-window .nemo-window-pane widget.entry:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
-flowbox flowboxchild:selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window iconview selection, .nautilus-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nautilus-window treeview.view selection, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view selection, .nautilus-window .view:selected, .nautilus-window iconview:selected, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view:selected, .nemo-window .view selection, .nemo-window iconview selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view selection, .nemo-window .view:selected, .nemo-window iconview:selected, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:selected {
+flowbox flowboxchild:selected, spinbutton:not(.vertical) selection,
+entry selection, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window iconview selection, .nautilus-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nautilus-window treeview.view selection, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view selection, .nautilus-window .view:selected, .nautilus-window iconview:selected, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view:selected, .nemo-window .view selection, .nemo-window iconview selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view selection, .nemo-window .view:selected, .nemo-window iconview:selected, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:selected {
   color: #1A73E8;
   background-color: rgba(138, 180, 248, 0.2);
 }
@@ -4377,6 +4386,19 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right + separator {
 /************************
  * Gnome Control Center *
  ************************/
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
+  border-top-left-radius: 4px;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:not(:only-child) {
+  border-top-right-radius: 4px;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:only-child, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:only-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
 window.background.csd > stack {
   border-radius: 0 0 4px 4px;
 }
@@ -6527,6 +6549,10 @@ calendar.raven-calendar:selected {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.budgie-settings-window list.sidebar {
+  border-radius: 0 0 0 4px;
+}
+
 /**************
  * Xfce4 Apps *
  **************/
@@ -6749,80 +6775,6 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   -NemoPlacesTreeView-disk-full-max-length: 80px;
 }
 
-/* GTK NAMED COLORS
-   ----------------
-   use responsibly! */
-/*
-widget text/foreground color */
-@define-color theme_fg_color rgba(0, 0, 0, 0.87);
-/*
-text color for entries, views and content in general */
-@define-color theme_text_color rgba(0, 0, 0, 0.87);
-/*
-widget base background color */
-@define-color theme_bg_color #F2F2F2;
-/*
-text widgets and the like base background color */
-@define-color theme_base_color #FFFFFF;
-/*
-base background color of selections */
-@define-color theme_selected_bg_color #1A73E8;
-/*
-text/foreground color of selections */
-@define-color theme_selected_fg_color white;
-/*
-base background color of insensitive widgets */
-@define-color insensitive_bg_color #F2F2F2;
-/*
-text foreground color of insensitive widgets */
-@define-color insensitive_fg_color rgba(0, 0, 0, 0.38);
-/*
-insensitive text widgets and the like base background color */
-@define-color insensitive_base_color #FAFAFA;
-/*
-widget text/foreground color on backdrop windows */
-@define-color theme_unfocused_fg_color rgba(0, 0, 0, 0.87);
-/*
-text color for entries, views and content in general on backdrop windows */
-@define-color theme_unfocused_text_color rgba(0, 0, 0, 0.87);
-/*
-widget base background color on backdrop windows */
-@define-color theme_unfocused_bg_color #F2F2F2;
-/*
-text widgets and the like base background color on backdrop windows */
-@define-color theme_unfocused_base_color #FFFFFF;
-/*
-base background color of selections on backdrop windows */
-@define-color theme_unfocused_selected_bg_color #1A73E8;
-/*
-text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color white;
-/*
-insensitive color on backdrop windows */
-@define-color unfocused_insensitive_color rgba(0, 0, 0, 0.38);
-/*
-widgets main borders color */
-@define-color borders rgba(0, 0, 0, 0.12);
-/*
-widgets main borders color on backdrop windows */
-@define-color unfocused_borders rgba(0, 0, 0, 0.12);
-/*
-these are pretty self explicative */
-@define-color warning_color #F4B400;
-@define-color error_color #D93025;
-@define-color success_color #0F9D58;
-/*
-these colors are exported for the window manager and shouldn't be used in applications,
-read if you used those and something break with a version upgrade you're on your own... */
-@define-color wm_title white;
-@define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
-@define-color wm_highlight rgba(255, 255, 255, 0.2);
-@define-color wm_bg #188ae4;
-@define-color wm_unfocused_bg #0c7cd4;
-/*
-FIXME this is really an API */
-@define-color content_view_bg #FFFFFF;
-@define-color placeholder_text_color #666666;
 window.org-gnome-gedit > paned.titlebar {
   background-color: #673AB7;
 }
@@ -6900,3 +6852,78 @@ window#GearyMainWindow > .titlebar {
 window.background.budgie-setting-window.csd > headerbar.titlebar {
   background-color: #37474F;
 }
+
+/* GTK NAMED COLORS
+   ----------------
+   use responsibly! */
+/*
+widget text/foreground color */
+@define-color theme_fg_color rgba(0, 0, 0, 0.87);
+/*
+text color for entries, views and content in general */
+@define-color theme_text_color rgba(0, 0, 0, 0.87);
+/*
+widget base background color */
+@define-color theme_bg_color #F2F2F2;
+/*
+text widgets and the like base background color */
+@define-color theme_base_color #FFFFFF;
+/*
+base background color of selections */
+@define-color theme_selected_bg_color #1A73E8;
+/*
+text/foreground color of selections */
+@define-color theme_selected_fg_color white;
+/*
+base background color of insensitive widgets */
+@define-color insensitive_bg_color #F2F2F2;
+/*
+text foreground color of insensitive widgets */
+@define-color insensitive_fg_color rgba(0, 0, 0, 0.38);
+/*
+insensitive text widgets and the like base background color */
+@define-color insensitive_base_color #FAFAFA;
+/*
+widget text/foreground color on backdrop windows */
+@define-color theme_unfocused_fg_color rgba(0, 0, 0, 0.87);
+/*
+text color for entries, views and content in general on backdrop windows */
+@define-color theme_unfocused_text_color rgba(0, 0, 0, 0.87);
+/*
+widget base background color on backdrop windows */
+@define-color theme_unfocused_bg_color #F2F2F2;
+/*
+text widgets and the like base background color on backdrop windows */
+@define-color theme_unfocused_base_color #FFFFFF;
+/*
+base background color of selections on backdrop windows */
+@define-color theme_unfocused_selected_bg_color #1A73E8;
+/*
+text/foreground color of selections on backdrop windows */
+@define-color theme_unfocused_selected_fg_color white;
+/*
+insensitive color on backdrop windows */
+@define-color unfocused_insensitive_color rgba(0, 0, 0, 0.38);
+/*
+widgets main borders color */
+@define-color borders rgba(0, 0, 0, 0.12);
+/*
+widgets main borders color on backdrop windows */
+@define-color unfocused_borders rgba(0, 0, 0, 0.12);
+/*
+these are pretty self explicative */
+@define-color warning_color #F4B400;
+@define-color error_color #D93025;
+@define-color success_color #0F9D58;
+/*
+these colors are exported for the window manager and shouldn't be used in applications,
+read if you used those and something break with a version upgrade you're on your own... */
+@define-color wm_title white;
+@define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
+@define-color wm_highlight rgba(255, 255, 255, 0.2);
+@define-color wm_bg #188ae4;
+@define-color wm_unfocused_bg #0c7cd4;
+/*
+FIXME this is really an API */
+@define-color content_view_bg #FFFFFF;
+@define-color placeholder_text_color #666666;

@@ -537,3 +537,10 @@ calendar.raven-calendar {
 
   scrolledwindow { border-top: 1px solid $divider; }
 }
+
+// Budgie setting
+.budgie-settings-window {
+  list.sidebar {
+    border-radius: 0 0 0 $window-radius;
+  }
+}

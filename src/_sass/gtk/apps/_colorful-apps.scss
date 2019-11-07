@@ -50,8 +50,6 @@ window.org-gnome-gedit {
 headerbar.titlebar.contacts-left-header-bar,
 headerbar.titlebar.contacts-right-header-bar {
   background-color: $canvas_indigo;
-
-  // button { @extend %header_theme_button; }
 }
 
 //
@@ -60,8 +58,6 @@ headerbar.titlebar.contacts-right-header-bar {
 window.org-gnome-Calendar {
   headerbar.titlebar {
     background-color: $canvas_amber;
-
-    // button { @extend %header_theme_button; }
   }
 }
 
@@ -74,8 +70,6 @@ window.background.csd {
     > headerbar.titlebar.tweak-titlebar-left,
     > headerbar.titlebar.tweak-titlebar-right {
       background-color: $canvas_brown;
-
-      // button { @extend %header_theme_button; }
     }
 
     > separator {
@@ -120,8 +114,6 @@ window.background.csd {
 window.workbench.org-gnome-Builder {
   headerbar {
     background-color: $canvas_blue;
-
-    // button { @extend %header_theme_button; }
   }
 }
 
@@ -131,8 +123,6 @@ window.workbench.org-gnome-Builder {
 window#gnome-system-monitor {
   headerbar.titlebar {
     background-color: $canvas_teal;
-
-    // button { @extend %header_theme_button; }
   }
 }
 
@@ -142,8 +132,6 @@ window#gnome-system-monitor {
 window.org-gnome-Todo {
   headerbar.titlebar {
     background-color: $canvas_deep_orange;
-
-    // button { @extend %header_theme_button; }
   }
 }
 
@@ -153,8 +141,6 @@ window.org-gnome-Todo {
 window.dconf-editor {
   headerbar.titlebar {
     background-color: $canvas_purple;
-
-    // button { @extend %header_theme_button; }
   }
 }
 
@@ -163,8 +149,6 @@ window.dconf-editor {
 //
 headerbar.titlebar.event_toolbar {
   background-color: $canvas_dark_yellow;
-
-  // button { @extend %header_theme_button; }
 }
 
 //
