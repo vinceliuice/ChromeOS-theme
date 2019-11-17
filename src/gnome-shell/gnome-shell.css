@@ -865,11 +865,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:ltr {
-  padding: 0.6em 24px 0.6em 0;
+  padding: .4em 1.75em .4em 0em;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding: 0.6em 0 0.6em 24px;
+  padding: .4em 0em .4em 1.75em;
 }
 
 .popup-menu .popup-menu-item:checked {
@@ -1002,12 +1002,30 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: transparent;
 }
 
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
+}
+
 .aggregate-menu {
-  min-width: 280px;
+  min-width: 21em;
 }
 
 .aggregate-menu .popup-menu-icon {
   padding: 0 4px;
+  -st-icon-style: symbolic;
+}
+
+.aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
+  /* 12px spacing + 2*4px padding */
+  padding-left: 20px;
+  margin-left: 1.09em;
+}
+
+.aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
+  /* 12px spacing + 2*4px padding */
+  padding-right: 20px;
+  margin-right: 1.09em;
 }
 
 .system-menu-action {
