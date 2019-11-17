@@ -1230,13 +1230,13 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
-  height: 36px;
+  height: 32px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.3);
   border-radius: 0 0 16px 16px;
 }
 
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: transparent;
 }
 
 #panel #panelLeft, #panel #panelCenter {
@@ -1266,8 +1266,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 #panel .panel-button {
   margin: 3px 6px;
-  -natural-hpadding: 4px;
-  -minimum-hpadding: 4px;
+  -natural-hpadding: 2px;
+  -minimum-hpadding: 2px;
   font-weight: bold;
   color: #dedede;
   text-shadow: none;

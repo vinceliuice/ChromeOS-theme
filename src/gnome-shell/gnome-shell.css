@@ -1236,7 +1236,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: transparent;
 }
 
 #panel #panelLeft, #panel #panelCenter {

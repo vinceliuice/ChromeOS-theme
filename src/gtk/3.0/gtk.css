@@ -6803,7 +6803,7 @@ window.background.csd > hdyleaflet.titlebar > separator {
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
-  background-color: #4769d2;
+  background-color: #5E35B1;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -6821,7 +6821,7 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > separator {
-  background-color: #4769d2;
+  background-color: #5E35B1;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 

@@ -1034,7 +1034,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
-  height: 36px;
+  height: $medium_size;
   box-shadow: $shadow_6;
   border-radius: 0 0 16px 16px;
 
@@ -1042,7 +1042,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   &.unlock-screen,
   &.login-screen,
   &.lock-screen {
-    background-color: if($panel == 'light', rgba($panel_bg_color, 0.35), transparent);
+    background-color: transparent;
   }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
@@ -1070,8 +1070,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .panel-button {
     margin: 3px 6px;
-    -natural-hpadding: 4px;
-    -minimum-hpadding: 4px;
+    -natural-hpadding: $minimum-hpadding;
+    -minimum-hpadding: $minimum-hpadding;
     font-weight: bold;
     color: $panel_fg_color;
     text-shadow: none;

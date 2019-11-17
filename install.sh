@@ -28,14 +28,11 @@ OPTIONS:
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
   -c, --color VARIANT...  Specify color variant(s) [standard|dark|light] (Default: All variants)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
-  -g, --gdm               Install and apply GDM theme (for advanced users)
   -h, --help              Show help
 
 INSTALLATION EXAMPLES:
 Install all theme variants into ~/.themes
   $0 --dest ~/.themes
-Install all theme variants including GDM theme
-  $0 --gdm
 Install standard theme variant only
   $0 --color standard --size standard
 Install specific theme variants with different name into ~/.themes
@@ -76,7 +73,7 @@ install() {
 
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
   cp -ur "${SRC_DIR}"/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell$color$size.css"                              "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell${ELSE_DARK:-}$size.css"                      "${THEME_DIR}/gnome-shell/gnome-shell.css"
   cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
 
