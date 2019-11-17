@@ -817,11 +817,6 @@ $slider_color: if($variant == 'light', $accent_color, white);
     .label-shadow { color: transparent; }
   }
 
-  .app-menu,
-  .app-well-menu {
-    max-width: 27.25em;
-  }
-
   .aggregate-menu {
     min-width: 21em;
 
@@ -1091,18 +1086,16 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     border-radius: 100px;
     transition-duration: $longer_duration;
 
-    StLabel { padding: 0 2px; }
+    StLabel { padding: 0 3px; }
+
+    .popup-menu-arrow { width: 0; height: 0; } // Remove arrow on panel button
 
     .app-menu-icon {
       -st-icon-style: symbolic;
-      height: 0;
-      width: 0;
-      margin-left: 0;
+      margin-left: 4px;
       margin-right: 0;
       //dimensions of the icon are hardcoded
     }
-
-    .popup-menu-arrow { width: 0; height: 0; } // Remove arrow on panel button
 
     .system-status-icon,
     .app-menu-icon > StIcon,
