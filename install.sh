@@ -74,13 +74,13 @@ install() {
   echo "CursorTheme=Adwaita" >>                                                 "${THEME_DIR}/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "${THEME_DIR}/index.theme"
 
-  mkdir -p                                                                              "${THEME_DIR}/gnome-shell"
-  cp -ur ${SRC_DIR}/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
-  cp -ur ${SRC_DIR}/gnome-shell/gnome-shell$color$size.css                              "${THEME_DIR}/gnome-shell/gnome-shell.css"
-  cp -ur ${SRC_DIR}/gnome-shell/common-assets                                           "${THEME_DIR}/gnome-shell/assets"
-  cp -ur ${SRC_DIR}/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
+  mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}"/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell$color$size.css"                              "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
 
-  cd ${THEME_DIR}/gnome-shell
+  cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
   ln -s assets/process-working.svg process-working.svg
   ln -s assets/no-notifications.svg no-notifications.svg
@@ -180,9 +180,11 @@ done
 if [[ "${#colors[@]}" -eq 0 ]] ; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
+
 if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
+
 for color in "${colors[@]}"; do
   for size in "${sizes[@]}"; do
     install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$color" "$size"
