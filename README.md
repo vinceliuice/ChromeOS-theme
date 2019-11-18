@@ -30,9 +30,11 @@ Run the following commands in the terminal:
 -n, --name NAME         Specify theme name (Default: Materia)
 -c, --color VARIANT...  Specify color variant(s) [standard|dark|light] (Default: All variants)
 -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
--g, --gdm               Install and apply GDM theme (for advanced users)
 -h, --help              Show help
 ```
 
 > For more information, run: `./install.sh --help`
+
+## Preview
+![1](https://cdn.pling.com/img/9/2/b/e/0f3bbcad86f2b4baee71ca3f12117ebf4d5a.jpg?raw=true)
 
