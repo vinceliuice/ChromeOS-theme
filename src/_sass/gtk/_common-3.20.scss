@@ -40,11 +40,11 @@
  * Base States *
  ***************/
 .background {
-  background-color: rgba($background, 0.9999);
+  background-color: $background;
   color: $text;
 
   &.csd { // Set csd windows botttom border radius
-    border-radius: 0 0 $window-radius $window-radius;
+    border-radius: 0 0 ($window-radius + 2px) ($window-radius + 2px);
   }
 
   &.maximized, &.solid-csd { // No radius when windows maximized
@@ -114,7 +114,7 @@ textview {
   }
 }
 
-iconview { @extend .view; }
+// iconview { @extend .view; }
 
 .rubberband,
 rubberband {
@@ -129,7 +129,7 @@ flowbox {
     padding: 4px;
     border-radius: $corner-radius;
 
-    &:selected { @extend %selected_items_primary; }
+    &:selected { @extend %selected_items_color; }
   }
 }
 
@@ -1337,8 +1337,7 @@ headerbar {
 }
 
 // Development versions of apps to use a differently styled headerbar
-window.devel .titlebar:not(.selection-mode) {
-}
+// window.devel .titlebar:not(.selection-mode) { }
 
 
 /************
@@ -3470,8 +3469,7 @@ button.titlebutton {
 
   @extend %circular_button;
 
-  .selection-mode & {
-  }
+  // .selection-mode & { }
 }
 
 
@@ -3481,9 +3479,14 @@ button.titlebutton {
   background-color: $overlay-selected;
 }
 
-%selected_items_primary {
+%selected_items_color {
   color: $primary;
   background-color: rgba($primary-light, 0.2);
+}
+
+%selected_items_primary {
+  color: on($primary);
+  background-color: $primary;
 }
 
 .monospace { font-family: monospace; }

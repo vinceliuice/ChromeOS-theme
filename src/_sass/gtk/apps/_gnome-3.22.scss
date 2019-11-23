@@ -202,14 +202,14 @@
   &:selected {
     background-color: transparent;
 
-    .icon-item-background { @extend %selected_items_primary; }
+    .icon-item-background { @extend %selected_items_color; }
   }
 }
 
 .nautilus-window .view {
   selection,
   &:selected {
-    @extend %selected_items_primary;
+    @extend %selected_items_color;
   }
 }
 
@@ -386,7 +386,7 @@ frame.gedit-map-frame > border {
   separator { @extend %hide_separators; }
 
   .csd & {
-    border-bottom-left-radius: $window-radius;
+    border-bottom-left-radius: $window-radius + 2px;
   }
 }
 
@@ -480,7 +480,7 @@ window.background.csd {
     }
   }
 
-  > stack {
+  > stack:not(.titlebar) {
     border-radius: 0 0 $window-radius $window-radius;
   }
 
