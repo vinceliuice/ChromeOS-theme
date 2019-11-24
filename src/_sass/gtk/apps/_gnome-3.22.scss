@@ -9,11 +9,11 @@
 .nautilus-window {
   &.csd {
     background-color: $base-alt;
-    border-radius: 0 0 $window-radius + 2px $window-radius + 2px;
+    border-radius: 0 0 $corner-radius $corner-radius;
 
     .nautilus-list-view {
       background-color: $base;
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $corner-radius $corner-radius;
 
       treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: transparent;
@@ -26,12 +26,12 @@
   & notebook,
   & notebook > stack {
     background-color: $base;
-    border-radius: 0 0 $window-radius + 2px $window-radius + 2px;
+    border-radius: 0 0 $corner-radius $corner-radius;
   }
 
   &.csd placessidebar {
     background: none;
-    border-bottom-left-radius: $window-radius;
+    border-bottom-left-radius: $corner-radius;
   }
 
   &.maximized { // No border radius when window maximized
@@ -70,7 +70,7 @@
   }
 
   &.csd:not(.maximized) .floating-bar {
-    border-radius: ($corner-radius + 1px) 0 ($window-radius + 2px) 0;
+    border-radius: ($corner-radius + 1px) 0 ($corner-radius + 2px) 0;
   }
 }
 
@@ -304,7 +304,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 
 .gedit-side-panel-paned statusbar {
   border-top: 1px solid $divider;
-  border-radius: 0 0 $window-radius $window-radius;
+  border-radius: 0 0 $corner-radius $corner-radius;
 }
 
 .gedit-search-slider {
@@ -386,7 +386,7 @@ frame.gedit-map-frame > border {
   separator { @extend %hide_separators; }
 
   .csd & {
-    border-bottom-left-radius: $window-radius + 2px;
+    border-bottom-left-radius: $corner-radius;
   }
 }
 
@@ -466,33 +466,47 @@ window.background.csd {
   > headerbar.titlebar > hdyleaflet {
     > headerbar {
       &:first-child:not(:only-child) {
-        border-top-left-radius: $window-radius;
+        border-top-left-radius: $corner-radius;
       }
 
       &:last-child:not(:only-child) {
-        border-top-right-radius: $window-radius;
+        border-top-right-radius: $corner-radius;
       }
 
       &:first-child:only-child, &:last-child:only-child {
-        border-top-right-radius: $window-radius;
-        border-top-left-radius: $window-radius;
+        border-top-right-radius: $corner-radius;
+        border-top-left-radius: $corner-radius;
       }
     }
   }
 
-  > stack:not(.titlebar) {
-    border-radius: 0 0 $window-radius $window-radius;
+  > stack:not(.titlebar),
+  > hdyleaflet > stack.background {
+    border-radius: 0 0 $corner-radius $corner-radius;
   }
 
   > hdyleaflet > stack.background, // > 3.34.0
   > box.horizontal > stack.background {
     background: none;
+
+    > widget {
+      > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
+        > scrolledwindow > viewport.frame {
+          background-color: $base;
+          border-bottom-right-radius: $corner-radius + 2px;
+
+          > box.vertical.view {
+            background: none;
+          }
+        }
+      }
+    }
   }
 
   > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
   > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
     background-color: $base;
-    border-bottom-left-radius: $window-radius + 1px;
+    border-bottom-left-radius: $corner-radius + 2px;
 
     > viewport.frame > stack {
       background-color: transparent;
@@ -511,7 +525,7 @@ window.background.csd {
 dialog.background.csd {
   > box.vertical.dialog-vbox { // wifi setting
     > notebook > stack > box.horizontal > notebook > stack {
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $corner-radius $corner-radius;
     }
   }
 }
@@ -523,7 +537,7 @@ dialog.background.csd {
 window#gnome-system-monitor.background.csd {
   > box.vertical > stack {
     background-color: $base;
-    border-radius: 0 0 $window-radius $window-radius;
+    border-radius: 0 0 $corner-radius $corner-radius;
 
     > box.vertical > scrolledwindow {
       treeview.view {
@@ -550,11 +564,11 @@ stack {
   > grid.vertical {
     > scrolledwindow {
       border: none;
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $corner-radius $corner-radius;
 
       > viewport.frame {
         list {
-          border-radius: 0 0 $window-radius $window-radius;
+          border-radius: 0 0 $corner-radius $corner-radius;
         }
       }
     }
@@ -571,7 +585,7 @@ window.background.csd {
   > overlay > grid.horizontal {
     > overlay > stack > box.horizontal > grid.horizontal {
       > scrolledwindow.contacts-contact-form {
-        border-bottom-right-radius: $window-radius + 1px;
+        border-bottom-right-radius: $corner-radius;
       }
     }
   }
@@ -1055,7 +1069,7 @@ box.vertical > revealer > toolbar.search-bar {
 
   .content-view {
     background-color: transparent;
-    border-radius: 0 0 $window-radius $window-radius;
+    border-radius: 0 0 $corner-radius $corner-radius;
   }
 
   viewport.frame { // Documents
@@ -1065,7 +1079,7 @@ box.vertical > revealer > toolbar.search-bar {
       border { border: none; }
 
       background-color: transparent;
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $corner-radius $corner-radius;
     }
   }
 }
@@ -1079,14 +1093,14 @@ window.background.csd {
     > scrolledwindow {
       > iconview.view.content-view:not(:hover):not(:selected) {
         background-color: transparent;
-        border-radius: $window-radius;
+        border-radius: $corner-radius;
       }
     }
   }
 
   evview.view.content-view {
     background-color: transparent;
-    border-radius: 0 0 $window-radius $window-radius;
+    border-radius: 0 0 $corner-radius $corner-radius;
   }
 }
 
@@ -1097,7 +1111,7 @@ window.background.csd {
 .background.csd {
   > grid.horizontal > paned.horizontal {
     > scrolledwindow {
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $corner-radius $corner-radius;
       background-color: $base;
 
       treeview.view:not(:hover):not(:selected) {
@@ -1107,7 +1121,7 @@ window.background.csd {
 
     > box.vertical {
       > scrolledwindow {
-        border-radius: 0 0 0 $window-radius;
+        border-radius: 0 0 0 $corner-radius;
         background-color: $background;
 
         treeview.view:not(:hover):not(:selected) {
@@ -1126,7 +1140,7 @@ window.background.csd {
   > box.vertical > paned.horizontal {
     > scrolledwindow {
       treeview.view {
-        border-bottom-left-radius: $window-radius;
+        border-bottom-left-radius: $corner-radius;
       }
     }
   }
@@ -1243,21 +1257,21 @@ button.title label { min-height: $medium-size; }
  *********/
 window#GearyMainWindow.background.csd {
   box.vertical > paned.horizontal > box.sidebar.vertical {
-    border-bottom-left-radius: $window-radius;
+    border-bottom-left-radius: $corner-radius;
 
     statusbar {
-      border-bottom-left-radius: $window-radius;
+      border-bottom-left-radius: $corner-radius;
     }
   }
 
   stack#conversation_viewer {
-    border-bottom-right-radius: $window-radius;
+    border-bottom-right-radius: $corner-radius;
 
     scrolledwindow.geary-conversation-scroller {
       viewport.frame {
         list.conversation-listbox {
           background: none;
-          border-bottom-right-radius: $window-radius;
+          border-bottom-right-radius: $corner-radius;
         }
       }
     }
@@ -1273,8 +1287,8 @@ dialog.background.csd {
     > grid.horizontal {
       > scrolledwindow.frame {
         > viewport.frame {
-          list:first-child { border-radius: 0 0 0 $window-radius; }
-          list:last-child { border-radius: 0 0 $window-radius 0; }
+          list:first-child { border-radius: 0 0 0 $corner-radius; }
+          list:last-child { border-radius: 0 0 $corner-radius 0; }
         }
       }
     }
@@ -1282,7 +1296,7 @@ dialog.background.csd {
     > stack,
     > stack > stack {
       > scrolledwindow {
-        border-radius: 0 0 $window-radius $window-radius;
+        border-radius: 0 0 $corner-radius $corner-radius;
         background-color: $base;
 
         iconview.view:not(:hover):not(:selected):not(:active) { // Wallpaper setting window
@@ -1295,7 +1309,7 @@ dialog.background.csd {
     > stack {
       > scrolledwindow > viewport.frame {
         > list {
-          border-radius: 0 0 $window-radius $window-radius;
+          border-radius: 0 0 $corner-radius $corner-radius;
 
           row.activatable:not(:hover):not(:selected):not(:active) {
             background-color: transparent;
@@ -1310,13 +1324,13 @@ dialog.background.csd {
       }
 
       toolbar.toolbar {
-        border-radius: 0 0 $window-radius $window-radius;
+        border-radius: 0 0 $corner-radius $corner-radius;
       }
     }
 
     > notebook {
       > stack {
-        border-radius: 0 0 $window-radius $window-radius;
+        border-radius: 0 0 $corner-radius $corner-radius;
       }
     }
   }

@@ -40,11 +40,11 @@
  * Base States *
  ***************/
 .background {
-  background-color: $background;
+  background-color: rgba($background, 0.999);
   color: $text;
 
   &.csd { // Set csd windows botttom border radius
-    border-radius: 0 0 ($window-radius + 2px) ($window-radius + 2px);
+    border-radius: 0 0 $corner-radius $corner-radius;
   }
 
   &.maximized, &.solid-csd { // No radius when windows maximized
@@ -2679,7 +2679,7 @@ actionbar > revealer > box {
   background-clip: border-box;
 
   .background.csd & {
-    border-radius: 0 0 $window-radius $window-radius;
+    border-radius: 0 0 $corner-radius $corner-radius;
   }
 
   button:not(.suggested-action):not(.destructive-action) { @extend %button_basic.flat; }
@@ -2944,7 +2944,7 @@ filechooser {
 
     scrolledwindow {
       background-color: $base;
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: 0 0 $corner-radius $corner-radius;
 
       treeview.view {
         @extend .view;
@@ -2955,7 +2955,7 @@ filechooser {
 
   .csd & placessidebar {
     background: none;
-    border-bottom-left-radius: $window-radius;
+    border-bottom-left-radius: $corner-radius;
   }
 }
 
@@ -3405,7 +3405,7 @@ colorchooser .popover.osd {
  **********************/
 decoration {
   transition: $transition-shadow;
-  border-radius: $window-radius;
+  border-radius: $corner-radius;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
   // FIXME rationalize shadows
