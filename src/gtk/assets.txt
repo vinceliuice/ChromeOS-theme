@@ -22,3 +22,8 @@ scale-vert-marks-before-slider-dark
 scale-vert-marks-before-slider-disabled-dark
 scale-vert-marks-after-slider-dark
 scale-vert-marks-after-slider-disabled-dark
+scale-slider-cyan
+scale-horz-marks-before-slider-cyan
+scale-horz-marks-after-slider-cyan
+scale-vert-marks-before-slider-cyan
+scale-vert-marks-after-slider-cyan

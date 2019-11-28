@@ -26,6 +26,78 @@ $theme_blue_grey:   #37474F;
 $theme_green_grey:  #3b4342;
 // /***** color-palette *****/
 
+// Some color theme stuff
+@mixin color_theme($check_rules:'true',
+                   $switch_rules:'true',
+                   $entry_rules:'true',
+                   $button_rules:'true',
+                   $scale_rules:'true',
+                   $theme_color:$primary) {
+  @if $check_rules=='true' {
+    check, radio {
+      &:checked, &:indeterminate {
+        color: $theme_color;
+      }
+    }
+
+    radio {
+      & {
+        border-image-source: -gtk-gradient(radial,
+                                           center center, 0,
+                                           center center, 0.001,
+                                           to($theme_color),
+                                           to(transparent));
+      }
+
+      &:checked:not(:indeterminate) {
+        border-image-source: -gtk-gradient(radial,
+                                           center center, 0,
+                                           center center, (10px / $check_radio_size / 2),
+                                           to($theme_color),
+                                           to(transparent));
+      }
+    }
+  }
+
+  @if $switch_rules=='true' {
+    switch {
+      &:checked { background-color: rgba($theme_color, 0.5); }
+
+      &:checked slider {
+        background-color: $theme_color;
+        color: $theme_color;
+      }
+    }
+  }
+
+  @if $entry_rules=='true' {
+    entry, spinbutton:not(.vertical) {
+      &:focus { @include entry(checked, $fc: $theme_color); }
+    }
+  }
+
+  @if $button_rules=='true' {
+    button:not(.flat):not(.combo) {
+      &:checked { background-color: $theme_color; }
+    }
+
+    button.combo {
+      &:checked { @include entry(checked, $fc: $theme_color); }
+    }
+  }
+
+  @if $scale_rules=='true' {
+    scale {
+      highlight {
+        background-image: image($theme_color);
+      }
+
+      slider { color: $theme_color; }
+    }
+  }
+}
+
+
 //
 // Gedit
 //
@@ -42,15 +114,17 @@ window.org-gnome-gedit {
     //   background-color: $theme_deep_purple;
     // }
   }
+
+  @include color_theme($theme_color:$theme_deep_purple);
 }
 
 //
 // Gnome Contacts
 //
-headerbar.titlebar.contacts-left-header-bar,
-headerbar.titlebar.contacts-right-header-bar {
-  background-color: $theme_indigo;
-}
+// headerbar.titlebar.contacts-left-header-bar,
+// headerbar.titlebar.contacts-right-header-bar { // 3.22
+//   background-color: $theme_indigo;
+// }
 
 //
 // Gnome Calender
@@ -59,6 +133,8 @@ window.org-gnome-Calendar {
   headerbar.titlebar {
     background-color: $theme_amber;
   }
+
+  @include color_theme($theme_color:$theme_amber);
 }
 
 //
@@ -70,10 +146,54 @@ window.background.csd {
     > headerbar.titlebar.tweak-titlebar-left,
     > headerbar.titlebar.tweak-titlebar-right {
       background-color: $theme_brown;
+
+      switch {
+        &:checked { background-color: rgba(lighten($theme_brown, 25%), 0.5); }
+
+        &:checked slider {
+          background-color: lighten($theme_brown, 25%);
+          color: lighten($theme_brown, 25%);
+        }
+      }
     }
 
     > separator {
       background-color: $theme_brown;
+    }
+  }
+
+  > hdyleaflet > box.vertical {
+    > stack.main-container {
+      @include color_theme($theme_color:$theme_brown);
+    }
+
+    > searchbar {
+      entry.search {
+        @include button(normal);
+
+        border-radius: $corner-radius;
+        box-shadow: none;
+        border-image: none;
+        background-color: $fill;
+
+        &:focus {
+          transition: $transition,
+                      background-size 0ms,
+                      background-image 0ms;
+          animation: ripple $ripple-fade-in-duration $ease-out forwards;
+          box-shadow: inset 0 0 0 9999px $overlay-hover, $shadow-z8;
+          background-image: radial-gradient(circle, $overlay-checked 10%, transparent 0%);
+          background-size: 0% 0%;
+
+          box-shadow: none;
+          border-image: none;
+        }
+
+        &:backdrop {
+          animation: none;
+          transition: none;
+        }
+      }
     }
   }
 }
@@ -99,6 +219,15 @@ window.background.csd {
         border-top-right-radius: $window-radius;
         border-top-left-radius: $window-radius;
       }
+
+      switch {
+        &:checked { background-color: rgba(lighten($theme_cyan, 25%), 0.5); }
+
+        &:checked slider {
+          background-color: lighten($theme_cyan, 25%);
+          color: lighten($theme_cyan, 25%);
+        }
+      }
     }
 
     > separator {
@@ -106,6 +235,46 @@ window.background.csd {
       box-shadow: inset 0 1px highlight($titlebar);
     }
   }
+
+  > hdyleaflet > stack.background {
+    @include color_theme($theme_color:$theme_cyan);
+
+    scale {
+      slider {
+        color: $theme_cyan;
+
+        @each $s, $as in ('', '') {
+          &#{$s} {
+            $_url: 'assets/scale-slider#{$as}#{$asset-suffix}-cyan';
+
+            background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                              radial-gradient(circle, transparent 10%, transparent 0%);
+          }
+        }
+
+        &:active {
+          $_url: 'assets/scale-slider#{$asset-suffix}-cyan';
+          background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                            radial-gradient(circle, $overlay-active 10%, transparent 0%);
+          background-size: auto, 0% 0%;
+        }
+      }
+    }
+  }
+
+  > hdyleaflet > box.vertical {
+    > scrolledwindow.view {
+      > viewport.frame {
+        > stack {
+          entry.search {
+            &:focus { @include entry(checked, $fc: $theme_cyan); }
+          }
+        }
+      }
+    }
+  }
+
+
 }
 
 //
@@ -121,6 +290,8 @@ window.background.csd.org-gnome-Builder {
       }
     }
   }
+
+  @include color_theme($theme_color:$theme_grey);
 }
 
 //
@@ -129,6 +300,14 @@ window.background.csd.org-gnome-Builder {
 window#gnome-system-monitor {
   headerbar.titlebar {
     background-color: $theme_teal;
+  }
+
+  @include color_theme($theme_color:$theme_teal);
+
+  treeview.view {
+    &.progressbar { // progress bar in treeviews
+      border-bottom: $bar-size solid $theme_teal;
+    }
   }
 }
 
@@ -139,6 +318,8 @@ window.org-gnome-Todo {
   headerbar.titlebar {
     background-color: $theme_deep_orange;
   }
+
+  @include color_theme($theme_color:$theme_deep_orange);
 }
 
 //
@@ -148,6 +329,8 @@ window.dconf-editor {
   headerbar.titlebar {
     background-color: $theme_purple;
   }
+
+  @include color_theme($theme_color:$theme_purple);
 }
 
 //
@@ -164,6 +347,8 @@ window#GearyMainWindow {
   > .titlebar {
     background-color: $theme_green;
   }
+
+  @include color_theme($theme_color:$theme_green);
 }
 
 //
@@ -173,4 +358,6 @@ window.background.budgie-setting-window.csd {
   > headerbar.titlebar {
     background-color: $theme_blue_grey;
   }
+
+  @include color_theme($theme_color:$theme_blue_grey);
 }

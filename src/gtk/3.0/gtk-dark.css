@@ -6795,13 +6795,90 @@ window.org-gnome-gedit > paned.titlebar > separator {
   border-top: 1px solid transparent;
 }
 
-headerbar.titlebar.contacts-left-header-bar,
-headerbar.titlebar.contacts-right-header-bar {
-  background-color: #3949AB;
+window.org-gnome-gedit check:checked, window.org-gnome-gedit check:indeterminate, window.org-gnome-gedit radio:checked, window.org-gnome-gedit radio:indeterminate {
+  color: #673AB7;
+}
+
+window.org-gnome-gedit radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#673AB7), to(transparent));
+}
+
+window.org-gnome-gedit radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#673AB7), to(transparent));
+}
+
+window.org-gnome-gedit switch:checked {
+  background-color: rgba(103, 58, 183, 0.5);
+}
+
+window.org-gnome-gedit switch:checked slider {
+  background-color: #673AB7;
+  color: #673AB7;
+}
+
+window.org-gnome-gedit entry:focus, window.org-gnome-gedit spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #673AB7 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-gedit button:not(.flat):not(.combo):checked {
+  background-color: #673AB7;
+}
+
+window.org-gnome-gedit button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #673AB7 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-gedit scale highlight {
+  background-image: image(#673AB7);
+}
+
+window.org-gnome-gedit scale slider {
+  color: #673AB7;
 }
 
 window.org-gnome-Calendar headerbar.titlebar {
   background-color: #FF6F00;
+}
+
+window.org-gnome-Calendar check:checked, window.org-gnome-Calendar check:indeterminate, window.org-gnome-Calendar radio:checked, window.org-gnome-Calendar radio:indeterminate {
+  color: #FF6F00;
+}
+
+window.org-gnome-Calendar radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#FF6F00), to(transparent));
+}
+
+window.org-gnome-Calendar radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#FF6F00), to(transparent));
+}
+
+window.org-gnome-Calendar switch:checked {
+  background-color: rgba(255, 111, 0, 0.5);
+}
+
+window.org-gnome-Calendar switch:checked slider {
+  background-color: #FF6F00;
+  color: #FF6F00;
+}
+
+window.org-gnome-Calendar entry:focus, window.org-gnome-Calendar spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6F00 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-Calendar button:not(.flat):not(.combo):checked {
+  background-color: #FF6F00;
+}
+
+window.org-gnome-Calendar button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6F00 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-Calendar scale highlight {
+  background-image: image(#FF6F00);
+}
+
+window.org-gnome-Calendar scale slider {
+  color: #FF6F00;
 }
 
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
@@ -6809,8 +6886,91 @@ window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-
   background-color: #6D4C41;
 }
 
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left switch:checked,
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right switch:checked {
+  background-color: rgba(177, 138, 124, 0.5);
+}
+
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left switch:checked slider,
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right switch:checked slider {
+  background-color: #b18a7c;
+  color: #b18a7c;
+}
+
 window.background.csd > hdyleaflet.titlebar > separator {
   background-color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container check:checked, window.background.csd > hdyleaflet > box.vertical > stack.main-container check:indeterminate, window.background.csd > hdyleaflet > box.vertical > stack.main-container radio:checked, window.background.csd > hdyleaflet > box.vertical > stack.main-container radio:indeterminate {
+  color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#6D4C41), to(transparent));
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#6D4C41), to(transparent));
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container switch:checked {
+  background-color: rgba(109, 76, 65, 0.5);
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container switch:checked slider {
+  background-color: #6D4C41;
+  color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container entry:focus, window.background.csd > hdyleaflet > box.vertical > stack.main-container spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6D4C41 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):checked {
+  background-color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6D4C41 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container scale highlight {
+  background-image: image(#6D4C41);
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container scale slider {
+  color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet > box.vertical > searchbar entry.search {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
+  outline: none;
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  background-color: #3C3C3C;
+  background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000% 1000%;
+  color: white;
+  border-radius: 6px;
+  box-shadow: none;
+  border-image: none;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:focus {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08), 0 5px 3px -3px rgba(0, 0, 0, 0.2), 0 8px 6px 1px rgba(0, 0, 0, 0.14), 0 3px 8.4px 2px rgba(0, 0, 0, 0.12);
+  background-image: radial-gradient(circle, alpha(currentColor, 0.1) 10%, transparent 0%);
+  background-size: 0% 0%;
+  box-shadow: none;
+  border-image: none;
+}
+
+window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backdrop {
+  animation: none;
+  transition: none;
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
@@ -6831,25 +6991,264 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:
   border-top-left-radius: 4px;
 }
 
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar switch:checked {
+  background-color: rgba(165, 138, 220, 0.5);
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar switch:checked slider {
+  background-color: #a58adc;
+  color: #a58adc;
+}
+
 window.background.csd > headerbar.titlebar > hdyleaflet > separator {
   background-color: #5E35B1;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+window.background.csd > hdyleaflet > stack.background check:checked, window.background.csd > hdyleaflet > stack.background check:indeterminate, window.background.csd > hdyleaflet > stack.background radio:checked, window.background.csd > hdyleaflet > stack.background radio:indeterminate {
+  color: #5E35B1;
+}
+
+window.background.csd > hdyleaflet > stack.background radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#5E35B1), to(transparent));
+}
+
+window.background.csd > hdyleaflet > stack.background radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#5E35B1), to(transparent));
+}
+
+window.background.csd > hdyleaflet > stack.background switch:checked {
+  background-color: rgba(94, 53, 177, 0.5);
+}
+
+window.background.csd > hdyleaflet > stack.background switch:checked slider {
+  background-color: #5E35B1;
+  color: #5E35B1;
+}
+
+window.background.csd > hdyleaflet > stack.background entry:focus, window.background.csd > hdyleaflet > stack.background spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):checked {
+  background-color: #5E35B1;
+}
+
+window.background.csd > hdyleaflet > stack.background button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd > hdyleaflet > stack.background scale highlight {
+  background-image: image(#5E35B1);
+}
+
+window.background.csd > hdyleaflet > stack.background scale slider {
+  color: #5E35B1;
+}
+
+window.background.csd > hdyleaflet > stack.background scale slider {
+  color: #5E35B1;
+}
+
+window.background.csd > hdyleaflet > stack.background scale slider {
+  background-image: -gtk-scaled(url("assets/scale-slider-dark-cyan.png"), url("assets/scale-slider-dark-cyan@2.png")), radial-gradient(circle, transparent 10%, transparent 0%);
+}
+
+window.background.csd > hdyleaflet > stack.background scale slider {
+  background-image: -gtk-scaled(url("assets/scale-slider-dark-cyan.png"), url("assets/scale-slider-dark-cyan@2.png")), radial-gradient(circle, transparent 10%, transparent 0%);
+}
+
+window.background.csd > hdyleaflet > stack.background scale slider:active {
+  background-image: -gtk-scaled(url("assets/scale-slider-dark-cyan.png"), url("assets/scale-slider-dark-cyan@2.png")), radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: auto, 0% 0%;
+}
+
+window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack entry.search:focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.background.csd.org-gnome-Builder > stack.titlebar {
   background-color: #424242;
 }
 
+window.background.csd.org-gnome-Builder check:checked, window.background.csd.org-gnome-Builder check:indeterminate, window.background.csd.org-gnome-Builder radio:checked, window.background.csd.org-gnome-Builder radio:indeterminate {
+  color: #424242;
+}
+
+window.background.csd.org-gnome-Builder radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#424242), to(transparent));
+}
+
+window.background.csd.org-gnome-Builder radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#424242), to(transparent));
+}
+
+window.background.csd.org-gnome-Builder switch:checked {
+  background-color: rgba(66, 66, 66, 0.5);
+}
+
+window.background.csd.org-gnome-Builder switch:checked slider {
+  background-color: #424242;
+  color: #424242;
+}
+
+window.background.csd.org-gnome-Builder entry:focus, window.background.csd.org-gnome-Builder spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #424242 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):checked {
+  background-color: #424242;
+}
+
+window.background.csd.org-gnome-Builder button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #424242 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd.org-gnome-Builder scale highlight {
+  background-image: image(#424242);
+}
+
+window.background.csd.org-gnome-Builder scale slider {
+  color: #424242;
+}
+
 window#gnome-system-monitor headerbar.titlebar {
   background-color: #188c75;
+}
+
+window#gnome-system-monitor check:checked, window#gnome-system-monitor check:indeterminate, window#gnome-system-monitor radio:checked, window#gnome-system-monitor radio:indeterminate {
+  color: #188c75;
+}
+
+window#gnome-system-monitor radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#188c75), to(transparent));
+}
+
+window#gnome-system-monitor radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#188c75), to(transparent));
+}
+
+window#gnome-system-monitor switch:checked {
+  background-color: rgba(24, 140, 117, 0.5);
+}
+
+window#gnome-system-monitor switch:checked slider {
+  background-color: #188c75;
+  color: #188c75;
+}
+
+window#gnome-system-monitor entry:focus, window#gnome-system-monitor spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #188c75 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window#gnome-system-monitor button:not(.flat):not(.combo):checked {
+  background-color: #188c75;
+}
+
+window#gnome-system-monitor button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #188c75 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window#gnome-system-monitor scale highlight {
+  background-image: image(#188c75);
+}
+
+window#gnome-system-monitor scale slider {
+  color: #188c75;
+}
+
+window#gnome-system-monitor treeview.view.progressbar, filechooser stack.view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:focus {
+  border-bottom: 4px solid #188c75;
 }
 
 window.org-gnome-Todo headerbar.titlebar {
   background-color: #F4511E;
 }
 
+window.org-gnome-Todo check:checked, window.org-gnome-Todo check:indeterminate, window.org-gnome-Todo radio:checked, window.org-gnome-Todo radio:indeterminate {
+  color: #F4511E;
+}
+
+window.org-gnome-Todo radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#F4511E), to(transparent));
+}
+
+window.org-gnome-Todo radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#F4511E), to(transparent));
+}
+
+window.org-gnome-Todo switch:checked {
+  background-color: rgba(244, 81, 30, 0.5);
+}
+
+window.org-gnome-Todo switch:checked slider {
+  background-color: #F4511E;
+  color: #F4511E;
+}
+
+window.org-gnome-Todo entry:focus, window.org-gnome-Todo spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-Todo button:not(.flat):not(.combo):checked {
+  background-color: #F4511E;
+}
+
+window.org-gnome-Todo button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-Todo scale highlight {
+  background-image: image(#F4511E);
+}
+
+window.org-gnome-Todo scale slider {
+  color: #F4511E;
+}
+
 window.dconf-editor headerbar.titlebar {
   background-color: #9C27B0;
+}
+
+window.dconf-editor check:checked, window.dconf-editor check:indeterminate, window.dconf-editor radio:checked, window.dconf-editor radio:indeterminate {
+  color: #9C27B0;
+}
+
+window.dconf-editor radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#9C27B0), to(transparent));
+}
+
+window.dconf-editor radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#9C27B0), to(transparent));
+}
+
+window.dconf-editor switch:checked {
+  background-color: rgba(156, 39, 176, 0.5);
+}
+
+window.dconf-editor switch:checked slider {
+  background-color: #9C27B0;
+  color: #9C27B0;
+}
+
+window.dconf-editor entry:focus, window.dconf-editor spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9C27B0 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.dconf-editor button:not(.flat):not(.combo):checked {
+  background-color: #9C27B0;
+}
+
+window.dconf-editor button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9C27B0 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.dconf-editor scale highlight {
+  background-image: image(#9C27B0);
+}
+
+window.dconf-editor scale slider {
+  color: #9C27B0;
 }
 
 headerbar.titlebar.event_toolbar {
@@ -6860,8 +7259,90 @@ window#GearyMainWindow > .titlebar {
   background-color: #4CAF50;
 }
 
+window#GearyMainWindow check:checked, window#GearyMainWindow check:indeterminate, window#GearyMainWindow radio:checked, window#GearyMainWindow radio:indeterminate {
+  color: #4CAF50;
+}
+
+window#GearyMainWindow radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#4CAF50), to(transparent));
+}
+
+window#GearyMainWindow radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#4CAF50), to(transparent));
+}
+
+window#GearyMainWindow switch:checked {
+  background-color: rgba(76, 175, 80, 0.5);
+}
+
+window#GearyMainWindow switch:checked slider {
+  background-color: #4CAF50;
+  color: #4CAF50;
+}
+
+window#GearyMainWindow entry:focus, window#GearyMainWindow spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window#GearyMainWindow button:not(.flat):not(.combo):checked {
+  background-color: #4CAF50;
+}
+
+window#GearyMainWindow button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window#GearyMainWindow scale highlight {
+  background-image: image(#4CAF50);
+}
+
+window#GearyMainWindow scale slider {
+  color: #4CAF50;
+}
+
 window.background.budgie-setting-window.csd > headerbar.titlebar {
   background-color: #37474F;
+}
+
+window.background.budgie-setting-window.csd check:checked, window.background.budgie-setting-window.csd check:indeterminate, window.background.budgie-setting-window.csd radio:checked, window.background.budgie-setting-window.csd radio:indeterminate {
+  color: #37474F;
+}
+
+window.background.budgie-setting-window.csd radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#37474F), to(transparent));
+}
+
+window.background.budgie-setting-window.csd radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#37474F), to(transparent));
+}
+
+window.background.budgie-setting-window.csd switch:checked {
+  background-color: rgba(55, 71, 79, 0.5);
+}
+
+window.background.budgie-setting-window.csd switch:checked slider {
+  background-color: #37474F;
+  color: #37474F;
+}
+
+window.background.budgie-setting-window.csd entry:focus, window.background.budgie-setting-window.csd spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #37474F 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.budgie-setting-window.csd button:not(.flat):not(.combo):checked {
+  background-color: #37474F;
+}
+
+window.background.budgie-setting-window.csd button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #37474F 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.budgie-setting-window.csd scale highlight {
+  background-image: image(#37474F);
+}
+
+window.background.budgie-setting-window.csd scale slider {
+  color: #37474F;
 }
 
 /* GTK NAMED COLORS
