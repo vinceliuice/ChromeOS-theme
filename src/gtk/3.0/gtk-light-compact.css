@@ -6224,22 +6224,87 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 6px;
 }
 
+.budgie-panel button.budgie-menu-launcher {
+  padding: 0;
+  margin: 0;
+  min-width: 32px;
+  min-width: 32px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.budgie-panel button.budgie-menu-launcher, .budgie-panel button.budgie-menu-launcher:hover,
+.budgie-panel button.budgie-menu-launcher:drop(active), .budgie-panel button.budgie-menu-launcher:active, .budgie-panel button.budgie-menu-launcher:checked {
+  background: none;
+  box-shadow: none;
+}
+
+.budgie-panel button.budgie-menu-launcher image {
+  padding: 0;
+  margin: 0;
+  background-size: 32px 32px;
+  border-radius: 100px;
+  background-image: image(rgba(255, 255, 255, 0.12));
+}
+
+.budgie-panel button.budgie-menu-launcher:hover,
+.budgie-panel button.budgie-menu-launcher:drop(active) {
+  color: white;
+}
+
+.budgie-panel button.budgie-menu-launcher:hover image, .budgie-panel button.budgie-menu-launcher:drop(active) image {
+  background-image: image(rgba(255, 255, 255, 0.2));
+}
+
+.budgie-panel button.budgie-menu-launcher:active, .budgie-panel button.budgie-menu-launcher:checked {
+  color: white;
+}
+
+.budgie-panel button.budgie-menu-launcher:active image, .budgie-panel button.budgie-menu-launcher:checked image {
+  background-image: image(rgba(255, 255, 255, 0.28));
+}
+
 .budgie-panel {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: rgba(0, 0, 0, 0.6);
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .budgie-panel.transparent {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.top .budgie-panel.transparent {
+  border-radius: 0 0 16px 16px;
+}
+
+.bottom .budgie-panel.transparent {
+  border-radius: 16px 16px 0 0;
+}
+
+.left .budgie-panel.transparent {
+  border-radius: 0 16px 16px 0;
+}
+
+.right .budgie-panel.transparent {
+  border-radius: 16px 0 0 16px;
+}
+
 .budgie-panel button {
-  min-height: 16px;
-  min-width: 16px;
+  background-color: rgba(255, 255, 255, 0.12);
+  min-height: 24px;
+  min-width: 24px;
   padding: 0;
-  border-radius: 0;
+  border-radius: 100px;
+}
+
+.budgie-panel button.budgie-menu-launcher:focus {
+  background: none;
+  box-shadow: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .budgie-panel.horizontal button {
@@ -6283,6 +6348,12 @@ MsdOsdWindow.background.osd .progressbar {
 .budgie-panel menubar > menuitem,
 .budgie-panel .menubar > menuitem {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.budgie-panel menubar > menuitem:hover, .budgie-panel menubar > menuitem:active,
+.budgie-panel .menubar > menuitem:hover,
+.budgie-panel .menubar > menuitem:active {
+  color: white;
 }
 
 .budgie-panel menubar > menuitem > window.background.popup > decoration,
@@ -6553,7 +6624,7 @@ calendar.raven-calendar:selected {
 }
 
 .budgie-settings-window list.sidebar {
-  border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 6px;
 }
 
 /**************

@@ -93,9 +93,9 @@
     .container { padding: 8px; }
 
     // FIXME: untested
-    .message-bar {
-      // margin-bottom: 4px;
-    }
+    // .message-bar {
+    //   margin-bottom: 4px;
+    // }
 
     .name-button {
       image {
@@ -109,8 +109,7 @@
       padding: 0;
     }
 
-    .places-section-header {
-    }
+    // .places-section-header { }
 
     .places-list:not(.always-expand) {
       margin-top: 4px;
@@ -119,13 +118,11 @@
     }
 
     // FIXME: untested
-    .unlock-area {
-      entry {
-      }
-
-      button {
-      }
-    }
+    // .unlock-area {
+    //   entry { }
+    //
+    //   button { }
+    // }
 
     // use such sizes for consistency with other hard-coded dim-label sizes
     .alternative-label {
@@ -198,14 +195,41 @@
   }
 }
 
-// Menu Button
-button.budgie-menu-launcher {
-  // padding: 0 2px;
-}
+%panel_circlebutton {
+  padding: 0;
+  margin: 0;
+  min-width: 32px;
+  min-width: 32px;
+  color: on($panel, secondary);
 
-// Raven Trigger
-button.raven-trigger {
-  // padding: 0 4px;
+  &, &:hover, &:active, &:checked {
+    background: none;
+    box-shadow: none;
+  }
+
+  image {
+    padding: 0;
+    margin: 0;
+    background-size: 32px 32px;
+    border-radius: 100px;
+    background-image: image(on($panel, divider));
+  }
+
+  &:hover {
+    color: on($panel);
+
+    image {
+      background-image: image(rgba(white, 0.20));
+    }
+  }
+
+  &:active, &:checked {
+    color: on($panel);
+
+    image {
+      background-image: image(rgba(white, 0.28));
+    }
+  }
 }
 
 // Panel
@@ -214,17 +238,49 @@ button.raven-trigger {
   background-color: $panel;
   color: on($panel, secondary);
   font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
 
   &.transparent { background-color: $scrim; }
+
+  @each $pos, $p_radius in (top,    0 0 16px 16px),
+                           (bottom, 16px 16px 0 0),
+                           (left,   0 16px 16px 0),
+                           (right,  16px 0 0 16px) {
+    .#{$pos} &.transparent {
+      border-radius: $p_radius;
+    }
+  }
 
   button {
     @extend %button-flat;
     @extend %button-on-dark.flat;
 
-    min-height: 16px;
-    min-width: 16px;
+    background-color: on($panel, divider);
+
+    min-height: 24px;
+    min-width: 24px;
     padding: 0;
-    border-radius: 0;
+    border-radius: 100px;
+  }
+
+  // Menu Button
+  button.budgie-menu-launcher {
+    // padding: 0 2px;
+    @extend %panel_circlebutton;
+
+    &:focus { // Fixed issues when global menubar item is hovering
+      background: none;
+      box-shadow: none;
+      border: none;
+      color: on($panel, secondary);
+    }
+  }
+
+  // Raven Trigger
+  button.raven-trigger {
+    // padding: 0 4px;
+    // @extend %panel_circlebutton;
   }
 
   &.horizontal button { padding: 0 4px; }
@@ -264,6 +320,10 @@ button.raven-trigger {
 
     > menuitem {
       color: on($panel, secondary);
+
+      &:hover, &:active {
+        color: on($panel);
+      }
 
       > window.background.popup > decoration,
       > window.background.popup > menu { border-radius: 0 0 $window-radius $window-radius; }
@@ -541,6 +601,6 @@ calendar.raven-calendar {
 // Budgie setting
 .budgie-settings-window {
   list.sidebar {
-    border-radius: 0 0 0 $window-radius;
+    border-radius: 0 0 0 $corner-radius;
   }
 }
