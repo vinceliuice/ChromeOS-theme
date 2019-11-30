@@ -62,7 +62,7 @@
       font-size: 120%;
     }
 
-    button.flat:not(.image-button) {
+    button.flat:not(.image-button):not(.indicator-item) {
       @extend row.activatable;
 
       min-height: 32px;
@@ -79,6 +79,32 @@
     .container { padding: 8px; }
 
     separator { margin: 4px 0; }
+
+    // frame.container {
+    //   separator { min-height: 0; } // hide separator
+    // }
+
+    list,
+    row { // reset styling
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+
+    // top-row (user-name and avatar)
+    > frame.container > box.vertical row.activatable:first-child {
+      margin-bottom: 4px;
+      outline-width: 0;
+      border-radius: $corner-radius;
+
+      button.indicator-item {
+        transition: none;
+        animation: none;
+
+        &:hover {
+        }
+      }
+    }
   }
 
   &.sound-popover {
