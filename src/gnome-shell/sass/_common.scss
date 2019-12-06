@@ -650,7 +650,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
   .popup-menu-arrow { width: 16px; height: 16px; } //defined globally in the TOP BAR
 
   .popup-sub-menu {
-    margin: 0 4px;
+    margin: 0 $container_padding;
     color: rgba(black, 0.75);
     background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
     border-radius: 0 0 $bt_radius $bt_radius;
@@ -683,8 +683,8 @@ $slider_color: if($variant == 'light', $accent_color, white);
   // .popup-menu-content { }
 
   .popup-menu-item {
-    spacing: 8px;
-    margin: 0 4px;
+    spacing: $container_padding*2;
+    margin: 0 $container_padding;
     color: $fg_color;
     transition-duration: $shorter_duration;
     border-radius: 100px;
@@ -741,9 +741,10 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
     &:insensitive { color: $hint_fg_color; }
   }
+
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
-    -boxpointer-gap: 4px;
+    -boxpointer-gap: $container_padding;
     margin-bottom: 1.75em;
   }
 }
@@ -762,7 +763,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     -arrow-base: 0;
     -arrow-rise: 0;
     -arrow-box-shadow: none; //dreaming. bug #689995
-    margin: 6px 6px 6px;
+    margin: $container_padding 10px 16px;
     background-color: $menu_bg_color;
     border-radius: $bt_radius;
     box-shadow: $shadow_3;
@@ -782,7 +783,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     box-shadow: none;
 
     .popup-menu-content {
-      margin: 6px 6px 6px;
+      margin: $container_padding 10px 16px;
       background-color: $menu_bg_color;
       border-radius: $bt_radius;
       box-shadow: $shadow_3;
@@ -821,16 +822,16 @@ $slider_color: if($variant == 'light', $accent_color, white);
     min-width: 21em;
 
     .popup-menu-icon {
-      padding: 0 4px;
+      padding: 0 $container_padding;
       -st-icon-style: symbolic;
     }
 
     .popup-sub-menu .popup-menu-item > :first-child {
       &:ltr { /* 12px spacing + 2*4px padding */
-        padding-left: 20px; margin-left: 1.09em;
+        padding-left: 16px + $container_padding; margin-left: 1.09em;
       }
       &:rtl { /* 12px spacing + 2*4px padding */
-        padding-right: 20px; margin-right: 1.09em;
+        padding-right: 16px + $container_padding; margin-right: 1.09em;
       }
     }
   }
@@ -1385,7 +1386,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
       /* Message list */
       .message-list {
-        width: 420px;
+        width: 25em;
       }
 
         .message-list-clear-button.button {

@@ -824,7 +824,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-sub-menu {
-  margin: 0 4px;
+  margin: 0 6px;
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 0 0 12px 12px;
@@ -857,8 +857,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item {
-  spacing: 8px;
-  margin: 0 4px;
+  spacing: 12px;
+  margin: 0 6px;
   color: rgba(0, 0, 0, 0.87);
   transition-duration: 100ms;
   border-radius: 100px;
@@ -929,7 +929,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu.panel-menu {
-  -boxpointer-gap: 4px;
+  -boxpointer-gap: 6px;
   margin-bottom: 1.75em;
 }
 
@@ -947,7 +947,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
-  margin: 6px 6px 6px;
+  margin: 6px 10px 16px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
@@ -968,7 +968,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-boxpointer .popup-menu-content {
-  margin: 6px 6px 6px;
+  margin: 6px 10px 16px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
@@ -1007,19 +1007,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .aggregate-menu .popup-menu-icon {
-  padding: 0 4px;
+  padding: 0 6px;
   -st-icon-style: symbolic;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
   /* 12px spacing + 2*4px padding */
-  padding-left: 20px;
+  padding-left: 22px;
   margin-left: 1.09em;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
   /* 12px spacing + 2*4px padding */
-  padding-right: 20px;
+  padding-right: 22px;
   margin-right: 1.09em;
 }
 
@@ -1667,7 +1667,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 /* Message list */
 .message-list {
-  width: 420px;
+  width: 25em;
 }
 
 .message-list-clear-button.button {
