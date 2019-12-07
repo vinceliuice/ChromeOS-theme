@@ -693,8 +693,8 @@ $mdbt_radius: 100px;
     transition-duration: $shorter_duration;
     border-radius: 100px;
 
-    &:ltr { padding: .4em 1.75em .4em 0em; }
-    &:rtl { padding: .4em 0em .4em 1.75em; }
+    &:ltr { padding: .5em 2em .5em 0em; }
+    &:rtl { padding: .5em 0em .5em 2em; }
 
     &:checked {
       background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);

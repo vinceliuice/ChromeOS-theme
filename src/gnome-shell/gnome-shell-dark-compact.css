@@ -865,11 +865,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:ltr {
-  padding: .4em 1.75em .4em 0em;
+  padding: .5em 2em .5em 0em;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding: .4em 0em .4em 1.75em;
+  padding: .5em 0em .5em 2em;
 }
 
 .popup-menu .popup-menu-item:checked {
