@@ -229,12 +229,14 @@ $slider_color: if($variant == 'light', $accent_color, white);
 .lightbox { background-color: black; }
 .flashspot { background-color: white; }
 
+$mdborder_color: if($variant == 'light', transparent, rgba($white, 0.12));
+
 .modal-dialog {
-  border-radius: $bt_radius;
+  border-radius: $bt_radius*2;
   color: $fg_color;
   background-color: $base_color;
-  border: none;
-  box-shadow: $shadow_2;
+  border: 2px solid $mdborder_color;
+  box-shadow: $shadow_0;
   .modal-dialog-content-box {
     padding: 24px;
   }
@@ -255,6 +257,8 @@ $slider_color: if($variant == 'light', $accent_color, white);
   }
 }
 
+$mdbt_radius: 100px;
+
 .modal-dialog-linked-button {
   min-height: 40px;
   padding: 0 16px;
@@ -269,17 +273,17 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
   &:first-child {
     margin-left: 6px;
-    border-radius: $bt_radius 0px 0px $bt_radius;
+    border-radius: $mdbt_radius 0px 0px $mdbt_radius;
   }
   &:last-child {
     margin-right: 6px;
     border-right-width: 0px;
-    border-radius: 0px $bt_radius $bt_radius 0;
+    border-radius: 0px $mdbt_radius $mdbt_radius 0;
   }
   &:first-child:last-child {
     margin: 0 6px 6px 6px;
     border-right-width: 0px;
-    border-radius: $bt_radius $bt_radius $bt_radius $bt_radius;
+    border-radius: $mdbt_radius;
   }
 }
 
@@ -317,7 +321,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 /* End Session Dialog */
 .end-session-dialog {
   spacing: 42px;
-  border: none;
+  border: 2px solid $mdborder_color;
 
   .modal-dialog-linked-button:last-child {
     color: white;
@@ -469,7 +473,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 .prompt-dialog {
   //this is the width of the entire modal popup
   width: 34em;
-  border: none;
+  border: 2px solid $mdborder_color;
 
   .message-dialog-main-layout { spacing: 24px; padding: 10px; }
   .message-dialog-content { spacing: 16px; }
@@ -1029,15 +1033,6 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
 /* TOP BAR */
 
-Gjs_AggregateMenu.panel-button {
-  background-color: rgba($panel_fg_color, 0.15);
-}
-
-Gjs_ActivitiesButton.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button {
-  background-color: rgba($panel_fg_color, 0.15);
-}
-
 #panel {
   background-color: $panel_bg_color;
   /* transition from solid to transparent */
@@ -1183,23 +1178,40 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 // Activities button
-#panel #panelActivities.panel-button {
 
+$size_suffix: if($laptop == 'true', '-small', '');
+
+#panel #panelActivities.panel-button {
   > * {
-    background-image: url("assets/activities.svg");
-    background-position: center top;
+    background-image: url("assets/activities#{$size_suffix}.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
     background-color: transparent !important;
     background-gradient-direction: none !important;
-    border: none;
+    border: 0 solid transparent !important;
+    text-shadow: 0 0 transparent !important;
+    transition-duration: 0ms !important;
+    box-shadow: none !important;
     color: transparent;
   }
 
-  &:active, &:overview, &:focus, &:checked {
+  &:hover, &:active, &:overview, &:focus, &:checked {
     background-color: transparent;
     border: none;
-
-//    > * { background-image: url("assets/activities-active.svg"); }
+    transition: none;
+    animation: none;
   }
+
+  &:active, &:overview, &:focus, &:checked {
+    > * { background-image: url("assets/activities-active#{$size_suffix}.svg"); }
+  }
+}
+
+// Gjs_ActivitiesButton.panel-button,
+Gjs_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button {
+  background-color: rgba($panel_fg_color, 0.15);
 }
 
   // calendar popover
@@ -1641,12 +1653,13 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .window-clone-border {
     border: 4px solid $inverse_track_color;
-    border-radius: $bt_radius;
+    border-radius: $material_radius;
     // For window decorations with round corners we can't match
     // the exact shape when the window is scaled. So apply a shadow
     // to fix that case
     box-shadow: inset 0 0 0 1px $inverse_track_color;
   }
+
   .window-caption {
     spacing: 25px;
     color: $inverse_fg_color;
@@ -1954,10 +1967,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     visible-width: 32px; //amount visible before hover
     spacing: 12px;
     padding: 16px;
-    border-radius: $material_radius;
+    border-radius: $bt_radius;
     margin: 6px;
     //border-width: 0; //fixme: can't have non unoform borders :(
-//    &:rtl { border-radius: $material_radius; }
+    // &:rtl { border-radius: $material_radius; }
   }
   .workspace-thumbnail-indicator {
     border: 0 solid $primary_color;

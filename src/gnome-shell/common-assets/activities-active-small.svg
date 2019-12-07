@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="28"
-   height="28"
+   width="24"
+   height="24"
+   enable-background="new"
    version="1.0"
    id="svg6"
-   sodipodi:docname="activities.svg"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   style="enable-background:new">
+   sodipodi:docname="activities-checked.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata12">
     <rdf:RDF>
@@ -38,31 +38,31 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1366"
-     inkscape:window-height="706"
+     inkscape:window-height="704"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="13.906433"
-     inkscape:cx="2.1832783"
-     inkscape:cy="14.410041"
+     inkscape:zoom="9.8333334"
+     inkscape:cx="16.499013"
+     inkscape:cy="1.2954287"
      inkscape:window-x="0"
-     inkscape:window-y="36"
+     inkscape:window-y="32"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6" />
   <circle
-     style="opacity:0.15;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.3066448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-     id="path816"
-     cx="14"
-     cy="14"
-     r="14" />
+     style="opacity:0.25;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.36226296;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+     id="path822"
+     cx="12"
+     cy="12"
+     r="12" />
   <g
-     transform="translate(2,-274)"
-     id="g4"
-     style="fill:#ffffff">
+     transform="translate(0,-276)"
+     fill="#fff"
+     id="g4">
     <path
        transform="translate(0,276)"
-       d="m 12,6 a 6,6 0 0 0 -6,6 6,6 0 0 0 6,6 6,6 0 0 0 6,-6 6,6 0 0 0 -6,-6 z m 0,2 a 4,4 0 0 1 4,4 4,4 0 0 1 -4,4 4,4 0 0 1 -4,-4 4,4 0 0 1 4,-4 z"
-       style="fill:#ffffff;paint-order:fill markers stroke"
-       id="path2"
-       inkscape:connector-curvature="0" />
+       d="m12 6a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0-6-6zm0 2a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4z"
+       fill="#fff"
+       style="paint-order:fill markers stroke"
+       id="path2" />
   </g>
 </svg>

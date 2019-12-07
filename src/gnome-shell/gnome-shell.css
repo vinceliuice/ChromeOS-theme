@@ -316,11 +316,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .modal-dialog {
-  border-radius: 12px;
+  border-radius: 24px;
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
-  border: none;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
+  border: 2px solid transparent;
+  box-shadow: 0 0 transparent;
 }
 
 .modal-dialog .modal-dialog-content-box {
@@ -403,19 +403,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog-linked-button:first-child {
   margin-left: 6px;
-  border-radius: 12px 0px 0px 12px;
+  border-radius: 100px 0px 0px 100px;
 }
 
 .modal-dialog-linked-button:last-child {
   margin-right: 6px;
   border-right-width: 0px;
-  border-radius: 0px 12px 12px 0;
+  border-radius: 0px 100px 100px 0;
 }
 
 .modal-dialog-linked-button:first-child:last-child {
   margin: 0 6px 6px 6px;
   border-right-width: 0px;
-  border-radius: 12px 12px 12px 12px;
+  border-radius: 100px;
 }
 
 .show-processes-dialog-subject,
@@ -453,7 +453,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* End Session Dialog */
 .end-session-dialog {
   spacing: 42px;
-  border: none;
+  border: 2px solid transparent;
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
@@ -624,7 +624,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 34em;
-  border: none;
+  border: 2px solid transparent;
 }
 
 .prompt-dialog .message-dialog-main-layout {
@@ -1229,15 +1229,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 /* TOP BAR */
-Gjs_AggregateMenu.panel-button {
-  background-color: rgba(222, 222, 222, 0.15);
-}
-
-Gjs_ActivitiesButton.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button {
-  background-color: rgba(222, 222, 222, 0.15);
-}
-
 #panel {
   background-color: rgba(0, 0, 0, 0.5);
   /* transition from solid to transparent */
@@ -1418,16 +1409,32 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 #panel #panelActivities.panel-button > * {
   background-image: url("assets/activities.svg");
-  background-position: center top;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
   background-color: transparent !important;
   background-gradient-direction: none !important;
-  border: none;
+  border: 0 solid transparent !important;
+  text-shadow: 0 0 transparent !important;
+  transition-duration: 0ms !important;
+  box-shadow: none !important;
   color: transparent;
 }
 
-#panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
+#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
   background-color: transparent;
   border: none;
+  transition: none;
+  animation: none;
+}
+
+#panel #panelActivities.panel-button:active > *, #panel #panelActivities.panel-button:overview > *, #panel #panelActivities.panel-button:focus > *, #panel #panelActivities.panel-button:checked > * {
+  background-image: url("assets/activities-active.svg");
+}
+
+Gjs_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button {
+  background-color: rgba(222, 222, 222, 0.15);
 }
 
 #calendarArea {
@@ -1991,7 +1998,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 .window-clone-border {
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
+  border-radius: 5px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
@@ -2349,7 +2356,7 @@ StWidget.focused .app-well-app-running-dot {
   visible-width: 32px;
   spacing: 12px;
   padding: 16px;
-  border-radius: 5px;
+  border-radius: 12px;
   margin: 6px;
 }
 
