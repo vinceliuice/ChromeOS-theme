@@ -315,11 +315,11 @@
         background-size: auto;
       }
 
-      &:hover {
+      &:hover:not(:active) {
         background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
       }
 
-      &:active {
+      &:active, &:active:hover {
         background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
       }
     }

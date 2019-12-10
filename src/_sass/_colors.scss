@@ -66,10 +66,10 @@ $titlebar-decoration:                   if($topbar == 'dark', #1977D1, #d2cdcd);
 $titlebar-decoration-backdrop:          if($topbar == 'dark', #176cbd, #c4bebe);
 
 @if $variant == 'dark' {
-  $titlebar:                            #353535;
-  $titlebar-backdrop:                   #2C2C2C;
-  $titlebar-decoration:                 #303030;
-  $titlebar-decoration-backdrop:        #282828;
+  $titlebar:                            darken(#188ae4, 5%);
+  $titlebar-backdrop:                   darken(#0c7cd4, 5%);
+  $titlebar-decoration:                 darken(#1977D1, 5%);
+  $titlebar-decoration-backdrop:        darken(#176cbd, 5%);
 }
 
 $panel:                                 if($topbar == 'dark', #1F1F1F, $scrim);

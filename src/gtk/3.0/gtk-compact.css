@@ -5363,7 +5363,7 @@ tooltip.background.chromium {
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):hover, #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):active,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):hover,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):active {
-  color: #212121;
+  color: #9E9E9E;
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):disabled,
@@ -6354,12 +6354,13 @@ MsdOsdWindow.background.osd .progressbar {
   background-size: auto;
 }
 
-.budgie-panel button.raven-trigger:hover,
-.budgie-panel button.raven-trigger:drop(active) {
+.budgie-panel button.raven-trigger:hover:not(:active),
+.budgie-panel button.raven-trigger:not(:active):drop(active) {
   background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
 }
 
-.budgie-panel button.raven-trigger:active {
+.budgie-panel button.raven-trigger:active, .budgie-panel button.raven-trigger:active:hover,
+.budgie-panel button.raven-trigger:active:drop(active) {
   background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
 }
 

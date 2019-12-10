@@ -1291,10 +1291,10 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 4px 4px 0 0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #353535;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  background-color: #167ccd;
   color: white;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(255, 255, 255, 0.12);
 }
 
 .titlebar:disabled {
@@ -1302,7 +1302,7 @@ searchbar > revealer > box {
 }
 
 .titlebar:backdrop {
-  background-color: #2C2C2C;
+  background-color: #0b6ebc;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1511,14 +1511,14 @@ searchbar > revealer > box {
 }
 
 .titlebar.default-decoration {
-  background-color: #303030;
+  background-color: #166aba;
   min-height: 24px;
   padding: 6px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .titlebar.default-decoration:backdrop {
-  background-color: #282828;
+  background-color: #145fa6;
 }
 
 .tiled .titlebar.default-decoration,
@@ -1754,13 +1754,13 @@ menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
   padding: 0;
-  background-color: #353535;
+  background-color: #167ccd;
   color: white;
 }
 
 menubar:backdrop,
 .menubar:backdrop {
-  background-color: #2C2C2C;
+  background-color: #0b6ebc;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -3822,12 +3822,12 @@ messagedialog.csd decoration {
   padding: 2px;
   border-radius: 0;
   box-shadow: none;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #353535;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  background-color: #167ccd;
 }
 
 .solid-csd decoration:backdrop {
-  background-color: #2C2C2C;
+  background-color: #0b6ebc;
 }
 
 .view selection, filechooser stack.view scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, .view:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, label selection, modelbutton.flat:selected,
@@ -5358,7 +5358,7 @@ tooltip.background.chromium {
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):hover, #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):active,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):hover,
 #MozillaGtkWidget > widget > radiobutton > radio:not(:checked):not(:indeterminate):active {
-  color: #212121;
+  color: #9E9E9E;
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:not(:checked):not(:indeterminate):disabled,
@@ -5492,13 +5492,13 @@ UnityDecoration .top {
   padding: 0 2px;
   border-style: none;
   border-radius: 6px 6px 0 0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #353535;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  background-color: #167ccd;
   color: white;
 }
 
 UnityDecoration .top:backdrop {
-  background-color: #2C2C2C;
+  background-color: #0b6ebc;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -6349,12 +6349,13 @@ MsdOsdWindow.background.osd .progressbar {
   background-size: auto;
 }
 
-.budgie-panel button.raven-trigger:hover,
-.budgie-panel button.raven-trigger:drop(active) {
+.budgie-panel button.raven-trigger:hover:not(:active),
+.budgie-panel button.raven-trigger:not(:active):drop(active) {
   background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
 }
 
-.budgie-panel button.raven-trigger:active {
+.budgie-panel button.raven-trigger:active, .budgie-panel button.raven-trigger:active:hover,
+.budgie-panel button.raven-trigger:active:drop(active) {
   background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
 }
 
@@ -7089,7 +7090,7 @@ window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backd
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
   background-color: #5E35B1;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
@@ -7116,7 +7117,7 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar switch:check
 
 window.background.csd > headerbar.titlebar > hdyleaflet > separator {
   background-color: #5E35B1;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
 window.background.csd > hdyleaflet > stack.background check:checked, window.background.csd > hdyleaflet > stack.background check:indeterminate, window.background.csd > hdyleaflet > stack.background radio:checked, window.background.csd > hdyleaflet > stack.background radio:indeterminate {
@@ -7526,9 +7527,9 @@ these colors are exported for the window manager and shouldn't be used in applic
 read if you used those and something break with a version upgrade you're on your own... */
 @define-color wm_title white;
 @define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
-@define-color wm_highlight rgba(255, 255, 255, 0.1);
-@define-color wm_bg #353535;
-@define-color wm_unfocused_bg #2C2C2C;
+@define-color wm_highlight rgba(255, 255, 255, 0.2);
+@define-color wm_bg #167ccd;
+@define-color wm_unfocused_bg #0b6ebc;
 /*
 FIXME this is really an API */
 @define-color content_view_bg #2C2C2C;
