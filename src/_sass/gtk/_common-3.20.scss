@@ -100,13 +100,16 @@
 
   &:hover, &:selected { border-radius: $corner-radius; }
 
-  selection,
-  &:selected { @extend %selected_items; }
+  &:selected { background-color: $primary; }
 }
 
 textview {
   // FIXME: we need to override background-color to ensure text rendering
-  text { background-color: $base; }
+
+  text {
+    background-color: $base;
+    selection { &:focus, & { @extend %selected_items_primary; }}
+  }
 
   border {
     background-color: $base-alt;
@@ -151,7 +154,7 @@ label {
     color: $text-secondary;
   }
 
-  selection { @extend %selected_items; }
+  selection { @extend %selected_items_primary; }
 
   &:disabled {
     color: $text-disabled;
@@ -1400,7 +1403,7 @@ treeview.view {
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
     background-color: $base;
-    background-image: image($overlay-selected);
+    background-image: image($overlay-checked);
   }
 
   rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
@@ -1844,7 +1847,7 @@ notebook {
       border-color: transparent; //
 
       outline: none;
-      background-image: radial-gradient(circle, $primary 10%, transparent 0%);
+      background-image: radial-gradient(circle, rgba($primary, 0.35) 10%, transparent 0%);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 0% 0%;
@@ -3210,7 +3213,7 @@ infobar {
 
     // button { @extend %button-on-dark; }
 
-    selection {}
+    // selection {}
 
     *:link { color: on($warning); }
   }
@@ -3221,7 +3224,7 @@ infobar {
 
     button { @extend %button-on-dark; }
 
-    selection {}
+    // selection {}
 
     *:link { color: on($error); }
   }

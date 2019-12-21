@@ -113,6 +113,10 @@
   border-radius: 6px;
 }
 
+.view:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected {
+  background-color: #1A73E8;
+}
+
 textview text {
   background-color: #FFFFFF;
 }
@@ -1630,7 +1634,7 @@ treeview.view, filechooser stack.view scrolledwindow treeview.view, window#gnome
 
 treeview.view:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected {
   background-color: #FFFFFF;
-  background-image: image(alpha(currentColor, 0.06));
+  background-image: image(alpha(currentColor, 0.1));
 }
 
 treeview.view:hover, filechooser stack.view scrolledwindow treeview.view:hover, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover, treeview.view:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected {
@@ -2141,7 +2145,7 @@ notebook > header tab {
   border-width: 1px;
   border-color: transparent;
   outline: none;
-  background-image: radial-gradient(circle, #1A73E8 10%, transparent 0%);
+  background-image: radial-gradient(circle, rgba(26, 115, 232, 0.35) 10%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 0% 0%;
@@ -3822,18 +3826,18 @@ messagedialog.csd decoration {
   background-color: #D6D6D6;
 }
 
-.view selection, filechooser stack.view scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, .view:selected, filechooser stack.view scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, label selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active, .nemo-window .nemo-window-pane widget.entry:selected {
+modelbutton.flat:selected,
+.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active {
   background-color: alpha(currentColor, 0.06);
 }
 
-flowbox flowboxchild:selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nautilus-window treeview.view selection, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view selection, .nautilus-window .view:selected, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view:selected {
+flowbox flowboxchild:selected, .nautilus-window flowboxchild:selected .icon-item-background, .nautilus-window .view selection, .nautilus-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nautilus-window treeview.view selection, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view selection, .nautilus-window .view:selected, .nautilus-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window treeview.view:selected, .nemo-window .view selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view selection, .nemo-window .view:selected, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:selected {
   color: #1A73E8;
   background-color: rgba(138, 180, 248, 0.2);
 }
 
-spinbutton:not(.vertical) selection,
-entry selection, .nemo-window .view selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view selection, .nemo-window .view:selected, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:selected {
+textview text selection:focus, textview text selection, label selection, spinbutton:not(.vertical) selection,
+entry selection, .nemo-window .nemo-window-pane widget.entry:selected {
   color: white;
   background-color: #1A73E8;
 }

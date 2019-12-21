@@ -115,6 +115,32 @@ window.org-gnome-gedit {
     // }
   }
 
+  notebook {
+    &:focus tab:checked {
+      box-shadow: inset 0 0 0 9999px rgba($theme_deep_purple, 0.12);
+    }
+
+    > header {
+      &.top {
+        > tabs {
+          > tab {
+            border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2 / 0 0 2px;
+
+            &:checked { border-image-source: linear-gradient(to top, $theme_deep_purple 2px, $frame 2px); }
+          }
+        }
+      }
+
+      tab {
+        background-image: radial-gradient(circle, rgba($theme_deep_purple, 0.35) 10%, transparent 0%);
+
+        &:checked {
+          background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+        }
+      }
+    }
+  }
+
   @include color_theme($theme_color:$theme_deep_purple);
 }
 

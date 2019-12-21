@@ -46,7 +46,7 @@
     border-radius: $corner-radius;
     background-color: $fill;
 
-    &:selected { @extend %selected_items; }
+    &:selected { @extend %selected_items_primary; }
   }
 
   .toolbar button { @extend %button_basic.flat; }
@@ -54,7 +54,7 @@
   .view {
     selection,
     &:selected {
-      @extend %selected_items_primary;
+      @extend %selected_items_color;
     }
   }
 }
