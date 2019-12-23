@@ -510,7 +510,7 @@ button {
   font-weight: 500;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   background-image: radial-gradient(circle, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
@@ -521,7 +521,7 @@ button {
 
 
 button:focus {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08), 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
 }
 
 
@@ -532,7 +532,7 @@ button:drop(active) {
 
 
 button:active {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08), 0 5px 3px -3px rgba(0, 0, 0, 0.2), 0 8px 6px 1px rgba(0, 0, 0, 0.14), 0 3px 8.4px 2px rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
@@ -548,8 +548,15 @@ button:disabled {
 
 
 button:checked {
+  box-shadow: none;
   background-color: #1A73E8;
   color: white;
+}
+
+
+button:checked:hover,
+button:checked:drop(active) {
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 2px -3px rgba(26, 115, 232, 0.3), 0 2px 2px -1px rgba(26, 115, 232, 0.24), 0 1px 3px 0 rgba(26, 115, 232, 0.12);
 }
 
 
@@ -561,7 +568,7 @@ button:checked:disabled {
 
 modelbutton.flat,
 .menuitem.button.flat, spinbutton:not(.vertical) button, spinbutton.vertical button, notebook > header > tabs > arrow, scrollbar button, check,
-radio, calendar.button, button.sidebar-button, .gedit-search-slider .linked > button, popover.messagepopover .popover-action-area button, #MatePanelPopupWindow button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .drop-shadow button, .budgie-session-dialog .linked.horizontal > button, combobox > .linked:not(.vertical) > button:not(:only-child), .caja-pathbar button,
+radio, row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, calendar.button, button.sidebar-button, .gedit-search-slider .linked > button, popover.messagepopover .popover-action-area button, #MatePanelPopupWindow button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .drop-shadow button, .budgie-session-dialog .linked.horizontal > button, combobox > .linked:not(.vertical) > button:not(:only-child), .caja-pathbar button,
 .path-bar.linked:not(.vertical) > button, layouttabbar button, .mate-panel-menu-bar button, .budgie-panel button, .raven stackswitcher.linked > button, .xfce4-panel.background button, toolbar button, .titlebar button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), .app-notification button, messagedialog.csd .dialog-action-box button, filechooser #pathbarbox > stack > box > button, infobar.info button, infobar.question button, .lock-dialog button, #buttonbox_frame button, .nemo-window .toolbar button,
 button.flat {
@@ -578,11 +585,11 @@ button.flat {
 
 modelbutton.flat:focus,
 .menuitem.button.flat:focus, spinbutton:not(.vertical) button:focus, spinbutton.vertical button:focus, notebook > header > tabs > arrow:focus, scrollbar button:focus, check:focus,
-radio:focus, calendar.button:focus, button.sidebar-button:focus, .gedit-search-slider .linked > button:focus, popover.messagepopover .popover-action-area button:focus, #MatePanelPopupWindow button:focus, #mate-menu button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, .drop-shadow button:focus, .budgie-session-dialog .linked.horizontal > button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), .caja-pathbar button:focus,
+radio:focus, row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, calendar.button:focus, button.sidebar-button:focus, .gedit-search-slider .linked > button:focus, popover.messagepopover .popover-action-area button:focus, #MatePanelPopupWindow button:focus, #mate-menu button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, .drop-shadow button:focus, .budgie-session-dialog .linked.horizontal > button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), .caja-pathbar button:focus,
 .path-bar.linked:not(.vertical) > button:focus, layouttabbar button:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven stackswitcher.linked > button:focus, .xfce4-panel.background button:focus, toolbar button:focus, .titlebar button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .app-notification button:focus, messagedialog.csd .dialog-action-box button:focus, filechooser #pathbarbox > stack > box > button:focus, infobar.info button:focus, infobar.question button:focus, .lock-dialog button:focus, #buttonbox_frame button:focus, .nemo-window .toolbar button:focus,
 button.flat:focus {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -591,7 +598,11 @@ modelbutton.flat:hover,
 spinbutton:not(.vertical) button:drop(active), spinbutton.vertical button:hover,
 spinbutton.vertical button:drop(active), notebook > header > tabs > arrow:hover, scrollbar button:hover,
 scrollbar button:drop(active), check:hover,
-radio:hover, calendar.button:hover, button.sidebar-button:hover,
+radio:hover, row.activatable button.circular:hover, treeview.view header button button.circular:hover, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover,
+row.activatable button.circular:drop(active),
+treeview.view header button button.circular:drop(active),
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:drop(active),
+.budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:drop(active), calendar.button:hover, button.sidebar-button:hover,
 button.sidebar-button:drop(active), .gedit-search-slider .linked > button:hover,
 .gedit-search-slider .linked > button:drop(active), popover.messagepopover .popover-action-area button:hover,
 popover.messagepopover .popover-action-area button:drop(active), #MatePanelPopupWindow button:hover,
@@ -644,7 +655,7 @@ button.flat:drop(active) {
 
 modelbutton.flat:active,
 .menuitem.button.flat:active, spinbutton:not(.vertical) button:active, spinbutton.vertical button:active, notebook > header > tabs > arrow:active, scrollbar button:active, check:active,
-radio:active, calendar.button:active, button.sidebar-button:active, .gedit-search-slider .linked > button:active, popover.messagepopover .popover-action-area button:active, #MatePanelPopupWindow button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .drop-shadow button:active, .budgie-session-dialog .linked.horizontal > button:active, combobox > .linked:not(.vertical) > button:active:not(:only-child), .caja-pathbar button:active,
+radio:active, row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, calendar.button:active, button.sidebar-button:active, .gedit-search-slider .linked > button:active, popover.messagepopover .popover-action-area button:active, #MatePanelPopupWindow button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .drop-shadow button:active, .budgie-session-dialog .linked.horizontal > button:active, combobox > .linked:not(.vertical) > button:active:not(:only-child), .caja-pathbar button:active,
 .path-bar.linked:not(.vertical) > button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, .xfce4-panel.background button:active, toolbar button:active, .titlebar button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), .app-notification button:active, messagedialog.csd .dialog-action-box button:active, filechooser #pathbarbox > stack > box > button:active, infobar.info button:active, infobar.question button:active, .lock-dialog button:active, #buttonbox_frame button:active, .nemo-window .toolbar button:active,
 button.flat:active {
@@ -658,7 +669,7 @@ button.flat:active {
 
 modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, spinbutton:not(.vertical) button:disabled, spinbutton.vertical button:disabled, notebook > header > tabs > arrow:disabled, scrollbar button:disabled, check:disabled,
-radio:disabled, calendar.button:disabled, button.sidebar-button:disabled, .gedit-search-slider .linked > button:disabled, popover.messagepopover .popover-action-area button:disabled, #MatePanelPopupWindow button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .drop-shadow button:disabled, .budgie-session-dialog .linked.horizontal > button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), .caja-pathbar button:disabled,
+radio:disabled, row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, calendar.button:disabled, button.sidebar-button:disabled, .gedit-search-slider .linked > button:disabled, popover.messagepopover .popover-action-area button:disabled, #MatePanelPopupWindow button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .drop-shadow button:disabled, .budgie-session-dialog .linked.horizontal > button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), .caja-pathbar button:disabled,
 .path-bar.linked:not(.vertical) > button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, .xfce4-panel.background button:disabled, toolbar button:disabled, .titlebar button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:disabled, messagedialog.csd .dialog-action-box button:disabled, filechooser #pathbarbox > stack > box > button:disabled, infobar.info button:disabled, infobar.question button:disabled, .lock-dialog button:disabled, #buttonbox_frame button:disabled, .nemo-window .toolbar button:disabled,
 button.flat:disabled {
@@ -4330,7 +4341,12 @@ frame.gedit-map-frame > border:dir(rtl) {
 
 .tweak-group-startup {
   background-image: image(#FFFFFF);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.tweak-group-startup row.tweak-startup {
+  border-radius: 6px;
+  background-color: transparent;
+  background-image: none;
 }
 
 row#Focus,
@@ -4340,16 +4356,6 @@ row#dynamic-workspaces,
 row#PrimaryWorkspaceTweak,
 row#workspaces-only-on-primary {
   padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-row#Focus row:not(:last-child),
-row#ClickMethod row:not(:last-child),
-row#StaticWorkspaceTweak row:not(:last-child),
-row#dynamic-workspaces row:not(:last-child),
-row#PrimaryWorkspaceTweak row:not(:last-child),
-row#workspaces-only-on-primary row:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 row#Focus.tweak > list,
@@ -4447,6 +4453,38 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > vi
 
 dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizontal > notebook > stack {
   border-radius: 0 0 6px 6px;
+}
+
+.tweak-group-startup, list.tweak-group list, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), hdyleaflet frame.view, hdyleaflet list.view.frame {
+  margin: 6px;
+  border-radius: 6px;
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.tweak-group-startup row.activatable:first-child, .tweak-group-startup treeview.view header button:first-child, treeview.view header .tweak-group-startup button:first-child, .tweak-group-startup window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-group-startup button:first-child, .tweak-group-startup .budgie-popover.budgie-menu button.flat:first-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-group-startup button.flat:first-child:not(.image-button):not(.indicator-item), list.tweak-group list row.activatable:first-child, list.tweak-group list treeview.view header button:first-child, treeview.view header list.tweak-group list button:first-child, list.tweak-group list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.tweak-group list button:first-child, list.tweak-group list .budgie-popover.budgie-menu button.flat:first-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu list.tweak-group list button.flat:first-child:not(.image-button):not(.indicator-item), hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) treeview.view header button:first-child, treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) .budgie-popover.budgie-menu button.flat:first-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button.flat:first-child:not(.image-button):not(.indicator-item), hdyleaflet frame.view list row.activatable:first-child, hdyleaflet frame.view list treeview.view header button:first-child, treeview.view header hdyleaflet frame.view list button:first-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame.view list button:first-child, hdyleaflet frame.view list .budgie-popover.budgie-menu button.flat:first-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame.view list button.flat:first-child:not(.image-button):not(.indicator-item), hdyleaflet list.view.frame row.activatable:first-child, hdyleaflet list.view.frame treeview.view header button:first-child, treeview.view header hdyleaflet list.view.frame button:first-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet list.view.frame button:first-child, hdyleaflet list.view.frame .budgie-popover.budgie-menu button.flat:first-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet list.view.frame button.flat:first-child:not(.image-button):not(.indicator-item) {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.tweak-group-startup row.activatable:last-child, .tweak-group-startup treeview.view header button:last-child, treeview.view header .tweak-group-startup button:last-child, .tweak-group-startup window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-group-startup button:last-child, .tweak-group-startup .budgie-popover.budgie-menu button.flat:last-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-group-startup button.flat:last-child:not(.image-button):not(.indicator-item), list.tweak-group list row.activatable:last-child, list.tweak-group list treeview.view header button:last-child, treeview.view header list.tweak-group list button:last-child, list.tweak-group list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.tweak-group list button:last-child, list.tweak-group list .budgie-popover.budgie-menu button.flat:last-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu list.tweak-group list button.flat:last-child:not(.image-button):not(.indicator-item), hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) treeview.view header button:last-child, treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) .budgie-popover.budgie-menu button.flat:last-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button.flat:last-child:not(.image-button):not(.indicator-item), hdyleaflet frame.view list row.activatable:last-child, hdyleaflet frame.view list treeview.view header button:last-child, treeview.view header hdyleaflet frame.view list button:last-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame.view list button:last-child, hdyleaflet frame.view list .budgie-popover.budgie-menu button.flat:last-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame.view list button.flat:last-child:not(.image-button):not(.indicator-item), hdyleaflet list.view.frame row.activatable:last-child, hdyleaflet list.view.frame treeview.view header button:last-child, treeview.view header hdyleaflet list.view.frame button:last-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet list.view.frame button:last-child, hdyleaflet list.view.frame .budgie-popover.budgie-menu button.flat:last-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet list.view.frame button.flat:last-child:not(.image-button):not(.indicator-item) {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.tweak-group-startup row.activatable:only-child, .tweak-group-startup treeview.view header button:only-child, treeview.view header .tweak-group-startup button:only-child, .tweak-group-startup window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-group-startup button:only-child, .tweak-group-startup .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-group-startup button.flat:only-child:not(.image-button):not(.indicator-item), list.tweak-group list row.activatable:only-child, list.tweak-group list treeview.view header button:only-child, treeview.view header list.tweak-group list button:only-child, list.tweak-group list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.tweak-group list button:only-child, list.tweak-group list .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu list.tweak-group list button.flat:only-child:not(.image-button):not(.indicator-item), hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) treeview.view header button:only-child, treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button.flat:only-child:not(.image-button):not(.indicator-item), hdyleaflet frame.view list row.activatable:only-child, hdyleaflet frame.view list treeview.view header button:only-child, treeview.view header hdyleaflet frame.view list button:only-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame.view list button:only-child, hdyleaflet frame.view list .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame.view list button.flat:only-child:not(.image-button):not(.indicator-item), hdyleaflet list.view.frame row.activatable:only-child, hdyleaflet list.view.frame treeview.view header button:only-child, treeview.view header hdyleaflet list.view.frame button:only-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet list.view.frame button:only-child, hdyleaflet list.view.frame .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet list.view.frame button.flat:only-child:not(.image-button):not(.indicator-item) {
+  border-radius: 6px;
+}
+
+hdyleaflet frame > border {
+  border: none;
+}
+
+hdyleaflet frame.view list {
+  background: none;
+}
+
+hdyleaflet list.view.frame {
+  border: none;
 }
 
 /************************
@@ -6562,6 +6600,35 @@ frame.raven-frame > border {
 
 .raven .option-subtitle {
   font-size: smaller;
+}
+
+.raven .audio-widget scale.marks-after {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.raven .audio-widget scale.marks-after label {
+  font-size: 90%;
+  padding: 0;
+  margin: -10px 0 0 6px;
+}
+
+.raven .audio-widget button.flat.expander-button {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.raven .audio-widget list.devices-list.sound-devices > row.activatable:selected, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:selected, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:selected, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.devices-list.sound-devices > button:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:selected, .raven .audio-widget .budgie-popover.budgie-menu list.devices-list.sound-devices > button.flat:selected:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .raven .audio-widget list.devices-list.sound-devices > button.flat:selected:not(.image-button):not(.indicator-item), .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:checked, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:checked, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.devices-list.sound-devices > button:checked, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:checked, .raven .audio-widget .budgie-popover.budgie-menu list.devices-list.sound-devices > button.flat:checked:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .raven .audio-widget list.devices-list.sound-devices > button.flat:checked:not(.image-button):not(.indicator-item) {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.raven .audio-widget list.devices-list.sound-devices > row.activatable:selected label, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:selected label, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:selected label, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.devices-list.sound-devices > button:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:selected label, .raven .audio-widget .budgie-popover.budgie-menu list.devices-list.sound-devices > button.flat:selected:not(.image-button):not(.indicator-item) label, .budgie-popover.budgie-menu .raven .audio-widget list.devices-list.sound-devices > button.flat:selected:not(.image-button):not(.indicator-item) label, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked label, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:checked label, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:checked label, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.devices-list.sound-devices > button:checked label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:checked label, .raven .audio-widget .budgie-popover.budgie-menu list.devices-list.sound-devices > button.flat:checked:not(.image-button):not(.indicator-item) label, .budgie-popover.budgie-menu .raven .audio-widget list.devices-list.sound-devices > button.flat:checked:not(.image-button):not(.indicator-item) label {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.raven .audio-widget list.devices-list.sound-devices > row.activatable label, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button label, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button label, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.devices-list.sound-devices > button label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .raven .audio-widget list.devices-list.sound-devices > button label, .raven .audio-widget .budgie-popover.budgie-menu list.devices-list.sound-devices > button.flat:not(.image-button):not(.indicator-item) label, .budgie-popover.budgie-menu .raven .audio-widget list.devices-list.sound-devices > button.flat:not(.image-button):not(.indicator-item) label {
+  padding-left: 12px;
 }
 
 calendar.raven-calendar {

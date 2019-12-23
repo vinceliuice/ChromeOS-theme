@@ -152,6 +152,14 @@ window.org-gnome-gedit {
 //   background-color: $theme_indigo;
 // }
 
+hdyleaflet {
+  > stack > frame {
+    entry.search {
+      &:focus { @include entry(checked, $fc: $theme_cyan); }
+    }
+  }
+}
+
 //
 // Gnome Calender
 //
@@ -299,8 +307,6 @@ window.background.csd {
       }
     }
   }
-
-
 }
 
 //

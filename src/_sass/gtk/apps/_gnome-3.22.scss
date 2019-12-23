@@ -413,12 +413,32 @@ frame.gedit-map-frame > border {
 .tweak-group-startup {
   // background-color: @view_separators;
   background-image: image($base);
-  border: 1px solid $frame;
+  // border: 1px solid $frame;
+
+  @extend %circular_list;
+
+  row.activatable { @extend %circular_row; }
+
+  row.tweak-startup {
+    border-radius: $corner-radius;
+    background-color: transparent;
+    background-image: none;
+  }
 }
 
 //
 // Workaround for 3.26
 //
+
+list {
+  &.tweak-group {
+    list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+}
 
 row#Focus,
 row#ClickMethod,
@@ -427,9 +447,9 @@ row#dynamic-workspaces,
 row#PrimaryWorkspaceTweak, // for 3.26.0
 row#workspaces-only-on-primary {
   padding: 0;
-  border: 1px solid $frame;
+  // border: 1px solid $frame;
 
-  row:not(:last-child) { border-bottom: 1px solid $divider; }
+  // row:not(:last-child) { border-bottom: 1px solid $divider; }
 
   &.tweak > list { margin-top: -3px; }
 }
@@ -530,6 +550,54 @@ dialog.background.csd {
   }
 }
 
+%circular_list {
+  margin: $container-padding;
+  border-radius: $corner-radius;
+  box-shadow: $shadow-z2;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
+
+hdyleaflet {
+  frame > border { border: none; }
+
+  frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+
+  frame.view {
+    @extend %circular_list;
+
+    list {
+      background: none;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  list.view.frame {
+    border: none;
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+}
 
 /************************
  * Gnome system monitor *
