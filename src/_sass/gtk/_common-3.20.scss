@@ -492,11 +492,15 @@ button {
     .linked:not(.vertical) > & {
       @extend %linked;
 
+      &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
+
       &.image-button:not(.text-button) { @extend %linked-image-button; }
     }
 
     .linked.vertical > & {
       @extend %linked-vertical;
+
+      &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
 
       &.image-button:not(.text-button) { @extend %linked-vertical-image-button; }
     }
@@ -508,6 +512,8 @@ button {
 
         &.image-button:not(.text-button) { border-radius: $circular-radius; }
       }
+
+      &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
     }
   }
 
@@ -534,8 +540,7 @@ button {
 
   // overlay / OSD style
   @at-root %osd_button,
-  .osd & {
-  }
+  .osd & { }
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color in (suggested-action, $suggested),
@@ -548,6 +553,8 @@ button {
 
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
 
+      &:focus { box-shadow: 0 0 0 2px rgba($b_color, 0.35); }
+
       &.flat {
         background-color: transparent;
         color: $b_color;
@@ -557,8 +564,7 @@ button {
         &:checked { background-color: rgba($b_color, 0.3); }
       }
 
-      .osd & {
-      }
+      .osd & { }
     }
   }
 
@@ -1149,6 +1155,8 @@ searchbar > revealer > box {
     color: $titlebar-text-secondary;
 
     &:focus, &:hover, &:active { color: $titlebar-text; }
+
+    &:focus { box-shadow: 0 0 0 2px $titlebar-divider; }
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
@@ -2120,8 +2128,7 @@ switch {
     color: $primary;
   }
 
-  row:selected & {
-  }
+  row:selected & { }
 }
 
 
@@ -2184,6 +2191,8 @@ radio {
 
     &:disabled { color: $text-secondary-disabled; }
   }
+
+  &:not(:hover):focus { box-shadow: inset 0 0 0 9999px transparent; }
 
   // &:only-child { margin: -12px; }
 

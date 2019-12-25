@@ -73,6 +73,11 @@ $theme_green_grey:  #3b4342;
   @if $entry_rules=='true' {
     entry, spinbutton:not(.vertical) {
       &:focus { @include entry(checked, $fc: $theme_color); }
+
+      selection {
+        color: on($theme_color);
+        background-color: $theme_color;
+      }
     }
   }
 
@@ -223,6 +228,11 @@ window.background.csd {
           border-image: none;
         }
 
+        selection {
+          color: on($theme_brown);
+          background-color: $theme_brown;
+        }
+
         &:backdrop {
           animation: none;
           transition: none;
@@ -302,6 +312,11 @@ window.background.csd {
         > stack {
           entry.search {
             &:focus { @include entry(checked, $fc: $theme_cyan); }
+
+            selection {
+              color: on($theme_cyan);
+              background-color: $theme_cyan;
+            }
           }
         }
       }

@@ -589,7 +589,7 @@ radio:focus, row.activatable button.circular:focus, treeview.view header button 
 .path-bar.linked:not(.vertical) > button:focus, layouttabbar button:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven stackswitcher.linked > button:focus, .xfce4-panel.background button:focus, toolbar button:focus, .titlebar button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .app-notification button:focus, messagedialog.csd .dialog-action-box button:focus, filechooser #pathbarbox > stack > box > button:focus, infobar.info button:focus, infobar.question button:focus, .lock-dialog button:focus, #buttonbox_frame button:focus, .nemo-window .toolbar button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:focus,
 button.flat:focus {
-  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
+  box-shadow: 0 0 0 2px alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -749,6 +749,16 @@ button.text-button.image-button image:not(:only-child) {
   margin: 0 4px;
 }
 
+.linked:not(.vertical) >
+button:focus {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+}
+
+.linked.vertical >
+button:focus {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+}
+
 toolbar .linked:not(.vertical) > button:not(:only-child), .titlebar .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child),
 popover.background .linked:not(.vertical) > button.model:not(:only-child), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child), infobar.info .linked:not(.vertical) > button:not(:only-child), infobar.question .linked:not(.vertical) > button:not(:only-child), .lock-dialog .linked:not(.vertical) > button:not(:only-child), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child),
 toolbar .linked.vertical > button:not(:only-child),
@@ -791,6 +801,28 @@ button.flat:not(:only-child).image-button:not(.text-button),
 .linked.vertical >
 button.flat:not(:only-child).image-button:not(.text-button) {
   border-radius: 9999px;
+}
+
+toolbar .linked:not(.vertical) > button:focus, .titlebar .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:focus,
+popover.background .linked:not(.vertical) > button.model:focus, actionbar > revealer > box .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:focus, messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:focus, filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:focus, infobar.info .linked:not(.vertical) > button:focus, infobar.question .linked:not(.vertical) > button:focus, .lock-dialog .linked:not(.vertical) > button:focus, #buttonbox_frame .linked:not(.vertical) > button:focus, .nemo-window .toolbar .linked:not(.vertical) > button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:focus,
+toolbar .linked.vertical > button:focus,
+.titlebar .linked.vertical > button:focus:not(.suggested-action):not(.destructive-action),
+popover.background.menu .linked.vertical > button:focus,
+popover.background .linked.vertical > button.model:focus,
+actionbar > revealer > box .linked.vertical > button:focus:not(.suggested-action):not(.destructive-action),
+.app-notification .linked.vertical > button:focus,
+messagedialog.csd .dialog-action-box .linked.vertical > button:focus,
+filechooser #pathbarbox > stack > box.linked.vertical > button:focus,
+infobar.info .linked.vertical > button:focus,
+infobar.question .linked.vertical > button:focus,
+.lock-dialog .linked.vertical > button:focus,
+#buttonbox_frame .linked.vertical > button:focus,
+.nemo-window .toolbar .linked.vertical > button:focus,
+window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked.vertical > button:focus, .linked:not(.vertical) >
+button.flat:focus,
+.linked.vertical >
+button.flat:focus {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
 infobar.error button.flat, .mate-panel-menu-bar button, .budgie-panel button, .raven-mpris button.image-button, .xfce4-panel.background button {
@@ -849,6 +881,11 @@ button.suggested-action:checked {
 }
 
 
+button.suggested-action:focus {
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
+}
+
+
 button.suggested-action.flat {
   background-color: transparent;
   color: #1A73E8;
@@ -882,6 +919,11 @@ button.destructive-action:disabled {
 
 button.destructive-action:checked {
   background-color: #e46e66;
+}
+
+
+button.destructive-action:focus {
+  box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.35);
 }
 
 
@@ -1399,6 +1441,10 @@ searchbar > revealer > box {
 .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):active {
   color: white;
+}
+
+.titlebar button:not(.suggested-action):not(.destructive-action):focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
 }
 
 .titlebar button:not(.suggested-action):not(.destructive-action):disabled {
@@ -2524,6 +2570,11 @@ check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
   color: rgba(0, 0, 0, 0.26);
+}
+
+check:not(:hover):focus,
+radio:not(:hover):focus {
+  box-shadow: inset 0 0 0 9999px transparent;
 }
 
 popover modelbutton.flat check, popover modelbutton.flat check:focus, popover modelbutton.flat check:hover, popover modelbutton.flat check:focus:hover, popover modelbutton.flat check:active, popover modelbutton.flat check:disabled, popover modelbutton.flat
@@ -7031,6 +7082,11 @@ window.org-gnome-gedit entry:focus, window.org-gnome-gedit spinbutton:not(.verti
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #673AB7 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+window.org-gnome-gedit entry selection, window.org-gnome-gedit spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #673AB7;
+}
+
 window.org-gnome-gedit button:not(.flat):not(.combo):checked {
   background-color: #673AB7;
 }
@@ -7078,6 +7134,11 @@ window.org-gnome-Calendar switch:checked slider {
 
 window.org-gnome-Calendar entry:focus, window.org-gnome-Calendar spinbutton:not(.vertical):focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6F00 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.org-gnome-Calendar entry selection, window.org-gnome-Calendar spinbutton:not(.vertical) selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FF6F00;
 }
 
 window.org-gnome-Calendar button:not(.flat):not(.combo):checked {
@@ -7141,6 +7202,11 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container entry:f
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6D4C41 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+window.background.csd > hdyleaflet > box.vertical > stack.main-container entry selection, window.background.csd > hdyleaflet > box.vertical > stack.main-container spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #6D4C41;
+}
+
 window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):checked {
   background-color: #6D4C41;
 }
@@ -7181,6 +7247,11 @@ window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:focus
   background-size: 0% 0%;
   box-shadow: none;
   border-image: none;
+}
+
+window.background.csd > hdyleaflet > box.vertical > searchbar entry.search selection {
+  color: white;
+  background-color: #6D4C41;
 }
 
 window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backdrop {
@@ -7245,6 +7316,11 @@ window.background.csd > hdyleaflet > stack.background entry:focus, window.backgr
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+window.background.csd > hdyleaflet > stack.background entry selection, window.background.csd > hdyleaflet > stack.background spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #5E35B1;
+}
+
 window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):checked {
   background-color: #5E35B1;
 }
@@ -7282,6 +7358,11 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewpo
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack entry.search selection {
+  color: white;
+  background-color: #5E35B1;
+}
+
 window.background.csd.org-gnome-Builder > stack.titlebar {
   background-color: #424242;
 }
@@ -7309,6 +7390,11 @@ window.background.csd.org-gnome-Builder switch:checked slider {
 
 window.background.csd.org-gnome-Builder entry:focus, window.background.csd.org-gnome-Builder spinbutton:not(.vertical):focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #424242 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd.org-gnome-Builder entry selection, window.background.csd.org-gnome-Builder spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #424242;
 }
 
 window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):checked {
@@ -7354,6 +7440,11 @@ window#gnome-system-monitor switch:checked slider {
 
 window#gnome-system-monitor entry:focus, window#gnome-system-monitor spinbutton:not(.vertical):focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #188c75 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window#gnome-system-monitor entry selection, window#gnome-system-monitor spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #188c75;
 }
 
 window#gnome-system-monitor button:not(.flat):not(.combo):checked {
@@ -7405,6 +7496,11 @@ window.org-gnome-Todo entry:focus, window.org-gnome-Todo spinbutton:not(.vertica
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+window.org-gnome-Todo entry selection, window.org-gnome-Todo spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #F4511E;
+}
+
 window.org-gnome-Todo button:not(.flat):not(.combo):checked {
   background-color: #F4511E;
 }
@@ -7448,6 +7544,11 @@ window.dconf-editor switch:checked slider {
 
 window.dconf-editor entry:focus, window.dconf-editor spinbutton:not(.vertical):focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9C27B0 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.dconf-editor entry selection, window.dconf-editor spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #9C27B0;
 }
 
 window.dconf-editor button:not(.flat):not(.combo):checked {
@@ -7499,6 +7600,11 @@ window#GearyMainWindow entry:focus, window#GearyMainWindow spinbutton:not(.verti
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+window#GearyMainWindow entry selection, window#GearyMainWindow spinbutton:not(.vertical) selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #4CAF50;
+}
+
 window#GearyMainWindow button:not(.flat):not(.combo):checked {
   background-color: #4CAF50;
 }
@@ -7542,6 +7648,11 @@ window.background.csd.budgie-settings-window switch:checked slider {
 
 window.background.csd.budgie-settings-window entry:focus, window.background.csd.budgie-settings-window spinbutton:not(.vertical):focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #37474F 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+window.background.csd.budgie-settings-window entry selection, window.background.csd.budgie-settings-window spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #37474F;
 }
 
 window.background.csd.budgie-settings-window button:not(.flat):not(.combo):checked {

@@ -589,7 +589,7 @@ radio:focus, row.activatable button.circular:focus, treeview.view header button 
 .path-bar.linked:not(.vertical) > button:focus, layouttabbar button:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven stackswitcher.linked > button:focus, .xfce4-panel.background button:focus, toolbar button:focus, .titlebar button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .app-notification button:focus, messagedialog.csd .dialog-action-box button:focus, filechooser #pathbarbox > stack > box > button:focus, infobar.info button:focus, infobar.question button:focus, .lock-dialog button:focus, #buttonbox_frame button:focus, .nemo-window .toolbar button:focus,
 button.flat:focus {
-  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
+  box-shadow: 0 0 0 2px alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -747,6 +747,16 @@ button.text-button.image-button image:not(:only-child) {
   margin: 0 4px;
 }
 
+.linked:not(.vertical) >
+button:focus {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+}
+
+.linked.vertical >
+button:focus {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+}
+
 toolbar .linked:not(.vertical) > button:not(:only-child), .titlebar .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child),
 popover.background .linked:not(.vertical) > button.model:not(:only-child), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child), infobar.info .linked:not(.vertical) > button:not(:only-child), infobar.question .linked:not(.vertical) > button:not(:only-child), .lock-dialog .linked:not(.vertical) > button:not(:only-child), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child),
 toolbar .linked.vertical > button:not(:only-child),
@@ -787,6 +797,27 @@ button.flat:not(:only-child).image-button:not(.text-button),
 .linked.vertical >
 button.flat:not(:only-child).image-button:not(.text-button) {
   border-radius: 9999px;
+}
+
+toolbar .linked:not(.vertical) > button:focus, .titlebar .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:focus,
+popover.background .linked:not(.vertical) > button.model:focus, actionbar > revealer > box .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:focus, messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:focus, filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:focus, infobar.info .linked:not(.vertical) > button:focus, infobar.question .linked:not(.vertical) > button:focus, .lock-dialog .linked:not(.vertical) > button:focus, #buttonbox_frame .linked:not(.vertical) > button:focus, .nemo-window .toolbar .linked:not(.vertical) > button:focus,
+toolbar .linked.vertical > button:focus,
+.titlebar .linked.vertical > button:focus:not(.suggested-action):not(.destructive-action),
+popover.background.menu .linked.vertical > button:focus,
+popover.background .linked.vertical > button.model:focus,
+actionbar > revealer > box .linked.vertical > button:focus:not(.suggested-action):not(.destructive-action),
+.app-notification .linked.vertical > button:focus,
+messagedialog.csd .dialog-action-box .linked.vertical > button:focus,
+filechooser #pathbarbox > stack > box.linked.vertical > button:focus,
+infobar.info .linked.vertical > button:focus,
+infobar.question .linked.vertical > button:focus,
+.lock-dialog .linked.vertical > button:focus,
+#buttonbox_frame .linked.vertical > button:focus,
+.nemo-window .toolbar .linked.vertical > button:focus, .linked:not(.vertical) >
+button.flat:focus,
+.linked.vertical >
+button.flat:focus {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
 infobar.error button.flat, .mate-panel-menu-bar button, .budgie-panel button, .raven-mpris button.image-button, .xfce4-panel.background button {
@@ -845,6 +876,11 @@ button.suggested-action:checked {
 }
 
 
+button.suggested-action:focus {
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
+}
+
+
 button.suggested-action.flat {
   background-color: transparent;
   color: #1A73E8;
@@ -878,6 +914,11 @@ button.destructive-action:disabled {
 
 button.destructive-action:checked {
   background-color: #e46e66;
+}
+
+
+button.destructive-action:focus {
+  box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.35);
 }
 
 
@@ -1386,6 +1427,10 @@ searchbar > revealer > box {
 .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):active {
   color: rgba(0, 0, 0, 0.87);
+}
+
+.titlebar button:not(.suggested-action):not(.destructive-action):focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.12);
 }
 
 .titlebar button:not(.suggested-action):not(.destructive-action):disabled {
@@ -2511,6 +2556,11 @@ check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
   color: rgba(0, 0, 0, 0.26);
+}
+
+check:not(:hover):focus,
+radio:not(:hover):focus {
+  box-shadow: inset 0 0 0 9999px transparent;
 }
 
 popover modelbutton.flat check, popover modelbutton.flat check:focus, popover modelbutton.flat check:hover, popover modelbutton.flat check:focus:hover, popover modelbutton.flat check:active, popover modelbutton.flat check:disabled, popover modelbutton.flat

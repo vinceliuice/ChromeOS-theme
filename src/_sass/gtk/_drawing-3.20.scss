@@ -175,7 +175,7 @@
   }
 
   @if $t == flat-focus {
-    box-shadow: 0 0 0 2px rgba($primary, 0.35);
+    box-shadow: 0 0 0 2px $overlay-focus;
     color: $text;
   }
 
