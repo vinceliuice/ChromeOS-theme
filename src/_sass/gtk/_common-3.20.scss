@@ -1059,14 +1059,16 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
   border-radius: $window-radius $window-radius 0 0;
-  box-shadow: inset 0 1px highlight($titlebar);
   background-color: $titlebar;
   color: $titlebar-text;
 
-  @if $topbar == 'dark' and $variant == 'light' {
-    box-shadow: inset 0 1px highlight($titlebar);
-  } @else {
+  @if $topbar == 'light' and $variant == 'light' {
     box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $divider;
+  } @else {
+    box-shadow: inset 0 1px highlight($titlebar),
+                0 2px 2px -2px rgba($primary, 0.3),
+                0 1px 2px -1px rgba($primary, 0.24),
+                0 1px 2px -.6px rgba($primary, 0.17);
   }
 
   &:disabled { color: $titlebar-text-disabled; }
