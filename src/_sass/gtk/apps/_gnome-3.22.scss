@@ -23,10 +23,18 @@
     }
   }
 
-  & notebook,
-  & notebook > stack {
-    background-color: $base;
+  & notebook {
+    background: none;
     border-radius: 0 0 $corner-radius $corner-radius;
+
+    > stack {
+      background-color: $base;
+      border-radius: 0 0 $corner-radius $corner-radius;
+    }
+
+    scrolledwindow > .view:not(:selected):not(:hover):not(:checked) {
+      background-color: transparent;
+    }
   }
 
   &.csd placessidebar {
@@ -132,11 +140,11 @@
   }
 
   // for 3.32
-  .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
-    padding-left: ($medium-size - 24px) / 2;
-    padding-right: ($medium-size - 24px) / 2;
-
-    &.text-button { min-width: 0; }
+  .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
+    padding-left: ($medium-size - 12px) / 2;
+    padding-right: ($medium-size - 12px) / 2;
+    margin-left: 1px;
+    margin-right: 1px;
 
     label:not(:only-child) {
       &:first-child { margin-left: 0; }
@@ -144,7 +152,15 @@
       &:last-child { margin-right: 0; }
     }
 
-    &.text-button.image-button image:not(:only-child) { margin: 0; }
+    &.text-button {
+      min-width: 0;
+      border-radius: 1000px;
+    }
+
+    &.text-button.image-button {
+      border-radius: 1000px;
+      image:not(:only-child) { margin: 0; }
+    }
 
     &:last-child:dir(ltr),
     &:first-child:dir(rtl) { @extend %titlebar-button:checked; }
@@ -551,7 +567,7 @@ dialog.background.csd {
 }
 
 %circular_list {
-  margin: $container-padding;
+  margin: $container-padding 4px;
   border-radius: $corner-radius;
   box-shadow: $shadow-z2;
 }

@@ -510,7 +510,7 @@ button {
   font-weight: 500;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px #cccccc;
   background-color: #FFFFFF;
   background-image: radial-gradient(circle, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
@@ -681,15 +681,59 @@ button.flat:disabled {
 }
 
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), .caja-pathbar button:checked,
-.path-bar.linked:not(.vertical) > button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, .xfce4-panel.background button:checked, toolbar button:checked, .path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
-popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked,
-button.flat:checked {
+.path-bar.linked:not(.vertical) > button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, .xfce4-panel.background button:checked, combobox > .linked:not(.vertical) > button:checked:hover:not(:only-child),
+combobox > .linked:not(.vertical) > button:checked:not(:only-child):drop(active), .caja-pathbar button:checked:hover,
+.caja-pathbar button:checked:drop(active),
+.path-bar.linked:not(.vertical) > button:checked:hover,
+.path-bar.linked:not(.vertical) > button:checked:drop(active), layouttabbar button:checked:hover,
+layouttabbar button:checked:drop(active), .mate-panel-menu-bar button:checked:hover,
+.mate-panel-menu-bar button:checked:drop(active), .budgie-panel button:checked:hover,
+.budgie-panel button:checked:drop(active), .raven stackswitcher.linked > button:checked:hover,
+.raven stackswitcher.linked > button:checked:drop(active), .xfce4-panel.background button:checked:hover,
+.xfce4-panel.background button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
+popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked, toolbar button:checked:hover,
+toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:checked:hover:not(.suggested-action):not(.destructive-action),
+.titlebar button:checked:not(.suggested-action):not(.destructive-action):drop(active), popover.background.menu button:checked:hover,
+popover.background.menu button:checked:drop(active),
+popover.background button.model:checked:hover,
+popover.background button.model:checked:drop(active), actionbar > revealer > box button:checked:hover:not(.suggested-action):not(.destructive-action),
+actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):drop(active), .app-notification button:checked:hover,
+.app-notification button:checked:drop(active), messagedialog.csd .dialog-action-box button:checked:hover,
+messagedialog.csd .dialog-action-box button:checked:drop(active), filechooser #pathbarbox > stack > box > button:checked:hover,
+filechooser #pathbarbox > stack > box > button:checked:drop(active), infobar.info button:checked:hover,
+infobar.info button:checked:drop(active), infobar.question button:checked:hover,
+infobar.question button:checked:drop(active), .lock-dialog button:checked:hover,
+.lock-dialog button:checked:drop(active), #buttonbox_frame button:checked:hover,
+#buttonbox_frame button:checked:drop(active), .nemo-window .toolbar button:checked:hover,
+.nemo-window .toolbar button:checked:drop(active), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:hover,
+window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:drop(active),
+button.flat:checked,
+button.flat:checked:hover,
+toolbar button:checked:drop(active),
+.path-bar-box .linked.nautilus-path-bar button:drop(active):not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:drop(active):not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.titlebar button:checked:drop(active):not(.suggested-action):not(.destructive-action),
+popover.background.menu button:checked:drop(active),
+popover.background button.model:checked:drop(active),
+actionbar > revealer > box button:checked:drop(active):not(.suggested-action):not(.destructive-action),
+.app-notification button:checked:drop(active),
+messagedialog.csd .dialog-action-box button:checked:drop(active),
+filechooser #pathbarbox > stack > box > button:checked:drop(active),
+infobar.info button:checked:drop(active),
+infobar.question button:checked:drop(active),
+.lock-dialog button:checked:drop(active),
+#buttonbox_frame button:checked:drop(active),
+.nemo-window .toolbar button:checked:drop(active),
+window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:drop(active),
+button.flat:checked:drop(active) {
   background-color: alpha(currentColor, 0.1);
   color: rgba(0, 0, 0, 0.87);
 }
 
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), .caja-pathbar button:checked:disabled,
-.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
+.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:checked:disabled, messagedialog.csd .dialog-action-box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, .lock-dialog button:checked:disabled, #buttonbox_frame button:checked:disabled, .nemo-window .toolbar button:checked:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:disabled,
 button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
@@ -751,12 +795,12 @@ button.text-button.image-button image:not(:only-child) {
 
 .linked:not(.vertical) >
 button:focus {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  box-shadow: 0 0 0 1px #cccccc;
 }
 
 .linked.vertical >
 button:focus {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  box-shadow: 0 0 0 1px #cccccc;
 }
 
 toolbar .linked:not(.vertical) > button:not(:only-child), .titlebar .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child),
@@ -1348,9 +1392,9 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 4px 4px 0 0;
-  background-color: #188ae4;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.12);
+  background-color: #3266D4;
   color: white;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 2px 2px -2px rgba(26, 115, 232, 0.3), 0 1px 2px -1px rgba(26, 115, 232, 0.24), 0 1px 2px -0.6px rgba(26, 115, 232, 0.17);
 }
 
 .titlebar:disabled {
@@ -1358,7 +1402,7 @@ searchbar > revealer > box {
 }
 
 .titlebar:backdrop {
-  background-color: #0c7cd4;
+  background-color: #295bc3;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1424,7 +1468,7 @@ searchbar > revealer > box {
 }
 
 .titlebar entry selection {
-  color: #188ae4;
+  color: #3266D4;
   background-color: white;
 }
 
@@ -1433,12 +1477,14 @@ searchbar > revealer > box {
 }
 
 .titlebar button:not(.suggested-action):not(.destructive-action) {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
-.titlebar button:not(.suggested-action):not(.destructive-action):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):active {
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
+.titlebar button:not(.suggested-action):not(.destructive-action):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):active, .titlebar button:not(.suggested-action):not(.destructive-action):checked, .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
+.titlebar button:not(.suggested-action):not(.destructive-action):checked:drop(active) {
   color: white;
 }
 
@@ -1446,17 +1492,33 @@ searchbar > revealer > box {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
 }
 
+.titlebar button:not(.suggested-action):not(.destructive-action):hover,
+.titlebar button:not(.suggested-action):not(.destructive-action):drop(active) {
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.15);
+}
+
+.titlebar button:not(.suggested-action):not(.destructive-action):active {
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.15);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 10%, transparent 0%);
+}
+
 .titlebar button:not(.suggested-action):not(.destructive-action):disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
-  background-color: transparent;
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked {
+  background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-.path-bar-box .nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked:disabled {
+.path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
+.titlebar button:not(.suggested-action):not(.destructive-action):checked:drop(active) {
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.25);
+}
+
+.path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked:disabled {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -1474,11 +1536,11 @@ searchbar > revealer > box {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.path-bar-box .nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
+.path-bar-box .linked.nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.path-bar-box .nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
+.path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1489,6 +1551,12 @@ searchbar > revealer > box {
 
 .titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
   min-width: 104px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
+}
+
+.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
+  background-color: transparent;
 }
 
 .titlebar .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
@@ -1576,14 +1644,14 @@ searchbar > revealer > box {
 }
 
 .titlebar.default-decoration {
-  background-color: #1977D1;
+  background-color: #244FAE;
   min-height: 24px;
   padding: 6px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .titlebar.default-decoration:backdrop {
-  background-color: #176cbd;
+  background-color: #224ba6;
 }
 
 .tiled .titlebar.default-decoration,
@@ -1819,13 +1887,13 @@ menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
   padding: 0;
-  background-color: #188ae4;
+  background-color: #3266D4;
   color: white;
 }
 
 menubar:backdrop,
 .menubar:backdrop {
-  background-color: #0c7cd4;
+  background-color: #295bc3;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -3542,13 +3610,13 @@ placessidebar.sidebar list {
 
 placessidebar.sidebar row {
   min-height: 32px;
-  margin: -1px 4px;
+  margin: -1px 4px -1px 0;
   padding: 0;
-  border-radius: 6px;
+  border-radius: 0 1000px 1000px 0;
 }
 
 placessidebar.sidebar row > revealer {
-  padding: 0 8px;
+  padding: 0 8px 0 16px;
 }
 
 placessidebar.sidebar row:selected {
@@ -3893,11 +3961,11 @@ messagedialog.csd decoration {
   border-radius: 0;
   box-shadow: none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
-  background-color: #188ae4;
+  background-color: #3266D4;
 }
 
 .solid-csd decoration:backdrop {
-  background-color: #0c7cd4;
+  background-color: #295bc3;
 }
 
 modelbutton.flat:selected,
@@ -4060,10 +4128,18 @@ popover.emoji-completion .emoji:hover {
   border-radius: 0;
 }
 
-.nautilus-window notebook,
+.nautilus-window notebook {
+  background: none;
+  border-radius: 0 0 6px 6px;
+}
+
 .nautilus-window notebook > stack {
   background-color: #FFFFFF;
   border-radius: 0 0 6px 6px;
+}
+
+.nautilus-window notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
+  background-color: transparent;
 }
 
 .nautilus-window.csd placessidebar {
@@ -4158,24 +4234,31 @@ popover.emoji-completion .emoji:hover {
   margin-right: 0;
 }
 
-.path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
-  padding-left: 6px;
-  padding-right: 6px;
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
-.path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button {
-  min-width: 0;
-}
-
-.path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) label:not(:only-child):first-child {
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action) label:not(:only-child):first-child {
   margin-left: 0;
 }
 
-.path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) label:not(:only-child):last-child {
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action) label:not(:only-child):last-child {
   margin-right: 0;
 }
 
-.path-bar-box .nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button image:not(:only-child) {
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button {
+  min-width: 0;
+  border-radius: 1000px;
+}
+
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button {
+  border-radius: 1000px;
+}
+
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button image:not(:only-child) {
   margin: 0;
 }
 
@@ -4519,7 +4602,7 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizo
 }
 
 .tweak-group-startup, list.tweak-group list, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), hdyleaflet frame.view, hdyleaflet list.view.frame {
-  margin: 6px;
+  margin: 6px 4px;
   border-radius: 6px;
   box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
@@ -5590,12 +5673,12 @@ UnityDecoration .top {
   border-style: none;
   border-radius: 6px 6px 0 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
-  background-color: #188ae4;
+  background-color: #3266D4;
   color: white;
 }
 
 UnityDecoration .top:backdrop {
-  background-color: #0c7cd4;
+  background-color: #295bc3;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -7028,16 +7111,16 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 }
 
 window.org-gnome-gedit > paned.titlebar {
-  background-color: #673AB7;
+  background-color: #FFA000;
 }
 
 window.org-gnome-gedit > paned.titlebar > separator {
-  background-image: image(#673AB7);
+  background-image: image(#FFA000);
   border-top: 1px solid transparent;
 }
 
 window.org-gnome-gedit notebook:focus tab:checked {
-  box-shadow: inset 0 0 0 9999px rgba(103, 58, 183, 0.12);
+  box-shadow: inset 0 0 0 9999px rgba(255, 160, 0, 0.12);
 }
 
 window.org-gnome-gedit notebook > header.top > tabs > tab {
@@ -7045,11 +7128,11 @@ window.org-gnome-gedit notebook > header.top > tabs > tab {
 }
 
 window.org-gnome-gedit notebook > header.top > tabs > tab:checked {
-  border-image-source: linear-gradient(to top, #673AB7 2px, rgba(0, 0, 0, 0.12) 2px);
+  border-image-source: linear-gradient(to top, #FFA000 2px, rgba(0, 0, 0, 0.12) 2px);
 }
 
 window.org-gnome-gedit notebook > header tab {
-  background-image: radial-gradient(circle, rgba(103, 58, 183, 0.35) 10%, transparent 0%);
+  background-image: radial-gradient(circle, rgba(255, 160, 0, 0.35) 10%, transparent 0%);
 }
 
 window.org-gnome-gedit notebook > header tab:checked {
@@ -7057,49 +7140,49 @@ window.org-gnome-gedit notebook > header tab:checked {
 }
 
 window.org-gnome-gedit check:checked, window.org-gnome-gedit check:indeterminate, window.org-gnome-gedit radio:checked, window.org-gnome-gedit radio:indeterminate {
-  color: #673AB7;
+  color: #FFA000;
 }
 
 window.org-gnome-gedit radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#673AB7), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#FFA000), to(transparent));
 }
 
 window.org-gnome-gedit radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#673AB7), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#FFA000), to(transparent));
 }
 
 window.org-gnome-gedit switch:checked {
-  background-color: rgba(103, 58, 183, 0.5);
+  background-color: rgba(255, 160, 0, 0.5);
 }
 
 window.org-gnome-gedit switch:checked slider {
-  background-color: #673AB7;
-  color: #673AB7;
+  background-color: #FFA000;
+  color: #FFA000;
 }
 
 window.org-gnome-gedit entry:focus, window.org-gnome-gedit spinbutton:not(.vertical):focus {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #673AB7 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.org-gnome-gedit entry selection, window.org-gnome-gedit spinbutton:not(.vertical) selection {
-  color: white;
-  background-color: #673AB7;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFA000;
 }
 
 window.org-gnome-gedit button:not(.flat):not(.combo):checked {
-  background-color: #673AB7;
+  background-color: #FFA000;
 }
 
 window.org-gnome-gedit button.combo:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #673AB7 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.org-gnome-gedit scale highlight {
-  background-image: image(#673AB7);
+  background-image: image(#FFA000);
 }
 
 window.org-gnome-gedit scale slider {
-  color: #673AB7;
+  color: #FFA000;
 }
 
 hdyleaflet > stack > frame entry.search:focus {
@@ -7107,53 +7190,53 @@ hdyleaflet > stack > frame entry.search:focus {
 }
 
 window.org-gnome-Calendar headerbar.titlebar {
-  background-color: #FF6F00;
+  background-color: #FF5252;
 }
 
 window.org-gnome-Calendar check:checked, window.org-gnome-Calendar check:indeterminate, window.org-gnome-Calendar radio:checked, window.org-gnome-Calendar radio:indeterminate {
-  color: #FF6F00;
+  color: #FF5252;
 }
 
 window.org-gnome-Calendar radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#FF6F00), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#FF5252), to(transparent));
 }
 
 window.org-gnome-Calendar radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#FF6F00), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#FF5252), to(transparent));
 }
 
 window.org-gnome-Calendar switch:checked {
-  background-color: rgba(255, 111, 0, 0.5);
+  background-color: rgba(255, 82, 82, 0.5);
 }
 
 window.org-gnome-Calendar switch:checked slider {
-  background-color: #FF6F00;
-  color: #FF6F00;
+  background-color: #FF5252;
+  color: #FF5252;
 }
 
 window.org-gnome-Calendar entry:focus, window.org-gnome-Calendar spinbutton:not(.vertical):focus {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6F00 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF5252 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.org-gnome-Calendar entry selection, window.org-gnome-Calendar spinbutton:not(.vertical) selection {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #FF6F00;
+  background-color: #FF5252;
 }
 
 window.org-gnome-Calendar button:not(.flat):not(.combo):checked {
-  background-color: #FF6F00;
+  background-color: #FF5252;
 }
 
 window.org-gnome-Calendar button.combo:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6F00 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF5252 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.org-gnome-Calendar scale highlight {
-  background-image: image(#FF6F00);
+  background-image: image(#FF5252);
 }
 
 window.org-gnome-Calendar scale slider {
-  color: #FF6F00;
+  color: #FF5252;
 }
 
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
@@ -7225,7 +7308,7 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container scale s
 window.background.csd > hdyleaflet > box.vertical > searchbar entry.search {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px #cccccc;
   background-color: #FFFFFF;
   background-image: radial-gradient(circle, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
@@ -7260,7 +7343,7 @@ window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backd
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
   background-color: #5E35B1;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
@@ -7468,6 +7551,7 @@ window#gnome-system-monitor treeview.view.progressbar, filechooser stack.view wi
 
 window.org-gnome-Todo headerbar.titlebar {
   background-color: #F4511E;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 2px 2px -2px rgba(244, 81, 30, 0.3), 0 1px 2px -1px rgba(244, 81, 30, 0.24), 0 1px 2px -0.6px rgba(244, 81, 30, 0.17);
 }
 
 window.org-gnome-Todo check:checked, window.org-gnome-Todo check:indeterminate, window.org-gnome-Todo radio:checked, window.org-gnome-Todo radio:indeterminate {
@@ -7572,6 +7656,10 @@ headerbar.titlebar.event_toolbar {
 
 window#GearyMainWindow > .titlebar {
   background-color: #4CAF50;
+}
+
+window#GearyMainWindow > .titlebar > headerbar {
+  box-shadow: none;
 }
 
 window#GearyMainWindow check:checked, window#GearyMainWindow check:indeterminate, window#GearyMainWindow radio:checked, window#GearyMainWindow radio:indeterminate {
@@ -7738,8 +7826,8 @@ read if you used those and something break with a version upgrade you're on your
 @define-color wm_title white;
 @define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
 @define-color wm_highlight rgba(255, 255, 255, 0.2);
-@define-color wm_bg #188ae4;
-@define-color wm_unfocused_bg #0c7cd4;
+@define-color wm_bg #3266D4;
+@define-color wm_unfocused_bg #295bc3;
 /*
 FIXME this is really an API */
 @define-color content_view_bg #FFFFFF;

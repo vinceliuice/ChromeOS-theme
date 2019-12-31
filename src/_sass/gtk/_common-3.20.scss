@@ -444,7 +444,7 @@ button {
         &:disabled { @include button(flat-disabled); }
       }
 
-      &:checked { @include button(flat-checked); }
+      &:checked, &:checked:hover { @include button(flat-checked); }
 
       &:checked:disabled { @include button(flat-checked-disabled); }
     }
@@ -492,7 +492,7 @@ button {
     .linked:not(.vertical) > & {
       @extend %linked;
 
-      &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
+      &:focus { box-shadow: 0 0 0 1px $solid-border; }
 
       &.image-button:not(.text-button) { @extend %linked-image-button; }
     }
@@ -500,7 +500,7 @@ button {
     .linked.vertical > & {
       @extend %linked-vertical;
 
-      &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
+      &:focus { box-shadow: 0 0 0 1px $solid-border; }
 
       &.image-button:not(.text-button) { @extend %linked-vertical-image-button; }
     }
@@ -1059,17 +1059,9 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
   border-radius: $window-radius $window-radius 0 0;
+  box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $divider;
   background-color: $titlebar;
   color: $titlebar-text;
-
-  @if $topbar == 'light' and $variant == 'light' {
-    box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $divider;
-  } @else {
-    box-shadow: inset 0 1px highlight($titlebar),
-                0 2px 2px -2px rgba($primary, 0.3),
-                0 1px 2px -1px rgba($primary, 0.24),
-                0 1px 2px -.6px rgba($primary, 0.17);
-  }
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1149,26 +1141,30 @@ searchbar > revealer > box {
 
   @at-root %titlebar-button, & button:not(.suggested-action):not(.destructive-action) {
     @extend %button_basic.flat;
-
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $titlebar-indicator 0%,
-                                  transparent 0%)
-                                  0 0 0 / 0 0 0px;
     color: $titlebar-text-secondary;
 
-    &:focus, &:hover, &:active { color: $titlebar-text; }
+    &:focus, &:hover, &:active, &:checked, &:checked:hover { color: $titlebar-text; }
 
     &:focus { box-shadow: 0 0 0 2px $titlebar-divider; }
+
+    &:hover {
+      box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+      background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 0%);
+    }
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
     &:checked {
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $titlebar-indicator 100%,
-                                    transparent 0%)
-                                    0 0 2 / 0 0 2px;
-      background-color: transparent;
+      background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
       color: $titlebar-text;
+
+      &:hover {
+        box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
+      }
 
       &:disabled {
         background-color: transparent;
@@ -1199,7 +1195,21 @@ searchbar > revealer > box {
   }
 
   // FIXME: Ugly overriding
-  stackswitcher button:not(.suggested-action):not(.destructive-action).text-button { min-width: 120px - 8px * 2; }
+  stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
+    min-width: 120px - 8px * 2;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $titlebar-indicator 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0px;
+
+    &:checked {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $titlebar-indicator 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+      background-color: transparent;
+    }
+  }
 
   // FIXME: Ugly overriding
   .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
@@ -3083,13 +3093,13 @@ placessidebar.sidebar {
   row {
     // Needs overriding of the GtkListBoxRow padding
     min-height: 32px;
-    margin: -1px 4px; // Remove unwanted hard-coded vertical margins with -1px
+    margin: -1px 4px -1px 0; // Remove unwanted hard-coded vertical margins with -1px
     padding: 0;
-    border-radius: $corner-radius;
+    border-radius: 0 1000px 1000px 0;
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
-    > revealer { padding: 0 8px; }
+    > revealer { padding: 0 8px 0 16px; }
 
     &:selected {
       background-color: $overlay-checked;
