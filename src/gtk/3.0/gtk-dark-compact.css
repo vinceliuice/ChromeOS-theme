@@ -556,7 +556,7 @@ button:checked {
 
 button:checked:hover,
 button:checked:drop(active) {
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 2px -3px rgba(138, 180, 248, 0.3), 0 2px 2px -1px rgba(138, 180, 248, 0.24), 0 1px 3px 0 rgba(138, 180, 248, 0.12);
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(138, 180, 248, 0.3), 0 2px 3px -1px rgba(138, 180, 248, 0.24), 0 2px 5px 0 rgba(138, 180, 248, 0.12);
 }
 
 
@@ -910,6 +910,7 @@ button.osd:disabled {
 button.suggested-action {
   background-color: #8AB4F8;
   color: rgba(0, 0, 0, 0.87);
+  box-shadow: none;
 }
 
 
@@ -920,8 +921,20 @@ button.suggested-action:disabled {
 }
 
 
+button.suggested-action:hover,
+button.suggested-action:drop(active) {
+  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px rgba(138, 180, 248, 0.2), 0 4px 3px 0 rgba(138, 180, 248, 0.14), 0 1px 6px 0 rgba(138, 180, 248, 0.12);
+}
+
+
 button.suggested-action:checked {
   background-color: rgba(104, 135, 186, 0.961);
+}
+
+
+button.suggested-action:checked:hover,
+button.suggested-action:checked:drop(active) {
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(138, 180, 248, 0.3), 0 2px 3px -1px rgba(138, 180, 248, 0.24), 0 2px 5px 0 rgba(138, 180, 248, 0.12);
 }
 
 
@@ -951,6 +964,7 @@ button.suggested-action.flat:checked {
 button.destructive-action {
   background-color: #F28B82;
   color: rgba(0, 0, 0, 0.87);
+  box-shadow: none;
 }
 
 
@@ -961,8 +975,20 @@ button.destructive-action:disabled {
 }
 
 
+button.destructive-action:hover,
+button.destructive-action:drop(active) {
+  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px rgba(242, 139, 130, 0.2), 0 4px 3px 0 rgba(242, 139, 130, 0.14), 0 1px 6px 0 rgba(242, 139, 130, 0.12);
+}
+
+
 button.destructive-action:checked {
   background-color: rgba(182, 105, 98, 0.961);
+}
+
+
+button.destructive-action:checked:hover,
+button.destructive-action:checked:drop(active) {
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(242, 139, 130, 0.3), 0 2px 3px -1px rgba(242, 139, 130, 0.24), 0 2px 5px 0 rgba(242, 139, 130, 0.12);
 }
 
 
@@ -4123,17 +4149,17 @@ popover.emoji-completion .emoji:hover {
   border-radius: 0;
 }
 
-.nautilus-window notebook {
+.nautilus-window.csd notebook {
   background: none;
   border-radius: 0 0 6px 6px;
 }
 
-.nautilus-window notebook > stack {
+.nautilus-window.csd notebook > stack {
   background-color: #2C2C2C;
   border-radius: 0 0 6px 6px;
 }
 
-.nautilus-window notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
+.nautilus-window.csd notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.csd notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), .nautilus-window.csd notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
   background-color: transparent;
 }
 
