@@ -467,6 +467,8 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
                                     0 0 2 / 0 0 2px;
       background-color: transparent;
     }
+
+    &:focus { box-shadow: none; }
   }
 
   .raven-header {
@@ -605,7 +607,7 @@ calendar.raven-calendar {
 
 .budgie-panel {
   .lock-keys {
-    image:disabled { color: on($panel, secondary-disabled); } 
+    image:disabled { color: on($panel, secondary-disabled); }
   }
 }
 

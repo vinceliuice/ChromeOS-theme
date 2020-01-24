@@ -6722,6 +6722,10 @@ frame.raven-frame > border {
   background-color: transparent;
 }
 
+.raven stackswitcher.linked > button:focus {
+  box-shadow: none;
+}
+
 .raven .raven-header {
   min-height: 32px;
   padding: 3px;
