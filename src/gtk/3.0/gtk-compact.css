@@ -6857,6 +6857,10 @@ calendar.raven-calendar:selected {
   font-size: 120%;
 }
 
+.budgie-panel .lock-keys image:disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .drop-shadow {
   margin: 5px 9px;
   padding: 3px;

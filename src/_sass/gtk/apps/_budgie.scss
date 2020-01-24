@@ -603,6 +603,12 @@ calendar.raven-calendar {
   @extend .budgie-notification;
 }
 
+.budgie-panel {
+  .lock-keys {
+    image:disabled { color: on($panel, secondary-disabled); } 
+  }
+}
+
 .drop-shadow {
   margin: 5px 9px;
   padding: 3px;
