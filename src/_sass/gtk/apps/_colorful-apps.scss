@@ -83,7 +83,14 @@ $theme_green_grey:  #3b4342;
 
   @if $button_rules=='true' {
     button:not(.flat):not(.combo) {
-      &:checked { background-color: $theme_color; }
+      &:checked {
+        color: on($theme_color);
+        background-color: $theme_color;
+      }
+
+      &:checked:disabled {
+        @include button(checked-disabled);
+      }
     }
 
     button.combo {
@@ -242,6 +249,17 @@ window.background.csd {
   }
 }
 
+// the sidebar
+.tweak-categories {
+  row.activatable.tweak-category {
+    &:selected {
+      color: $theme_brown;
+
+      image, label { color: $theme_brown; }
+    }
+  }
+}
+
 //
 // Gnome Control Center
 //
@@ -316,6 +334,16 @@ window.background.csd {
             selection {
               color: on($theme_cyan);
               background-color: $theme_cyan;
+            }
+          }
+        }
+
+        > stack, > stack > box.vertical {
+          > list > row.activatable {
+            &:selected {
+              color: $theme_cyan;
+
+              image, label { color: $theme_cyan; }
             }
           }
         }

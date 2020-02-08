@@ -78,7 +78,7 @@
 }
 
 .gtkstyle-fallback:active {
-  background-color: #d9d8d8;
+  background-color: #d9d9d9;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -688,11 +688,11 @@ layouttabbar button:checked:drop(active), .mate-panel-menu-bar button:checked:ho
 .mate-panel-menu-bar button:checked:drop(active), .budgie-panel button:checked:hover,
 .budgie-panel button:checked:drop(active), .raven stackswitcher.linked > button:checked:hover,
 .raven stackswitcher.linked > button:checked:drop(active), .xfce4-panel.background button:checked:hover,
-.xfce4-panel.background button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
+.xfce4-panel.background button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
 popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, toolbar button:checked:hover,
-toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:checked:hover:not(.suggested-action):not(.destructive-action),
+toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:checked:hover:not(.suggested-action):not(.destructive-action),
 .titlebar button:checked:not(.suggested-action):not(.destructive-action):drop(active), popover.background.menu button:checked:hover,
 popover.background.menu button:checked:drop(active),
 popover.background button.model:checked:hover,
@@ -709,8 +709,8 @@ infobar.question button:checked:drop(active), .lock-dialog button:checked:hover,
 button.flat:checked,
 button.flat:checked:hover,
 toolbar button:checked:drop(active),
-.path-bar-box .linked.nautilus-path-bar button:drop(active):not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:drop(active):not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:last-child:drop(active):not(.suggested-action):not(.destructive-action):dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:first-child:drop(active):not(.suggested-action):not(.destructive-action):dir(rtl),
 .titlebar button:checked:drop(active):not(.suggested-action):not(.destructive-action),
 popover.background.menu button:checked:drop(active),
 popover.background button.model:checked:drop(active),
@@ -729,7 +729,7 @@ button.flat:checked:drop(active) {
 }
 
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), .caja-pathbar button:checked:disabled,
-.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
+.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:checked:disabled, messagedialog.csd .dialog-action-box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, .lock-dialog button:checked:disabled, #buttonbox_frame button:checked:disabled, .nemo-window .toolbar button:checked:disabled,
 button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
@@ -821,11 +821,11 @@ button.flat:not(:only-child) {
 }
 
 toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .titlebar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
-popover.background .linked:not(.vertical) > button.model:not(:only-child).image-button:not(.text-button), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.info .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.question .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .lock-dialog .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
+popover.background .linked:not(.vertical) > button:not(:only-child).image-button.model:not(.text-button), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.info .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.question .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .lock-dialog .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
 toolbar .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 .titlebar .linked.vertical > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action),
 popover.background.menu .linked.vertical > button:not(:only-child).image-button:not(.text-button),
-popover.background .linked.vertical > button.model:not(:only-child).image-button:not(.text-button),
+popover.background .linked.vertical > button:not(:only-child).image-button.model:not(.text-button),
 actionbar > revealer > box .linked.vertical > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action),
 .app-notification .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 messagedialog.csd .dialog-action-box .linked.vertical > button:not(:only-child).image-button:not(.text-button),
@@ -1490,9 +1490,9 @@ searchbar > revealer > box {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
+.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):active, .titlebar button:not(.suggested-action):not(.destructive-action):checked, .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):checked:drop(active) {
   color: rgba(0, 0, 0, 0.87);
@@ -1516,19 +1516,19 @@ searchbar > revealer > box {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked {
+.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked {
   background-color: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.87);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
+.path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):checked:drop(active) {
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.12);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked:disabled {
+.path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked:disabled {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.38);
 }
@@ -1546,11 +1546,11 @@ searchbar > revealer > box {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
+.path-bar-box .linked.nautilus-path-bar button:backdrop:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
+.path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
@@ -1799,11 +1799,11 @@ treeview.view:drop(active), filechooser stack.view scrolledwindow treeview.view:
   border-color: alpha(currentColor, 0.08);
 }
 
-treeview.view:drop(active).after, filechooser stack.view scrolledwindow treeview.view:drop(active).after, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:drop(active).after {
+treeview.view:drop(active).after, filechooser stack.view scrolledwindow treeview:drop(active).after.view, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview:drop(active).after.view {
   border-top-style: none;
 }
 
-treeview.view:drop(active).before, filechooser stack.view scrolledwindow treeview.view:drop(active).before, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:drop(active).before {
+treeview.view:drop(active).before, filechooser stack.view scrolledwindow treeview:drop(active).before.view, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview:drop(active).before.view {
   border-bottom-style: none;
 }
 
@@ -3979,7 +3979,7 @@ messagedialog.csd decoration {
 }
 
 modelbutton.flat:selected,
-.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active {
+.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:checked:not(.image-button):not(.indicator-item), calendar.raven-calendar:selected, XfdesktopIconView.view:active {
   background-color: alpha(currentColor, 0.06);
 }
 
@@ -4580,6 +4580,13 @@ window.background.csd > box.horizontal > stack.background > widget > box.vertica
   background: none;
 }
 
+window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > box.vertical > toolbar.inline-toolbar,
+window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > box.vertical > toolbar.inline-toolbar {
+  margin: 6px 3px;
+  border: none;
+  border-radius: 6px;
+}
+
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {
   background-color: #FFFFFF;
@@ -4629,6 +4636,20 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizo
 
 .tweak-group-startup row.activatable:only-child, .tweak-group-startup treeview.view header button:only-child, treeview.view header .tweak-group-startup button:only-child, .tweak-group-startup window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-group-startup button:only-child, .tweak-group-startup .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-group-startup button.flat:only-child:not(.image-button):not(.indicator-item), list.tweak-group list row.activatable:only-child, list.tweak-group list treeview.view header button:only-child, treeview.view header list.tweak-group list button:only-child, list.tweak-group list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header list.tweak-group list button:only-child, list.tweak-group list .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu list.tweak-group list button.flat:only-child:not(.image-button):not(.indicator-item), hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) treeview.view header button:only-child, treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame:not(.view) list:not(.contacts-contact-list) button.flat:only-child:not(.image-button):not(.indicator-item), hdyleaflet frame.view list row.activatable:only-child, hdyleaflet frame.view list treeview.view header button:only-child, treeview.view header hdyleaflet frame.view list button:only-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet frame.view list button:only-child, hdyleaflet frame.view list .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet frame.view list button.flat:only-child:not(.image-button):not(.indicator-item), hdyleaflet list.view.frame row.activatable:only-child, hdyleaflet list.view.frame treeview.view header button:only-child, treeview.view header hdyleaflet list.view.frame button:only-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet list.view.frame button:only-child, hdyleaflet list.view.frame .budgie-popover.budgie-menu button.flat:only-child:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu hdyleaflet list.view.frame button.flat:only-child:not(.image-button):not(.indicator-item) {
   border-radius: 6px;
+}
+
+.tweak-categories row.activatable.tweak-category, .tweak-categories treeview.view header button.tweak-category, treeview.view header .tweak-categories button.tweak-category, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:not(.image-button):not(.indicator-item), hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:not(.image-button):not(.indicator-item), hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:not(.image-button):not(.indicator-item) {
+  margin-right: 4px;
+  border-radius: 0 1000px 1000px 0;
+}
+
+.tweak-categories row.activatable.tweak-category:selected, .tweak-categories treeview.view header button.tweak-category:selected, treeview.view header .tweak-categories button.tweak-category:selected, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category:selected, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:selected:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:selected:not(.image-button):not(.indicator-item), hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:selected, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:selected:not(.image-button):not(.indicator-item), hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable:selected, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:selected:not(.image-button):not(.indicator-item) {
+  background-color: alpha(currentColor, 0.1);
+  color: #1A73E8;
+}
+
+.tweak-categories row.activatable.tweak-category:selected image, .tweak-categories treeview.view header button.tweak-category:selected image, treeview.view header .tweak-categories button.tweak-category:selected image, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category:selected image, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) image, .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) image, hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:selected image, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected image, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:selected:not(.image-button):not(.indicator-item) image, hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable:selected image, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected image, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:selected:not(.image-button):not(.indicator-item) image, .tweak-categories row.activatable.tweak-category:selected label, .tweak-categories treeview.view header button.tweak-category:selected label, treeview.view header .tweak-categories button.tweak-category:selected label, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category:selected label, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) label, .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) label, hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:selected label, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected label, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:selected:not(.image-button):not(.indicator-item) label, hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable:selected label, treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected label, .budgie-popover.budgie-menu hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:selected:not(.image-button):not(.indicator-item) label {
+  color: #1A73E8;
 }
 
 hdyleaflet frame > border {

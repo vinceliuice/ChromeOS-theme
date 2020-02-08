@@ -404,6 +404,10 @@ frame.gedit-map-frame > border {
   .csd & {
     border-bottom-left-radius: $corner-radius;
   }
+
+  row.activatable.tweak-category {
+    @extend %circular_side_row;
+  }
 }
 
 .tweak {
@@ -536,6 +540,16 @@ window.background.csd {
           }
         }
       }
+
+      > scrolledwindow > viewport.frame {
+        > hdycolumn > box.vertical > box.vertical {
+          > toolbar.inline-toolbar {
+            margin: 6px 3px;
+            border: none;
+            border-radius: $corner-radius;
+          }
+        }
+      }
     }
   }
 
@@ -588,6 +602,18 @@ dialog.background.csd {
   }
 }
 
+%circular_side_row {
+  margin-right: 4px;
+  border-radius: 0 1000px 1000px 0;
+
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
+
+    image, label { color: $primary; }
+  }
+}
+
 hdyleaflet {
   frame > border { border: none; }
 
@@ -612,6 +638,14 @@ hdyleaflet {
     @extend %circular_list;
 
     row.activatable { @extend %circular_row; }
+  }
+
+  > box.vertical > scrolledwindow.view > viewport.frame {
+    > stack, > stack > box.vertical {
+      > list > row.activatable {
+        @extend %circular_side_row;
+      }
+    }
   }
 }
 
