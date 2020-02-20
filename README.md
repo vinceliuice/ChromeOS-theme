@@ -36,5 +36,11 @@ Run the following commands in the terminal:
 
 > For more information, run: `./install.sh --help`
 
+## Firefox theme
+[Intall Firefox theme](src/firefox)
+
+![01](src/firefox/preview01.png?raw=true)
+![02](src/firefox/preview02.png?raw=true)
+
 ## Preview
 ![1](https://cdn.pling.com/img/9/2/b/e/0f3bbcad86f2b4baee71ca3f12117ebf4d5a.jpg?raw=true)

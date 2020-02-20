@@ -4,8 +4,8 @@
 <p align="center">A ChromeOS theme for Firefox 60+</p>
 
 #### Preview
-![01](src/firefox/preview01.png?raw=true)
-![02](src/firefox/preview02.png?raw=true)
+![01](preview01.png?raw=true)
+![02](preview02.png?raw=true)
 
 ## Description
 
