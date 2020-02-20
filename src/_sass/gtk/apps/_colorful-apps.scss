@@ -520,6 +520,7 @@ dialog.background.csd {
                                   0 0 0 / 0 0 0px;
 
     &:checked {
+      color: on($background);
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $theme_pink 100%,
                                     transparent 0%)
