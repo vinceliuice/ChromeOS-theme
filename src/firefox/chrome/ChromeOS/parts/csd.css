@@ -1,0 +1,34 @@
+/* GNOME CSD styles for headerbar on Firefox [tabsintitlebar] */
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#main-window {
+	-moz-appearance: -moz-window-titlebar !important;
+}
+
+/* Headerbar top border corners rounded */
+:root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
+	border-radius: 0 0 0 0 !important;
+}
+
+/* Remove tabsbar titlebar blank spaces */
+:root[tabsintitlebar] #TabsToolbar .titlebar-placeholder {
+	display: none !important;
+}
+
+/* Prevent menubar from breaking */
+:root[tabsintitlebar] #toolbar-menubar:not([inactive=true]) {
+	height: 30px !important;
+	margin-bottom: 0px;
+	margin-top: 0;
+}
+
+/* Remove default style of titlebar */
+:root[tabsintitlebar] #titlebar {
+	-moz-appearance: none !important;
+}
+
+/* Fix the issue when dragging tabs */
+:root[tabsintitlebar] #navigator-toolbox[movingtab] #TabsToolbar {
+	padding-bottom: 0 !important;
+}

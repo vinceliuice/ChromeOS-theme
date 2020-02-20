@@ -1,17 +1,16 @@
 // /***** color-palette *****/
 $theme_red:         #FF5252;
 $theme_light_red:   #FF1744;
-$theme_pink:        #D81B60;
+$theme_pink:        #E91E63;
 $theme_purple:      #9C27B0;
 $theme_deep_purple: #673AB7;
 $theme_indigo:      #3949AB;
-$theme_blue:        #2962FF;
+$theme_blue:        #0091EA;
 $theme_light_blue:  #0288D1;
 $theme_cyan:        #5E35B1;
 $theme_dark_cyan:   #4769d2;
 $theme_teal:        #188c75;
 $theme_green:       #4CAF50;
-$theme_light_green: #7CB342;
 $theme_sea_green:   #6ab878;
 $theme_lime:        #C0CA33;
 $theme_yellow:      #FFD600;
@@ -109,6 +108,44 @@ $theme_green_grey:  #3b4342;
   }
 }
 
+//
+// Terminal
+//
+terminal-window {
+  > headerbar.titlebar {
+    background-color: $theme_sea_green;
+
+    &:backdrop { background-color: darken($theme_sea_green, 2%); }
+  }
+
+  notebook {
+    &:focus tab:checked {
+      box-shadow: inset 0 0 0 9999px rgba($theme_sea_green, 0.12);
+    }
+
+    > header {
+      &.top {
+        > tabs {
+          > tab {
+            border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2 / 0 0 2px;
+
+            &:checked { border-image-source: linear-gradient(to top, $theme_sea_green 2px, $frame 2px); }
+          }
+        }
+      }
+
+      tab {
+        background-image: radial-gradient(circle, rgba($theme_sea_green, 0.35) 10%, transparent 0%);
+
+        &:checked {
+          background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+        }
+      }
+    }
+  }
+
+  @include color_theme($theme_color:$theme_sea_green);
+}
 
 //
 // Gedit
@@ -116,6 +153,8 @@ $theme_green_grey:  #3b4342;
 window.org-gnome-gedit {
   > paned.titlebar {
     background-color: $theme_amber;
+
+    &:backdrop { background-color: darken($theme_amber, 2%); }
 
     > separator {
       background-image: image($theme_amber);
@@ -178,6 +217,8 @@ hdyleaflet {
 window.org-gnome-Calendar {
   headerbar.titlebar {
     background-color: $theme_red;
+
+    &:backdrop { background-color: darken($theme_red, 2%); }
   }
 
   @include color_theme($theme_color:$theme_red);
@@ -192,6 +233,8 @@ window.background.csd {
     > headerbar.titlebar.tweak-titlebar-left,
     > headerbar.titlebar.tweak-titlebar-right {
       background-color: $theme_brown;
+
+      &:backdrop { background-color: darken($theme_brown, 2%); }
 
       switch {
         &:checked { background-color: rgba(lighten($theme_brown, 25%), 0.5); }
@@ -268,6 +311,8 @@ window.background.csd {
     > headerbar {
       background-color: $theme_cyan;
       box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $divider;
+
+      &:backdrop { background-color: darken($theme_cyan, 2%); }
 
       &:first-child:not(:only-child) {
         border-top-left-radius: $window-radius;
@@ -359,6 +404,8 @@ window.background.csd.org-gnome-Builder {
   > stack.titlebar {
     background-color: $theme_grey;
 
+    &:backdrop { background-color: darken($theme_grey, 2%); }
+
     > headerbar {
       > box.horizontal > stack.suggestionbutton {
         > button { @extend %button_basic.flat; }
@@ -375,6 +422,8 @@ window.background.csd.org-gnome-Builder {
 window#gnome-system-monitor {
   headerbar.titlebar {
     background-color: $theme_teal;
+
+    &:backdrop { background-color: darken($theme_teal, 2%); }
   }
 
   @include color_theme($theme_color:$theme_teal);
@@ -392,10 +441,8 @@ window#gnome-system-monitor {
 window.org-gnome-Todo {
   headerbar.titlebar {
     background-color: $theme_deep_orange;
-    box-shadow: inset 0 1px highlight($titlebar),
-                0 2px 2px -2px rgba($theme_deep_orange, 0.3),
-                0 1px 2px -1px rgba($theme_deep_orange, 0.24),
-                0 1px 2px -.6px rgba($theme_deep_orange, 0.17);
+
+    &:backdrop { background-color: darken($theme_deep_orange, 2%); }
   }
 
   @include color_theme($theme_color:$theme_deep_orange);
@@ -407,6 +454,8 @@ window.org-gnome-Todo {
 window.dconf-editor {
   headerbar.titlebar {
     background-color: $theme_purple;
+
+    &:backdrop { background-color: darken($theme_purple, 2%); }
   }
 
   @include color_theme($theme_color:$theme_purple);
@@ -417,6 +466,8 @@ window.dconf-editor {
 //
 headerbar.titlebar.event_toolbar {
   background-color: $theme_dark_yellow;
+
+  &:backdrop { background-color: darken($theme_dark_yellow, 2%); }
 }
 
 //
@@ -425,6 +476,8 @@ headerbar.titlebar.event_toolbar {
 window#GearyMainWindow {
   > .titlebar {
     background-color: $theme_green;
+
+    &:backdrop { background-color: darken($theme_green, 2%); }
 
     > headerbar {
       box-shadow: none;
@@ -440,7 +493,21 @@ window#GearyMainWindow {
 window.background.csd.budgie-settings-window {
   > headerbar.titlebar {
     background-color: $theme_blue_grey;
+
+    &:backdrop { background-color: darken($theme_blue_grey, 2%); }
   }
 
   @include color_theme($theme_color:$theme_blue_grey);
+}
+
+//Dialogs
+
+dialog.background.csd {
+  > headerbar.titlebar {
+    background-color: $theme_pink;
+
+    &:backdrop { background-color: darken($theme_pink, 2%); }
+  }
+
+  @include color_theme($theme_color:$theme_pink);
 }

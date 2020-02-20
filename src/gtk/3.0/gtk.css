@@ -7181,8 +7181,93 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   -NemoPlacesTreeView-disk-full-max-length: 80px;
 }
 
+terminal-window > headerbar.titlebar {
+  background-color: #6ab878;
+}
+
+terminal-window > headerbar.titlebar:backdrop {
+  background-color: #63b572;
+}
+
+terminal-window notebook:focus tab:checked {
+  box-shadow: inset 0 0 0 9999px rgba(106, 184, 120, 0.12);
+}
+
+terminal-window notebook > header.top > tabs > tab {
+  border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2/0 0 2px;
+}
+
+terminal-window notebook > header.top > tabs > tab:checked {
+  border-image-source: linear-gradient(to top, #6ab878 2px, rgba(0, 0, 0, 0.12) 2px);
+}
+
+terminal-window notebook > header tab {
+  background-image: radial-gradient(circle, rgba(106, 184, 120, 0.35) 10%, transparent 0%);
+}
+
+terminal-window notebook > header tab:checked {
+  background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+}
+
+terminal-window check:checked, terminal-window check:indeterminate, terminal-window radio:checked, terminal-window radio:indeterminate {
+  color: #6ab878;
+}
+
+terminal-window radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#6ab878), to(transparent));
+}
+
+terminal-window radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#6ab878), to(transparent));
+}
+
+terminal-window switch:checked {
+  background-color: rgba(106, 184, 120, 0.5);
+}
+
+terminal-window switch:checked slider {
+  background-color: #6ab878;
+  color: #6ab878;
+}
+
+terminal-window entry:focus, terminal-window spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6ab878 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+terminal-window entry selection, terminal-window spinbutton:not(.vertical) selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #6ab878;
+}
+
+terminal-window button:not(.flat):not(.combo):checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #6ab878;
+}
+
+terminal-window button:not(.flat):not(.combo):checked:disabled {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.38);
+}
+
+terminal-window button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6ab878 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+terminal-window scale highlight {
+  background-image: image(#6ab878);
+}
+
+terminal-window scale slider {
+  color: #6ab878;
+}
+
 window.org-gnome-gedit > paned.titlebar {
   background-color: #FFA000;
+}
+
+window.org-gnome-gedit > paned.titlebar:backdrop {
+  background-color: #f59a00;
 }
 
 window.org-gnome-gedit > paned.titlebar > separator {
@@ -7271,6 +7356,10 @@ window.org-gnome-Calendar headerbar.titlebar {
   background-color: #FF5252;
 }
 
+window.org-gnome-Calendar headerbar.titlebar:backdrop {
+  background-color: #ff4848;
+}
+
 window.org-gnome-Calendar check:checked, window.org-gnome-Calendar check:indeterminate, window.org-gnome-Calendar radio:checked, window.org-gnome-Calendar radio:indeterminate {
   color: #FF5252;
 }
@@ -7327,6 +7416,11 @@ window.org-gnome-Calendar scale slider {
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right {
   background-color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left:backdrop,
+window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right:backdrop {
+  background-color: #67483d;
 }
 
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left switch:checked,
@@ -7444,6 +7538,10 @@ window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backd
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
   background-color: #5E35B1;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.12);
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:backdrop {
+  background-color: #5a33a9;
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
@@ -7564,6 +7662,10 @@ window.background.csd.org-gnome-Builder > stack.titlebar {
   background-color: #424242;
 }
 
+window.background.csd.org-gnome-Builder > stack.titlebar:backdrop {
+  background-color: #3d3d3d;
+}
+
 window.background.csd.org-gnome-Builder check:checked, window.background.csd.org-gnome-Builder check:indeterminate, window.background.csd.org-gnome-Builder radio:checked, window.background.csd.org-gnome-Builder radio:indeterminate {
   color: #424242;
 }
@@ -7619,6 +7721,10 @@ window.background.csd.org-gnome-Builder scale slider {
 
 window#gnome-system-monitor headerbar.titlebar {
   background-color: #188c75;
+}
+
+window#gnome-system-monitor headerbar.titlebar:backdrop {
+  background-color: #17836e;
 }
 
 window#gnome-system-monitor check:checked, window#gnome-system-monitor check:indeterminate, window#gnome-system-monitor radio:checked, window#gnome-system-monitor radio:indeterminate {
@@ -7680,7 +7786,10 @@ window#gnome-system-monitor treeview.view.progressbar, filechooser stack.view wi
 
 window.org-gnome-Todo headerbar.titlebar {
   background-color: #F4511E;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 2px 2px -2px rgba(244, 81, 30, 0.3), 0 1px 2px -1px rgba(244, 81, 30, 0.24), 0 1px 2px -0.6px rgba(244, 81, 30, 0.17);
+}
+
+window.org-gnome-Todo headerbar.titlebar:backdrop {
+  background-color: #f44914;
 }
 
 window.org-gnome-Todo check:checked, window.org-gnome-Todo check:indeterminate, window.org-gnome-Todo radio:checked, window.org-gnome-Todo radio:indeterminate {
@@ -7740,6 +7849,10 @@ window.dconf-editor headerbar.titlebar {
   background-color: #9C27B0;
 }
 
+window.dconf-editor headerbar.titlebar:backdrop {
+  background-color: #9525a8;
+}
+
 window.dconf-editor check:checked, window.dconf-editor check:indeterminate, window.dconf-editor radio:checked, window.dconf-editor radio:indeterminate {
   color: #9C27B0;
 }
@@ -7797,8 +7910,16 @@ headerbar.titlebar.event_toolbar {
   background-color: #F57F17;
 }
 
+headerbar.titlebar.event_toolbar:backdrop {
+  background-color: #f57a0d;
+}
+
 window#GearyMainWindow > .titlebar {
   background-color: #4CAF50;
+}
+
+window#GearyMainWindow > .titlebar:backdrop {
+  background-color: #49a84d;
 }
 
 window#GearyMainWindow > .titlebar > headerbar {
@@ -7862,6 +7983,10 @@ window.background.csd.budgie-settings-window > headerbar.titlebar {
   background-color: #37474F;
 }
 
+window.background.csd.budgie-settings-window > headerbar.titlebar:backdrop {
+  background-color: #334249;
+}
+
 window.background.csd.budgie-settings-window check:checked, window.background.csd.budgie-settings-window check:indeterminate, window.background.csd.budgie-settings-window radio:checked, window.background.csd.budgie-settings-window radio:indeterminate {
   color: #37474F;
 }
@@ -7913,6 +8038,67 @@ window.background.csd.budgie-settings-window scale highlight {
 
 window.background.csd.budgie-settings-window scale slider {
   color: #37474F;
+}
+
+dialog.background.csd > headerbar.titlebar {
+  background-color: #E91E63;
+}
+
+dialog.background.csd > headerbar.titlebar:backdrop {
+  background-color: #e6175d;
+}
+
+dialog.background.csd check:checked, dialog.background.csd check:indeterminate, dialog.background.csd radio:checked, dialog.background.csd radio:indeterminate {
+  color: #E91E63;
+}
+
+dialog.background.csd radio {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#E91E63), to(transparent));
+}
+
+dialog.background.csd radio:checked:not(:indeterminate) {
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#E91E63), to(transparent));
+}
+
+dialog.background.csd switch:checked {
+  background-color: rgba(233, 30, 99, 0.5);
+}
+
+dialog.background.csd switch:checked slider {
+  background-color: #E91E63;
+  color: #E91E63;
+}
+
+dialog.background.csd entry:focus, dialog.background.csd spinbutton:not(.vertical):focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+dialog.background.csd entry selection, dialog.background.csd spinbutton:not(.vertical) selection {
+  color: white;
+  background-color: #E91E63;
+}
+
+dialog.background.csd button:not(.flat):not(.combo):checked {
+  color: white;
+  background-color: #E91E63;
+}
+
+dialog.background.csd button:not(.flat):not(.combo):checked:disabled {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.38);
+}
+
+dialog.background.csd button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+dialog.background.csd scale highlight {
+  background-image: image(#E91E63);
+}
+
+dialog.background.csd scale slider {
+  color: #E91E63;
 }
 
 /* GTK NAMED COLORS
