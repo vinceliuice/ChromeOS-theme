@@ -510,4 +510,57 @@ dialog.background.csd {
   }
 
   @include color_theme($theme_color:$theme_pink);
+
+  .linked.path-bar > button {
+    @extend %button-flat;
+
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $theme_pink 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0px;
+
+    &:checked {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $theme_pink 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+
+      &, &:disabled { background-color: transparent; }
+    }
+  }
+
+  // the sidebar
+  .sidebar row.activatable {
+    &:selected {
+      color: $theme_pink;
+
+      image, label { color: $theme_pink; }
+    }
+  }
+
+  notebook {
+    &:focus tab:checked {
+      box-shadow: inset 0 0 0 9999px rgba($theme_pink, 0.12);
+    }
+
+    > header {
+      &.top {
+        > tabs {
+          > tab {
+            border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2 / 0 0 2px;
+
+            &:checked { border-image-source: linear-gradient(to top, $theme_pink 2px, $frame 2px); }
+          }
+        }
+      }
+
+      tab {
+        background-image: radial-gradient(circle, rgba($theme_pink, 0.35) 10%, transparent 0%);
+
+        &:checked {
+          background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+        }
+      }
+    }
+  }
 }

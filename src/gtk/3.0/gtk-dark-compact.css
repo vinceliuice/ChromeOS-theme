@@ -569,7 +569,7 @@ button:checked:disabled {
 modelbutton.flat,
 .menuitem.button.flat, spinbutton:not(.vertical) button, spinbutton.vertical button, notebook > header > tabs > arrow, scrollbar button, check,
 radio, row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, calendar.button, button.sidebar-button, .gedit-search-slider .linked > button, popover.messagepopover .popover-action-area button, #MatePanelPopupWindow button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .drop-shadow button, .budgie-session-dialog .linked.horizontal > button, combobox > .linked:not(.vertical) > button:not(:only-child), .caja-pathbar button,
-.path-bar.linked:not(.vertical) > button, layouttabbar button, .mate-panel-menu-bar button, .budgie-panel button, .raven stackswitcher.linked > button, .xfce4-panel.background button, toolbar button, .titlebar button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
+.path-bar.linked:not(.vertical) > button, layouttabbar button, .mate-panel-menu-bar button, .budgie-panel button, .raven stackswitcher.linked > button, .xfce4-panel.background button, dialog.background.csd .linked.path-bar > button, toolbar button, .titlebar button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), .app-notification button, messagedialog.csd .dialog-action-box button, filechooser #pathbarbox > stack > box > button, infobar.info button, infobar.question button, .lock-dialog button, #buttonbox_frame button, .nemo-window .toolbar button, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button,
 button.flat {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
@@ -586,7 +586,7 @@ button.flat {
 modelbutton.flat:focus,
 .menuitem.button.flat:focus, spinbutton:not(.vertical) button:focus, spinbutton.vertical button:focus, notebook > header > tabs > arrow:focus, scrollbar button:focus, check:focus,
 radio:focus, row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, calendar.button:focus, button.sidebar-button:focus, .gedit-search-slider .linked > button:focus, popover.messagepopover .popover-action-area button:focus, #MatePanelPopupWindow button:focus, #mate-menu button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, .drop-shadow button:focus, .budgie-session-dialog .linked.horizontal > button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), .caja-pathbar button:focus,
-.path-bar.linked:not(.vertical) > button:focus, layouttabbar button:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven stackswitcher.linked > button:focus, .xfce4-panel.background button:focus, toolbar button:focus, .titlebar button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
+.path-bar.linked:not(.vertical) > button:focus, layouttabbar button:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven stackswitcher.linked > button:focus, .xfce4-panel.background button:focus, dialog.background.csd .linked.path-bar > button:focus, toolbar button:focus, .titlebar button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .app-notification button:focus, messagedialog.csd .dialog-action-box button:focus, filechooser #pathbarbox > stack > box > button:focus, infobar.info button:focus, infobar.question button:focus, .lock-dialog button:focus, #buttonbox_frame button:focus, .nemo-window .toolbar button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:focus,
 button.flat:focus {
   box-shadow: 0 0 0 2px alpha(currentColor, 0.08);
@@ -619,7 +619,8 @@ layouttabbar button:drop(active), .mate-panel-menu-bar button:hover,
 .mate-panel-menu-bar button:drop(active), .budgie-panel button:hover,
 .budgie-panel button:drop(active), .raven stackswitcher.linked > button:hover,
 .raven stackswitcher.linked > button:drop(active), .xfce4-panel.background button:hover,
-.xfce4-panel.background button:drop(active), toolbar button:hover,
+.xfce4-panel.background button:drop(active), dialog.background.csd .linked.path-bar > button:hover,
+dialog.background.csd .linked.path-bar > button:drop(active), toolbar button:hover,
 toolbar button:drop(active), .titlebar button:hover:not(.suggested-action):not(.destructive-action),
 .titlebar button:not(.suggested-action):not(.destructive-action):drop(active), popover.background.menu button:hover,
 popover.background.menu button:drop(active),
@@ -658,7 +659,7 @@ button.flat:drop(active) {
 modelbutton.flat:active,
 .menuitem.button.flat:active, spinbutton:not(.vertical) button:active, spinbutton.vertical button:active, notebook > header > tabs > arrow:active, scrollbar button:active, check:active,
 radio:active, row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, calendar.button:active, button.sidebar-button:active, .gedit-search-slider .linked > button:active, popover.messagepopover .popover-action-area button:active, #MatePanelPopupWindow button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .drop-shadow button:active, .budgie-session-dialog .linked.horizontal > button:active, combobox > .linked:not(.vertical) > button:active:not(:only-child), .caja-pathbar button:active,
-.path-bar.linked:not(.vertical) > button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, .xfce4-panel.background button:active, toolbar button:active, .titlebar button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
+.path-bar.linked:not(.vertical) > button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, .xfce4-panel.background button:active, dialog.background.csd .linked.path-bar > button:active, toolbar button:active, .titlebar button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), .app-notification button:active, messagedialog.csd .dialog-action-box button:active, filechooser #pathbarbox > stack > box > button:active, infobar.info button:active, infobar.question button:active, .lock-dialog button:active, #buttonbox_frame button:active, .nemo-window .toolbar button:active, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:active,
 button.flat:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
@@ -672,7 +673,7 @@ button.flat:active {
 modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, spinbutton:not(.vertical) button:disabled, spinbutton.vertical button:disabled, notebook > header > tabs > arrow:disabled, scrollbar button:disabled, check:disabled,
 radio:disabled, row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, calendar.button:disabled, button.sidebar-button:disabled, .gedit-search-slider .linked > button:disabled, popover.messagepopover .popover-action-area button:disabled, #MatePanelPopupWindow button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .drop-shadow button:disabled, .budgie-session-dialog .linked.horizontal > button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), .caja-pathbar button:disabled,
-.path-bar.linked:not(.vertical) > button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, .xfce4-panel.background button:disabled, toolbar button:disabled, .titlebar button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
+.path-bar.linked:not(.vertical) > button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, .xfce4-panel.background button:disabled, dialog.background.csd .linked.path-bar > button:disabled, toolbar button:disabled, .titlebar button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:disabled, messagedialog.csd .dialog-action-box button:disabled, filechooser #pathbarbox > stack > box > button:disabled, infobar.info button:disabled, infobar.question button:disabled, .lock-dialog button:disabled, #buttonbox_frame button:disabled, .nemo-window .toolbar button:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:disabled,
 button.flat:disabled {
   box-shadow: none;
@@ -681,7 +682,7 @@ button.flat:disabled {
 }
 
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), .caja-pathbar button:checked,
-.path-bar.linked:not(.vertical) > button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, .xfce4-panel.background button:checked, combobox > .linked:not(.vertical) > button:checked:hover:not(:only-child),
+.path-bar.linked:not(.vertical) > button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, .xfce4-panel.background button:checked, dialog.background.csd .linked.path-bar > button:checked, combobox > .linked:not(.vertical) > button:checked:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child):drop(active), .caja-pathbar button:checked:hover,
 .caja-pathbar button:checked:drop(active),
 .path-bar.linked:not(.vertical) > button:checked:hover,
@@ -690,7 +691,8 @@ layouttabbar button:checked:drop(active), .mate-panel-menu-bar button:checked:ho
 .mate-panel-menu-bar button:checked:drop(active), .budgie-panel button:checked:hover,
 .budgie-panel button:checked:drop(active), .raven stackswitcher.linked > button:checked:hover,
 .raven stackswitcher.linked > button:checked:drop(active), .xfce4-panel.background button:checked:hover,
-.xfce4-panel.background button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
+.xfce4-panel.background button:checked:drop(active), dialog.background.csd .linked.path-bar > button:checked:hover,
+dialog.background.csd .linked.path-bar > button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
 popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked, toolbar button:checked:hover,
 toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
 .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
@@ -733,7 +735,7 @@ button.flat:checked:drop(active) {
 }
 
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), .caja-pathbar button:checked:disabled,
-.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
+.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, dialog.background.csd .linked.path-bar > button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:checked:disabled, messagedialog.csd .dialog-action-box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, .lock-dialog button:checked:disabled, #buttonbox_frame button:checked:disabled, .nemo-window .toolbar button:checked:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:disabled,
 button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
@@ -8094,6 +8096,46 @@ dialog.background.csd scale highlight {
 
 dialog.background.csd scale slider {
   color: #E91E63;
+}
+
+dialog.background.csd .linked.path-bar > button {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 0%, transparent 0%) 0 0 0/0 0 0px;
+}
+
+dialog.background.csd .linked.path-bar > button:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+dialog.background.csd .linked.path-bar > button:checked, dialog.background.csd .linked.path-bar > button:checked:disabled {
+  background-color: transparent;
+}
+
+dialog.background.csd .sidebar row.activatable:selected, dialog.background.csd .sidebar treeview.view header button:selected, treeview.view header dialog.background.csd .sidebar button:selected, dialog.background.csd .sidebar window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header dialog.background.csd .sidebar button:selected, dialog.background.csd .sidebar .budgie-popover.budgie-menu button.flat:selected:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu dialog.background.csd .sidebar button.flat:selected:not(.image-button):not(.indicator-item) {
+  color: #E91E63;
+}
+
+dialog.background.csd .sidebar row.activatable:selected image, dialog.background.csd .sidebar treeview.view header button:selected image, treeview.view header dialog.background.csd .sidebar button:selected image, dialog.background.csd .sidebar window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header dialog.background.csd .sidebar button:selected image, dialog.background.csd .sidebar .budgie-popover.budgie-menu button.flat:selected:not(.image-button):not(.indicator-item) image, .budgie-popover.budgie-menu dialog.background.csd .sidebar button.flat:selected:not(.image-button):not(.indicator-item) image, dialog.background.csd .sidebar row.activatable:selected label, dialog.background.csd .sidebar treeview.view header button:selected label, treeview.view header dialog.background.csd .sidebar button:selected label, dialog.background.csd .sidebar window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header dialog.background.csd .sidebar button:selected label, dialog.background.csd .sidebar .budgie-popover.budgie-menu button.flat:selected:not(.image-button):not(.indicator-item) label, .budgie-popover.budgie-menu dialog.background.csd .sidebar button.flat:selected:not(.image-button):not(.indicator-item) label {
+  color: #E91E63;
+}
+
+dialog.background.csd notebook:focus tab:checked {
+  box-shadow: inset 0 0 0 9999px rgba(233, 30, 99, 0.12);
+}
+
+dialog.background.csd notebook > header.top > tabs > tab {
+  border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2/0 0 2px;
+}
+
+dialog.background.csd notebook > header.top > tabs > tab:checked {
+  border-image-source: linear-gradient(to top, #E91E63 2px, rgba(0, 0, 0, 0.26) 2px);
+}
+
+dialog.background.csd notebook > header tab {
+  background-image: radial-gradient(circle, rgba(233, 30, 99, 0.35) 10%, transparent 0%);
+}
+
+dialog.background.csd notebook > header tab:checked {
+  background-image: radial-gradient(circle, transparent 10%, transparent 0%);
 }
 
 /* GTK NAMED COLORS
