@@ -40,33 +40,19 @@
 	box-shadow: none !important;
 	border: none !important;
 	border-radius: 1000px !important;
-	padding: 0 0 !important;
-	height: 32px !important;
-	max-height: 32px !important;
 	min-height: 32px !important;
 	min-width: 32px !important;
 	color: var(--gnome-button-color) !important;
+}
+
+#PanelUI-menu-button {
+	padding: 0 0 !important;
 }
 
 /* Buttons with margins */
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton) {
 	margin: 0 2px !important;
 }
-
-/*#nav-bar #back-button:not(#hack),*/
-/*#nav-bar #forward-button:not(#hack) {*/
-/*	padding: 0 0 !important;*/
-/*	width: 32px !important;*/
-/*	min-width: 32px !important;*/
-/*}*/
-
-/*#nav-bar #forward-button:not(#hack) {*/
-/*	margin-left: 0 !important;*/
-/*}*/
-
-/*#nav-bar #back-button:not(#hack) {*/
-/*	margin-right: 0 !important;*/
-/*}*/
 
 /* Text buttons */
 .subviewbutton.panel-subview-footer,
@@ -231,13 +217,12 @@ menulist[open] .menulist-label-box,
 }
 
 #TabsToolbar .toolbarbutton-1 {
-	margin: 2px 4px 4px !important;
+	margin: 4px 2px !important;
 	padding: 0 0 !important;
-	height: 28px !important;
-	width: 28px !important;
-	min-height: 28px !important;
-	min-width: 28px !important;
+	min-height: 32px !important;
+	min-width: 32px !important;
 	border-radius: 100px !important;
+	color: var(--gnome-toolbar-color) !important;
 }
 
 #TabsToolbar .toolbarbutton-1 .toolbarbutton-icon {
@@ -252,6 +237,12 @@ menulist[open] .menulist-label-box,
 	width: 16px !important;
 	min-height: 16px !important;
 	min-width: 16px !important;
+}
+
+#TabsToolbar #tabs-newtab-button {
+	margin: 2px 4px 4px !important;
+	min-height: 28px !important;
+	min-width: 28px !important;
 }
 
 .close-icon:not(.tab-close-button):hover,

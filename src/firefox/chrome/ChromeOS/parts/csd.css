@@ -32,3 +32,7 @@
 :root[tabsintitlebar] #navigator-toolbox[movingtab] #TabsToolbar {
 	padding-bottom: 0 !important;
 }
+
+:root[tabsintitlebar] .titlebar-buttonbox {
+	margin: 0 3px;
+}

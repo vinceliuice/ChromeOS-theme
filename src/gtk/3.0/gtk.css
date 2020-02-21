@@ -4238,7 +4238,7 @@ popover.emoji-completion .emoji:hover {
 .path-bar-box {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   margin: 6px 0;
-  border-radius: 6px;
+  border-radius: 9999px;
 }
 
 .path-bar-box button {
