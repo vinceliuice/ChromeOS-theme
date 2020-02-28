@@ -30,9 +30,7 @@
 .expander-down, .expander-up,
 .notification-button,
 .protections-popup-footer-button,
-.identity-popup-permission-remove-button,
 #identity-popup-security-expander,
-#PanelUI-panic-view-button,
 .tracking-protection-button,
 .dialog-button {
 	-moz-appearance: none !important;
@@ -121,7 +119,6 @@ menulist:hover .menulist-label-box,
 .expander-down:hover, .expander-up:hover,
 .notification-button:hover,
 .protections-popup-footer-button:hover,
-.identity-popup-permission-remove-button:hover,
 #identity-popup-security-expander:hover,
 .tracking-protection-button:hover,
 .dialog-button:hover {
@@ -152,7 +149,6 @@ menulist[open] .menulist-label-box,
 .expander-down:active, .expander-up:active,
 .notification-button:active,
 .protections-popup-footer-button:not(#hack):active,
-.identity-popup-permission-remove-button:active,
 #identity-popup-security-expander:active,
 .tracking-protection-button:active,
 .dialog-button:active {
@@ -317,8 +313,10 @@ menulist[open] .menulist-label-box,
 button.popup-notification-primary-button,
 #editBookmarkPanelDoneButton,
 #tracking-action-block {
+	outline-style: none !important;
 	color: white !important;
 	background: var(--gnome-button-suggested-action-background) !important;
+	transition: none !important;
 }
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]:hover,
@@ -339,8 +337,10 @@ button.popup-notification-primary-button.popup-notification-button:active,
 #editBookmarkPanelRemoveButton,
 .identity-popup-permission-remove-button,
 #PanelUI-panic-view-button {
+	outline-style: none !important;
 	color: white !important;
 	background: var(--gnome-button-destructive-action-background) !important;
+	transition: none !important;
 }
 
 #editBookmarkPanelRemoveButton:hover,
