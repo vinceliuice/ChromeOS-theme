@@ -148,18 +148,18 @@ tab[selected]:-moz-window-inactive {
 	border: none !important;
 	box-sizing: content-box; /* Avoid deformation on flexbox */
 	border-radius: 100px;
-	list-style-image: url("../icons/window-close-symbolic-light.svg") !important;
+	list-style-image: url("../icons/window-close-symbolic.svg") !important;
 	height: 16px;
 	opacity: .3;
 	padding: 2px;
 	width: 16px;
 }
 tab[selected] .tab-close-button {
-	list-style-image: url("../icons/window-close-symbolic.svg") !important;
+	list-style-image: url("../icons/window-close-alt-symbolic.svg") !important;
 }
 @media (prefers-color-scheme: dark) {
 	tab[selected] .tab-close-button {
-		list-style-image: url("../icons/window-close-symbolic-light.svg") !important;
+		list-style-image: url("../icons/window-close-symbolic.svg") !important;
 	}
 }
 :root:-moz-window-inactive .tab-close-button:not(#hack) {
@@ -200,6 +200,7 @@ tab[selected] .tab-close-button {
 
 /*.tab-background {*/
 /*	background-color: var(--gnome-tabbar-tab-background) !important;*/
+/*	transition: all .2s ease;*/
 /*}*/
 
 /* Active tab */
@@ -209,6 +210,7 @@ tab[selected] .tab-close-button {
 	border-radius: 6px 6px 0 0;
 	border: none !important;
 	border-image: none !important;
+	transition: all .2s ease;
 }
 .tab-background[selected=true]:-moz-window-inactive {
 	background-color: var(--gnome-inactive-tabbar-tab-active-background) !important;
@@ -225,6 +227,7 @@ tab[selected] .tab-close-button {
 	border: none !important;
 	border-image: none !important;
 	border-top: none !important;
+	transition: all .2s ease;
 }
 .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
 #TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
@@ -233,6 +236,7 @@ tab[selected] .tab-close-button {
 	border-radius: 6px 6px 0 0;
 	border: none !important;
 	border-image: none !important;
+	transition: all .2s ease;
 }
 
 /* Tabs scroll buttons hover */

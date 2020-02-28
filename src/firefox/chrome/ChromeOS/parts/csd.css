@@ -8,6 +8,38 @@
 
 /* Headerbar top border corners rounded */
 :root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
+	border-radius: 4px 4px 0 0 !important;
+}
+
+/* Window buttons box */
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container,
+:root[tabsintitlebar] #titlebar-buttonbox-container,
+:root[tabsintitlebar][inFullscreen] #window-controls {
+	-moz-appearance: none !important;
+	padding: 0 0;
+	position: absolute !important;
+	right: 0;
+	top: 0;
+	display: block !important;
+}
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox {
+	-moz-appearance: none !important;
+}
+
+/* Remove close and minimize buttons from fullscreen buttons */
+:root[tabsintitlebar][inFullscreen] #window-controls #close-button,
+:root[tabsintitlebar][inFullscreen] #window-controls #minimize-button,
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container {
+	display: none !important;
+}
+
+/* Remove tabsbar titlebar blank spaces */
+:root[tabsintitlebar] #TabsToolbar .titlebar-placeholder {
+	display: none !important;
+}
+
+/* Headerbar top border corners rounded */
+:root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
 	border-radius: 0 0 0 0 !important;
 }
 
@@ -35,4 +67,65 @@
 
 :root[tabsintitlebar] .titlebar-buttonbox {
 	margin: 0 3px;
+}
+
+/* Window buttons style */
+:root[tabsintitlebar] #titlebar .titlebar-button,
+:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
+	-moz-appearance: none !important;
+	border: none !important;
+	border-radius: 100% !important;
+	padding: 0 0 !important;
+	transition: all .2s ease;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-button:hover,
+:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton:hover {
+	transition: all .1s ease;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-button {
+	height: 24px !important;
+	width: 24px;
+	margin: 7px 3px !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-min:hover,
+:root[tabsintitlebar] #titlebar #titlebar-min:hover {
+	background: var(--gnome-titlebutton-min-hover-background) !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-min:active,
+:root[tabsintitlebar] #titlebar #titlebar-min:active {
+	background: var(--gnome-titlebutton-min-active-background) !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-max:hover,
+:root[tabsintitlebar] #titlebar #titlebar-max:hover {
+	background: var(--gnome-titlebutton-max-hover-background) !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-max:active,
+:root[tabsintitlebar] #titlebar #titlebar-max:active {
+	background: var(--gnome-titlebutton-max-active-background) !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-close:hover,
+:root[tabsintitlebar] #titlebar #titlebar-close:hover {
+	background: var(--gnome-titlebutton-close-hover-background) !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-close:active,
+:root[tabsintitlebar] #titlebar #titlebar-close:active {
+	background: var(--gnome-titlebutton-close-active-background) !important;
+}
+
+:root[tabsintitlebar] #titlebar:-moz-window-inactive .titlebar-button {
+	opacity: .4 !important;
+}
+
+:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
+	height: 28px;
+	width: 28px;
+	margin: 6px 12px !important;
 }

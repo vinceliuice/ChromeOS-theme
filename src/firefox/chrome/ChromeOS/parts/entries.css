@@ -63,6 +63,10 @@
 	background: var(--gnome-button-hover-background) !important;
 }
 
+#searchbar:focus-within:hover {
+	background: var(--gnome-urlbar-background) !important;
+}
+
 /* Inactive window entries */
 #search-box:-moz-window-inactive,
 .findbar-textbox:-moz-window-inactive {

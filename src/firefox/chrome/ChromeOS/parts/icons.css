@@ -51,9 +51,9 @@
 menu[disabled] > .menu-right {
 	opacity: 0.3;
 }
-menu:not([disabled]):hover > .menu-right {
-	filter: invert(100%) brightness(200%);
-}
+/*menu:not([disabled]):hover > .menu-right {*/
+/*	filter: invert(100%) brightness(200%);*/
+/*}*/
 
 /* Arrow down buttons */
 .expander-down > .button-box,
@@ -146,7 +146,28 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 /* Close button */
 .close-icon:not(.tab-close-button),
 .identity-popup-permission-remove-button .button-icon {
+	list-style-image: url("../icons/window-close-alt-symbolic.svg") !important;
+}
+
+/* Window buttons */
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar #titlebar-close .toolbarbutton-icon {
 	list-style-image: url("../icons/window-close-symbolic.svg") !important;
+}
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar #titlebar-max .toolbarbutton-icon {
+	list-style-image: url("../icons/window-maximize-symbolic.svg") !important;
+}
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar #titlebar-min .toolbarbutton-icon {
+	list-style-image: url("../icons/window-minimize-symbolic.svg") !important;
+}
+:root[tabsintitlebar][sizemode="maximized"] #titlebar .titlebar-max .toolbarbutton-icon,
+:root[tabsintitlebar][sizemode="maximized"] #titlebar #titlebar-max .toolbarbutton-icon {
+	list-style-image: url("../icons/window-unmaximize-symbolic.svg") !important;
+}
+:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
+	list-style-image: url("../icons/view-restore-symbolic.svg") !important;
 }
 
 /* Private browsing button */
@@ -282,6 +303,8 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 	.searchbar-search-icon,
 	#search-box .textbox-search-sign,
 
+	:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon,
+
 	.menulist-label-box:after,
 	.expander-down image,
 	.expander-up image,
@@ -293,14 +316,6 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 
 	.close-icon:not(.tab-close-button) image,
 	.identity-popup-permission-remove-button .button-icon,
-
-	:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
-	:root[tabsintitlebar] #titlebar #titlebar-close .toolbarbutton-icon,
-	:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
-	:root[tabsintitlebar] #titlebar #titlebar-max .toolbarbutton-icon,
-	:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon,
-	:root[tabsintitlebar] #titlebar #titlebar-min .toolbarbutton-icon,
-	:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon,
 
 	#privatebrowsing-button .toolbarbutton-icon,
 	#sidebar-button:-moz-locale-dir(ltr):not([positionend])  .toolbarbutton-icon, 

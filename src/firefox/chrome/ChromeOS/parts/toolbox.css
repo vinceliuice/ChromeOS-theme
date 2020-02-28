@@ -66,6 +66,21 @@ findbar:-moz-window-inactive label,
 	border-bottom: 1px solid var(--gnome-inactive-toolbar-border-color) !important;
 }
 
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+	padding: 2px 8px !important;
+	margin: 0 0 !important;
+	color: var(--gnome-button-color) !important;
+	border-radius: 100px !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton):hover {
+	background: var(--gnome-button-hover-background) !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton)[open="true"] {
+	background: var(--gnome-button-active-background) !important;
+}
+
 /* Overrides: Remove border below the menu bar / above the header bar */
 #TabsToolbar:not([collapsed="true"]) + #nav-bar {
 	border-top-width: 0 !important;

@@ -43,6 +43,7 @@
 	min-height: 32px !important;
 	min-width: 32px !important;
 	color: var(--gnome-button-color) !important;
+	transition: all .2s ease;
 }
 
 #PanelUI-menu-button {
@@ -70,6 +71,7 @@
 .dialog-button {
 	padding: 2px 10px !important;
 	text-align: center !important;
+	transition: all .2s ease;
 }
 
 .subviewbutton.panel-subview-footer label {
@@ -125,6 +127,7 @@ menulist:hover .menulist-label-box,
 .dialog-button:hover {
 	outline: 0 !important;
 	background: var(--gnome-button-hover-background) !important;
+	transition: all .1s ease;
 }
 
 /* Active buttons */
@@ -185,14 +188,20 @@ menulist[open] .menulist-label-box,
 
 /* Flat buttons */
 .subviewbutton-back:not(#hack),
-#TabsToolbar .toolbarbutton-1 {
+.close-icon:not(.tab-close-button),
+#TabsToolbar .toolbarbutton-1,
+#protections-popup-show-report-button,
+.identity-popup-permission-remove-button:not(#hack) {
 	background: transparent !important;
 	box-shadow: none !important;
 	border-color: transparent !important;
 }
 
 .subviewbutton-back:not(#hack):not(:active):hover,
+.close-icon:not(.tab-close-button):not(:active):hover,
+#TabsToolbar .toolbarbutton-1:not(:active):not([open]):hover,
 #protections-popup-show-report-button:not(:active):hover {
+	background: var(--gnome-button-hover-background) !important;
 }
 
 .close-icon:not(.tab-close-button) {
@@ -271,6 +280,7 @@ menulist[open] .menulist-label-box,
 
 /* Combined buttons */
 #nav-bar .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#hack),
+#nav-bar #back-button:not(#hack),
 .subviewbutton.panel-subview-footer:not(:only-of-type):not(:last-of-type),
 .panel-footer button:not(:only-of-type):not(:last-of-type),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#appMenu-zoomEnlarge-button),
@@ -284,6 +294,7 @@ menulist[open] .menulist-label-box,
 }
 
 #nav-bar .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#hack),
+#nav-bar #forward-button:not(#hack),
 .subviewbutton.panel-subview-footer:not(:only-of-type):not(:first-of-type),
 .panel-footer button:not(:only-of-type):not(:first-of-type),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#appMenu-fullscreen-button),
@@ -312,19 +323,21 @@ button.popup-notification-primary-button,
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]:hover,
 button.popup-notification-primary-button.popup-notification-button:hover,
-#editBookmarkPanelDoneButton:hover {
+#editBookmarkPanelDoneButton:hover,
+#tracking-action-block:hover {
 	background: var(--gnome-button-suggested-action-hover-background) !important;
 }
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]:active,
 button.popup-notification-primary-button.popup-notification-button:active,
-#editBookmarkPanelDoneButton:active {
+#editBookmarkPanelDoneButton:active,
+#tracking-action-block:active {
 	background: var(--gnome-button-suggested-action-active-background) !important;
-	text-shadow: none !important;
 }
 
 /* Buttons with destructive action */
 #editBookmarkPanelRemoveButton,
+.identity-popup-permission-remove-button,
 #PanelUI-panic-view-button {
 	color: white !important;
 	background: var(--gnome-button-destructive-action-background) !important;
@@ -343,20 +356,8 @@ button.popup-notification-primary-button.popup-notification-button:active,
 }
 
 .identity-popup-permission-remove-button:not(#hack):hover { /* Is flat */
+	border-color: var(--gnome-button-destructive-action-border-color) !important;
 }
 .identity-popup-permission-remove-button:not(#hack):hover .button-icon {
 	filter: invert(100%) brightness(200%);
-}
-
-/* User sync menu, bigger avatar */
-#fxa-toolbar-menu-button .toolbarbutton-badge-stack {
-	padding: 0 !important;
-	margin: 0 !important;
-}
-
-#fxa-avatar-image {
-	height: 26px !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	width: 26px !important;
 }

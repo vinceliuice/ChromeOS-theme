@@ -5,11 +5,35 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="16"
    version="1.1"
    style="enable-background:new"
    id="svg7384"
-   height="16">
+   height="16"
+   sodipodi:docname="window-minimize-symbolic.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="692"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="18.104904"
+     inkscape:cx="3.4332218"
+     inkscape:cy="9.1353295"
+     inkscape:window-x="0"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7384" />
   <metadata
      id="metadata90">
     <rdf:RDF>
@@ -70,12 +94,9 @@
   <g
      transform="translate(-32.005853,-888)"
      id="layer4" />
-  <g
-     transform="translate(-32.005853,-952)"
-     id="layer10">
-    <path
-       id="rect8269"
-       d="m 36.005852,962.00891 h 8 v 1.98874 h -8 z"
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#2e3436;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;enable-background:accumulate" />
-  </g>
+  <path
+     inkscape:connector-curvature="0"
+     style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+     d="m 3.999999,10.00891 h 8 v 1.98874 h -8 z"
+     id="rect8269" />
 </svg>
