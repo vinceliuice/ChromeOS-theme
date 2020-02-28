@@ -198,10 +198,10 @@ tab[selected] .tab-close-button {
 	display: none;
 }
 
-/*.tab-background {*/
-/*	background-color: var(--gnome-tabbar-tab-background) !important;*/
-/*	transition: all .2s ease;*/
-/*}*/
+.tab-background {
+	background-color: var(--gnome-tabbar-tab-background) !important;
+	transition: all .2s ease;
+}
 
 /* Active tab */
 .tab-background[selected=true] {
@@ -284,8 +284,8 @@ tab[selected] .tab-close-button {
 }
 
 .tabbrowser-tab[class*="identity-color-"][pinned] .tab-content::before,
-.tabbrowser-tab[class*="identity-color-"][image] .tab-content::before, 
-.tabbrowser-tab[class*="identity-color-"][busy] .tab-content::before, 
+.tabbrowser-tab[class*="identity-color-"][image] .tab-content::before,
+.tabbrowser-tab[class*="identity-color-"][busy] .tab-content::before,
 .tabbrowser-tab[class*="identity-color-"][progress] .tab-content::before {
 	right: -10px;
 	top: -8px;
