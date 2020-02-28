@@ -19,7 +19,7 @@
 	background: var(--gnome-toolbar-background) !important;
 }
 
-#TabsToolbar, #toolbar-menubar {
+#TabsToolbar, #toolbar-menubar, #tabbrowser-tabs {
 	border: 0 !important;
 	background: var(--gnome-tabstoolbar-background) !important;
 	border-radius: 4px 4px 0 0;
@@ -28,16 +28,14 @@
 	fill: var(--gnome-toolbar-color) !important;
 }
 
-#TabsToolbar:-moz-window-inactive, #toolbar-menubar:-moz-window-inactive {
-	background: var(--gnome-inactive-tabstoolbar-background) !important;
+#tabbrowser-tabs {
+	box-shadow: none !important;
 }
 
-#tabbrowser-tabs {
-	border: 0 !important;
-	background: var(--gnome-tabstoolbar-background) !important;
-	border-radius: 4px 4px 0 0;
-	color: var(--gnome-toolbar-color) !important;
-	fill: var(--gnome-toolbar-color) !important;
+#TabsToolbar:-moz-window-inactive,
+#toolbar-menubar:-moz-window-inactive,
+#tabbrowser-tabs:-moz-window-inactive {
+	background: var(--gnome-inactive-tabstoolbar-background) !important;
 }
 
 #toolbar-menubar:not([autohide="true"]) + #TabsToolbar {
