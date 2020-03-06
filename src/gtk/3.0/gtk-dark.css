@@ -570,7 +570,7 @@ modelbutton.flat,
 .menuitem.button.flat, spinbutton:not(.vertical) button, spinbutton.vertical button, notebook > header > tabs > arrow, scrollbar button, check,
 radio, row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, calendar.button, button.sidebar-button, .gedit-search-slider .linked > button, popover.messagepopover .popover-action-area button, #MatePanelPopupWindow button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .drop-shadow button, .budgie-session-dialog .linked.horizontal > button, combobox > .linked:not(.vertical) > button:not(:only-child), .caja-pathbar button,
 .path-bar.linked:not(.vertical) > button, layouttabbar button, .mate-panel-menu-bar button, .budgie-panel button, .raven stackswitcher.linked > button, .xfce4-panel.background button, dialog.background.csd .linked.path-bar > button, toolbar button, .titlebar button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
-popover.background button.model, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), .app-notification button, messagedialog.csd .dialog-action-box button, filechooser #pathbarbox > stack > box > button, infobar.info button, infobar.question button, .lock-dialog button, #buttonbox_frame button, .nemo-window .toolbar button, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button,
+popover.background button.model, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), .app-notification button, messagedialog.csd .dialog-action-box button, filechooser #pathbarbox > stack > box > button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .lock-dialog button, #buttonbox_frame button, .nemo-window .toolbar button, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button,
 button.flat {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
@@ -587,7 +587,7 @@ modelbutton.flat:focus,
 .menuitem.button.flat:focus, spinbutton:not(.vertical) button:focus, spinbutton.vertical button:focus, notebook > header > tabs > arrow:focus, scrollbar button:focus, check:focus,
 radio:focus, row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, calendar.button:focus, button.sidebar-button:focus, .gedit-search-slider .linked > button:focus, popover.messagepopover .popover-action-area button:focus, #MatePanelPopupWindow button:focus, #mate-menu button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, .drop-shadow button:focus, .budgie-session-dialog .linked.horizontal > button:focus, combobox > .linked:not(.vertical) > button:focus:not(:only-child), .caja-pathbar button:focus,
 .path-bar.linked:not(.vertical) > button:focus, layouttabbar button:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven stackswitcher.linked > button:focus, .xfce4-panel.background button:focus, dialog.background.csd .linked.path-bar > button:focus, toolbar button:focus, .titlebar button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
-popover.background button.model:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .app-notification button:focus, messagedialog.csd .dialog-action-box button:focus, filechooser #pathbarbox > stack > box > button:focus, infobar.info button:focus, infobar.question button:focus, .lock-dialog button:focus, #buttonbox_frame button:focus, .nemo-window .toolbar button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:focus,
+popover.background button.model:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .app-notification button:focus, messagedialog.csd .dialog-action-box button:focus, filechooser #pathbarbox > stack > box > button:focus, infobar.info button:focus, infobar.question button:focus, infobar.warning button:focus, infobar.error button:focus, .lock-dialog button:focus, #buttonbox_frame button:focus, .nemo-window .toolbar button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:focus,
 button.flat:focus {
   box-shadow: 0 0 0 2px alpha(currentColor, 0.08);
   color: white;
@@ -631,7 +631,9 @@ actionbar > revealer > box button:not(.suggested-action):not(.destructive-action
 messagedialog.csd .dialog-action-box button:drop(active), filechooser #pathbarbox > stack > box > button:hover,
 filechooser #pathbarbox > stack > box > button:drop(active), infobar.info button:hover,
 infobar.info button:drop(active), infobar.question button:hover,
-infobar.question button:drop(active), .lock-dialog button:hover,
+infobar.question button:drop(active), infobar.warning button:hover,
+infobar.warning button:drop(active), infobar.error button:hover,
+infobar.error button:drop(active), .lock-dialog button:hover,
 .lock-dialog button:drop(active), #buttonbox_frame button:hover,
 #buttonbox_frame button:drop(active), .nemo-window .toolbar button:hover,
 .nemo-window .toolbar button:drop(active), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:hover,
@@ -647,6 +649,8 @@ messagedialog.csd .dialog-action-box button:drop(active),
 filechooser #pathbarbox > stack > box > button:drop(active),
 infobar.info button:drop(active),
 infobar.question button:drop(active),
+infobar.warning button:drop(active),
+infobar.error button:drop(active),
 .lock-dialog button:drop(active),
 #buttonbox_frame button:drop(active),
 .nemo-window .toolbar button:drop(active),
@@ -660,7 +664,7 @@ modelbutton.flat:active,
 .menuitem.button.flat:active, spinbutton:not(.vertical) button:active, spinbutton.vertical button:active, notebook > header > tabs > arrow:active, scrollbar button:active, check:active,
 radio:active, row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, calendar.button:active, button.sidebar-button:active, .gedit-search-slider .linked > button:active, popover.messagepopover .popover-action-area button:active, #MatePanelPopupWindow button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .drop-shadow button:active, .budgie-session-dialog .linked.horizontal > button:active, combobox > .linked:not(.vertical) > button:active:not(:only-child), .caja-pathbar button:active,
 .path-bar.linked:not(.vertical) > button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, .xfce4-panel.background button:active, dialog.background.csd .linked.path-bar > button:active, toolbar button:active, .titlebar button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
-popover.background button.model:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), .app-notification button:active, messagedialog.csd .dialog-action-box button:active, filechooser #pathbarbox > stack > box > button:active, infobar.info button:active, infobar.question button:active, .lock-dialog button:active, #buttonbox_frame button:active, .nemo-window .toolbar button:active, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:active,
+popover.background button.model:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), .app-notification button:active, messagedialog.csd .dialog-action-box button:active, filechooser #pathbarbox > stack > box > button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .lock-dialog button:active, #buttonbox_frame button:active, .nemo-window .toolbar button:active, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:active,
 button.flat:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
@@ -674,7 +678,7 @@ modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, spinbutton:not(.vertical) button:disabled, spinbutton.vertical button:disabled, notebook > header > tabs > arrow:disabled, scrollbar button:disabled, check:disabled,
 radio:disabled, row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button button.circular:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, calendar.button:disabled, button.sidebar-button:disabled, .gedit-search-slider .linked > button:disabled, popover.messagepopover .popover-action-area button:disabled, #MatePanelPopupWindow button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .drop-shadow button:disabled, .budgie-session-dialog .linked.horizontal > button:disabled, combobox > .linked:not(.vertical) > button:disabled:not(:only-child), .caja-pathbar button:disabled,
 .path-bar.linked:not(.vertical) > button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, .xfce4-panel.background button:disabled, dialog.background.csd .linked.path-bar > button:disabled, toolbar button:disabled, .titlebar button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
-popover.background button.model:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:disabled, messagedialog.csd .dialog-action-box button:disabled, filechooser #pathbarbox > stack > box > button:disabled, infobar.info button:disabled, infobar.question button:disabled, .lock-dialog button:disabled, #buttonbox_frame button:disabled, .nemo-window .toolbar button:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:disabled,
+popover.background button.model:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:disabled, messagedialog.csd .dialog-action-box button:disabled, filechooser #pathbarbox > stack > box > button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .lock-dialog button:disabled, #buttonbox_frame button:disabled, .nemo-window .toolbar button:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:disabled,
 button.flat:disabled {
   box-shadow: none;
   background-color: transparent;
@@ -693,7 +697,7 @@ layouttabbar button:checked:drop(active), .mate-panel-menu-bar button:checked:ho
 .raven stackswitcher.linked > button:checked:drop(active), .xfce4-panel.background button:checked:hover,
 .xfce4-panel.background button:checked:drop(active), dialog.background.csd .linked.path-bar > button:checked:hover,
 dialog.background.csd .linked.path-bar > button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
-popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked, toolbar button:checked:hover,
+popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked, toolbar button:checked:hover,
 toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
 .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
 .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:checked:hover:not(.suggested-action):not(.destructive-action),
@@ -706,7 +710,9 @@ actionbar > revealer > box button:checked:not(.suggested-action):not(.destructiv
 messagedialog.csd .dialog-action-box button:checked:drop(active), filechooser #pathbarbox > stack > box > button:checked:hover,
 filechooser #pathbarbox > stack > box > button:checked:drop(active), infobar.info button:checked:hover,
 infobar.info button:checked:drop(active), infobar.question button:checked:hover,
-infobar.question button:checked:drop(active), .lock-dialog button:checked:hover,
+infobar.question button:checked:drop(active), infobar.warning button:checked:hover,
+infobar.warning button:checked:drop(active), infobar.error button:checked:hover,
+infobar.error button:checked:drop(active), .lock-dialog button:checked:hover,
 .lock-dialog button:checked:drop(active), #buttonbox_frame button:checked:hover,
 #buttonbox_frame button:checked:drop(active), .nemo-window .toolbar button:checked:hover,
 .nemo-window .toolbar button:checked:drop(active), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:hover,
@@ -725,6 +731,8 @@ messagedialog.csd .dialog-action-box button:checked:drop(active),
 filechooser #pathbarbox > stack > box > button:checked:drop(active),
 infobar.info button:checked:drop(active),
 infobar.question button:checked:drop(active),
+infobar.warning button:checked:drop(active),
+infobar.error button:checked:drop(active),
 .lock-dialog button:checked:drop(active),
 #buttonbox_frame button:checked:drop(active),
 .nemo-window .toolbar button:checked:drop(active),
@@ -736,7 +744,7 @@ button.flat:checked:drop(active) {
 
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), .caja-pathbar button:checked:disabled,
 .path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, dialog.background.csd .linked.path-bar > button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
-popover.background button.model:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:checked:disabled, messagedialog.csd .dialog-action-box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, .lock-dialog button:checked:disabled, #buttonbox_frame button:checked:disabled, .nemo-window .toolbar button:checked:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:disabled,
+popover.background button.model:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:checked:disabled, messagedialog.csd .dialog-action-box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .lock-dialog button:checked:disabled, #buttonbox_frame button:checked:disabled, .nemo-window .toolbar button:checked:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:disabled,
 button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
   color: rgba(255, 255, 255, 0.5);
@@ -750,7 +758,7 @@ button.text-button {
 }
 
 toolbar button.text-button, .titlebar button.text-button:not(.suggested-action):not(.destructive-action), popover.background.menu button.text-button,
-popover.background button.text-button.model, actionbar > revealer > box button.text-button:not(.suggested-action):not(.destructive-action), .app-notification button.text-button, messagedialog.csd .dialog-action-box button.text-button, filechooser #pathbarbox > stack > box > button.text-button, infobar.info button.text-button, infobar.question button.text-button, .lock-dialog button.text-button, #buttonbox_frame button.text-button, .nemo-window .toolbar button.text-button, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.text-button,
+popover.background button.text-button.model, actionbar > revealer > box button.text-button:not(.suggested-action):not(.destructive-action), .app-notification button.text-button, messagedialog.csd .dialog-action-box button.text-button, filechooser #pathbarbox > stack > box > button.text-button, infobar.info button.text-button, infobar.question button.text-button, infobar.warning button.text-button, infobar.error button.text-button, .lock-dialog button.text-button, #buttonbox_frame button.text-button, .nemo-window .toolbar button.text-button, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.text-button,
 button.text-button.flat {
   min-width: 48px;
   padding-left: 8px;
@@ -780,12 +788,12 @@ button.text-button.image-button label:last-child {
   margin-right: 10px;
 }
 
-toolbar button.text-button.image-button label:first-child, .titlebar button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:first-child, popover.background.menu button.text-button.image-button label:first-child, popover.background button.text-button.image-button.model label:first-child, actionbar > revealer > box button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:first-child, .app-notification button.text-button.image-button label:first-child, messagedialog.csd .dialog-action-box button.text-button.image-button label:first-child, filechooser #pathbarbox > stack > box > button.text-button.image-button label:first-child, infobar.info button.text-button.image-button label:first-child, infobar.question button.text-button.image-button label:first-child, .lock-dialog button.text-button.image-button label:first-child, #buttonbox_frame button.text-button.image-button label:first-child, .nemo-window .toolbar button.text-button.image-button label:first-child, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.text-button.image-button label:first-child,
+toolbar button.text-button.image-button label:first-child, .titlebar button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:first-child, popover.background.menu button.text-button.image-button label:first-child, popover.background button.text-button.image-button.model label:first-child, actionbar > revealer > box button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:first-child, .app-notification button.text-button.image-button label:first-child, messagedialog.csd .dialog-action-box button.text-button.image-button label:first-child, filechooser #pathbarbox > stack > box > button.text-button.image-button label:first-child, infobar.info button.text-button.image-button label:first-child, infobar.question button.text-button.image-button label:first-child, infobar.warning button.text-button.image-button label:first-child, infobar.error button.text-button.image-button label:first-child, .lock-dialog button.text-button.image-button label:first-child, #buttonbox_frame button.text-button.image-button label:first-child, .nemo-window .toolbar button.text-button.image-button label:first-child, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.text-button.image-button label:first-child,
 button.text-button.image-button.flat label:first-child {
   margin-left: 6px;
 }
 
-toolbar button.text-button.image-button label:last-child, .titlebar button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:last-child, popover.background.menu button.text-button.image-button label:last-child, popover.background button.text-button.image-button.model label:last-child, actionbar > revealer > box button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:last-child, .app-notification button.text-button.image-button label:last-child, messagedialog.csd .dialog-action-box button.text-button.image-button label:last-child, filechooser #pathbarbox > stack > box > button.text-button.image-button label:last-child, infobar.info button.text-button.image-button label:last-child, infobar.question button.text-button.image-button label:last-child, .lock-dialog button.text-button.image-button label:last-child, #buttonbox_frame button.text-button.image-button label:last-child, .nemo-window .toolbar button.text-button.image-button label:last-child, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.text-button.image-button label:last-child,
+toolbar button.text-button.image-button label:last-child, .titlebar button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:last-child, popover.background.menu button.text-button.image-button label:last-child, popover.background button.text-button.image-button.model label:last-child, actionbar > revealer > box button.text-button.image-button:not(.suggested-action):not(.destructive-action) label:last-child, .app-notification button.text-button.image-button label:last-child, messagedialog.csd .dialog-action-box button.text-button.image-button label:last-child, filechooser #pathbarbox > stack > box > button.text-button.image-button label:last-child, infobar.info button.text-button.image-button label:last-child, infobar.question button.text-button.image-button label:last-child, infobar.warning button.text-button.image-button label:last-child, infobar.error button.text-button.image-button label:last-child, .lock-dialog button.text-button.image-button label:last-child, #buttonbox_frame button.text-button.image-button label:last-child, .nemo-window .toolbar button.text-button.image-button label:last-child, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.text-button.image-button label:last-child,
 button.text-button.image-button.flat label:last-child {
   margin-right: 6px;
 }
@@ -806,7 +814,7 @@ button:focus {
 }
 
 toolbar .linked:not(.vertical) > button:not(:only-child), .titlebar .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child),
-popover.background .linked:not(.vertical) > button.model:not(:only-child), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child), infobar.info .linked:not(.vertical) > button:not(:only-child), infobar.question .linked:not(.vertical) > button:not(:only-child), .lock-dialog .linked:not(.vertical) > button:not(:only-child), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child),
+popover.background .linked:not(.vertical) > button.model:not(:only-child), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child), infobar.info .linked:not(.vertical) > button:not(:only-child), infobar.question .linked:not(.vertical) > button:not(:only-child), infobar.warning .linked:not(.vertical) > button:not(:only-child), infobar.error .linked:not(.vertical) > button:not(:only-child), .lock-dialog .linked:not(.vertical) > button:not(:only-child), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child),
 toolbar .linked.vertical > button:not(:only-child),
 .titlebar .linked.vertical > button:not(:only-child):not(.suggested-action):not(.destructive-action),
 popover.background.menu .linked.vertical > button:not(:only-child),
@@ -817,6 +825,8 @@ messagedialog.csd .dialog-action-box .linked.vertical > button:not(:only-child),
 filechooser #pathbarbox > stack > box.linked.vertical > button:not(:only-child),
 infobar.info .linked.vertical > button:not(:only-child),
 infobar.question .linked.vertical > button:not(:only-child),
+infobar.warning .linked.vertical > button:not(:only-child),
+infobar.error .linked.vertical > button:not(:only-child),
 .lock-dialog .linked.vertical > button:not(:only-child),
 #buttonbox_frame .linked.vertical > button:not(:only-child),
 .nemo-window .toolbar .linked.vertical > button:not(:only-child),
@@ -828,7 +838,7 @@ button.flat:not(:only-child) {
 }
 
 toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .titlebar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
-popover.background .linked:not(.vertical) > button:not(:only-child).image-button.model:not(.text-button), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.info .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.question .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .lock-dialog .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
+popover.background .linked:not(.vertical) > button:not(:only-child).image-button.model:not(.text-button), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.info .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.question .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.warning .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.error .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .lock-dialog .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
 toolbar .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 .titlebar .linked.vertical > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action),
 popover.background.menu .linked.vertical > button:not(:only-child).image-button:not(.text-button),
@@ -839,6 +849,8 @@ messagedialog.csd .dialog-action-box .linked.vertical > button:not(:only-child).
 filechooser #pathbarbox > stack > box.linked.vertical > button:not(:only-child).image-button:not(.text-button),
 infobar.info .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 infobar.question .linked.vertical > button:not(:only-child).image-button:not(.text-button),
+infobar.warning .linked.vertical > button:not(:only-child).image-button:not(.text-button),
+infobar.error .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 .lock-dialog .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 #buttonbox_frame .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 .nemo-window .toolbar .linked.vertical > button:not(:only-child).image-button:not(.text-button),
@@ -850,7 +862,7 @@ button.flat:not(:only-child).image-button:not(.text-button) {
 }
 
 toolbar .linked:not(.vertical) > button:focus, .titlebar .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:focus,
-popover.background .linked:not(.vertical) > button.model:focus, actionbar > revealer > box .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:focus, messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:focus, filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:focus, infobar.info .linked:not(.vertical) > button:focus, infobar.question .linked:not(.vertical) > button:focus, .lock-dialog .linked:not(.vertical) > button:focus, #buttonbox_frame .linked:not(.vertical) > button:focus, .nemo-window .toolbar .linked:not(.vertical) > button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:focus,
+popover.background .linked:not(.vertical) > button.model:focus, actionbar > revealer > box .linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:focus, messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:focus, filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:focus, infobar.info .linked:not(.vertical) > button:focus, infobar.question .linked:not(.vertical) > button:focus, infobar.warning .linked:not(.vertical) > button:focus, infobar.error .linked:not(.vertical) > button:focus, .lock-dialog .linked:not(.vertical) > button:focus, #buttonbox_frame .linked:not(.vertical) > button:focus, .nemo-window .toolbar .linked:not(.vertical) > button:focus, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:focus,
 toolbar .linked.vertical > button:focus,
 .titlebar .linked.vertical > button:focus:not(.suggested-action):not(.destructive-action),
 popover.background.menu .linked.vertical > button:focus,
@@ -861,6 +873,8 @@ messagedialog.csd .dialog-action-box .linked.vertical > button:focus,
 filechooser #pathbarbox > stack > box.linked.vertical > button:focus,
 infobar.info .linked.vertical > button:focus,
 infobar.question .linked.vertical > button:focus,
+infobar.warning .linked.vertical > button:focus,
+infobar.error .linked.vertical > button:focus,
 .lock-dialog .linked.vertical > button:focus,
 #buttonbox_frame .linked.vertical > button:focus,
 .nemo-window .toolbar .linked.vertical > button:focus,
@@ -875,9 +889,8 @@ infobar.error button.flat, .mate-panel-menu-bar button, .budgie-panel button, .r
   color: rgba(255, 255, 255, 0.7);
 }
 
-infobar.error button.flat:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven-mpris button.image-button:focus, .xfce4-panel.background button:focus, infobar.error button.flat:hover, infobar.error toolbar button:drop(active), toolbar infobar.error button:drop(active), infobar.error .titlebar button:drop(active):not(.suggested-action):not(.destructive-action), .titlebar infobar.error button:drop(active):not(.suggested-action):not(.destructive-action), infobar.error popover.background.menu button:drop(active), popover.background.menu infobar.error button:drop(active),
-infobar.error popover.background button.model:drop(active), popover.background infobar.error button.model:drop(active), infobar.error actionbar > revealer > box button:drop(active):not(.suggested-action):not(.destructive-action), actionbar > revealer > box infobar.error button:drop(active):not(.suggested-action):not(.destructive-action), infobar.error .app-notification button:drop(active), .app-notification infobar.error button:drop(active), infobar.error messagedialog.csd .dialog-action-box button:drop(active), messagedialog.csd .dialog-action-box infobar.error button:drop(active), infobar.error filechooser #pathbarbox > stack > box > button:drop(active), filechooser infobar.error #pathbarbox > stack > box > button:drop(active), infobar.error infobar.info button:drop(active), infobar.info infobar.error button:drop(active), infobar.error infobar.question button:drop(active), infobar.question infobar.error button:drop(active), infobar.error .lock-dialog button:drop(active), .lock-dialog infobar.error button:drop(active), infobar.error #buttonbox_frame button:drop(active), #buttonbox_frame infobar.error button:drop(active), infobar.error .nemo-window .toolbar button:drop(active), .nemo-window .toolbar infobar.error button:drop(active), infobar.error window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:drop(active),
-infobar.error button.flat:drop(active), .mate-panel-menu-bar button:hover,
+infobar.error button.flat:focus, .mate-panel-menu-bar button:focus, .budgie-panel button:focus, .raven-mpris button.image-button:focus, .xfce4-panel.background button:focus, infobar.error button.flat:hover, infobar.error .titlebar button:drop(active):not(.suggested-action):not(.destructive-action), .titlebar infobar.error button:drop(active):not(.suggested-action):not(.destructive-action), infobar.error popover.background.menu button:drop(active), popover.background.menu infobar.error button:drop(active),
+infobar.error popover.background button.model:drop(active), popover.background infobar.error button.model:drop(active), infobar.error actionbar > revealer > box button:drop(active):not(.suggested-action):not(.destructive-action), actionbar > revealer > box infobar.error button:drop(active):not(.suggested-action):not(.destructive-action), infobar.error messagedialog.csd .dialog-action-box button:drop(active), messagedialog.csd .dialog-action-box infobar.error button:drop(active), infobar.error filechooser #pathbarbox > stack > box > button:drop(active), filechooser infobar.error #pathbarbox > stack > box > button:drop(active), infobar.error button:drop(active), infobar.error #buttonbox_frame button:drop(active), #buttonbox_frame infobar.error button:drop(active), infobar.error .nemo-window .toolbar button:drop(active), .nemo-window .toolbar infobar.error button:drop(active), infobar.error window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:drop(active), .mate-panel-menu-bar button:hover,
 .mate-panel-menu-bar button:drop(active), .budgie-panel button:hover,
 .budgie-panel button:drop(active), .raven-mpris button.image-button:hover,
 .raven-mpris button.image-button:drop(active), .xfce4-panel.background button:hover,
@@ -3377,7 +3390,7 @@ row.activatable:hover, treeview.view header button:hover, filechooser stack.view
 treeview.view header button:drop(active),
 filechooser stack.view scrolledwindow treeview.view header button:drop(active),
 window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:drop(active), placessidebar.sidebar row.activatable:drop(active), placessidebar.sidebar window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button:drop(active), .budgie-popover.budgie-menu button.flat:hover:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu toolbar button:not(.image-button):not(.indicator-item):drop(active), toolbar .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu .titlebar button:not(.image-button):not(.indicator-item):drop(active):not(.suggested-action):not(.destructive-action), .titlebar .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active):not(.suggested-action):not(.destructive-action), .budgie-popover.budgie-menu popover.background.menu button:not(.image-button):not(.indicator-item):drop(active), popover.background.menu .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active),
-.budgie-popover.budgie-menu popover.background button.model:not(.image-button):not(.indicator-item):drop(active), popover.background .budgie-popover.budgie-menu button.model:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu actionbar > revealer > box button:not(.image-button):not(.indicator-item):drop(active):not(.suggested-action):not(.destructive-action), actionbar > revealer > box .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active):not(.suggested-action):not(.destructive-action), .budgie-popover.budgie-menu .app-notification button:not(.image-button):not(.indicator-item):drop(active), .app-notification .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu messagedialog.csd .dialog-action-box button:not(.image-button):not(.indicator-item):drop(active), messagedialog.csd .dialog-action-box .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu filechooser #pathbarbox > stack > box > button:not(.image-button):not(.indicator-item):drop(active), filechooser .budgie-popover.budgie-menu #pathbarbox > stack > box > button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu infobar.info button:not(.image-button):not(.indicator-item):drop(active), infobar.info .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu infobar.question button:not(.image-button):not(.indicator-item):drop(active), infobar.question .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu .lock-dialog button:not(.image-button):not(.indicator-item):drop(active), .lock-dialog .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu #buttonbox_frame button:not(.image-button):not(.indicator-item):drop(active), #buttonbox_frame .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu .nemo-window .toolbar button:not(.image-button):not(.indicator-item):drop(active), .nemo-window .toolbar .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:not(.image-button):not(.indicator-item):drop(active),
+.budgie-popover.budgie-menu popover.background button.model:not(.image-button):not(.indicator-item):drop(active), popover.background .budgie-popover.budgie-menu button.model:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu actionbar > revealer > box button:not(.image-button):not(.indicator-item):drop(active):not(.suggested-action):not(.destructive-action), actionbar > revealer > box .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active):not(.suggested-action):not(.destructive-action), .budgie-popover.budgie-menu .app-notification button:not(.image-button):not(.indicator-item):drop(active), .app-notification .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu messagedialog.csd .dialog-action-box button:not(.image-button):not(.indicator-item):drop(active), messagedialog.csd .dialog-action-box .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu filechooser #pathbarbox > stack > box > button:not(.image-button):not(.indicator-item):drop(active), filechooser .budgie-popover.budgie-menu #pathbarbox > stack > box > button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu infobar.info button:not(.image-button):not(.indicator-item):drop(active), infobar.info .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu infobar.question button:not(.image-button):not(.indicator-item):drop(active), infobar.question .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu infobar.warning button:not(.image-button):not(.indicator-item):drop(active), infobar.warning .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu infobar.error button:not(.image-button):not(.indicator-item):drop(active), infobar.error .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu .lock-dialog button:not(.image-button):not(.indicator-item):drop(active), .lock-dialog .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu #buttonbox_frame button:not(.image-button):not(.indicator-item):drop(active), #buttonbox_frame .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu .nemo-window .toolbar button:not(.image-button):not(.indicator-item):drop(active), .nemo-window .toolbar .budgie-popover.budgie-menu button:not(.image-button):not(.indicator-item):drop(active), .budgie-popover.budgie-menu window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:not(.image-button):not(.indicator-item):drop(active),
 .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):drop(active) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
@@ -3980,7 +3993,7 @@ messagedialog.csd decoration {
 
 .solid-csd decoration {
   margin: 0;
-  padding: 2px;
+  padding: 0;
   border-radius: 0;
   box-shadow: none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
@@ -6672,7 +6685,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel button.flat.launcher:not(:checked):hover, .budgie-panel toolbar button.launcher:not(:checked):drop(active), toolbar .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel .titlebar button.launcher:not(:checked):drop(active):not(.suggested-action):not(.destructive-action), .titlebar .budgie-panel button.launcher:not(:checked):drop(active):not(.suggested-action):not(.destructive-action), .budgie-panel popover.background.menu button.launcher:not(:checked):drop(active), popover.background.menu .budgie-panel button.launcher:not(:checked):drop(active),
-.budgie-panel popover.background button.launcher.model:not(:checked):drop(active), popover.background .budgie-panel button.launcher.model:not(:checked):drop(active), .budgie-panel actionbar > revealer > box button.launcher:not(:checked):drop(active):not(.suggested-action):not(.destructive-action), actionbar > revealer > box .budgie-panel button.launcher:not(:checked):drop(active):not(.suggested-action):not(.destructive-action), .budgie-panel .app-notification button.launcher:not(:checked):drop(active), .app-notification .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel messagedialog.csd .dialog-action-box button.launcher:not(:checked):drop(active), messagedialog.csd .dialog-action-box .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel filechooser #pathbarbox > stack > box > button.launcher:not(:checked):drop(active), filechooser .budgie-panel #pathbarbox > stack > box > button.launcher:not(:checked):drop(active), .budgie-panel infobar.info button.launcher:not(:checked):drop(active), infobar.info .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel infobar.question button.launcher:not(:checked):drop(active), infobar.question .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel .lock-dialog button.launcher:not(:checked):drop(active), .lock-dialog .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel #buttonbox_frame button.launcher:not(:checked):drop(active), #buttonbox_frame .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel .nemo-window .toolbar button.launcher:not(:checked):drop(active), .nemo-window .toolbar .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.launcher:not(:checked):drop(active),
+.budgie-panel popover.background button.launcher.model:not(:checked):drop(active), popover.background .budgie-panel button.launcher.model:not(:checked):drop(active), .budgie-panel actionbar > revealer > box button.launcher:not(:checked):drop(active):not(.suggested-action):not(.destructive-action), actionbar > revealer > box .budgie-panel button.launcher:not(:checked):drop(active):not(.suggested-action):not(.destructive-action), .budgie-panel .app-notification button.launcher:not(:checked):drop(active), .app-notification .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel messagedialog.csd .dialog-action-box button.launcher:not(:checked):drop(active), messagedialog.csd .dialog-action-box .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel filechooser #pathbarbox > stack > box > button.launcher:not(:checked):drop(active), filechooser .budgie-panel #pathbarbox > stack > box > button.launcher:not(:checked):drop(active), .budgie-panel infobar.info button.launcher:not(:checked):drop(active), infobar.info .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel infobar.question button.launcher:not(:checked):drop(active), infobar.question .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel infobar.warning button.launcher:not(:checked):drop(active), infobar.warning .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel infobar.error button.launcher:not(:checked):drop(active), infobar.error .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel .lock-dialog button.launcher:not(:checked):drop(active), .lock-dialog .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel #buttonbox_frame button.launcher:not(:checked):drop(active), #buttonbox_frame .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel .nemo-window .toolbar button.launcher:not(:checked):drop(active), .nemo-window .toolbar .budgie-panel button.launcher:not(:checked):drop(active), .budgie-panel window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button.launcher:not(:checked):drop(active),
 .budgie-panel button.flat.launcher:not(:checked):drop(active), .budgie-panel button.flat.launcher:not(:checked):active {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -7236,12 +7249,17 @@ terminal-window entry selection, terminal-window spinbutton:not(.vertical) selec
   background-color: #6ab878;
 }
 
-terminal-window button:not(.flat):not(.combo):checked {
+terminal-window label selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #6ab878;
 }
 
-terminal-window button:not(.flat):not(.combo):checked:disabled {
+terminal-window button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #6ab878;
+}
+
+terminal-window button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7322,12 +7340,17 @@ window.org-gnome-gedit entry selection, window.org-gnome-gedit spinbutton:not(.v
   background-color: #FFA000;
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):checked {
+window.org-gnome-gedit label selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):checked:disabled {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFA000;
+}
+
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7350,64 +7373,69 @@ hdyleaflet > stack > frame entry.search:focus {
 }
 
 window.org-gnome-Calendar headerbar.titlebar {
-  background-color: #FF5252;
+  background-color: #4CAF50;
 }
 
 window.org-gnome-Calendar headerbar.titlebar:backdrop {
-  background-color: #ff4848;
+  background-color: #49a84d;
 }
 
 window.org-gnome-Calendar check:checked, window.org-gnome-Calendar check:indeterminate, window.org-gnome-Calendar radio:checked, window.org-gnome-Calendar radio:indeterminate {
-  color: #FF5252;
+  color: #4CAF50;
 }
 
 window.org-gnome-Calendar radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#FF5252), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#4CAF50), to(transparent));
 }
 
 window.org-gnome-Calendar radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#FF5252), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#4CAF50), to(transparent));
 }
 
 window.org-gnome-Calendar switch:checked {
-  background-color: rgba(255, 82, 82, 0.5);
+  background-color: rgba(76, 175, 80, 0.5);
 }
 
 window.org-gnome-Calendar switch:checked slider {
-  background-color: #FF5252;
-  color: #FF5252;
+  background-color: #4CAF50;
+  color: #4CAF50;
 }
 
 window.org-gnome-Calendar entry:focus, window.org-gnome-Calendar spinbutton:not(.vertical):focus {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF5252 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.org-gnome-Calendar entry selection, window.org-gnome-Calendar spinbutton:not(.vertical) selection {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #FF5252;
+  background-color: #4CAF50;
 }
 
-window.org-gnome-Calendar button:not(.flat):not(.combo):checked {
+window.org-gnome-Calendar label selection {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #FF5252;
+  background-color: #4CAF50;
 }
 
-window.org-gnome-Calendar button:not(.flat):not(.combo):checked:disabled {
+window.org-gnome-Calendar button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #4CAF50;
+}
+
+window.org-gnome-Calendar button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
 }
 
 window.org-gnome-Calendar button.combo:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF5252 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window.org-gnome-Calendar scale highlight {
-  background-image: image(#FF5252);
+  background-image: image(#4CAF50);
 }
 
 window.org-gnome-Calendar scale slider {
-  color: #FF5252;
+  color: #4CAF50;
 }
 
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
@@ -7465,12 +7493,17 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container entry s
   background-color: #6D4C41;
 }
 
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):checked {
+window.background.csd > hdyleaflet > box.vertical > stack.main-container label selection {
   color: white;
   background-color: #6D4C41;
 }
 
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):checked:disabled {
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #6D4C41;
+}
+
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7525,11 +7558,11 @@ window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backd
 }
 
 .tweak-categories row.activatable.tweak-category:selected, .tweak-categories treeview.view header button.tweak-category:selected, treeview.view header .tweak-categories button.tweak-category:selected, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category:selected, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:selected:not(.image-button):not(.indicator-item), .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) {
-  color: #6D4C41;
+  color: #c4a69c;
 }
 
 .tweak-categories row.activatable.tweak-category:selected image, .tweak-categories treeview.view header button.tweak-category:selected image, treeview.view header .tweak-categories button.tweak-category:selected image, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category:selected image, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) image, .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) image, .tweak-categories row.activatable.tweak-category:selected label, .tweak-categories treeview.view header button.tweak-category:selected label, treeview.view header .tweak-categories button.tweak-category:selected label, .tweak-categories window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header button.tweak-category:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header .tweak-categories button.tweak-category:selected label, .tweak-categories .budgie-popover.budgie-menu button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) label, .budgie-popover.budgie-menu .tweak-categories button.tweak-category.flat:selected:not(.image-button):not(.indicator-item) label {
-  color: #6D4C41;
+  color: #c4a69c;
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
@@ -7598,12 +7631,17 @@ window.background.csd > hdyleaflet > stack.background entry selection, window.ba
   background-color: #5E35B1;
 }
 
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):checked {
+window.background.csd > hdyleaflet > stack.background label selection {
   color: white;
   background-color: #5E35B1;
 }
 
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):checked:disabled {
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #5E35B1;
+}
+
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7648,11 +7686,11 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewpo
 }
 
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:selected, treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected, .budgie-popover.budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:selected:not(.image-button):not(.indicator-item), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable:selected, treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected, .budgie-popover.budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:selected:not(.image-button):not(.indicator-item) {
-  color: #5E35B1;
+  color: #c3b1e8;
 }
 
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:selected image, treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected image, .budgie-popover.budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:selected:not(.image-button):not(.indicator-item) image, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:selected label, treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:selected label, .budgie-popover.budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button.flat:selected:not(.image-button):not(.indicator-item) label, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable:selected image, treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected image, .budgie-popover.budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:selected:not(.image-button):not(.indicator-item) image, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > row.activatable:selected label, treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view header window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button:selected label, .budgie-popover.budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > box.vertical > list > button.flat:selected:not(.image-button):not(.indicator-item) label {
-  color: #5E35B1;
+  color: #c3b1e8;
 }
 
 window.background.csd.org-gnome-Builder > stack.titlebar {
@@ -7693,12 +7731,17 @@ window.background.csd.org-gnome-Builder entry selection, window.background.csd.o
   background-color: #424242;
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):checked {
+window.background.csd.org-gnome-Builder label selection {
   color: white;
   background-color: #424242;
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):checked:disabled {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #424242;
+}
+
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7754,12 +7797,17 @@ window#gnome-system-monitor entry selection, window#gnome-system-monitor spinbut
   background-color: #188c75;
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):checked {
+window#gnome-system-monitor label selection {
   color: white;
   background-color: #188c75;
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):checked:disabled {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #188c75;
+}
+
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7819,12 +7867,17 @@ window.org-gnome-Todo entry selection, window.org-gnome-Todo spinbutton:not(.ver
   background-color: #F4511E;
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):checked {
+window.org-gnome-Todo label selection {
   color: white;
   background-color: #F4511E;
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):checked:disabled {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #F4511E;
+}
+
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7880,12 +7933,17 @@ window.dconf-editor entry selection, window.dconf-editor spinbutton:not(.vertica
   background-color: #9C27B0;
 }
 
-window.dconf-editor button:not(.flat):not(.combo):checked {
+window.dconf-editor label selection {
   color: white;
   background-color: #9C27B0;
 }
 
-window.dconf-editor button:not(.flat):not(.combo):checked:disabled {
+window.dconf-editor button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #9C27B0;
+}
+
+window.dconf-editor button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -7912,11 +7970,11 @@ headerbar.titlebar.event_toolbar:backdrop {
 }
 
 window#GearyMainWindow > .titlebar {
-  background-color: #4CAF50;
+  background-color: #D93025;
 }
 
 window#GearyMainWindow > .titlebar:backdrop {
-  background-color: #49a84d;
+  background-color: #d02e24;
 }
 
 window#GearyMainWindow > .titlebar > headerbar {
@@ -7924,56 +7982,61 @@ window#GearyMainWindow > .titlebar > headerbar {
 }
 
 window#GearyMainWindow check:checked, window#GearyMainWindow check:indeterminate, window#GearyMainWindow radio:checked, window#GearyMainWindow radio:indeterminate {
-  color: #4CAF50;
+  color: #D93025;
 }
 
 window#GearyMainWindow radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#4CAF50), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#D93025), to(transparent));
 }
 
 window#GearyMainWindow radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#4CAF50), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#D93025), to(transparent));
 }
 
 window#GearyMainWindow switch:checked {
-  background-color: rgba(76, 175, 80, 0.5);
+  background-color: rgba(217, 48, 37, 0.5);
 }
 
 window#GearyMainWindow switch:checked slider {
-  background-color: #4CAF50;
-  color: #4CAF50;
+  background-color: #D93025;
+  color: #D93025;
 }
 
 window#GearyMainWindow entry:focus, window#GearyMainWindow spinbutton:not(.vertical):focus {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #D93025 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window#GearyMainWindow entry selection, window#GearyMainWindow spinbutton:not(.vertical) selection {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #4CAF50;
+  color: white;
+  background-color: #D93025;
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):checked {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #4CAF50;
+window#GearyMainWindow label selection {
+  color: white;
+  background-color: #D93025;
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):checked:disabled {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #D93025;
+}
+
+window#GearyMainWindow button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
 }
 
 window#GearyMainWindow button.combo:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #D93025 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window#GearyMainWindow scale highlight {
-  background-image: image(#4CAF50);
+  background-image: image(#D93025);
 }
 
 window#GearyMainWindow scale slider {
-  color: #4CAF50;
+  color: #D93025;
 }
 
 window.background.csd.budgie-settings-window > headerbar.titlebar {
@@ -8014,12 +8077,17 @@ window.background.csd.budgie-settings-window entry selection, window.background.
   background-color: #37474F;
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):checked {
+window.background.csd.budgie-settings-window label selection {
   color: white;
   background-color: #37474F;
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):checked:disabled {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #37474F;
+}
+
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
@@ -8075,12 +8143,17 @@ dialog.background.csd entry selection, dialog.background.csd spinbutton:not(.ver
   background-color: #E91E63;
 }
 
-dialog.background.csd button:not(.flat):not(.combo):checked {
+dialog.background.csd label selection {
   color: white;
   background-color: #E91E63;
 }
 
-dialog.background.csd button:not(.flat):not(.combo):checked:disabled {
+dialog.background.csd button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked {
+  color: white;
+  background-color: #E91E63;
+}
+
+dialog.background.csd button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);

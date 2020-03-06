@@ -1,5 +1,5 @@
 // /***** color-palette *****/
-$theme_red:         #FF5252;
+$theme_red:         #D93025;
 $theme_light_red:   #FF1744;
 $theme_pink:        #E91E63;
 $theme_purple:      #9C27B0;
@@ -78,10 +78,17 @@ $theme_green_grey:  #3b4342;
         background-color: $theme_color;
       }
     }
+
+    label {
+      selection {
+        color: on($theme_color);
+        background-color: $theme_color;
+      }
+    }
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo) {
+    button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -216,12 +223,12 @@ hdyleaflet {
 //
 window.org-gnome-Calendar {
   headerbar.titlebar {
-    background-color: $theme_red;
+    background-color: $theme_green;
 
-    &:backdrop { background-color: darken($theme_red, 2%); }
+    &:backdrop { background-color: darken($theme_green, 2%); }
   }
 
-  @include color_theme($theme_color:$theme_red);
+  @include color_theme($theme_color:$theme_green);
 }
 
 //
@@ -296,9 +303,9 @@ window.background.csd {
 .tweak-categories {
   row.activatable.tweak-category {
     &:selected {
-      color: $theme_brown;
+      color: if($variant == 'light', $theme_brown, lighten($theme_brown, 35%));
 
-      image, label { color: $theme_brown; }
+      image, label { color: if($variant == 'light', $theme_brown, lighten($theme_brown, 35%)); }
     }
   }
 }
@@ -386,9 +393,9 @@ window.background.csd {
         > stack, > stack > box.vertical {
           > list > row.activatable {
             &:selected {
-              color: $theme_cyan;
+              color: if($variant == 'light', $theme_cyan, lighten($theme_cyan, 35%));
 
-              image, label { color: $theme_cyan; }
+              image, label { color: if($variant == 'light', $theme_cyan, lighten($theme_cyan, 35%)); }
             }
           }
         }
@@ -475,16 +482,16 @@ headerbar.titlebar.event_toolbar {
 //
 window#GearyMainWindow {
   > .titlebar {
-    background-color: $theme_green;
+    background-color: $theme_red;
 
-    &:backdrop { background-color: darken($theme_green, 2%); }
+    &:backdrop { background-color: darken($theme_red, 2%); }
 
     > headerbar {
       box-shadow: none;
     }
   }
 
-  @include color_theme($theme_color:$theme_green);
+  @include color_theme($theme_color:$theme_red);
 }
 
 //

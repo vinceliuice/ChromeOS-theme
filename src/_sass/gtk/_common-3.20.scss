@@ -3253,7 +3253,10 @@ infobar {
     background-color: $warning;
     color: on($warning);
 
-    // button { @extend %button-on-dark; }
+    button {
+      // @extend %button-on-dark;
+      @extend %button_basic.flat;
+    }
 
     // selection {}
 
@@ -3264,7 +3267,10 @@ infobar {
     background-color: $error;
     color: on($error);
 
-    button { @extend %button-on-dark; }
+    button {
+      @extend %button_basic.flat;
+      @extend %button-on-dark;
+    }
 
     // selection {}
 
@@ -3498,7 +3504,7 @@ decoration {
 
   .solid-csd & {
     margin: 0;
-    padding: 2px;
+    padding: 0;
     border-radius: 0;
     box-shadow: none;
     box-shadow: inset 0 1px highlight($titlebar);
