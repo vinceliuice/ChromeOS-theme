@@ -1330,11 +1330,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     .calendar-day-base {
       @include font(caption);
       text-align: center;
+      color: $fg_color;
       width: $menuitem_size; height: $menuitem_size;
       padding: 0;
       margin: 2px;
       border-radius: 100px;
-      &:hover,&:focus { background-color: $divider_color; }
+      &:hover,&:focus { background-color: rgba($primary_color, $lower_opacity); }
       &:active {
         color: inherit;
         background-color: $track_color;
@@ -1366,19 +1367,17 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
       }
       .calendar-nonwork-day {
-        color: $fg_color;
+        font-weight: bold;
       }
       .calendar-today {
         font-weight: bold !important;
         //color: $fg_color;
         //background-color: transparent;
-        border: none;
+        border: 1px solid $primary_color;
+	margin: 1px !important;
       }
       .calendar-day-with-events {
-        color: $link_color;
-        font-weight: normal;
-        text-decoration: underline;
-        background-image: none;
+        background-image: url("assets/calendar-event.svg");
       }
       .calendar-other-month-day {
         color: $disabled_secondary_fg_color;

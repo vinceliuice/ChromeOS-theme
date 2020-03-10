@@ -696,11 +696,11 @@ layouttabbar button:checked:drop(active), .mate-panel-menu-bar button:checked:ho
 .budgie-panel button:checked:drop(active), .raven stackswitcher.linked > button:checked:hover,
 .raven stackswitcher.linked > button:checked:drop(active), .xfce4-panel.background button:checked:hover,
 .xfce4-panel.background button:checked:drop(active), dialog.background.csd .linked.path-bar > button:checked:hover,
-dialog.background.csd .linked.path-bar > button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
+dialog.background.csd .linked.path-bar > button:checked:drop(active), toolbar button:checked, .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
 popover.background button.model:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), .app-notification button:checked, messagedialog.csd .dialog-action-box button:checked, filechooser #pathbarbox > stack > box > button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .lock-dialog button:checked, #buttonbox_frame button:checked, .nemo-window .toolbar button:checked, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked, toolbar button:checked:hover,
-toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
-.path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:checked:hover:not(.suggested-action):not(.destructive-action),
+toolbar button:checked:drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:checked:hover:not(.suggested-action):not(.destructive-action),
 .titlebar button:checked:not(.suggested-action):not(.destructive-action):drop(active), popover.background.menu button:checked:hover,
 popover.background.menu button:checked:drop(active),
 popover.background button.model:checked:hover,
@@ -720,8 +720,8 @@ window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horiz
 button.flat:checked,
 button.flat:checked:hover,
 toolbar button:checked:drop(active),
-.path-bar-box .linked.nautilus-path-bar button:last-child:drop(active):not(.suggested-action):not(.destructive-action):dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:first-child:drop(active):not(.suggested-action):not(.destructive-action):dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:drop(active):not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:drop(active):not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
 .titlebar button:checked:drop(active):not(.suggested-action):not(.destructive-action),
 popover.background.menu button:checked:drop(active),
 popover.background button.model:checked:drop(active),
@@ -743,7 +743,7 @@ button.flat:checked:drop(active) {
 }
 
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), .caja-pathbar button:checked:disabled,
-.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, dialog.background.csd .linked.path-bar > button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
+.path-bar.linked:not(.vertical) > button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, .xfce4-panel.background button:checked:disabled, dialog.background.csd .linked.path-bar > button:checked:disabled, toolbar button:checked:disabled, .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), .app-notification button:checked:disabled, messagedialog.csd .dialog-action-box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .lock-dialog button:checked:disabled, #buttonbox_frame button:checked:disabled, .nemo-window .toolbar button:checked:disabled, window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton > button:checked:disabled,
 button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
@@ -838,11 +838,11 @@ button.flat:not(:only-child) {
 }
 
 toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .titlebar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), popover.background.menu .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
-popover.background .linked:not(.vertical) > button:not(:only-child).image-button.model:not(.text-button), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.info .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.question .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.warning .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.error .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .lock-dialog .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
+popover.background .linked:not(.vertical) > button.model:not(:only-child).image-button:not(.text-button), actionbar > revealer > box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action), .app-notification .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), messagedialog.csd .dialog-action-box .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), filechooser #pathbarbox > stack > box.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.info .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.question .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.warning .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), infobar.error .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .lock-dialog .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), #buttonbox_frame .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), .nemo-window .toolbar .linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button), window.background.csd.org-gnome-Builder > stack.titlebar > headerbar > box.horizontal > stack.suggestionbutton.linked:not(.vertical) > button:not(:only-child).image-button:not(.text-button),
 toolbar .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 .titlebar .linked.vertical > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action),
 popover.background.menu .linked.vertical > button:not(:only-child).image-button:not(.text-button),
-popover.background .linked.vertical > button:not(:only-child).image-button.model:not(.text-button),
+popover.background .linked.vertical > button.model:not(:only-child).image-button:not(.text-button),
 actionbar > revealer > box .linked.vertical > button:not(:only-child).image-button:not(.text-button):not(.suggested-action):not(.destructive-action),
 .app-notification .linked.vertical > button:not(:only-child).image-button:not(.text-button),
 messagedialog.csd .dialog-action-box .linked.vertical > button:not(:only-child).image-button:not(.text-button),
@@ -1521,9 +1521,9 @@ searchbar > revealer > box {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
-.path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):active, .titlebar button:not(.suggested-action):not(.destructive-action):checked, .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):checked:drop(active) {
   color: white;
@@ -1547,19 +1547,19 @@ searchbar > revealer > box {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked {
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:hover:last-child:not(.suggested-action):not(.destructive-action):dir(ltr),
-.path-bar-box .linked.nautilus-path-bar button:last-child:not(.suggested-action):not(.destructive-action):dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:first-child:not(.suggested-action):not(.destructive-action):dir(rtl),
-.path-bar-box .linked.nautilus-path-bar button:first-child:not(.suggested-action):not(.destructive-action):dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
+.path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):last-child:dir(ltr),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):last-child:dir(ltr):drop(active), .path-bar-box .linked.nautilus-path-bar button:hover:not(.suggested-action):not(.destructive-action):first-child:dir(rtl),
+.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action):first-child:dir(rtl):drop(active), .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):checked:drop(active) {
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.25);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked:disabled {
+.path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):checked:disabled {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -1577,11 +1577,11 @@ searchbar > revealer > box {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:backdrop:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
+.path-bar-box .linked.nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:last-child:not(.suggested-action):not(.destructive-action):dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:first-child:not(.suggested-action):not(.destructive-action):dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
+.path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):last-child:dir(ltr), .path-bar-box .linked.nautilus-path-bar button:backdrop:disabled:not(.suggested-action):not(.destructive-action):first-child:dir(rtl), .titlebar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1830,11 +1830,11 @@ treeview.view:drop(active), filechooser stack.view scrolledwindow treeview.view:
   border-color: alpha(currentColor, 0.08);
 }
 
-treeview.view:drop(active).after, filechooser stack.view scrolledwindow treeview:drop(active).after.view, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview:drop(active).after.view {
+treeview.view:drop(active).after, filechooser stack.view scrolledwindow treeview.view:drop(active).after, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:drop(active).after {
   border-top-style: none;
 }
 
-treeview.view:drop(active).before, filechooser stack.view scrolledwindow treeview:drop(active).before.view, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview:drop(active).before.view {
+treeview.view:drop(active).before, filechooser stack.view scrolledwindow treeview.view:drop(active).before, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:drop(active).before {
   border-bottom-style: none;
 }
 
@@ -4010,7 +4010,7 @@ messagedialog.csd decoration {
 }
 
 modelbutton.flat:selected,
-.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:checked:not(.image-button):not(.indicator-item), calendar.raven-calendar:selected, XfdesktopIconView.view:active {
+.menuitem.button.flat:selected, row:selected, calendar:selected, box.vertical > widget > widget:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, calendar.raven-calendar:selected, XfdesktopIconView.view:active {
   background-color: alpha(currentColor, 0.06);
 }
 
