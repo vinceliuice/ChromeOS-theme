@@ -1489,7 +1489,6 @@ searchbar > revealer > box {
 }
 
 .titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
-  min-width: 104px;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
@@ -1619,6 +1618,23 @@ headerbar button {
   margin-bottom: 4px;
 }
 
+headerbar .linked:not(.vertical) > button:first-child, headerbar .linked:not(.vertical) > button:last-child {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+headerbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+headerbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child {
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
 headerbar separator.titlebutton {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -1638,6 +1654,17 @@ headerbar spinbutton button {
 headerbar .entry-tag, headerbar .photos-entry-tag, headerbar .documents-entry-tag {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
+  min-width: 104px;
+  border-radius: 6px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 0%, transparent 0%) 0 0 0/0 0 0px;
+}
+
+stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 0 0 2/0 0 2px;
+  background-color: transparent;
 }
 
 /************
@@ -3406,6 +3433,20 @@ messagedialog.csd.background {
 
 messagedialog.csd .dialog-action-box {
   margin-top: -4px;
+}
+
+messagedialog.csd .dialog-action-box button {
+  border-radius: 6px;
+}
+
+messagedialog.csd .dialog-action-box button:not(:first-child) {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+messagedialog.csd .dialog-action-box button:not(:last-child) {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 messagedialog.csd .dialog-action-box button:not(:last-child) {

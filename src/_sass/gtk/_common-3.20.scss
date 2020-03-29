@@ -1225,7 +1225,6 @@ searchbar > revealer > box {
 
   // FIXME: Ugly overriding
   stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
-    min-width: 120px - 8px * 2;
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                   $titlebar-indicator 0%,
                                   transparent 0%)
@@ -1366,6 +1365,27 @@ headerbar {
     margin-bottom: $container-padding;
   }
 
+  .linked:not(.vertical) > button {
+    &:first-child, &:last-child {
+      border-top-left-radius: $circular-radius;
+      border-bottom-left-radius: $circular-radius;
+      border-top-right-radius: $circular-radius;
+      border-bottom-right-radius: $circular-radius;
+    }
+
+    &.image-button:not(.text-button) {
+      &:first-child {
+        border-top-left-radius: $circular-radius;
+        border-bottom-left-radius: $circular-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $circular-radius;
+        border-bottom-right-radius: $circular-radius;
+      }
+    }
+  }
+
   separator.titlebutton {
     margin-top: $large-size / 4;
     margin-bottom: $large-size / 4;
@@ -1393,6 +1413,23 @@ headerbar {
 // Development versions of apps to use a differently styled headerbar
 // window.devel .titlebar:not(.selection-mode) { }
 
+// FIXME: Ugly overriding
+stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
+  min-width: 120px - 8px * 2;
+  border-radius: $corner-radius;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                $primary 0%,
+                                transparent 0%)
+                                0 0 0 / 0 0 0px;
+
+  &:checked {
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $primary 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+    background-color: transparent;
+  }
+}
 
 /************
  * Pathbars *
@@ -2976,6 +3013,17 @@ messagedialog { // Message Dialog styling
 
       button {
         @extend %button-flat;
+        border-radius: $corner-radius;
+
+        &:not(:first-child) {
+          border-top-left-radius: $corner-radius;
+          border-bottom-left-radius: $corner-radius;
+        }
+
+        &:not(:last-child) {
+          border-top-right-radius: $corner-radius;
+          border-bottom-right-radius: $corner-radius;
+        }
 
         &:not(:last-child) { margin-right: $container-padding; }
 
