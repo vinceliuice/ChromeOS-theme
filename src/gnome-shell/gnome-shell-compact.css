@@ -1351,7 +1351,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button .system-status-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
   padding: 0 3px;
 }
 
@@ -1613,6 +1613,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: 9pt;
   font-weight: 400;
   text-align: center;
+  color: rgba(0, 0, 0, 0.87);
   width: 28px;
   height: 28px;
   padding: 0;
@@ -1622,7 +1623,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(69, 134, 216, 0.3);
 }
 
 .calendar-day-base:active {
@@ -1664,14 +1665,19 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .calendar-nonwork-day {
-  color: rgba(0, 0, 0, 0.87);
+  font-weight: bold;
 }
 
 .calendar-today {
   font-weight: bold !important;
+<<<<<<< HEAD
   color: white;
   background-color: #4586D8;
   border: none;
+=======
+  border: 1px solid #4586D8;
+  margin: 1px !important;
+>>>>>>> 522642130aa2a37ac04640b65349c22b1d7ce867
 }
 
 .calendar-today:hover, .calendar-today:focus {
@@ -1690,10 +1696,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .calendar-day-with-events {
-  color: #4586D8;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  background-image: url("assets/calendar-event.svg");
 }
 
 .calendar-other-month-day {
@@ -1770,7 +1773,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 .message-icon-bin > StIcon {
   color: rgba(0, 0, 0, 0.87);
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
   -st-icon-style: requested;
   margin: 4px 0px 4px 4px;
 }
@@ -1794,7 +1797,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .message-secondary-bin > StIcon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .message-title {
@@ -1900,7 +1903,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .popup-menu-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .window-close {
@@ -2537,7 +2540,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .notification-banner .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .notification-banner .notification-actions {
@@ -2588,7 +2591,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .chat-body {
@@ -2876,7 +2879,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-page-button-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 /* Auth Dialogs & Screen Shield */
