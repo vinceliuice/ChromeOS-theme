@@ -4,7 +4,10 @@
 
 /* Entries */
 #search-box,
-.findbar-textbox {
+.findbar-textbox,
+#searchbar,
+#urlbar.megabar #urlbar-input-container,
+#urlbar:not(.megabar) {
 	-moz-appearance: none !important;
 	background: var(--gnome-urlbar-background) !important;
 	border: none !important;
@@ -13,31 +16,15 @@
 	color: var(--gnome-urlbar-color) !important;
 	height: 32px !important;
 	max-height: 32px !important;
-	margin: 0 0 !important;
-	padding: 5px 12px !important;
+	padding: 6px 12px !important;
 	box-sizing: border-box;
-}
-
-#urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar),
-#searchbar {
-	padding: 0 !important;
 }
 
 #searchbar,
 #urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar),
-#urlbar {
-	-moz-appearance: none !important;
+#urlbar:not(.megabar) {
 	background: var(--gnome-button-background) !important;
-	border: none !important;
-	border-radius: 1000px !important;
-	box-shadow: none !important;
-	color: var(--gnome-urlbar-color) !important;
-	height: 32px !important;
-	max-height: 32px !important;
-	padding: 2px 12px !important;
-	box-sizing: border-box;
+	padding: 0 6px !important;
 }
 
 /* Entries focused */
@@ -59,7 +46,10 @@
 	-moz-outline-radius: 1000px;
 }
 
-#urlbar:hover, #searchbar:hover {
+#urlbar:hover,
+#searchbar:hover,
+#urlbar.megabar #urlbar-input-container:hover,
+#urlbar:not(.megabar):hover {
 	background: var(--gnome-button-hover-background) !important;
 }
 

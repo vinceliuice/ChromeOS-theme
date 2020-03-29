@@ -52,8 +52,7 @@ panelview {
 
 .panel-arrowcontent {
 	background: var(--gnome-popover-background) !important;
-	border: 1px solid !important;
-	border-color: var(--gnome-popover-border-color) !important;
+	border: none !important;
 	border-radius: 9px;
 	box-shadow: var(--gnome-popover-shadow) !important;
 	padding: 12px !important;
