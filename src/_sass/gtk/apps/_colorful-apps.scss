@@ -415,7 +415,7 @@ window.background.csd.org-gnome-Builder {
 
     > headerbar {
       > box.horizontal > stack.suggestionbutton {
-        > button { @extend %button_basic.flat; }
+        > button { @extend %button-flat; }
       }
     }
   }

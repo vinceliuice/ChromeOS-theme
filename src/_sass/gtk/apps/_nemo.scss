@@ -49,7 +49,7 @@
     &:selected { @extend %selected_items_primary; }
   }
 
-  .toolbar button { @extend %button_basic.flat; }
+  .toolbar button { @extend %button-flat; }
 
   .view {
     selection,
@@ -70,5 +70,5 @@
 }
 
 .nemo-desktop.nemo-canvas-item {
-  @extend .nautilus-desktop.nautilus-canvas-item;
+  @extend %nautilus-desktop-canvas-item;
 }
