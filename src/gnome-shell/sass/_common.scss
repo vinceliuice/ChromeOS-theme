@@ -1149,6 +1149,17 @@ $mdbt_radius: 100px;
     }
   }
 
+  .panel-button.clock-display {
+    &:active, &:overview, &:focus, &:checked {
+      box-shadow: none;
+
+      .clock {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
   .panel-status-indicators-box,
   .panel-status-menu-box {
     spacing: 2px;
@@ -1564,7 +1575,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   width: 48px;
   height: 48px;
   border-radius: 0 0 48px 0;
-  background-color: $inverse_track_color;
+  background-color: rgba($primary_color, 0.35);
   background-image: none;
   background-size: auto;
 }
@@ -1649,7 +1660,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .nm-dialog-airplane-text { color: $fg_color; }
   .nm-dialog-header-icon { icon-size: 32px; }
-  .nm-dialog-scroll-view { border: none; }
+
+  .nm-dialog-scroll-view {
+    border: none;
+    background-color: transparent;
+  }
+
   .nm-dialog-header { @include font(title); }
 
   .nm-dialog-item {
@@ -1658,13 +1674,15 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     border-radius: $bt_radius;
     padding: 12px;
     spacing: 20px;
-    &:hover, &:focus { background-color: $divider_color; }
-    &:active { background-color: $track_color; }
-  }
 
-  .nm-dialog-item:selected {
-    background-color: $primary_color;
-    color: $inverse_fg_color;
+    &:hover, &:focus { background-color: $divider_color; }
+
+    &:active { background-color: $track_color; }
+
+    &:selected {
+      background-color: $primary_color;
+      color: $inverse_fg_color;
+    }
   }
 
   .nm-dialog-icons { spacing: .5em; }
@@ -1706,6 +1724,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     background-color: $bg_color;
     border-radius: $bt_radius;
     padding: 4px 8px;
+    border: none;
+    font-size: 1em;
+    font-weight: normal;
   }
 
   //search entry
@@ -1760,7 +1781,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   }
   .list-search-results { spacing: 3px; }
 
-  .search-section-separator { height: 1px; background-color: $inverse_divider_color; }
+  .search-section-separator { height: 0; }
 
   .list-search-result-content { spacing: 30px; }
   .list-search-result-title { @include font(subheading); color: $inverse_fg_color; spacing: 12px; }
@@ -1906,18 +1927,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
       box-shadow: none;
       transition-duration: $longer_duration;
     }
-
   }
 
-  // .show-apps {
-  //   & .overview-icon {
-  //     background-image: url("assets/startup.png") !important;
-  //     background-size: contain;
-  //   }
-  // }
-
   .app-well-app-running-dot { //running apps indicator
-    width: 5px; height: 2px;
+    width: 8px; height: 2px;
     border-radius: 0;
     background-color: $inverse_fg_color;
     margin-bottom: 0;
@@ -1961,12 +1974,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     -arrow-base: 0;
     -arrow-rise: 12px;
   }
+
   .app-folder-popup-bin { padding: 5px; }
-  .app-folder-icon {
-    padding: 5px;
-    spacing-rows: 5px;
-    spacing-columns: 5px;
-  }
 
   .page-indicator {
     padding: 15px 20px;
@@ -2008,10 +2017,27 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .no-frequent-applications-label { @extend %status_text; }
 
-  .app-well-app > .overview-icon.overview-icon-with-label,
   .grid-search-result .overview-icon.overview-icon-with-label {
     padding: 10px 8px 5px 8px;
-    spacing: 4px;
+    spacing: 6px;
+  }
+
+
+  .overview-icon.overview-icon-with-label {
+    padding: 10px 8px 5px 8px;
+
+    > StBoxLayout {
+      spacing: 6px;
+    }
+  }
+
+  /* App Folders */
+  .app-folder {
+    .overview-icon {
+      background-color: $inverse_bg_color;
+      padding: 16px;
+      border-radius: 100px;
+    }
   }
 
   // expanded folder
@@ -2066,9 +2092,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   }
 
   .app-folder-icon {
-    padding: $container_padding;
-    spacing-rows: $container_padding;
-    spacing-columns: $container_padding;
+    padding: 4px;
+    spacing-rows: 4px;
+    spacing-columns: 4px;
   }
 
   // Workspace pager
@@ -2576,9 +2602,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 // Looking Glass
 #LookingGlassDialog {
+  color: $secondary_fg_color;
   background-color: $base_color;
   spacing: 4px;
-  padding: 0;
+  padding: 6px;
   border: none;
   border-radius: $bt_radius;
   box-shadow: $shadow_4;

@@ -1363,6 +1363,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.85);
 }
 
+#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+  box-shadow: none;
+}
+
+#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+  background: none;
+  box-shadow: none;
+}
+
 #panel .panel-status-indicators-box,
 #panel .panel-status-menu-box {
   spacing: 2px;
@@ -1884,7 +1893,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   width: 48px;
   height: 48px;
   border-radius: 0 0 48px 0;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(69, 134, 216, 0.35);
   background-image: none;
   background-size: auto;
 }
@@ -1979,6 +1988,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 .nm-dialog-scroll-view {
   border: none;
+  background-color: transparent;
 }
 
 .nm-dialog-header {
@@ -2054,6 +2064,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   padding: 4px 8px;
+  border: none;
+  font-size: 1em;
+  font-weight: normal;
 }
 
 .search-entry, .app-folder-dialog .folder-name-container .folder-name-entry {
@@ -2125,8 +2138,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .search-section-separator {
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
+  height: 0;
 }
 
 .list-search-result-content {
@@ -2300,7 +2312,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .app-well-app-running-dot {
-  width: 5px;
+  width: 8px;
   height: 2px;
   border-radius: 0;
   background-color: rgba(255, 255, 255, 0.85);
@@ -2352,12 +2364,6 @@ StWidget.focused .app-well-app-running-dot {
   padding: 5px;
 }
 
-.app-folder-icon {
-  padding: 5px;
-  spacing-rows: 5px;
-  spacing-columns: 5px;
-}
-
 .page-indicator {
   padding: 15px 20px;
 }
@@ -2402,10 +2408,24 @@ StWidget.focused .app-well-app-running-dot {
   background-image: none;
 }
 
-.app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
-  spacing: 4px;
+  spacing: 6px;
+}
+
+.overview-icon.overview-icon-with-label {
+  padding: 10px 8px 5px 8px;
+}
+
+.overview-icon.overview-icon-with-label > StBoxLayout {
+  spacing: 6px;
+}
+
+/* App Folders */
+.app-folder .overview-icon {
+  background-color: rgba(255, 255, 255, 0.13);
+  padding: 16px;
+  border-radius: 100px;
 }
 
 .app-folder-dialog {
@@ -2464,9 +2484,9 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-folder-icon {
-  padding: 6px;
-  spacing-rows: 6px;
-  spacing-columns: 6px;
+  padding: 4px;
+  spacing-rows: 4px;
+  spacing-columns: 4px;
 }
 
 .workspace-thumbnails {
@@ -3241,9 +3261,10 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #LookingGlassDialog {
+  color: rgba(255, 255, 255, 0.7);
   background-color: #202020;
   spacing: 4px;
-  padding: 0;
+  padding: 6px;
   border: none;
   border-radius: 12px;
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
@@ -3481,6 +3502,10 @@ StWidget.focused .app-well-app-running-dot {
 /* Simple Dock */
 #dash:desktop {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent;
 }
 
 .openweather-provider {
