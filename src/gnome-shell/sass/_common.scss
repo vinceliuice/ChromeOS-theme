@@ -1750,6 +1750,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     &:insensitive, StLabel.hint-text {
       @include search_entry(insensitive);
     }
+
+    StLabel.hint-text {
+      color: rgba(black, 0.45);
+    }
   }
 
   //search results
