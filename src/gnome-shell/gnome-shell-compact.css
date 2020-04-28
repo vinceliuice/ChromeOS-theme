@@ -87,7 +87,7 @@ StEntry {
   border-radius: 0;
   border-width: 0;
   selection-background-color: #4586D8;
-  selected-color: rgba(255, 255, 255, 0.85);
+  selected-color: #FFFFFF;
   font-size: 11.25pt;
   font-weight: 400;
   caret-color: rgba(0, 0, 0, 0.54);
@@ -824,7 +824,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu {
-  min-width: 12em;
+  min-width: 15em;
   color: rgba(0, 0, 0, 0.87);
   background-color: transparent;
 }
@@ -865,6 +865,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-sub-menu .popup-menu-item:not(:first-child):last-child {
   border-radius: 0 0 12px 12px;
+}
+
+.popup-menu .popup-menu-content {
+  padding: 8px 0;
 }
 
 .popup-menu .popup-menu-item {
@@ -954,12 +958,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-popup-boxpointer {
-  -arrow-border-radius: 0;
+  -arrow-border-radius: 3px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
   -arrow-box-shadow: none;
   margin: 4px 10px 16px;
   background-color: rgba(255, 255, 255, 0.95);
@@ -968,12 +972,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-boxpointer {
-  -arrow-border-radius: 0;
+  -arrow-border-radius: 3px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
   -arrow-box-shadow: none;
   margin: 0;
   background-color: transparent;
@@ -1725,7 +1729,13 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 /* Message list */
 .message-list {
-  width: 25em;
+  width: 31.5em;
+  padding: 0 12px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.message-list .message-list-placeholder {
+  spacing: 12px;
 }
 
 .message-list-clear-button.button {
@@ -1741,31 +1751,31 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.message-list-sections {
+.message-list-section,
+.message-list-sections,
+.message-list-section-list {
   spacing: 8px;
 }
 
-.message-list-section,
-.message-list-section-list {
-  spacing: 8px;
+.message-list-controls {
+  margin: 8px 16px 0;
+  padding: 4px;
+  spacing: 16px;
 }
 
 .message {
   min-height: 56px;
   background-color: transparent;
   border: none;
-  color: rgba(0, 0, 0, 0.54);
   border-radius: 12px;
-  text-shadow: none;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .message:hover, .message:focus {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.16);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .message:active {
-  color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -1778,14 +1788,13 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .message-icon-bin > StIcon {
-  color: rgba(0, 0, 0, 0.87);
-  icon-size: 1.2307692308em;
-  -st-icon-style: requested;
-  margin: 4px 0px 4px 4px;
+  icon-size: 32px;
+  -st-icon-style: symbolic;
+  margin: 8px 0px 8px 8px;
 }
 
 .message-icon-bin > StIcon:rtl {
-  margin: 4px 4px 4px 0px;
+  margin: 8px 8px 8px 0px;
 }
 
 .message-secondary-bin {
@@ -1797,8 +1806,6 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   padding-top: 2px;
   color: rgba(0, 0, 0, 0.54);
   font-size: 1em;
-  /* HACK: the label should be baseline-aligned with a 1em label,
-                     fake this with some bottom padding */
   padding-bottom: 0;
 }
 
@@ -1821,27 +1828,34 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: 1em;
 }
 
-.message-content * > StIcon {
-  icon-size: 16px;
-  border-radius: 16px;
-  padding: 2px;
+.message-close-button {
   color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
 }
 
-/* FIXME: how do you do this in sass? */
-.message-content *:hover > StIcon,
-.message-content *:focus > StIcon {
+.message-close-button:hover, .message-close-button:focus {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.message-content *:active > StIcon {
+.message-close-button:active {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.message-close-button:insensitive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.message-body {
+  color: rgba(0, 0, 0, 0.38);
+}
+
 .message-media-control {
-  margin: 16px 0;
+  margin: 16px 4px;
   padding: 8px;
   border-radius: 100px;
   color: rgba(0, 0, 0, 0.54);
@@ -2069,10 +2083,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-weight: normal;
 }
 
-.search-entry, .app-folder-dialog .folder-name-container .folder-name-entry {
+.search-entry {
   width: 304px;
   padding: 0 8px;
   border: none;
+  selection-background-color: #4586D8;
+  selected-color: #FFFFFF;
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
@@ -2083,7 +2099,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   selected-color: white;
 }
 
-.search-entry:focus, .app-folder-dialog .folder-name-container .folder-name-entry:focus {
+.search-entry:focus {
   color: rgba(0, 0, 0, 0.85);
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
@@ -2092,22 +2108,22 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   padding: 0 8px;
 }
 
-.search-entry .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon {
+.search-entry .search-entry-icon {
   icon-size: 16px;
   padding: 0 0;
   color: rgba(0, 0, 0, 0.75);
 }
 
-.search-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon {
+.search-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.search-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .search-entry StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+.search-entry:insensitive {
   color: rgba(0, 0, 0, 0.35);
   box-shadow: none;
 }
 
-.search-entry StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+.search-entry StLabel.hint-text {
   color: rgba(0, 0, 0, 0.45);
 }
 
@@ -2448,6 +2464,29 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog .folder-name-container .folder-name-label, .app-folder-dialog .folder-name-container .folder-name-entry {
   font-size: 18pt;
   font-weight: bold;
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  selection-background-color: #4586D8;
+  selected-color: #FFFFFF;
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .app-folder-dialog .folder-name-container .folder-name-label {
@@ -3578,7 +3617,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 /* GPaste */
-.popup-menu .search-entry, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry {
+.popup-menu .search-entry {
   color: rgba(0, 0, 0, 0.87);
   selection-background-color: #4586D8;
   selected-color: rgba(255, 255, 255, 0.85);
@@ -3591,17 +3630,17 @@ StWidget.focused .app-well-app-running-dot {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
 }
 
-.popup-menu .search-entry:focus, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus {
+.popup-menu .search-entry:focus {
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
   border: 2px solid #4586D8;
   color: rgba(0, 0, 0, 0.87);
 }
 
-.popup-menu .search-entry .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry .search-entry-icon {
+.popup-menu .search-entry .search-entry-icon {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus .search-entry-icon {
+.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon {
   color: rgba(0, 0, 0, 0.87);
 }

@@ -670,29 +670,8 @@ window#gnome-system-monitor.background.csd {
     background-color: $base;
     border-radius: 0 0 $corner-radius $corner-radius;
 
-    > box.vertical > scrolledwindow {
-      treeview.view {
-        background: none;
-        @extend .view;
-
-        &.progressbar, &.progressbar:focus { // progress bar in treeviews
-          border-bottom: $bar-size solid $primary;
-          box-shadow: none;
-          background-color: transparent;
-          background-image: none;
-
-          &:selected:hover { box-shadow: none; }
-        }
-
-        &.trough { // progress bar trough in treeviews
-          border-bottom: $bar-size solid $track-disabled;
-          box-shadow: none;
-          background-color: transparent;
-          background-image: none;
-
-          &:selected:hover { box-shadow: none; }
-        }
-      }
+    treeview.view:not(.progressbar):not(.trough) {
+      &:not(:hover):not(:selected) { background-color: transparent; }
     }
   }
 }
@@ -1419,7 +1398,8 @@ button.title label { min-height: $medium-size; }
 /*********
  * Geary *
  *********/
-window#GearyMainWindow.background.csd {
+window#GearyMainWindow.background.csd,
+window.background.csd.geary-main-window {
   box.vertical > paned.horizontal > box.sidebar.vertical {
     border-bottom-left-radius: $corner-radius;
 

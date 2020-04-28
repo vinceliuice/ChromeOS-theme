@@ -88,7 +88,7 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.radio):not(.popup):not(.toggle):not(.titlebutton) {
+    button:not(.flat):not(.combo):not(.popup):not(.toggle):not(.titlebutton) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -228,7 +228,14 @@ window.org-gnome-Calendar {
     &:backdrop { background-color: darken($theme_green, 2%); }
   }
 
-  @include color_theme($theme_color:$theme_green);
+  > overlay,
+  > popover {
+    @include color_theme($theme_color:$theme_green);
+  }
+
+  mouthcell {
+    color: $text;
+  }
 }
 
 //
