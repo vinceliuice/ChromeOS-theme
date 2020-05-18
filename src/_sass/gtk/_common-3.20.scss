@@ -285,8 +285,7 @@ entry {
       }
     }
 
-    .osd & {
-    }
+    // .osd & { }
   }
 
   progress {
@@ -1366,23 +1365,8 @@ headerbar {
   }
 
   .linked:not(.vertical) > button {
-    &:first-child, &:last-child {
-      border-top-left-radius: $circular-radius;
-      border-bottom-left-radius: $circular-radius;
-      border-top-right-radius: $circular-radius;
-      border-bottom-right-radius: $circular-radius;
-    }
-
-    &.image-button:not(.text-button) {
-      &:first-child {
-        border-top-left-radius: $circular-radius;
-        border-bottom-left-radius: $circular-radius;
-      }
-
-      &:last-child {
-        border-top-right-radius: $circular-radius;
-        border-bottom-right-radius: $circular-radius;
-      }
+    &, &.image-button:not(.text-button) {
+      @include linked-button($r: $circular-radius);
     }
   }
 
@@ -3013,17 +2997,7 @@ messagedialog { // Message Dialog styling
 
       button {
         @extend %button-flat;
-        border-radius: $corner-radius;
-
-        &:not(:first-child) {
-          border-top-left-radius: $corner-radius;
-          border-bottom-left-radius: $corner-radius;
-        }
-
-        &:not(:last-child) {
-          border-top-right-radius: $corner-radius;
-          border-bottom-right-radius: $corner-radius;
-        }
+        @include linked-button($r: $corner-radius);
 
         &:not(:last-child) { margin-right: $container-padding; }
 

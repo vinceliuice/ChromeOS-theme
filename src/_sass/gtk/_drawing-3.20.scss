@@ -208,6 +208,30 @@
   }
 }
 
+@mixin linked-button($r: $corner-radius) {
+  border-radius: $r;
+
+  &:not(:first-child) {
+    border-top-left-radius: $r;
+    border-bottom-left-radius: $r;
+  }
+
+  &:not(:last-child) {
+    border-top-right-radius: $r;
+    border-bottom-right-radius: $r;
+  }
+
+  &:first-child {
+    border-top-left-radius: $r;
+    border-bottom-left-radius: $r;
+  }
+
+  &:last-child {
+    border-top-right-radius: $r;
+    border-bottom-right-radius: $r;
+  }
+}
+
 
 @mixin overshoot($p) {
 //

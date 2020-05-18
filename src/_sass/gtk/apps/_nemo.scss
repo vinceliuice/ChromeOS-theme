@@ -28,6 +28,13 @@
       padding-left: 4px;
       padding-right: 4px;
     }
+
+    > toolitem > .linked.raised > button.image-button {
+      @extend %button-flat;
+      @include linked-button($r: $circular-radius);
+      margin-left: 2px;
+      margin-right: 2px;
+    }
   }
 
   scrolledwindow.frame {
