@@ -7656,6 +7656,10 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewpo
   color: #5E35B1;
 }
 
+window.background.csd > hdyleaflet > scrolledwindow > viewport.frame > list {
+  border-bottom-left-radius: 4px;
+}
+
 window.background.csd.org-gnome-Builder > stack.titlebar {
   background-color: #424242;
 }

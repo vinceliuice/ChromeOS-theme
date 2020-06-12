@@ -412,6 +412,18 @@ window.background.csd {
 }
 
 //
+// Passwords and Keys (Seahorse)
+//
+
+window.background.csd {
+  > hdyleaflet > scrolledwindow {
+    > viewport.frame > list {
+      border-bottom-left-radius: $window-radius;
+    }
+  }
+}
+
+//
 // Gnome Builder
 //
 window.background.csd.org-gnome-Builder {
