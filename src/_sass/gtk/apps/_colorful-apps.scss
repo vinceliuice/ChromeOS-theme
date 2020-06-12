@@ -418,7 +418,7 @@ window.background.csd {
 window.background.csd {
   > hdyleaflet > scrolledwindow {
     > viewport.frame > list {
-      border-bottom-left-radius: $window-radius;
+      border-bottom-left-radius: $corner-radius;
     }
   }
 }

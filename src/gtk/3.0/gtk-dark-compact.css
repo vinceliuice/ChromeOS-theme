@@ -7652,7 +7652,7 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewpo
 }
 
 window.background.csd > hdyleaflet > scrolledwindow > viewport.frame > list {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 6px;
 }
 
 window.background.csd.org-gnome-Builder > stack.titlebar {
