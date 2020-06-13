@@ -12,7 +12,9 @@
 	box-shadow: none !important;
 }
 #urlbar-background {
-	display: none !important;
+	box-shadow: none !important;
+	border: 0 !important;
+	background: transparent !important;
 }
 #urlbar[breakout][breakout-extend] {
 	left: 0 !important;
@@ -28,13 +30,21 @@
 	height: auto !important;
 	max-height: unset !important;
 }
-#urlbar[breakout][breakout-extend][open] #urlbar-input-container {
+
+#urlbar[breakout][breakout-extend] #urlbar-input-container {
 	height: 30px !important;
 	max-height: 30px !important;
 	border-radius: 16px 16px 0 0 !important;
+	padding: 0 0 !important;
+}
+
+#urlbar[breakout][breakout-extend][open] #urlbar-input-container {
+	height: 28px !important;
+	max-height: 28px !important;
 	border: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	border-bottom: none !important;
 	background: var(--gnome-urlbar-background) !important;
+	box-shadow: var(--gnome-popover-shadow) !important;
 	padding: 0 0 !important;
 }
 
@@ -59,10 +69,11 @@ toolbarspring {
 
 /* URL bar results */
 .urlbarView {
-	background: transparent !important;
-	border: none !important;
-	border-radius: 16px;
-	box-shadow: var(--gnome-popover-shadow) !important;
+	background: var(--gnome-urlbar-background) !important;
+	border: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+	border-top: none !important;
+	border-radius: 0 0 16px 16px;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3) !important;
 	color: var(--gnome-button-color) !important;
 	margin: -2px 0 0 0 !important;
 	width: 100% !important;
