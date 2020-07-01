@@ -1401,10 +1401,15 @@ headerbar {
 stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
   min-width: 120px - 8px * 2;
   border-radius: $corner-radius;
+  box-shadow: none;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                 $primary 0%,
                                 transparent 0%)
                                 0 0 0 / 0 0 0px;
+
+  &:hover {
+    box-shadow: inset 0 0 0 9999px $overlay-hover;
+  }
 
   &:checked {
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
@@ -1412,6 +1417,8 @@ stackswitcher button:not(.suggested-action):not(.destructive-action).text-button
                                   transparent 0%)
                                   0 0 2 / 0 0 2px;
     background-color: transparent;
+
+    &:hover { box-shadow: none; }
   }
 }
 

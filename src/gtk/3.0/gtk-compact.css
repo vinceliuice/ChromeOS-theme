@@ -1252,12 +1252,12 @@ frame.documents-dropdown, .app-notification, toolbar.osd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   padding: 4px;
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
 frame.documents-dropdown:backdrop, .app-notification:backdrop, toolbar.osd:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
 }
 
 frame.left.documents-dropdown, .left.app-notification, frame.right.documents-dropdown, .right.app-notification, frame.top.documents-dropdown, .top.app-notification, frame.bottom.documents-dropdown, .bottom.app-notification, toolbar.osd.left, toolbar.osd.right, toolbar.osd.top, toolbar.osd.bottom {
@@ -1335,7 +1335,7 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 4px 4px 0 0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: #3266D4;
   color: white;
 }
@@ -1501,7 +1501,7 @@ searchbar > revealer > box {
 .titlebar.selection-mode {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
   animation: ripple-on-headerbar 225ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17), inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17), inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #1A73E8;
   color: white;
 }
@@ -1562,7 +1562,7 @@ searchbar > revealer > box {
 }
 
 .titlebar .selection-mode {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #1A73E8;
 }
 
@@ -1574,7 +1574,7 @@ searchbar > revealer > box {
   background-color: #244FAE;
   min-height: 24px;
   padding: 4px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .titlebar.default-decoration:backdrop {
@@ -1661,12 +1661,21 @@ headerbar .entry-tag, headerbar .photos-entry-tag, headerbar .documents-entry-ta
 stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 104px;
   border-radius: 6px;
+  box-shadow: none;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 0%, transparent 0%) 0 0 0/0 0 0px;
+}
+
+stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):hover {
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
 stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+}
+
+stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked:hover {
+  box-shadow: none;
 }
 
 /************
@@ -1895,7 +1904,7 @@ menu,
 .context-menu {
   margin: 4px 0;
   padding: 4px 0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -3403,7 +3412,7 @@ messagedialog.background {
 messagedialog .titlebar {
   min-height: 24px;
   border-style: none;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -3853,12 +3862,12 @@ colorswatch#editor-color-sample overlay {
 colorchooser .popover.osd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
 colorchooser .popover.osd:backdrop {
-  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
 }
 
 /********
@@ -3913,7 +3922,7 @@ messagedialog.csd decoration {
   padding: 1px;
   border-radius: 0;
   box-shadow: none;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #3266D4;
 }
 
@@ -5672,7 +5681,7 @@ UnityDecoration .top {
   padding: 0 2px;
   border-style: none;
   border-radius: 6px 6px 0 0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
   background-color: #3266D4;
   color: white;
 }
@@ -5863,7 +5872,7 @@ PanelApplet.wnck-applet .wnck-pager:selected {
 #MatePanelPopupWindow {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 7px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -5909,7 +5918,7 @@ na-tray-applet {
 .mate-panel-applet-slider {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 7px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -5962,7 +5971,7 @@ na-tray-applet {
 }
 
 .brisk-menu {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -6169,7 +6178,7 @@ filechooser stack.view scrolledwindow .caja-navigation-window treeview.view .ent
 .lock-dialog {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 7px;
-  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -6815,7 +6824,7 @@ calendar.raven-calendar:selected {
   margin: 5px 9px;
   padding: 3px;
   border-radius: 6px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -6825,7 +6834,7 @@ calendar.raven-calendar:selected {
 
 .budgie-run-dialog, .budgie-polkit-dialog, .budgie-session-dialog {
   border-radius: 6px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -7033,7 +7042,7 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 #restart_dialog {
   margin: 8px;
   border-radius: 6px;
-  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.45);
   background-color: #FFFFFF;
 }
 
@@ -7134,6 +7143,7 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 
 terminal-window > headerbar.titlebar {
   background-color: #6ab878;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 terminal-window > headerbar.titlebar:backdrop {
@@ -7220,6 +7230,7 @@ terminal-window scale slider {
 
 window.org-gnome-gedit > paned.titlebar {
   background-color: #FFA000;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.org-gnome-gedit > paned.titlebar:backdrop {
@@ -7315,6 +7326,7 @@ hdyleaflet > stack > frame entry.search:focus {
 
 window.org-gnome-Calendar headerbar.titlebar {
   background-color: #4CAF50;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.org-gnome-Calendar headerbar.titlebar:backdrop {
@@ -7404,6 +7416,7 @@ window.org-gnome-Calendar mouthcell {
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left,
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-right {
   background-color: #6D4C41;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.background.csd > hdyleaflet.titlebar > headerbar.titlebar.tweak-titlebar-left:backdrop,
@@ -7530,7 +7543,7 @@ window.background.csd > hdyleaflet > box.vertical > searchbar entry.search:backd
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar {
   background-color: #5E35B1;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:backdrop {
@@ -7561,7 +7574,7 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar switch:check
 
 window.background.csd > headerbar.titlebar > hdyleaflet > separator {
   background-color: #5E35B1;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
 }
 
 window.background.csd > hdyleaflet > stack.background check:checked, window.background.csd > hdyleaflet > stack.background check:indeterminate, window.background.csd > hdyleaflet > stack.background radio:checked, window.background.csd > hdyleaflet > stack.background radio:indeterminate {
@@ -7662,6 +7675,7 @@ window.background.csd > hdyleaflet > scrolledwindow > viewport.frame > list {
 
 window.background.csd.org-gnome-Builder > stack.titlebar {
   background-color: #424242;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.background.csd.org-gnome-Builder > stack.titlebar:backdrop {
@@ -7728,6 +7742,7 @@ window.background.csd.org-gnome-Builder scale slider {
 
 window#gnome-system-monitor headerbar.titlebar {
   background-color: #188c75;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window#gnome-system-monitor headerbar.titlebar:backdrop {
@@ -7798,6 +7813,7 @@ window#gnome-system-monitor treeview.view.progressbar {
 
 window.org-gnome-Todo headerbar.titlebar {
   background-color: #F4511E;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.org-gnome-Todo headerbar.titlebar:backdrop {
@@ -7864,6 +7880,7 @@ window.org-gnome-Todo scale slider {
 
 window.dconf-editor headerbar.titlebar {
   background-color: #9C27B0;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.dconf-editor headerbar.titlebar:backdrop {
@@ -7930,6 +7947,7 @@ window.dconf-editor scale slider {
 
 headerbar.titlebar.event_toolbar {
   background-color: #F57F17;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 headerbar.titlebar.event_toolbar:backdrop {
@@ -7938,6 +7956,7 @@ headerbar.titlebar.event_toolbar:backdrop {
 
 window#GearyMainWindow > .titlebar {
   background-color: #D93025;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window#GearyMainWindow > .titlebar:backdrop {
@@ -8008,6 +8027,7 @@ window#GearyMainWindow scale slider {
 
 window.background.csd.budgie-settings-window > headerbar.titlebar {
   background-color: #37474F;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.background.csd.budgie-settings-window > headerbar.titlebar:backdrop {
@@ -8074,6 +8094,7 @@ window.background.csd.budgie-settings-window scale slider {
 
 dialog.background.csd > headerbar.titlebar {
   background-color: #E91E63;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 dialog.background.csd > headerbar.titlebar:backdrop {
@@ -8246,7 +8267,7 @@ these colors are exported for the window manager and shouldn't be used in applic
 read if you used those and something break with a version upgrade you're on your own... */
 @define-color wm_title white;
 @define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
-@define-color wm_highlight rgba(255, 255, 255, 0.2);
+@define-color wm_highlight rgba(255, 255, 255, 0.15);
 @define-color wm_bg #3266D4;
 @define-color wm_unfocused_bg #295bc3;
 /*

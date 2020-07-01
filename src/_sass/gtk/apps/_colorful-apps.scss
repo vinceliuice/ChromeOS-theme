@@ -121,6 +121,7 @@ $theme_green_grey:  #3b4342;
 terminal-window {
   > headerbar.titlebar {
     background-color: $theme_sea_green;
+    box-shadow: inset 0 1px highlight($theme_sea_green), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_sea_green, 2%); }
   }
@@ -160,6 +161,7 @@ terminal-window {
 window.org-gnome-gedit {
   > paned.titlebar {
     background-color: $theme_amber;
+    box-shadow: inset 0 1px highlight($theme_amber), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_amber, 2%); }
 
@@ -224,6 +226,7 @@ hdyleaflet {
 window.org-gnome-Calendar {
   headerbar.titlebar {
     background-color: $theme_green;
+    box-shadow: inset 0 1px highlight($theme_green), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_green, 2%); }
   }
@@ -247,6 +250,7 @@ window.background.csd {
     > headerbar.titlebar.tweak-titlebar-left,
     > headerbar.titlebar.tweak-titlebar-right {
       background-color: $theme_brown;
+      box-shadow: inset 0 1px highlight($theme_brown), inset 0 -1px $divider;
 
       &:backdrop { background-color: darken($theme_brown, 2%); }
 
@@ -324,7 +328,7 @@ window.background.csd {
   > headerbar.titlebar > hdyleaflet {
     > headerbar {
       background-color: $theme_cyan;
-      box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $divider;
+      box-shadow: inset 0 1px highlight($theme_cyan), inset 0 -1px $divider;
 
       &:backdrop { background-color: darken($theme_cyan, 2%); }
 
@@ -353,7 +357,7 @@ window.background.csd {
 
     > separator {
       background-color: $theme_cyan;
-      box-shadow: inset 0 1px highlight($titlebar);
+      box-shadow: inset 0 1px highlight($theme_cyan);
     }
   }
 
@@ -429,6 +433,7 @@ window.background.csd {
 window.background.csd.org-gnome-Builder {
   > stack.titlebar {
     background-color: $theme_grey;
+    box-shadow: inset 0 1px highlight($theme_grey), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_grey, 2%); }
 
@@ -448,6 +453,7 @@ window.background.csd.org-gnome-Builder {
 window#gnome-system-monitor {
   headerbar.titlebar {
     background-color: $theme_teal;
+    box-shadow: inset 0 1px highlight($theme_teal), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_teal, 2%); }
   }
@@ -467,6 +473,7 @@ window#gnome-system-monitor {
 window.org-gnome-Todo {
   headerbar.titlebar {
     background-color: $theme_deep_orange;
+    box-shadow: inset 0 1px highlight($theme_deep_orange), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_deep_orange, 2%); }
   }
@@ -480,6 +487,7 @@ window.org-gnome-Todo {
 window.dconf-editor {
   headerbar.titlebar {
     background-color: $theme_purple;
+    box-shadow: inset 0 1px highlight($theme_purple), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_purple, 2%); }
   }
@@ -492,6 +500,7 @@ window.dconf-editor {
 //
 headerbar.titlebar.event_toolbar {
   background-color: $theme_dark_yellow;
+  box-shadow: inset 0 1px highlight($theme_dark_yellow), inset 0 -1px $divider;
 
   &:backdrop { background-color: darken($theme_dark_yellow, 2%); }
 }
@@ -502,6 +511,7 @@ headerbar.titlebar.event_toolbar {
 window#GearyMainWindow {
   > .titlebar {
     background-color: $theme_red;
+    box-shadow: inset 0 1px highlight($theme_red), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_red, 2%); }
 
@@ -519,6 +529,7 @@ window#GearyMainWindow {
 window.background.csd.budgie-settings-window {
   > headerbar.titlebar {
     background-color: $theme_blue_grey;
+    box-shadow: inset 0 1px highlight($theme_blue_grey), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_blue_grey, 2%); }
   }
@@ -531,6 +542,7 @@ window.background.csd.budgie-settings-window {
 dialog.background.csd {
   > headerbar.titlebar {
     background-color: $theme_pink;
+    box-shadow: inset 0 1px highlight($theme_pink), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_pink, 2%); }
   }
