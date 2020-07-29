@@ -1787,7 +1787,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .window-clone-border {
     border: 4px solid $inverse_track_color;
-    border-radius: $material_radius;
+    border-radius: 5px;
     // For window decorations with round corners we can't match
     // the exact shape when the window is scaled. So apply a shadow
     // to fix that case
