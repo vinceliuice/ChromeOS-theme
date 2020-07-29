@@ -1524,7 +1524,11 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .events-section-title {
   min-height: 24px;
   padding: 4px 8px;
+<<<<<<< HEAD
   border-radius: 8px;
+=======
+  border-radius: 5px;
+>>>>>>> c0d2be95ea3acad50419735de39144411124fcee
   border: none;
   box-shadow: none;
   background: none;
