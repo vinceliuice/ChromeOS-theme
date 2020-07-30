@@ -26,12 +26,13 @@ $theme_green_grey:  #3b4342;
 // /***** color-palette *****/
 
 // Some color theme stuff
-@mixin color_theme($check_rules:'true',
-                   $switch_rules:'true',
-                   $entry_rules:'true',
-                   $button_rules:'true',
-                   $scale_rules:'true',
-                   $theme_color:$primary) {
+@mixin color_theme($check_rules: 'true',
+                   $switch_rules: 'true',
+                   $entry_rules: 'true',
+                   $button_rules: 'true',
+                   $scale_rules: 'true',
+                   $theme_color: $primary,
+                   $theme_indicator: if($topbar == 'dark', currentColor, $theme_color)) {
   @if $check_rules=='true' {
     check, radio {
       &:checked, &:indeterminate {
@@ -88,10 +89,14 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.popup):not(.toggle):not(.titlebutton) {
+    button:not(.flat):not(.combo):not(.titlebutton) {
       &:checked {
-        color: on($theme_color);
+        color: on($titlebar);
         background-color: $theme_color;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px rgba($theme_color, 0.35);
       }
 
       &:checked:disabled {
@@ -101,6 +106,37 @@ $theme_green_grey:  #3b4342;
 
     button.combo {
       &:checked { @include entry(checked, $fc: $theme_color); }
+    }
+
+    headerbar, .titlebar {
+      button:not(.flat):not(.combo):not(.titlebutton) { // reset headerbar buttons
+        &:checked {
+          background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
+          color: $titlebar-text;
+        }
+      }
+
+      stackswitcher button:not(.suggested-action):not(.destructive-action).text-button { // reset stackswitcher buttons
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $theme_indicator 0%,
+                                      transparent 0%)
+                                      0 0 0 / 0 0 0px;
+
+        &:checked {
+          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                        $theme_indicator 100%,
+                                        transparent 0%)
+                                        0 0 2 / 0 0 2px;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .path-bar.linked:not(.vertical) > button { // reset path-bar buttons
+      &:checked {
+        color: $text;
+        &, &:disabled { background-color: transparent; }
+      }
     }
   }
 
@@ -118,12 +154,15 @@ $theme_green_grey:  #3b4342;
 //
 // Terminal
 //
+
+$terminal_header: if($topbar == 'light', $titlebar, $theme_sea_green);
+
 terminal-window {
   > headerbar.titlebar {
-    background-color: $theme_sea_green;
-    box-shadow: inset 0 1px highlight($theme_sea_green), inset 0 -1px $divider;
+    background-color: $terminal_header;
+    box-shadow: inset 0 1px highlight($terminal_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_sea_green, 2%); }
+    &:backdrop { background-color: darken($terminal_header, 2%); }
   }
 
   notebook {
@@ -158,15 +197,18 @@ terminal-window {
 //
 // Gedit
 //
+
+$gedit_header: if($topbar == 'light', $titlebar, $theme_amber);
+
 window.org-gnome-gedit {
   > paned.titlebar {
-    background-color: $theme_amber;
-    box-shadow: inset 0 1px highlight($theme_amber), inset 0 -1px $divider;
+    background-color: $gedit_header;
+    box-shadow: inset 0 1px highlight($gedit_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_amber, 2%); }
+    &:backdrop { background-color: darken($gedit_header, 2%); }
 
     > separator {
-      background-image: image($theme_amber);
+      background-image: image($gedit_header);
       border-top: 1px solid transparent;
     }
 
@@ -223,10 +265,13 @@ hdyleaflet {
 //
 // Gnome Calender
 //
+
+$calendar_header: if($topbar == 'light', $titlebar, $theme_green);
+
 window.org-gnome-Calendar {
   headerbar.titlebar {
-    background-color: $theme_green;
-    box-shadow: inset 0 1px highlight($theme_green), inset 0 -1px $divider;
+    background-color: $calendar_header;
+    box-shadow: inset 0 1px highlight($calendar_header), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($theme_green, 2%); }
   }
@@ -245,14 +290,16 @@ window.org-gnome-Calendar {
 // Gnome Tweak Tool (Gnome Tweaks)
 //
 
+$tweak_header: if($topbar == 'light', $titlebar, $theme_brown);
+
 window.background.csd {
   > hdyleaflet.titlebar {
     > headerbar.titlebar.tweak-titlebar-left,
     > headerbar.titlebar.tweak-titlebar-right {
-      background-color: $theme_brown;
-      box-shadow: inset 0 1px highlight($theme_brown), inset 0 -1px $divider;
+      background-color: $tweak_header;
+      box-shadow: inset 0 1px highlight($tweak_header), inset 0 -1px $divider;
 
-      &:backdrop { background-color: darken($theme_brown, 2%); }
+      &:backdrop { background-color: darken($tweak_header, 2%); }
 
       switch {
         &:checked { background-color: rgba(lighten($theme_brown, 25%), 0.5); }
@@ -265,7 +312,7 @@ window.background.csd {
     }
 
     > separator {
-      background-color: $theme_brown;
+      background-color: $tweak_header;
     }
   }
 
@@ -274,7 +321,7 @@ window.background.csd {
       @include color_theme($theme_color:$theme_brown);
     }
 
-    > searchbar {
+    > searchbar { // on Tweak and Control center sidebar
       entry.search {
         @include button(normal);
 
@@ -297,8 +344,8 @@ window.background.csd {
         }
 
         selection {
-          color: on($theme_brown);
-          background-color: $theme_brown;
+          color: $text;
+          background-color: $overlay-hover;
         }
 
         &:backdrop {
@@ -324,13 +371,16 @@ window.background.csd {
 //
 // Gnome Control Center
 //
+
+$control_center_header: if($topbar == 'light', $titlebar, $theme_cyan);
+
 window.background.csd {
   > headerbar.titlebar > hdyleaflet {
     > headerbar {
-      background-color: $theme_cyan;
-      box-shadow: inset 0 1px highlight($theme_cyan), inset 0 -1px $divider;
+      background-color: $control_center_header;
+      box-shadow: inset 0 1px highlight($control_center_header), inset 0 -1px $divider;
 
-      &:backdrop { background-color: darken($theme_cyan, 2%); }
+      &:backdrop { background-color: darken($control_center_header, 2%); }
 
       &:first-child:not(:only-child) {
         border-top-left-radius: $window-radius;
@@ -356,8 +406,8 @@ window.background.csd {
     }
 
     > separator {
-      background-color: $theme_cyan;
-      box-shadow: inset 0 1px highlight($theme_cyan);
+      background-color: $control_center_header;
+      box-shadow: inset 0 1px highlight($control_center_header);
     }
   }
 
@@ -430,12 +480,15 @@ window.background.csd {
 //
 // Gnome Builder
 //
+
+$builder_header: if($topbar == 'light', $titlebar, $theme_grey);
+
 window.background.csd.org-gnome-Builder {
   > stack.titlebar {
-    background-color: $theme_grey;
-    box-shadow: inset 0 1px highlight($theme_grey), inset 0 -1px $divider;
+    background-color: $builder_header;
+    box-shadow: inset 0 1px highlight($builder_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_grey, 2%); }
+    &:backdrop { background-color: darken($builder_header, 2%); }
 
     > headerbar {
       > box.horizontal > stack.suggestionbutton {
@@ -450,12 +503,15 @@ window.background.csd.org-gnome-Builder {
 //
 // Gnome-system-monitor
 //
+
+$monitor_header: if($topbar == 'light', $titlebar, $theme_teal);
+
 window#gnome-system-monitor {
   headerbar.titlebar {
-    background-color: $theme_teal;
-    box-shadow: inset 0 1px highlight($theme_teal), inset 0 -1px $divider;
+    background-color: $monitor_header;
+    box-shadow: inset 0 1px highlight($monitor_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_teal, 2%); }
+    &:backdrop { background-color: darken($monitor_header, 2%); }
   }
 
   @include color_theme($theme_color:$theme_teal);
@@ -470,12 +526,15 @@ window#gnome-system-monitor {
 //
 // Gnome-Todo
 //
+
+$todo_header: if($topbar == 'light', $titlebar, $theme_deep_orange);
+
 window.org-gnome-Todo {
   headerbar.titlebar {
-    background-color: $theme_deep_orange;
-    box-shadow: inset 0 1px highlight($theme_deep_orange), inset 0 -1px $divider;
+    background-color: $todo_header;
+    box-shadow: inset 0 1px highlight($todo_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_deep_orange, 2%); }
+    &:backdrop { background-color: darken($todo_header, 2%); }
   }
 
   @include color_theme($theme_color:$theme_deep_orange);
@@ -484,12 +543,15 @@ window.org-gnome-Todo {
 //
 // Dconf-editor
 //
+
+$dconf_header: if($topbar == 'light', $titlebar, $theme_purple);
+
 window.dconf-editor {
   headerbar.titlebar {
-    background-color: $theme_purple;
-    box-shadow: inset 0 1px highlight($theme_purple), inset 0 -1px $divider;
+    background-color: $dconf_header;
+    box-shadow: inset 0 1px highlight($dconf_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_purple, 2%); }
+    &:backdrop { background-color: darken($dconf_header, 2%); }
   }
 
   @include color_theme($theme_color:$theme_purple);
@@ -498,22 +560,29 @@ window.dconf-editor {
 //
 // Gnome-Logs
 //
-headerbar.titlebar.event_toolbar {
-  background-color: $theme_dark_yellow;
-  box-shadow: inset 0 1px highlight($theme_dark_yellow), inset 0 -1px $divider;
 
-  &:backdrop { background-color: darken($theme_dark_yellow, 2%); }
+$logs_header: if($topbar == 'light', $titlebar, $theme_dark_yellow);
+
+headerbar.titlebar.event_toolbar {
+  background-color: $logs_header;
+  box-shadow: inset 0 1px highlight($logs_header), inset 0 -1px $divider;
+
+  &:backdrop { background-color: darken($logs_header, 2%); }
 }
 
 //
 // Geary
 //
-window#GearyMainWindow {
-  > .titlebar {
-    background-color: $theme_red;
-    box-shadow: inset 0 1px highlight($theme_red), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_red, 2%); }
+$geary_header: if($topbar == 'light', $titlebar, $theme_red);
+
+window#GearyMainWindow,
+window.geary-main-window { // > 3.36.0
+  > .titlebar {
+    background-color: $geary_header;
+    box-shadow: inset 0 1px highlight($geary_header), inset 0 -1px $divider;
+
+    &:backdrop { background-color: darken($geary_header, 2%); }
 
     > headerbar {
       box-shadow: none;
@@ -526,12 +595,15 @@ window#GearyMainWindow {
 //
 // Budgie Setting Window
 //
+
+$budgie_header: if($topbar == 'light', $titlebar, $theme_blue_grey);
+
 window.background.csd.budgie-settings-window {
   > headerbar.titlebar {
-    background-color: $theme_blue_grey;
-    box-shadow: inset 0 1px highlight($theme_blue_grey), inset 0 -1px $divider;
+    background-color: $budgie_header;
+    box-shadow: inset 0 1px highlight($budgie_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_blue_grey, 2%); }
+    &:backdrop { background-color: darken($budgie_header, 2%); }
   }
 
   @include color_theme($theme_color:$theme_blue_grey);
@@ -539,12 +611,14 @@ window.background.csd.budgie-settings-window {
 
 //Dialogs
 
+$dialog_header: if($topbar == 'light', $titlebar, $theme_pink);
+
 dialog.background.csd {
   > headerbar.titlebar {
-    background-color: $theme_pink;
-    box-shadow: inset 0 1px highlight($theme_pink), inset 0 -1px $divider;
+    background-color: $dialog_header;
+    box-shadow: inset 0 1px highlight($dialog_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_pink, 2%); }
+    &:backdrop { background-color: darken($dialog_header, 2%); }
   }
 
   @include color_theme($theme_color:$theme_pink);
