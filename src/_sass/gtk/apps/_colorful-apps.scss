@@ -96,7 +96,7 @@ $theme_green_grey:  #3b4342;
       }
 
       &:focus {
-        box-shadow: 0 0 0 2px rgba($theme_color, 0.35);
+        box-shadow: 0 0 0 2px rgba($theme_color, 0.28);
       }
 
       &:checked:disabled {
@@ -113,6 +113,10 @@ $theme_green_grey:  #3b4342;
         &:checked {
           background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
           color: $titlebar-text;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 2px rgba($titlebar-text, 0.15);
         }
       }
 
