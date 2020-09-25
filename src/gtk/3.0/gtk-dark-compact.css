@@ -7114,6 +7114,17 @@ tooltip.background.chromium {
   padding: 8px 4px;
 }
 
+/************
+ * Lollypop *
+ ************/
+window.background.csd > grid.vertical > overlay > grid.vertical > grid.horizontal > .sidebar {
+  border-bottom-left-radius: 4px;
+}
+
+window.background.csd > grid.vertical > overlay > grid.vertical > grid.horizontal > paned.horizontal > stack {
+  border-bottom-right-radius: 4px;
+}
+
 /***********
  * Synapse *
  ***********/

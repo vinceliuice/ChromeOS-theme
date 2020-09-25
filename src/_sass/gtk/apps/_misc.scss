@@ -282,6 +282,22 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
   }
 }
 
+/************
+ * Lollypop *
+ ************/
+window.background.csd {
+  > grid.vertical > overlay > grid.vertical {
+    > grid.horizontal {
+      > .sidebar {
+        border-bottom-left-radius: $window-radius;
+      }
+
+      > paned.horizontal > stack {
+        border-bottom-right-radius: $window-radius;
+      }
+    }
+  }
+}
 
 /***********
  * Synapse *
