@@ -1366,7 +1366,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
   font-feature-settings: "tnum";
   &:hover, &:focus { background-color: $divider_color; }
   &:active {
-    color: inherit;
+    color: $secondary_fg_color;
     background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }

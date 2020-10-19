@@ -3476,7 +3476,19 @@ filechooser stack.view scrolledwindow {
   border-radius: 0 0 6px 6px;
 }
 
+filechooser stack.view scrolledwindow list {
+  background-color: transparent;
+}
+
 filechooser stack.view scrolledwindow treeview.view, filechooser stack.view scrolledwindow treeview.view {
+  background-color: transparent;
+}
+
+filechooser stack.view > placesview {
+  background-color: transparent;
+}
+
+filechooser stack.view > placesview > actionbar, filechooser stack.view > placesview > actionbar > revealer > box {
   background-color: transparent;
 }
 
@@ -4100,6 +4112,19 @@ popover.emoji-completion .emoji:hover {
   border-bottom-left-radius: 6px;
 }
 
+.nautilus-window.csd placesview > stack > frame > scrolledwindow > viewport > list {
+  background-color: transparent;
+}
+
+.nautilus-window.csd placesview > actionbar {
+  background-color: transparent;
+  border-radius: 0 0 6px 6px;
+}
+
+.nautilus-window.csd placesview > actionbar > revealer > box {
+  background-color: transparent;
+}
+
 .nautilus-window.maximized, .nautilus-window.maximized notebook, .nautilus-window.maximized notebook > stack,
 .nautilus-window.maximized placessidebar {
   border-radius: 0;
@@ -4544,6 +4569,11 @@ window.background.csd > box.horizontal > stack.background > widget > scrolledwin
   border-radius: 6px;
 }
 
+window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame,
+window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame {
+  border: none;
+}
+
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {
   background-color: #FFFFFF;
@@ -4569,23 +4599,27 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizo
   border-radius: 0 0 6px 6px;
 }
 
-hdyleaflet list.view.frame, hdyleaflet frame.view, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), .tweak-group-startup, list.tweak-group list {
+hdyleaflet list.view.frame, hdyleaflet frame.view, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), .tweak-group-startup, list.tweak-group list, window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame,
+window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame {
   margin: 4px 4px;
   border-radius: 6px;
   box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
-hdyleaflet list.view.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child {
+hdyleaflet list.view.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child, window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:first-child,
+window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-hdyleaflet list.view.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child {
+hdyleaflet list.view.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child, window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:last-child,
+window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-hdyleaflet list.view.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child {
+hdyleaflet list.view.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child, window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:only-child,
+window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:only-child {
   border-radius: 6px;
 }
 
@@ -5777,7 +5811,7 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container label s
 }
 
 window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #6D4C41;
 }
 
@@ -5895,6 +5929,15 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:
   border-top-left-radius: 4px;
 }
 
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 0%, transparent 0%) 0 0 0/0 0 0px;
+}
+
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
+  background-color: transparent;
+}
+
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar switch:checked {
   background-color: rgba(165, 138, 220, 0.5);
 }
@@ -5945,7 +5988,7 @@ window.background.csd > hdyleaflet > stack.background label selection {
 }
 
 window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #5E35B1;
 }
 
@@ -6080,7 +6123,7 @@ window.background.csd.org-gnome-Builder label selection {
 }
 
 window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #424242;
 }
 
@@ -6177,7 +6220,7 @@ window#gnome-system-monitor label selection {
 }
 
 window#gnome-system-monitor button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #188c75;
 }
 
@@ -6278,7 +6321,7 @@ window.org-gnome-Todo label selection {
 }
 
 window.org-gnome-Todo button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #F4511E;
 }
 
@@ -6375,7 +6418,7 @@ window.dconf-editor label selection {
 }
 
 window.dconf-editor button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #9C27B0;
 }
 
@@ -6502,7 +6545,7 @@ window.geary-main-window label selection {
 
 window#GearyMainWindow button:not(.flat):not(.combo):not(.titlebutton):checked,
 window.geary-main-window button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #D93025;
 }
 
@@ -6615,7 +6658,7 @@ window.background.csd.budgie-settings-window label selection {
 }
 
 window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #37474F;
 }
 
@@ -6712,7 +6755,7 @@ dialog.background.csd label selection {
 }
 
 dialog.background.csd button:not(.flat):not(.combo):not(.titlebutton):checked {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   background-color: #E91E63;
 }
 
@@ -8681,7 +8724,59 @@ read if you used those and something break with a version upgrade you're on your
 FIXME this is really an API */
 @define-color content_view_bg #FFFFFF;
 @define-color placeholder_text_color #666666;
+/* Very contrasty background for text views (@theme_text_color foreground) */
+@define-color text_view_bg #FFFFFF;
 @define-color budgie_tasklist_indicator_color white;
 @define-color budgie_tasklist_indicator_color_active white;
 @define-color budgie_tasklist_indicator_color_active_window rgba(187, 187, 187, 0.816);
 @define-color budgie_tasklist_indicator_color_attention #F4B400;
+@define-color STRAWBERRY_100 #FF9262;
+@define-color STRAWBERRY_300 #FF793E;
+@define-color STRAWBERRY_500 #F15D22;
+@define-color STRAWBERRY_700 #CF3B00;
+@define-color STRAWBERRY_900 #AC1800;
+@define-color ORANGE_100 #FFDB91;
+@define-color ORANGE_300 #FFCA40;
+@define-color ORANGE_500 #FAA41A;
+@define-color ORANGE_700 #DE8800;
+@define-color ORANGE_900 #C26C00;
+@define-color BANANA_100 #FFFFA8;
+@define-color BANANA_300 #FFFA7D;
+@define-color BANANA_500 #FFCE51;
+@define-color BANANA_700 #D1A023;
+@define-color BANANA_900 #A27100;
+@define-color LIME_100 #A2F3BE;
+@define-color LIME_300 #8ADBA6;
+@define-color LIME_500 #73C48F;
+@define-color LIME_700 #479863;
+@define-color LIME_900 #1C6D38;
+@define-color BLUEBERRY_100 #94A6FF;
+@define-color BLUEBERRY_300 #6A7CE0;
+@define-color BLUEBERRY_500 #3F51B5;
+@define-color BLUEBERRY_700 #213397;
+@define-color BLUEBERRY_900 #031579;
+@define-color GRAPE_100 #D25DE6;
+@define-color GRAPE_300 #B84ACB;
+@define-color GRAPE_500 #9C27B0;
+@define-color GRAPE_700 #830E97;
+@define-color GRAPE_900 #6A007E;
+@define-color COCOA_100 #9F9792;
+@define-color COCOA_300 #7B736E;
+@define-color COCOA_500 #574F4A;
+@define-color COCOA_700 #463E39;
+@define-color COCOA_900 #342C27;
+@define-color SILVER_100 #EEE;
+@define-color SILVER_300 #CCC;
+@define-color SILVER_500 #AAA;
+@define-color SILVER_700 #888;
+@define-color SILVER_900 #666;
+@define-color SLATE_100 #888;
+@define-color SLATE_300 #666;
+@define-color SLATE_500 #444;
+@define-color SLATE_700 #222;
+@define-color SLATE_900 #111;
+@define-color BLACK_100 #474341;
+@define-color BLACK_300 #403C3A;
+@define-color BLACK_500 #393634;
+@define-color BLACK_700 #33302F;
+@define-color BLACK_900 #2B2928;

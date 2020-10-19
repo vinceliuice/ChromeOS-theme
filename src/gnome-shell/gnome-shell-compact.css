@@ -1636,7 +1636,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 }
 
 .calendar-day-base:active {
-  color: inherit;
+  color: rgba(0, 0, 0, 0.54);
   background-color: rgba(0, 0, 0, 0.2);
   border-color: transparent;
 }

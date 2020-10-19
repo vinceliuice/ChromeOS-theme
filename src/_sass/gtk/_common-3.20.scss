@@ -1379,6 +1379,17 @@ headerbar {
   switch {
     margin-top: ($large-size - 24px) / 2;
     margin-bottom: ($large-size - 24px) / 2;
+
+    @if $topbar == 'dark' {
+      &:checked {
+        background-color: rgba(lighten($primary, 25%), 0.5);
+
+        slider {
+          color: lighten($primary, 25%);
+          background-color: lighten($primary, 25%);
+        }
+      }
+    }
   }
 
   // reset button margins of the spinbutton
@@ -3038,9 +3049,22 @@ filechooser {
       background-color: $base;
       border-radius: 0 0 $corner-radius $corner-radius;
 
+      list { background-color: transparent; }
+
       treeview.view {
         @extend .view;
         background-color: transparent;
+      }
+    }
+
+    > placesview {
+      background-color: transparent;
+      // border-bottom-right-radius: $window-radius;
+
+      > actionbar {
+        &, > revealer > box {
+          background-color: transparent;
+        }
       }
     }
   }

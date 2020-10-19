@@ -91,7 +91,7 @@ $theme_green_grey:  #3b4342;
   @if $button_rules=='true' {
     button:not(.flat):not(.combo):not(.titlebutton) {
       &:checked {
-        color: on($titlebar);
+        color: on($theme_color);
         background-color: $theme_color;
       }
 
@@ -397,6 +397,21 @@ window.background.csd {
       &:first-child:only-child, &:last-child:only-child {
         border-top-right-radius: $window-radius;
         border-top-left-radius: $window-radius;
+      }
+
+      > stackswitcher button:not(.suggested-action):not(.destructive-action).text-button { // reset stackswitcher buttons
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $theme_cyan 0%,
+                                      transparent 0%)
+                                      0 0 0 / 0 0 0px;
+
+        &:checked {
+          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                        $theme_cyan 100%,
+                                        transparent 0%)
+                                        0 0 2 / 0 0 2px;
+          background-color: transparent;
+        }
       }
 
       switch {

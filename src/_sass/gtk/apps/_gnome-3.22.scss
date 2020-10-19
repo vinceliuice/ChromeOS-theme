@@ -42,6 +42,16 @@
     border-bottom-left-radius: $corner-radius;
   }
 
+  &.csd placesview {
+    > stack > frame > scrolledwindow > viewport > list { background-color: transparent; }
+    > actionbar {
+      background-color: transparent;
+      border-radius: 0 0 $corner-radius $corner-radius;
+
+      > revealer > box { background-color: transparent; }
+    }
+  }
+
   &.maximized { // No border radius when window maximized
     &, & notebook,
     & notebook > stack,
@@ -561,6 +571,15 @@ window.background.csd {
             border: none;
             border-radius: $corner-radius;
           }
+        }
+      }
+
+      > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
+        > list.frame {
+          border: none;
+          @extend %circular_list;
+
+          > row.activatable { @extend %circular_row; }
         }
       }
     }
