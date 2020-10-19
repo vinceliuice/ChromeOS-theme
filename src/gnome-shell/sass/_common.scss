@@ -1241,8 +1241,10 @@ $size_suffix: if($laptop == 'true', '-small', '');
 
 // Gjs_ActivitiesButton.panel-button,
 Gjs_AggregateMenu.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button {
-  background-color: rgba($panel_fg_color, 0.15);
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
+  background-color: rgba($panel_fg_color, 0.15) !important;
 }
 
 // calendar popover
@@ -1265,6 +1267,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   box-shadow: none;
   background: none;
   padding: 0;
+  text-shadow: none;
 }
 
 .calendar,
@@ -1300,7 +1303,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   text-shadow: none;
   color: $secondary_fg_color;
 
-  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
   &:active {
     color: $fg_color;
     background-color: $track_color;
@@ -1323,6 +1326,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   color: $fg_color;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
   &:focus { background-color: $divider_color; }
 }
 
@@ -1351,6 +1355,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .calendar-day-base {
   @include font(caption);
   text-align: center;
+  text-shadow: none;
   width: $menuitem_size;
   height: $menuitem_size;
   padding: 0 0;
@@ -1359,15 +1364,15 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   color: $secondary_fg_color;
   border: none;
   font-feature-settings: "tnum";
-  &:hover,&:focus { background-color: $divider_color; }
+  &:hover, &:focus { background-color: $divider_color; }
   &:active {
     color: inherit;
     background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }
   &:selected {
-    color: $inverse_fg_color;
-    background-color: $primary_color;
+    color: $fg_color;
+    background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }
   &.calendar-day-heading {  //day of week heading
@@ -1380,6 +1385,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     @include font(caption);
     font-weight: bold;
     text-align: center;
+    text-shadow: none;
   }
 }
 
@@ -1417,10 +1423,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .calendar-day-with-events {
-  color: $link_color;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  color: $hint_fg_color;
+  background-image: url("assets/calendar-today.svg");
 
   &.calendar-work-day {
     color: $hint_fg_color;
@@ -1444,6 +1448,31 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
+}
+
+/* Events */
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .events-title {
+    color: $hint_fg_color;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $hint_fg_color;
+    font-feature-settings: "tnum";
+  }
 }
 
 .message-list-section-list:ltr {
@@ -2127,10 +2156,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   // expanded folder
   .app-folder-dialog {
-    border-radius: $bt_radius * 2;
+    border-radius: $bt_radius * 3;
     border: none;
     spacing: 12px;
-    background-color: rgba(black, 0.75);
+    background-color: rgba(black, 0.85);
 
     & .folder-name-container {
       padding: 24px 36px 0;
@@ -2373,7 +2402,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 #keyboard {
-  background-color: rgba(black, 0.25);
+  background-color: rgba(black, 0.5);
+  border: none;
+  box-shadow: none;
 }
 
 .keyboard-layout {
@@ -2413,27 +2444,16 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     &:focus, &:hover { color: $button_fg_color; background-color: $keyboard_bg_color; }
     &:checked, &:active { color: $button_fg_color; background-color: darken($keyboard_bg_color, 6%); }
   }
+
   &.enter-key {
+    color: $inverse_fg_color;
     background-color: $primary_color;
-    background-image: url("assets/key-enter.svg");
+    // background-image: url("assets/key-enter.svg");
     &:focus, &:hover { color: $inverse_fg_color; background-color: lighten($primary_color, 5%); }
     &:checked, &:active { color: $inverse_fg_color; background-color: darken($primary_color, 10%); }
   }
-  &.shift-key-lowercase {
-    background-image: url("assets/key-shift.svg");
-  }
-  &.shift-key-uppercase {
-    background-image: url("assets/key-shift-uppercase.svg");
-  }
-  &.shift-key-uppercase:latched {
-    background-image: url("assets/key-shift-latched-uppercase.svg");
-  }
-  &.hide-key {
-    background-image: url("assets/key-hide.svg");
-  }
-  &.layout-key {
-    background-image: url("assets/key-layout.svg");
-  }
+
+  StIcon { icon-size: 1.125em; }
 }
 
 .keyboard-subkeys { //long press on a key popup

@@ -1463,8 +1463,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 Gjs_AggregateMenu.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button {
-  background-color: rgba(222, 222, 222, 0.15);
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
+  background-color: rgba(222, 222, 222, 0.15) !important;
 }
 
 .clock-display-box {
@@ -1486,6 +1488,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   box-shadow: none;
   background: none;
   padding: 0;
+  text-shadow: none;
 }
 
 .calendar,
@@ -1571,6 +1574,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   color: rgba(0, 0, 0, 0.87);
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
 }
 
 .calendar-month-label:focus {
@@ -1616,6 +1620,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: 9pt;
   font-weight: 400;
   text-align: center;
+  text-shadow: none;
   width: 32px;
   height: 32px;
   padding: 0 0;
@@ -1637,8 +1642,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .calendar-day-base:selected {
-  color: rgba(255, 255, 255, 0.85);
-  background-color: #4586D8;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
   border-color: transparent;
 }
 
@@ -1654,6 +1659,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-weight: 400;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
 }
 
 .calendar-day {
@@ -1695,10 +1701,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .calendar-day-with-events {
-  color: #4586D8;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  color: rgba(0, 0, 0, 0.38);
+  background-image: url("assets/calendar-today.svg");
 }
 
 .calendar-day-with-events.calendar-work-day {
@@ -1722,6 +1726,29 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
+}
+
+/* Events */
+.events-button .events-box {
+  spacing: 6px;
+}
+
+.events-button .events-list {
+  spacing: 12px;
+  text-shadow: none;
+}
+
+.events-button .events-title {
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.events-button .event-time {
+  color: rgba(0, 0, 0, 0.38);
+  font-feature-settings: "tnum";
 }
 
 .message-list-section-list:ltr {
@@ -2521,10 +2548,10 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-folder-dialog {
-  border-radius: 24px;
+  border-radius: 36px;
   border: none;
   spacing: 12px;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2845,7 +2872,9 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #keyboard {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  box-shadow: none;
 }
 
 .keyboard-layout {
@@ -2901,8 +2930,8 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .keyboard-key.enter-key {
+  color: rgba(255, 255, 255, 0.85);
   background-color: #4586D8;
-  background-image: url("assets/key-enter.svg");
 }
 
 .keyboard-key.enter-key:focus, .keyboard-key.enter-key:hover {
@@ -2915,24 +2944,8 @@ StWidget.focused .app-well-app-running-dot {
   background-color: #296cc1;
 }
 
-.keyboard-key.shift-key-lowercase {
-  background-image: url("assets/key-shift.svg");
-}
-
-.keyboard-key.shift-key-uppercase {
-  background-image: url("assets/key-shift-uppercase.svg");
-}
-
-.keyboard-key.shift-key-uppercase:latched {
-  background-image: url("assets/key-shift-latched-uppercase.svg");
-}
-
-.keyboard-key.hide-key {
-  background-image: url("assets/key-hide.svg");
-}
-
-.keyboard-key.layout-key {
-  background-image: url("assets/key-layout.svg");
+.keyboard-key StIcon {
+  icon-size: 1.125em;
 }
 
 .keyboard-subkeys {
