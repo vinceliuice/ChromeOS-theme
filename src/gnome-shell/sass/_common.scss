@@ -1208,24 +1208,28 @@ $mdbt_radius: 100px;
   }
 }
 
-// Activities button
-
 $size_suffix: if($laptop == 'true', '-small', '');
 
-#panel #panelActivities.panel-button {
-  > * {
-    background-image: url("assets/activities#{$size_suffix}.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-color: transparent !important;
-    background-gradient-direction: none !important;
-    border: 0 solid transparent !important;
-    text-shadow: 0 0 transparent !important;
-    transition-duration: 0ms !important;
-    box-shadow: none !important;
-    color: transparent;
-  }
+Gjs_AggregateMenu.panel-button,
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
+  background-color: rgba($panel_fg_color, 0.15) !important;
+}
+
+// Activities button
+Gjs_ui_panel_ActivitiesButton.panel-button {
+  background-image: url("assets/activities#{$size_suffix}.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: transparent !important;
+  background-gradient-direction: none !important;
+  border: 0 solid transparent !important;
+  text-shadow: 0 0 transparent !important;
+  transition-duration: 0ms !important;
+  box-shadow: none !important;
+  color: transparent !important;
 
   &:hover, &:active, &:overview, &:focus, &:checked {
     background-color: transparent;
@@ -1235,16 +1239,8 @@ $size_suffix: if($laptop == 'true', '-small', '');
   }
 
   &:active, &:overview, &:focus, &:checked {
-    > * { background-image: url("assets/activities-active#{$size_suffix}.svg"); }
+    background-image: url("assets/activities-active#{$size_suffix}.svg");
   }
-}
-
-// Gjs_ActivitiesButton.panel-button,
-Gjs_AggregateMenu.panel-button,
-Gjs_ui_panel_AggregateMenu.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button,
-Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
-  background-color: rgba($panel_fg_color, 0.15) !important;
 }
 
 // calendar popover
@@ -1292,6 +1288,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.events-button,
 .message-list-section-title,
 .events-section-title {
   min-height: $menuitem_size - 4px * 2;
