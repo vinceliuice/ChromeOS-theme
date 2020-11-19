@@ -299,7 +299,5 @@ window.background.csd {
   }
 }
 
-/***********
- * Synapse *
- ***********/
+// Synapse
 box.vertical > widget > widget:selected { @extend %selected_items; }
