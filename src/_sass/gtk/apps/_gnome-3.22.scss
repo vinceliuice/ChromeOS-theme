@@ -624,7 +624,7 @@ dialog.background.csd {
 
 hdyleaflet, leaflet {
   stack.background, overlay {
-    scrolledwindow > viewport {
+    scrolledwindow > viewport, stack > widget {
       list {
         @extend %circular_list;
 

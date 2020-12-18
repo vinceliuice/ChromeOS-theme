@@ -1380,6 +1380,7 @@ searchbar > revealer > box {
 
 .titlebar .titlebar {
   background-color: transparent;
+  box-shadow: none;
 }
 
 .titlebar headerbar + separator {
@@ -1425,6 +1426,7 @@ searchbar > revealer > box {
 
 .titlebar button:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
 }
 
 .titlebar button:not(.suggested-action):not(.destructive-action):focus, .titlebar button:not(.suggested-action):not(.destructive-action):hover, .titlebar button:not(.suggested-action):not(.destructive-action):active, .titlebar button:not(.suggested-action):not(.destructive-action):checked, .titlebar button:not(.suggested-action):not(.destructive-action):checked:hover {
@@ -4493,24 +4495,24 @@ window.background.csd > stack > box > stack > scrolledwindow > viewport frame > 
 window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
 window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
 window.background.csd > stack > scrolledwindow > viewport > box > list,
-window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, list.tweak-group list, .tweak-group-startup {
+window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet stack.background stack > widget list, hdyleaflet overlay scrolledwindow > viewport list, hdyleaflet overlay stack > widget list, leaflet stack.background scrolledwindow > viewport list, leaflet stack.background stack > widget list, leaflet overlay scrolledwindow > viewport list, leaflet overlay stack > widget list, list.tweak-group list, .tweak-group-startup {
   margin: 6px 4px;
   border-radius: 6px;
   box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border: none;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, list.tweak-group list row.activatable:first-child, .tweak-group-startup row.activatable:first-child {
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet stack.background stack > widget list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay stack > widget list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background stack > widget list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet overlay stack > widget list row.activatable:first-child, list.tweak-group list row.activatable:first-child, .tweak-group-startup row.activatable:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, list.tweak-group list row.activatable:last-child, .tweak-group-startup row.activatable:last-child {
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet stack.background stack > widget list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay stack > widget list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background stack > widget list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet overlay stack > widget list row.activatable:last-child, list.tweak-group list row.activatable:last-child, .tweak-group-startup row.activatable:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, list.tweak-group list row.activatable:only-child, .tweak-group-startup row.activatable:only-child {
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet stack.background stack > widget list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay stack > widget list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background stack > widget list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet overlay stack > widget list row.activatable:only-child, list.tweak-group list row.activatable:only-child, .tweak-group-startup row.activatable:only-child {
   border-radius: 6px;
 }
 
@@ -5561,35 +5563,6 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack {
   border-radius: 0 0 6px 6px;
 }
 
-terminal-window > headerbar.titlebar {
-  background-color: #6ab878;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
-}
-
-terminal-window > headerbar.titlebar:backdrop {
-  background-color: #63b572;
-}
-
-terminal-window notebook:focus tab:checked {
-  box-shadow: inset 0 0 0 9999px rgba(106, 184, 120, 0.12);
-}
-
-terminal-window notebook > header.top > tabs > tab {
-  border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2/0 0 2px;
-}
-
-terminal-window notebook > header.top > tabs > tab:checked {
-  border-image-source: linear-gradient(to top, #6ab878 2px, rgba(0, 0, 0, 0.12) 2px);
-}
-
-terminal-window notebook > header tab {
-  background-image: radial-gradient(circle, rgba(106, 184, 120, 0.35) 10%, transparent 0%);
-}
-
-terminal-window notebook > header tab:checked {
-  background-image: radial-gradient(circle, transparent 10%, transparent 0%);
-}
-
 terminal-window check:checked, terminal-window check:indeterminate, terminal-window radio:checked, terminal-window radio:indeterminate {
   color: #6ab878;
 }
@@ -5625,16 +5598,16 @@ terminal-window label selection {
   background-color: #6ab878;
 }
 
-terminal-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #6ab878;
 }
 
-terminal-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(106, 184, 120, 0.28);
 }
 
-terminal-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -5644,25 +5617,26 @@ terminal-window button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6ab878 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-terminal-window headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, terminal-window .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+terminal-window headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-terminal-window headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), terminal-window .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+terminal-window headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-terminal-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), terminal-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+terminal-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-terminal-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, terminal-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+terminal-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-terminal-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), terminal-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+terminal-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -5684,6 +5658,35 @@ terminal-window scale highlight {
 
 terminal-window scale slider {
   color: #6ab878;
+}
+
+terminal-window > headerbar.titlebar {
+  background-color: #6ab878;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
+}
+
+terminal-window > headerbar.titlebar:backdrop {
+  background-color: #63b572;
+}
+
+terminal-window notebook:focus tab:checked {
+  box-shadow: inset 0 0 0 9999px rgba(106, 184, 120, 0.12);
+}
+
+terminal-window notebook > header.top > tabs > tab {
+  border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2/0 0 2px;
+}
+
+terminal-window notebook > header.top > tabs > tab:checked {
+  border-image-source: linear-gradient(to top, #6ab878 2px, rgba(0, 0, 0, 0.12) 2px);
+}
+
+terminal-window notebook > header tab {
+  background-image: radial-gradient(circle, rgba(106, 184, 120, 0.35) 10%, transparent 0%);
+}
+
+terminal-window notebook > header tab:checked {
+  background-image: radial-gradient(circle, transparent 10%, transparent 0%);
 }
 
 window.org-gnome-gedit > paned.titlebar {
@@ -5755,16 +5758,16 @@ window.org-gnome-gedit label selection {
   background-color: #FFA000;
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 160, 0, 0.28);
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -5774,25 +5777,26 @@ window.org-gnome-gedit button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.org-gnome-gedit headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.org-gnome-gedit .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.org-gnome-gedit headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-gedit headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.org-gnome-gedit .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.org-gnome-gedit headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-gedit headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.org-gnome-gedit .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.org-gnome-gedit headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.org-gnome-gedit headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.org-gnome-gedit .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.org-gnome-gedit headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.org-gnome-gedit headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.org-gnome-gedit .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.org-gnome-gedit headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -5886,19 +5890,19 @@ window.org-gnome-Calendar > popover label selection {
   background-color: #4CAF50;
 }
 
-window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked,
-window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
+window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #4CAF50;
 }
 
-window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover),
-window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
+window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.28);
 }
 
-window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled,
-window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled,
+window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -5909,35 +5913,31 @@ window.org-gnome-Calendar > popover button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.org-gnome-Calendar > overlay headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.org-gnome-Calendar > overlay .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.org-gnome-Calendar > popover headerbar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.org-gnome-Calendar > popover .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.org-gnome-Calendar > overlay headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked,
+window.org-gnome-Calendar > popover headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-Calendar > overlay headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.org-gnome-Calendar > overlay .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.org-gnome-Calendar > popover headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.org-gnome-Calendar > popover .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.org-gnome-Calendar > overlay headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.org-gnome-Calendar > popover headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-Calendar > overlay headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.org-gnome-Calendar > overlay .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.org-gnome-Calendar > popover headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.org-gnome-Calendar > popover .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.org-gnome-Calendar > overlay headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button),
+window.org-gnome-Calendar > popover headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.org-gnome-Calendar > overlay headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.org-gnome-Calendar > overlay .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.org-gnome-Calendar > popover headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.org-gnome-Calendar > popover .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.org-gnome-Calendar > overlay headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked,
+window.org-gnome-Calendar > popover headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.org-gnome-Calendar > overlay headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.org-gnome-Calendar > overlay .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.org-gnome-Calendar > popover headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.org-gnome-Calendar > popover .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.org-gnome-Calendar > overlay headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.org-gnome-Calendar > popover headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6045,19 +6045,19 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container label s
   background-color: #6D4C41;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #6D4C41;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(109, 76, 65, 0.28);
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6068,35 +6068,31 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container button.
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #6D4C41 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.background.csd > leaflet > box.vertical > stack.main-container .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.background.csd > leaflet > box.vertical > stack.main-container .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.background.csd > leaflet > box.vertical > stack.main-container .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.background.csd > leaflet > box.vertical > stack.main-container .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.background.csd > leaflet > box.vertical > stack.main-container .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6173,12 +6169,12 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:o
 
 window.background.csd > headerbar.titlebar > leaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 0%, transparent 0%) 0 0 0/0 0 0px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
 window.background.csd > headerbar.titlebar > leaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
 }
 
@@ -6247,19 +6243,19 @@ window.background.csd > hdyleaflet > stack.background label selection {
   background-color: #5E35B1;
 }
 
-window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked,
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #5E35B1;
 }
 
-window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(94, 53, 177, 0.28);
 }
 
-window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled,
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled,
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6270,35 +6266,31 @@ window.background.csd > hdyleaflet > stack.background button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.background.csd > leaflet > stack.background headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.background.csd > leaflet > stack.background .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.background.csd > hdyleaflet > stack.background headerbar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.background.csd > hdyleaflet > stack.background .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.background.csd > leaflet > stack.background headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked,
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd > leaflet > stack.background headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.background.csd > leaflet > stack.background .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.background.csd > leaflet > stack.background headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd > leaflet > stack.background headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.background.csd > leaflet > stack.background .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.background.csd > hdyleaflet > stack.background headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.background.csd > hdyleaflet > stack.background .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.background.csd > leaflet > stack.background headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button),
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.background.csd > leaflet > stack.background headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.background.csd > leaflet > stack.background .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.background.csd > hdyleaflet > stack.background headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.background.csd > hdyleaflet > stack.background .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.background.csd > leaflet > stack.background headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked,
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.background.csd > leaflet > stack.background headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.background.csd > leaflet > stack.background .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.background.csd > leaflet > stack.background headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6431,16 +6423,16 @@ window.background.csd.org-gnome-Builder label selection {
   background-color: #424242;
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #424242;
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(66, 66, 66, 0.28);
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6450,25 +6442,26 @@ window.background.csd.org-gnome-Builder button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #424242 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.background.csd.org-gnome-Builder headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.background.csd.org-gnome-Builder .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.background.csd.org-gnome-Builder headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd.org-gnome-Builder headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.background.csd.org-gnome-Builder .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.background.csd.org-gnome-Builder headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd.org-gnome-Builder headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.background.csd.org-gnome-Builder .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.background.csd.org-gnome-Builder headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.background.csd.org-gnome-Builder headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.background.csd.org-gnome-Builder .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.background.csd.org-gnome-Builder headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.background.csd.org-gnome-Builder headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.background.csd.org-gnome-Builder .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.background.csd.org-gnome-Builder headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6490,15 +6483,6 @@ window.background.csd.org-gnome-Builder scale highlight {
 
 window.background.csd.org-gnome-Builder scale slider {
   color: #424242;
-}
-
-window#gnome-system-monitor headerbar.titlebar {
-  background-color: #188c75;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.12);
-}
-
-window#gnome-system-monitor headerbar.titlebar:backdrop {
-  background-color: #17836e;
 }
 
 window#gnome-system-monitor check:checked, window#gnome-system-monitor check:indeterminate, window#gnome-system-monitor radio:checked, window#gnome-system-monitor radio:indeterminate {
@@ -6536,16 +6520,16 @@ window#gnome-system-monitor label selection {
   background-color: #188c75;
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #188c75;
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(24, 140, 117, 0.28);
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6555,25 +6539,26 @@ window#gnome-system-monitor button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #188c75 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window#gnome-system-monitor headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window#gnome-system-monitor .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window#gnome-system-monitor headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window#gnome-system-monitor headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window#gnome-system-monitor .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window#gnome-system-monitor headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window#gnome-system-monitor headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window#gnome-system-monitor .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window#gnome-system-monitor headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window#gnome-system-monitor headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window#gnome-system-monitor .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window#gnome-system-monitor headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window#gnome-system-monitor headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window#gnome-system-monitor .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window#gnome-system-monitor headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6595,6 +6580,19 @@ window#gnome-system-monitor scale highlight {
 
 window#gnome-system-monitor scale slider {
   color: #188c75;
+}
+
+window#gnome-system-monitor headerbar.titlebar {
+  background-color: #188c75;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.12);
+}
+
+window#gnome-system-monitor headerbar.titlebar:backdrop {
+  background-color: #17836e;
+}
+
+window#gnome-system-monitor headerbar.titlebar > button.popup {
+  border-radius: 9999px;
 }
 
 window#gnome-system-monitor treeview.view.progressbar {
@@ -6645,16 +6643,16 @@ window.org-gnome-Todo label selection {
   background-color: #F4511E;
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #F4511E;
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(244, 81, 30, 0.28);
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6664,25 +6662,26 @@ window.org-gnome-Todo button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.org-gnome-Todo headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.org-gnome-Todo .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.org-gnome-Todo headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-Todo headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.org-gnome-Todo .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.org-gnome-Todo headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-Todo headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.org-gnome-Todo .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.org-gnome-Todo headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.org-gnome-Todo headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.org-gnome-Todo .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.org-gnome-Todo headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.org-gnome-Todo headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.org-gnome-Todo .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.org-gnome-Todo headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6750,16 +6749,16 @@ window.dconf-editor label selection {
   background-color: #9C27B0;
 }
 
-window.dconf-editor button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #9C27B0;
 }
 
-window.dconf-editor button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.28);
 }
 
-window.dconf-editor button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6769,25 +6768,26 @@ window.dconf-editor button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9C27B0 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.dconf-editor headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.dconf-editor .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.dconf-editor headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.dconf-editor headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.dconf-editor .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.dconf-editor headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.dconf-editor headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.dconf-editor .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.dconf-editor headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.dconf-editor headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.dconf-editor .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.dconf-editor headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.dconf-editor headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.dconf-editor .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.dconf-editor headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -6884,19 +6884,19 @@ window.geary-main-window label selection {
   background-color: #D93025;
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked,
-window.geary-main-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
+window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #D93025;
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover),
-window.geary-main-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
+window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.28);
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled,
-window.geary-main-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled,
+window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6907,35 +6907,31 @@ window.geary-main-window button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #D93025 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window#GearyMainWindow headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window#GearyMainWindow .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.geary-main-window headerbar button:not(.flat):not(.combo):not(.titlebutton):checked,
-window.geary-main-window .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window#GearyMainWindow headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked,
+window.geary-main-window headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window#GearyMainWindow headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window#GearyMainWindow .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.geary-main-window headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover),
-window.geary-main-window .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window#GearyMainWindow headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.geary-main-window headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window#GearyMainWindow headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window#GearyMainWindow .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.geary-main-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
-window.geary-main-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window#GearyMainWindow headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button),
+window.geary-main-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window#GearyMainWindow headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window#GearyMainWindow .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.geary-main-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
-window.geary-main-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window#GearyMainWindow headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked,
+window.geary-main-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window#GearyMainWindow headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window#GearyMainWindow .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.geary-main-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover),
-window.geary-main-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window#GearyMainWindow headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover),
+window.geary-main-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -7009,16 +7005,16 @@ window.background.csd.budgie-settings-window label selection {
   background-color: #37474F;
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #37474F;
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(55, 71, 79, 0.28);
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7028,25 +7024,26 @@ window.background.csd.budgie-settings-window button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #37474F 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.background.csd.budgie-settings-window headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, window.background.csd.budgie-settings-window .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+window.background.csd.budgie-settings-window headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd.budgie-settings-window headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), window.background.csd.budgie-settings-window .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+window.background.csd.budgie-settings-window headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd.budgie-settings-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), window.background.csd.budgie-settings-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+window.background.csd.budgie-settings-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.background.csd.budgie-settings-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, window.background.csd.budgie-settings-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+window.background.csd.budgie-settings-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-window.background.csd.budgie-settings-window headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), window.background.csd.budgie-settings-window .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+window.background.csd.budgie-settings-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
@@ -7114,16 +7111,16 @@ dialog.background.csd label selection {
   background-color: #E91E63;
 }
 
-dialog.background.csd button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked {
+dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: white;
   background-color: #E91E63;
 }
 
-dialog.background.csd button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):focus:not(:hover) {
+dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.28);
 }
 
-dialog.background.csd button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up):checked:disabled {
+dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7133,25 +7130,26 @@ dialog.background.csd button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-dialog.background.csd headerbar button:not(.flat):not(.combo):not(.titlebutton):checked, dialog.background.csd .titlebar button:not(.flat):not(.combo):not(.titlebutton):checked {
+dialog.background.csd headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-dialog.background.csd headerbar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover), dialog.background.csd .titlebar button:not(.flat):not(.combo):not(.titlebutton):focus:not(:hover) {
+dialog.background.csd headerbar.titlebar > button:not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-dialog.background.csd headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action), dialog.background.csd .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
+dialog.background.csd headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-dialog.background.csd headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked, dialog.background.csd .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
+dialog.background.csd headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
+  color: white;
 }
 
-dialog.background.csd headerbar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover), dialog.background.csd .titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+dialog.background.csd headerbar.titlebar stackswitcher > button.radio:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 

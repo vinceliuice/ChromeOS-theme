@@ -1120,7 +1120,7 @@ searchbar > revealer > box {
   // Don't draw titlebar above titlebar
   .titlebar {
     background-color: transparent;
-    // box-shadow: none;
+    box-shadow: none;
   }
 
   // The separator for split headerbars
@@ -1169,6 +1169,7 @@ searchbar > revealer > box {
   @at-root %titlebar-button, & button:not(.suggested-action):not(.destructive-action) {
     @extend %button-flat;
     color: $titlebar-text-secondary;
+    border-radius: $circular-radius;
 
     &:focus, &:hover, &:active, &:checked, &:checked:hover { color: $titlebar-text; }
 

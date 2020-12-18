@@ -89,7 +89,7 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up) {
+    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -108,8 +108,8 @@ $theme_green_grey:  #3b4342;
       &:checked { @include entry(checked, $fc: $theme_color); }
     }
 
-    headerbar, .titlebar {
-      button:not(.flat):not(.combo):not(.titlebutton) { // reset headerbar buttons
+    headerbar.titlebar {
+      > button:not(.flat):not(.combo):not(.title-button) { // reset headerbar buttons
         &:checked {
           background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
           color: $titlebar-text;
@@ -120,7 +120,7 @@ $theme_green_grey:  #3b4342;
         }
       }
 
-      stackswitcher button:not(.suggested-action):not(.destructive-action).text-button { // reset stackswitcher buttons
+      stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button).radio { // reset stackswitcher buttons
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $theme_indicator 0%,
                                       transparent 0%)
@@ -132,6 +132,7 @@ $theme_green_grey:  #3b4342;
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
           background-color: transparent;
+          color: $titlebar-text;
         }
 
         &:focus:not(:hover) {
@@ -170,6 +171,8 @@ $theme_green_grey:  #3b4342;
 $terminal_header: if($topbar == 'light', $titlebar, $theme_sea_green);
 
 terminal-window {
+  @include color_theme($theme_color:$theme_sea_green);
+
   > headerbar.titlebar {
     background-color: $terminal_header;
     box-shadow: inset 0 1px highlight($terminal_header), inset 0 -1px $divider;
@@ -202,8 +205,6 @@ terminal-window {
       }
     }
   }
-
-  @include color_theme($theme_color:$theme_sea_green);
 }
 
 //
@@ -396,13 +397,13 @@ window.background.csd {
 
       > stackswitcher button:not(.suggested-action):not(.destructive-action).text-button { // reset stackswitcher buttons
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $theme_cyan 0%,
+                                      if($topbar == 'dark', currentColor, $theme_cyan) 0%,
                                       transparent 0%)
                                       0 0 0 / 0 0 0px;
 
         &:checked {
           border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                        $theme_cyan 100%,
+                                        if($topbar == 'dark', currentColor, $theme_cyan) 100%,
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
           background-color: transparent;
@@ -536,14 +537,16 @@ window.background.csd.org-gnome-Builder {
 $monitor_header: if($topbar == 'light', $titlebar, $theme_teal);
 
 window#gnome-system-monitor {
+  @include color_theme($theme_color:$theme_teal);
+
   headerbar.titlebar {
     background-color: $monitor_header;
     box-shadow: inset 0 1px highlight($monitor_header), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($monitor_header, 2%); }
-  }
 
-  @include color_theme($theme_color:$theme_teal);
+    > button.popup { border-radius: $circular-radius; }
+  }
 
   treeview.view {
     &.progressbar { // progress bar in treeviews
