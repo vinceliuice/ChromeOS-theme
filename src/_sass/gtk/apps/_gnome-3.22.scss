@@ -410,11 +410,44 @@ frame.gedit-map-frame > border {
 }
 
 
-/**********
- * Tweaks *
- **********/
-// hard-coded css:
-// https://gitlab.gnome.org/GNOME/gnome-tweaks/blob/master/data/shell.css
+/****************
+ * Gnome Tweaks *
+ ****************/
+
+%circular_list {
+  margin: $container-padding 4px;
+  border-radius: $corner-radius;
+  box-shadow: $shadow-z2;
+  border: none;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
+
+%circular_side_row {
+  margin-right: 4px;
+  border-radius: 0 $circular-radius $circular-radius 0;
+
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
+
+    image, label { color: $primary; }
+  }
+}
 
 // the sidebar
 .tweak-categories {
@@ -426,10 +459,6 @@ frame.gedit-map-frame > border {
 
   .csd & {
     border-bottom-left-radius: $corner-radius;
-  }
-
-  row.activatable.tweak-category {
-    @extend %circular_side_row;
   }
 }
 
@@ -483,20 +512,6 @@ list {
   }
 }
 
-row#Focus,
-row#ClickMethod,
-row#StaticWorkspaceTweak, // for 3.26.0
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
-  padding: 0;
-  // border: 1px solid $frame;
-
-  // row:not(:last-child) { border-bottom: 1px solid $divider; }
-
-  &.tweak > list { margin-top: -3px; }
-}
-
 // Add more spaces between title and list
 row#Focus,
 row#ClickMethod,
@@ -526,6 +541,7 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
  * Gnome Control Center *
  ************************/
 window.background.csd {
+  > headerbar.titlebar > leaflet,
   > headerbar.titlebar > hdyleaflet {
     > headerbar {
       &:first-child:not(:only-child) {
@@ -544,10 +560,12 @@ window.background.csd {
   }
 
   > stack:not(.titlebar),
+  > leaflet > stack.background,
   > hdyleaflet > stack.background {
     border-radius: 0 0 $corner-radius $corner-radius;
   }
 
+  > leaflet > stack.background, // > 3.38.0
   > hdyleaflet > stack.background, // > 3.34.0
   > box.horizontal > stack.background {
     background: none;
@@ -573,18 +591,10 @@ window.background.csd {
           }
         }
       }
-
-      > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
-        > list.frame {
-          border: none;
-          @extend %circular_list;
-
-          > row.activatable { @extend %circular_row; }
-        }
-      }
     }
   }
 
+  > leaflet > box.vertical > scrolledwindow.view, // > 3.38.0
   > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
   > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
     background-color: $base;
@@ -612,69 +622,22 @@ dialog.background.csd {
   }
 }
 
-%circular_list {
-  margin: $container-padding 4px;
-  border-radius: $corner-radius;
-  box-shadow: $shadow-z2;
-}
+hdyleaflet, leaflet {
+  stack.background, overlay {
+    scrolledwindow > viewport {
+      list {
+        @extend %circular_list;
 
-%circular_row {
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-top-right-radius: $corner-radius;
-  }
-
-  &:last-child { // Not use ?
-    border-bottom-left-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $corner-radius;
-  }
-}
-
-%circular_side_row {
-  margin-right: 4px;
-  border-radius: 0 1000px 1000px 0;
-
-  &:selected {
-    background-color: $overlay-checked;
-    color: $primary;
-
-    image, label { color: $primary; }
-  }
-}
-
-hdyleaflet {
-  frame > border { border: none; }
-
-  frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
-    @extend %circular_list;
-
-    row.activatable { @extend %circular_row; }
-  }
-
-  frame.view {
-    @extend %circular_list;
-
-    list {
-      background: none;
-
-      row.activatable { @extend %circular_row; }
+        row.activatable { @extend %circular_row; }
+      }
     }
   }
 
-  list.view.frame {
-    border: none;
-    @extend %circular_list;
-
-    row.activatable { @extend %circular_row; }
-  }
+  frame > border { border: none; }
 
   > box.vertical > scrolledwindow.view > viewport.frame {
-    > stack, > stack > box.vertical {
-      > list > row.activatable {
+    list:not(.view):not(.tweak-group) {
+      row.activatable {
         @extend %circular_side_row;
       }
     }
@@ -729,6 +692,182 @@ window.background.csd {
     }
   }
 }
+
+
+/*****************
+ * Gnome Weather *
+ *****************/
+#weather-page,
+#weekly-forecast-frame {
+  border-bottom-right-radius: $corner-radius;
+}
+
+#weather-page-content-view {
+  border-bottom-right-radius: $corner-radius;
+  border-bottom-left-radius: $corner-radius;
+}
+
+
+/****************
+ * Gnome Clocks *
+ ****************/
+window.background.csd.unified {
+  border-top-left-radius: $corner-radius;
+  border-top-right-radius: $corner-radius;
+
+  > deck > deck > deck {
+    > box.vertical > headerbar.titlebar.windowhandle {
+      border-top-left-radius: $corner-radius;
+      border-top-right-radius: $corner-radius;
+      box-shadow: inset 0 -1px $divider;
+
+      > viewswitchertitle > squeezer {
+        margin: 0 0;
+        background: none;
+
+        > viewswitcher > box.horizontal {
+          > button.radio {
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+
+    list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+}
+
+
+/*************
+ * Rhythmbox *
+ *************/
+%image_button {
+  min-height: 24px;
+  min-width: 24px;
+  padding: ($medium-size - 24px) / 2;
+  margin: 0;
+}
+
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
+  button.image-button {
+    border-radius: $circular-radius;
+
+    &:not(:first-child), &:not(:last-child) {
+      border-top-left-radius: $circular-radius;
+      border-bottom-left-radius: $circular-radius;
+      border-top-right-radius: $circular-radius;
+      border-bottom-right-radius: $circular-radius;
+    }
+
+    &.image-button:not(.text-button) {
+      &:first-child {
+        border-top-left-radius: $circular-radius;
+        border-bottom-left-radius: $circular-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $circular-radius;
+        border-bottom-right-radius: $circular-radius;
+      }
+    }
+
+    > widget > box > image { padding: 0; }
+  }
+}
+
+// tweak border and frame in alt-toolbar
+window.csd > box.vertical > box.vertical,
+window.solid-csd > box.vertical > box.vertical {
+  > toolbar.horizontal {
+    padding: $container-padding;
+    margin: -1px 0;
+    border-top: 1px solid $divider;
+    border-bottom: none;
+    box-shadow: none;
+    background-color: transparent;
+
+    > toolitem > .linked > button,
+    > toolitem > box.horizontal > button {
+      @extend %circular_button;
+      @extend %image_button;
+    }
+  }
+
+  > frame {
+    margin: -1px 0;
+    padding: 0;
+
+    > border { border: none; }
+  }
+}
+
+// hard-coded spacing depends on non-scalable unit,
+// seems cover-art widget is the most biggest thing?
+window.background > box.vertical > toolbar.primary-toolbar {
+  > toolitem {
+    > .linked > button.image-button.raised { // 'shuffle/repeat'
+      @extend %circular_button;
+      @extend %image_button;
+
+      > widget > box > image { padding: 0; }
+    }
+
+    button.flat.scale { // 'volume'
+      @extend %circular_button;
+      @extend %image_button;
+    }
+
+    > box.horizontal:not(.linked) > button.toggle,
+    > .linked > button:not(.toggle):not(.raised):not(.flat) {
+      @extend %circular_button;
+      @extend %image_button;
+    }
+  }
+}
+
+
+/**********
+ * Polari *
+ **********/
+.polari-room-list {
+  .sidebar {
+    background: none;
+
+    > row.activatable:selected {
+      background-color: $primary;
+      color: on($primary);
+
+      > widget > box.horizontal > label {
+        color: $text; // not use !
+      }
+    }
+  }
+}
+
+stack.view.polari-entry-area {
+  background-color: $background;
+  border-top: 1px solid $divider;
+  border-bottom-right-radius: $corner-radius;
+}
+
+stack:disabled.view.polari-entry-area { background-image: image($background); }
+
+
+/***********
+ * Fractal *
+ ***********/
+.background.csd.main-window {
+  .sidebar.rooms-sidebar {
+    border-bottom-left-radius: $corner-radius;
+  }
+}
+
 
 /***********
  * Builder *
@@ -1438,6 +1577,61 @@ window.background.csd.geary-main-window {
         }
       }
     }
+
+    .geary-expanded {
+      .geary-composer-embed {
+        actionbar > revealer > box { border-radius: 0; }
+      }
+    }
+  }
+}
+
+preferencesgroup, .geary-accounts-editor-pane {
+  list {
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+}
+
+.geary-accounts-editor-pane {
+  frame:not(.geary-signature) > border,
+  scrolledwindow.frame { border: none; }
+}
+
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd {
+  > stack, // GameMode setting
+  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
+  > box > stack > scrolledwindow > viewport > box {
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  stack stack stack frame, // ArcMenu setting
+  > stack > stack > box > frame, // Night Theme Switcher setting
+  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
+  > stack > box > stack > box > frame, // ArcMenu setting
+  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
+  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
+  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
+    > border { border: none; }
+
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  > stack > box > box > list { // ArcMenu setting sidebar
+    border-bottom-left-radius: $corner-radius;
   }
 }
 

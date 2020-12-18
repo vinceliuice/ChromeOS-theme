@@ -2147,16 +2147,21 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
     .overview-icon {
       background-color: $inverse_bg_color;
       padding: 16px;
-      border-radius: 100px;
+      border-radius: $circular-radius;
+    }
+
+    &:hover .overview-icon {
+      background-color: $inverse_divider_color;
     }
   }
 
   // expanded folder
   .app-folder-dialog {
-    border-radius: $bt_radius * 3;
-    border: none;
+    border-radius: $bt_radius * 4;
+    border: 2px solid $primary_color;
     spacing: 12px;
-    background-color: rgba(black, 0.85);
+    padding: 0;
+    background-color: rgba(#101010, 0.95);
 
     & .folder-name-container {
       padding: 24px 36px 0;
@@ -2173,6 +2178,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
         background-color: rgba(white, 0.15);
         selection-background-color: $primary_color;
         selected-color: $light_fg_color;
+        color: $inverse_fg_color;
 
         &:focus {
           background-color: rgba(white, 0.25);
@@ -2185,7 +2191,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
         }
 
         &:insensitive, StLabel.hint-text {
-          color: rgba(white, 0.45);
+          color: $inverse_disabled_secondary_fg_color;
         }
       }
 
@@ -2209,20 +2215,48 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
       }
     }
 
+    & .icon-grid {
+      row-spacing: $container_padding * 2;
+      column-spacing: $container_padding * 5;
+    }
+
+    & .page-indicators {
+      margin-bottom: 18px;
+
+      .page-indicator {
+        padding: 15px 12px;
+      }
+    }
+
     & StButton#vhandle,
     & StButton#vhandle:hover,
     & StButton#vhandle:active { background-color: transparent; }
   }
+
   .app-folder-dialog-container {
-    padding: 12px;
-    width: 800px;
+    padding: $container_padding;
+    width: 600px;
     height: 600px;
   }
 
   .app-folder-icon {
-    padding: 4px;
-    spacing-rows: 4px;
-    spacing-columns: 4px;
+    padding: $container_padding;
+    spacing-rows: $container_padding;
+    spacing-columns: $container_padding;
+  }
+
+  // Rename popup for app folders
+  .rename-folder-popup {
+    .rename-folder-popup-item {
+      spacing: $container_padding;
+      &:ltr, &:rtl { padding: 0 $container_padding * 2; }
+    }
+  }
+
+  // right-click app menu
+  .app-menu,
+  .app-well-menu {
+    max-width: 27.25em;
   }
 
   // Workspace pager
@@ -2236,6 +2270,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
     //border-width: 0; //fixme: can't have non unoform borders :(
     // &:rtl { border-radius: $material_radius; }
   }
+
   .workspace-thumbnail-indicator {
     border: 0 solid $primary_color;
     border-width: 2px;
@@ -2244,8 +2279,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   }
 
   //Some hacks I don't even
-  .search-display > StBoxLayout,
   .all-apps,
+  .search-display > StBoxLayout,
   .frequent-apps > StBoxLayout {
     // horizontal padding to make sure scrollbars or dash don't overlap content
     padding: 0px 88px 10px 88px;

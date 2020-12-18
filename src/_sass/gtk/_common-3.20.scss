@@ -812,8 +812,7 @@ spinbutton {
   }
 
   // OSD horizontal
-  .osd &:not(.vertical) {
-  }
+  // .osd &:not(.vertical) { }
 
   // Vertical
   &.vertical {
@@ -853,8 +852,8 @@ spinbutton {
   }
 
   // OSD vertical
-  .osd &.vertical {
-  }
+  // .osd &.vertical {
+  // }
 
   // Misc
   treeview &:not(.vertical) {
@@ -2764,10 +2763,15 @@ frame > border,
   border-radius: 0;
   box-shadow: none;
 
+  &.view { border-radius: $corner-radius; }
+
   &.flat { border-style: none; }
 }
 
-frame.flat > border { border-style: none; } // for backward compatibility
+frame {
+  &.flat > border,
+  statusbar & > border { border: none; } // for backward compatibility
+}
 
 actionbar > revealer > box {
   padding: $container-padding;
@@ -2781,12 +2785,20 @@ actionbar > revealer > box {
 
   button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
 
+  .linked > button:not(.suggested-action):not(.destructive-action) { border-radius: $corner-radius; }
+
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }
 }
 
 scrolledwindow {
   viewport.frame { // avoid double borders when viewport inside scrolled window
     border-style: none;
+  }
+
+  stack &.frame {
+    // border-radius: $corner-radius;
+
+    viewport.frame list { border: none; }
   }
 
   // This is used when content is touch-dragged past boundaries.

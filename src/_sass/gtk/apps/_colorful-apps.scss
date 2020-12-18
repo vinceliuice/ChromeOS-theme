@@ -89,7 +89,7 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.titlebutton) {
+    button:not(.flat):not(.combo):not(.titlebutton):not(.down):not(.up) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -258,10 +258,16 @@ window.org-gnome-gedit {
 //   background-color: $theme_indigo;
 // }
 
-hdyleaflet {
-  > stack > frame {
-    entry.search {
+hdyleaflet, leaflet {
+  > stack > frame,
+  clamp.medium {
+    entry {
       &:focus { @include entry(checked, $fc: $theme_cyan); }
+
+      selection {
+        color: on($theme_cyan);
+        background-color: $theme_cyan;
+      }
     }
   }
 }
@@ -320,41 +326,21 @@ window.background.csd {
     }
   }
 
+  > leaflet > box.vertical,
   > hdyleaflet > box.vertical {
     > stack.main-container {
       @include color_theme($theme_color:$theme_brown);
     }
+  }
 
-    > searchbar { // on Tweak and Control center sidebar
+  > hdyleaflet > box.vertical {
+    > searchbar { // on Tweak sidebar
       entry.search {
-        @include button(normal);
-
-        border-radius: $corner-radius;
-        box-shadow: none;
-        border-image: none;
-        background-color: $fill;
-
-        &:focus {
-          transition: $transition,
-                      background-size 0ms,
-                      background-image 0ms;
-          animation: ripple $ripple-fade-in-duration $ease-out forwards;
-          box-shadow: inset 0 0 0 9999px $overlay-hover, $shadow-z8;
-          background-image: radial-gradient(circle, $overlay-checked 10%, transparent 0%);
-          background-size: 0% 0%;
-
-          box-shadow: none;
-          border-image: none;
-        }
+        &:focus { @include entry(checked, $fc: $theme_brown); }
 
         selection {
-          color: $text;
-          background-color: $overlay-hover;
-        }
-
-        &:backdrop {
-          animation: none;
-          transition: none;
+          color: on($theme_brown);
+          background-color: $theme_brown;
         }
       }
     }
@@ -362,13 +348,13 @@ window.background.csd {
 }
 
 // the sidebar
-.tweak-categories {
-  row.activatable.tweak-category {
-    &:selected {
-      color: if($variant == 'light', $theme_brown, lighten($theme_brown, 35%));
+.tweak-category {
+  @extend %circular_side_row;
 
-      image, label { color: if($variant == 'light', $theme_brown, lighten($theme_brown, 35%)); }
-    }
+  &:selected {
+    color: if($variant == 'light', $theme_brown, lighten($theme_brown, 35%));
+
+    image, label { color: if($variant == 'light', $theme_brown, lighten($theme_brown, 35%)); }
   }
 }
 
@@ -379,6 +365,7 @@ window.background.csd {
 $control_center_header: if($topbar == 'light', $titlebar, $theme_cyan);
 
 window.background.csd {
+  > headerbar.titlebar > leaflet,
   > headerbar.titlebar > hdyleaflet {
     > headerbar {
       background-color: $control_center_header;
@@ -430,6 +417,7 @@ window.background.csd {
     }
   }
 
+  > leaflet > stack.background,
   > hdyleaflet > stack.background {
     @include color_theme($theme_color:$theme_cyan);
 
@@ -456,6 +444,7 @@ window.background.csd {
     }
   }
 
+  > leaflet > box.vertical,
   > hdyleaflet > box.vertical {
     > scrolledwindow.view {
       > viewport.frame {
@@ -478,6 +467,19 @@ window.background.csd {
               image, label { color: if($variant == 'light', $theme_cyan, lighten($theme_cyan, 35%)); }
             }
           }
+        }
+      }
+    }
+  }
+
+  > leaflet > box.vertical {
+    > searchbar { // on control center sidebar
+      entry.search {
+        &:focus { @include entry(checked, $fc: $theme_cyan); }
+
+        selection {
+          color: on($theme_cyan);
+          background-color: $theme_cyan;
         }
       }
     }

@@ -2548,14 +2548,19 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder .overview-icon {
   background-color: rgba(255, 255, 255, 0.13);
   padding: 16px;
-  border-radius: 100px;
+  border-radius: 9999px;
+}
+
+.app-folder:hover .overview-icon {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .app-folder-dialog {
-  border-radius: 36px;
-  border: none;
+  border-radius: 48px;
+  border: 2px solid #4586D8;
   spacing: 12px;
-  background-color: rgba(0, 0, 0, 0.85);
+  padding: 0;
+  background-color: rgba(16, 16, 16, 0.95);
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2574,6 +2579,7 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(255, 255, 255, 0.15);
   selection-background-color: #4586D8;
   selected-color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry:focus {
@@ -2589,7 +2595,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .app-folder-dialog .folder-name-container .folder-name-label {
@@ -2619,20 +2625,46 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.app-folder-dialog .icon-grid {
+  row-spacing: 12px;
+  column-spacing: 30px;
+}
+
+.app-folder-dialog .page-indicators {
+  margin-bottom: 18px;
+}
+
+.app-folder-dialog .page-indicators .page-indicator {
+  padding: 15px 12px;
+}
+
 .app-folder-dialog StButton#vhandle, .app-folder-dialog StButton#vhandle:hover, .app-folder-dialog StButton#vhandle:active {
   background-color: transparent;
 }
 
 .app-folder-dialog-container {
-  padding: 12px;
-  width: 800px;
+  padding: 6px;
+  width: 600px;
   height: 600px;
 }
 
 .app-folder-icon {
-  padding: 4px;
-  spacing-rows: 4px;
-  spacing-columns: 4px;
+  padding: 6px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
+}
+
+.rename-folder-popup .rename-folder-popup-item {
+  spacing: 6px;
+}
+
+.rename-folder-popup .rename-folder-popup-item:ltr, .rename-folder-popup .rename-folder-popup-item:rtl {
+  padding: 0 12px;
+}
+
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
 }
 
 .workspace-thumbnails {
@@ -2650,8 +2682,8 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 2px;
 }
 
-.search-display > StBoxLayout,
 .all-apps,
+.search-display > StBoxLayout,
 .frequent-apps > StBoxLayout {
   padding: 0px 88px 10px 88px;
 }
