@@ -89,13 +89,13 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.titlebutton):not(.down):not(.up) {
+    button:not(.flat):not(.combo):not(.titlebutton):not(.toggle):not(.radio):not(.down):not(.up) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
       }
 
-      &:focus {
+      &:focus:not(:hover) {
         box-shadow: 0 0 0 2px rgba($theme_color, 0.28);
       }
 
@@ -115,7 +115,7 @@ $theme_green_grey:  #3b4342;
           color: $titlebar-text;
         }
 
-        &:focus {
+        &:focus:not(:hover) {
           box-shadow: 0 0 0 2px rgba($titlebar-text, 0.15);
         }
       }
@@ -133,10 +133,18 @@ $theme_green_grey:  #3b4342;
                                         0 0 2 / 0 0 2px;
           background-color: transparent;
         }
+
+        &:focus:not(:hover) {
+          box-shadow: 0 0 0 2px transparent;
+        }
       }
     }
 
     .path-bar.linked:not(.vertical) > button { // reset path-bar buttons
+      &:focus:not(:hover) {
+        box-shadow: 0 0 0 2px transparent;
+      }
+
       &:checked {
         color: $text;
         &, &:disabled { background-color: transparent; }
