@@ -5635,15 +5635,15 @@ terminal-window headerbar.titlebar stackswitcher > button.radio:not(.suggested-a
   box-shadow: 0 0 0 2px transparent;
 }
 
-terminal-window .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+terminal-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-terminal-window .path-bar.linked:not(.vertical) > button:checked {
+terminal-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-terminal-window .path-bar.linked:not(.vertical) > button:checked, terminal-window .path-bar.linked:not(.vertical) > button:checked:disabled {
+terminal-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, terminal-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -5795,15 +5795,15 @@ window.org-gnome-gedit headerbar.titlebar stackswitcher > button.radio:not(.sugg
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:checked {
+window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:checked, window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.org-gnome-gedit .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -5936,19 +5936,19 @@ window.org-gnome-Calendar > popover headerbar.titlebar stackswitcher > button.ra
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:focus:not(:hover),
-window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover),
+window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:checked,
-window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:checked {
+window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:checked, window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:checked:disabled,
-window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:checked,
-window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.org-gnome-Calendar > overlay .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled,
+window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.org-gnome-Calendar > popover .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6091,19 +6091,19 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container headerb
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:checked {
+window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:checked, window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:checked:disabled,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.background.csd > leaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6289,19 +6289,19 @@ window.background.csd > hdyleaflet > stack.background headerbar.titlebar stacksw
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover),
+window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:checked,
-window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:checked {
+window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:checked, window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:checked:disabled,
-window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:checked,
-window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.background.csd > leaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled,
+window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.background.csd > hdyleaflet > stack.background .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6460,15 +6460,15 @@ window.background.csd.org-gnome-Builder headerbar.titlebar stackswitcher > butto
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:checked {
+window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:checked, window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.background.csd.org-gnome-Builder .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6557,15 +6557,15 @@ window#gnome-system-monitor headerbar.titlebar stackswitcher > button.radio:not(
   box-shadow: 0 0 0 2px transparent;
 }
 
-window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:checked {
+window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:checked, window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:checked:disabled {
+window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window#gnome-system-monitor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6680,15 +6680,15 @@ window.org-gnome-Todo headerbar.titlebar stackswitcher > button.radio:not(.sugge
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:checked {
+window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:checked, window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.org-gnome-Todo .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6786,15 +6786,15 @@ window.dconf-editor headerbar.titlebar stackswitcher > button.radio:not(.suggest
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.dconf-editor .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.dconf-editor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.dconf-editor .path-bar.linked:not(.vertical) > button:checked {
+window.dconf-editor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.dconf-editor .path-bar.linked:not(.vertical) > button:checked, window.dconf-editor .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.dconf-editor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.dconf-editor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -6930,19 +6930,19 @@ window.geary-main-window headerbar.titlebar stackswitcher > button.radio:not(.su
   box-shadow: 0 0 0 2px transparent;
 }
 
-window#GearyMainWindow .path-bar.linked:not(.vertical) > button:focus:not(:hover),
-window.geary-main-window .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window#GearyMainWindow .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover),
+window.geary-main-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window#GearyMainWindow .path-bar.linked:not(.vertical) > button:checked,
-window.geary-main-window .path-bar.linked:not(.vertical) > button:checked {
+window#GearyMainWindow .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.geary-main-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window#GearyMainWindow .path-bar.linked:not(.vertical) > button:checked, window#GearyMainWindow .path-bar.linked:not(.vertical) > button:checked:disabled,
-window.geary-main-window .path-bar.linked:not(.vertical) > button:checked,
-window.geary-main-window .path-bar.linked:not(.vertical) > button:checked:disabled {
+window#GearyMainWindow .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window#GearyMainWindow .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled,
+window.geary-main-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked,
+window.geary-main-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -7042,15 +7042,15 @@ window.background.csd.budgie-settings-window headerbar.titlebar stackswitcher > 
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:checked {
+window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:checked, window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:checked:disabled {
+window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, window.background.csd.budgie-settings-window .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 
@@ -7148,15 +7148,15 @@ dialog.background.csd headerbar.titlebar stackswitcher > button.radio:not(.sugge
   box-shadow: 0 0 0 2px transparent;
 }
 
-dialog.background.csd .path-bar.linked:not(.vertical) > button:focus:not(:hover) {
+dialog.background.csd .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):focus:not(:hover) {
   box-shadow: 0 0 0 2px transparent;
 }
 
-dialog.background.csd .path-bar.linked:not(.vertical) > button:checked {
+dialog.background.csd .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked {
   color: white;
 }
 
-dialog.background.csd .path-bar.linked:not(.vertical) > button:checked, dialog.background.csd .path-bar.linked:not(.vertical) > button:checked:disabled {
+dialog.background.csd .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked, dialog.background.csd .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):checked:disabled {
   background-color: transparent;
 }
 

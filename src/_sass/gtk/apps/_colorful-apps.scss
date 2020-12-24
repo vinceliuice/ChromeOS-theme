@@ -141,7 +141,7 @@ $theme_green_grey:  #3b4342;
       }
     }
 
-    .path-bar.linked:not(.vertical) > button { // reset path-bar buttons
+    .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo) { // reset path-bar buttons
       &:focus:not(:hover) {
         box-shadow: 0 0 0 2px transparent;
       }
