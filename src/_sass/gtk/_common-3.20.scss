@@ -1223,18 +1223,23 @@ searchbar > revealer > box {
   }
 
   // FIXME: Ugly overriding
-  stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $titlebar-indicator 0%,
-                                  transparent 0%)
-                                  0 0 0 / 0 0 0px;
+  stackswitcher {
+    background: none;
+    padding: 0;
 
-    &:checked {
+    button:not(.suggested-action):not(.destructive-action).text-button {
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $titlebar-indicator 100%,
+                                    $titlebar-indicator 0%,
                                     transparent 0%)
-                                    0 0 2 / 0 0 2px;
-      background-color: transparent;
+                                    0 0 0 / 0 0 0px;
+
+      &:checked {
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $titlebar-indicator 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+        background-color: transparent;
+      }
     }
   }
 
@@ -1409,27 +1414,35 @@ headerbar {
 // window.devel .titlebar:not(.selection-mode) { }
 
 // FIXME: Ugly overriding
-stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
-  min-width: 120px - 8px * 2;
-  border-radius: $corner-radius;
-  box-shadow: none;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                $primary 0%,
-                                transparent 0%)
-                                0 0 0 / 0 0 0px;
+stackswitcher {
+  background-color: $titlebar-fill;
+  border-radius: $window-radius;
+  padding: 0 $container-padding;
 
-  &:hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
-  }
-
-  &:checked {
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $primary 100%,
-                                  transparent 0%)
-                                  0 0 2 / 0 0 2px;
+  button:not(.suggested-action):not(.destructive-action).text-button {
+    min-width: 120px - 8px * 2;
+    border-radius: $corner-radius;
+    box-shadow: none;
     background-color: transparent;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $primary 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0px;
 
-    &:hover { box-shadow: none; }
+    &:hover {
+      box-shadow: inset 0 0 0 9999px $overlay-hover;
+    }
+
+    &:checked {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $primary 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+      background-color: transparent;
+      color: $text;
+
+      &:hover { box-shadow: none; }
+    }
   }
 }
 
@@ -3324,49 +3337,84 @@ paned {
 /**************
  * GtkInfoBar *
  **************/
-infobar {
-  border-style: none;
+ infobar {
+   border: none;
+   margin-bottom: 0;
 
-  &.info,
-  &.question {
-    border-bottom: 1px solid $divider;
-    background-color: $base;
+   &.info {
+     & > revealer > box,
+     &:hover > revealer > box,
+     &:backdrop > revealer > box {
+       background-color: $base;
 
-    button {
-      @extend %button-flat;
+       button {
+         @extend %button-flat;
 
-      &.text-button:not(:disabled) { color: $primary; }
-    }
-  }
+         &, &.text-button:not(:disabled) { color: $primary; }
+       }
+     }
+   }
 
-  &.warning {
-    background-color: $warning;
-    color: on($warning);
+   &.action,
+   &.question {
+     & > revealer > box,
+     &:backdrop > revealer > box {
+       background-color: $primary;
+       color: on($primary);
 
-    button {
-      // @extend %button-on-dark;
-      @extend %button-flat;
-    }
+       button {
+         @extend %button-flat;
 
-    // selection {}
+         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
+       }
+     }
 
-    *:link { color: on($warning); }
-  }
+     &:hover > revealer > box {
+       background-color: if($variant == 'light', lighten($primary, 5%), darken($primary, 5%));
+     }
+   }
 
-  &.error {
-    background-color: $error;
-    color: on($error);
+   &.warning {
+     & > revealer > box,
+     &:backdrop > revealer > box {
+       background-color: $warning;
+       color: on($warning);
 
-    button {
-      @extend %button-flat;
-      @extend %button-on-dark;
-    }
+       button {
+         @extend %button-flat;
+         @extend %button-on-dark;
 
-    // selection {}
+         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($warning); }
+       }
 
-    *:link { color: on($error); }
-  }
-}
+       *:link { color: on($warning); }
+     }
+
+     &:hover > revealer > box {
+       background-color: if($variant == 'light', lighten($warning, 5%), darken($warning, 5%));
+     }
+   }
+
+   &.error {
+     & > revealer > box,
+     &:backdrop > revealer > box {
+       background-color: $error;
+       color: on($error);
+
+       button {
+         @extend %button-flat;
+
+         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($error); }
+       }
+
+       *:link { color: on($error); }
+     }
+
+     &:hover > revealer > box {
+       background-color: if($variant == 'light', lighten($error, 5%), darken($error, 5%));
+     }
+   }
+ }
 
 
 /************
