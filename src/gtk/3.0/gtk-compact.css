@@ -2101,6 +2101,22 @@ popover.background toolbar {
   background-color: #FFFFFF;
 }
 
+popover.background .linked > button:not(.radio) {
+  border-radius: 6px;
+}
+
+popover.background .linked > button:not(.radio):first-child {
+  border-radius: 6px;
+}
+
+popover.background .linked > button:not(.radio):last-child {
+  border-radius: 6px;
+}
+
+popover.background .linked > button:not(.radio):only-child {
+  border-radius: 6px;
+}
+
 popover.background.menu button,
 popover.background button.model {
   min-height: 32px;
