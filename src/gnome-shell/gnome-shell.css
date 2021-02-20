@@ -414,19 +414,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog-linked-button:first-child {
   margin-left: 6px;
-  border-radius: 100px 0px 0px 100px;
+  border-radius: 9999px 0 0 9999px;
 }
 
 .modal-dialog-linked-button:last-child {
   margin-right: 6px;
-  border-right-width: 0px;
-  border-radius: 0px 100px 100px 0;
+  border-right-width: 0;
+  border-radius: 0 9999px 9999px 0;
 }
 
 .modal-dialog-linked-button:first-child:last-child {
   margin: 0 6px 6px 6px;
-  border-right-width: 0px;
-  border-radius: 100px;
+  border-right-width: 0;
+  border-radius: 9999px;
 }
 
 .show-processes-dialog-subject,
@@ -634,7 +634,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Password or Authentication Dialog */
 .prompt-dialog {
-  width: 34em;
+  width: 30em;
   border: 2px solid transparent;
 }
 
@@ -985,7 +985,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-boxpointer .popup-menu-content {
-  margin: 6px 10px 16px;
+  margin-left: 9px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
@@ -3338,6 +3338,44 @@ StWidget.focused .app-well-app-running-dot {
 
 .user-widget-label:rtl {
   padding-right: 18px;
+}
+
+.user-icon {
+  background-size: contain;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
+  border: none;
+}
+
+.user-icon:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.user-icon StIcon {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+.user-widget.vertical .user-icon {
+  icon-size: 128px;
+}
+
+.user-widget.vertical .user-icon StIcon {
+  padding: 20px;
+  padding-top: 18px;
+  padding-bottom: 22px;
+  width: 88px;
+  height: 88px;
+}
+
+.user-widget.horizontal .user-icon {
+  icon-size: 64px;
+}
+
+.user-widget.horizontal .user-icon StIcon {
+  padding: 12px;
+  width: 40px;
+  height: 40px;
 }
 
 .login-dialog-prompt-layout {

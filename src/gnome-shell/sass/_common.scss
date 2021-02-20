@@ -240,7 +240,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.12));
 
 .modal-dialog {
-  border-radius: $button_radius*2;
+  border-radius: $button_radius * 2;
   color: $fg_color;
   background-color: $base_color;
   border: 2px solid $mdborder_color;
@@ -265,8 +265,6 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.12));
   }
 }
 
-$mdbt_radius: 100px;
-
 .modal-dialog-linked-button {
   min-height: 40px;
   padding: 0 16px;
@@ -281,17 +279,17 @@ $mdbt_radius: 100px;
 
   &:first-child {
     margin-left: 6px;
-    border-radius: $mdbt_radius 0px 0px $mdbt_radius;
+    border-radius: $circular_radius 0 0 $circular_radius;
   }
   &:last-child {
     margin-right: 6px;
-    border-right-width: 0px;
-    border-radius: 0px $mdbt_radius $mdbt_radius 0;
+    border-right-width: 0;
+    border-radius: 0 $circular_radius $circular_radius 0;
   }
   &:first-child:last-child {
     margin: 0 6px 6px 6px;
-    border-right-width: 0px;
-    border-radius: $mdbt_radius;
+    border-right-width: 0;
+    border-radius: $circular_radius;
   }
 }
 
@@ -421,66 +419,66 @@ $mdbt_radius: 100px;
 /* ShellMountOperation Dialogs */
 .shell-mount-operation-icon { icon-size: 48px; }
 
-  .mount-dialog {
-    spacing: 24px;
+.mount-dialog {
+  spacing: 24px;
 
-    .message-dialog-title {
-      padding-top: 10px;
-      padding-left: 17px;
-      padding-bottom: 6px;
-      max-width: 34em;
-    }
-
-    .message-dialog-title:rtl {
-      padding-left: 0px;
-      padding-right: 17px;
-    }
-
-    .message-dialog-body {
-      padding-left: 17px;
-      width: 28em;
-    }
-
-    .message-dialog-body:rtl {
-      padding-left: 0px;
-      padding-right: 17px;
-    }
+  .message-dialog-title {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+    max-width: 34em;
   }
 
-  .mount-dialog-app-list {
-    max-height: 200px;
-    padding-top: 24px;
-    padding-left: 49px;
-    padding-right: 32px;
+  .message-dialog-title:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
   }
 
-  .mount-dialog-app-list:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
+  .message-dialog-body {
+    padding-left: 17px;
+    width: 28em;
   }
 
-  .mount-dialog-app-list-item {
-    color: $fg_color;
-    &:hover { color: $fg_color; }
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
+  .message-dialog-body:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
   }
+}
 
-  .mount-dialog-app-list-item-icon {
-    &:ltr { padding-right: 17px; }
-    &:rtl { padding-left: 17px; }
-  }
+.mount-dialog-app-list {
+  max-height: 200px;
+  padding-top: 24px;
+  padding-left: 49px;
+  padding-right: 32px;
+}
 
-  .mount-dialog-app-list-item-name {
-    font-size: 1em;
-  }
+.mount-dialog-app-list:rtl {
+  padding-right: 49px;
+  padding-left: 32px;
+}
+
+.mount-dialog-app-list-item {
+  color: $fg_color;
+  &:hover { color: $fg_color; }
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+}
+
+.mount-dialog-app-list-item-icon {
+  &:ltr { padding-right: 17px; }
+  &:rtl { padding-left: 17px; }
+}
+
+.mount-dialog-app-list-item-name {
+  font-size: 1em;
+}
 
 
 /* Password or Authentication Dialog */
 
 .prompt-dialog {
   //this is the width of the entire modal popup
-  width: 34em;
+  width: 30em;
   border: 2px solid $mdborder_color;
 
   .message-dialog-main-layout { spacing: 24px; padding: 10px; }
@@ -488,38 +486,37 @@ $mdbt_radius: 100px;
   .message-dialog-title { @include font(title); color: $fg_color; }
 }
 
-  .prompt-dialog-description:rtl {
-    text-align: right;
-  }
+.prompt-dialog-description:rtl {
+  text-align: right;
+}
 
-  .prompt-dialog-password-box {
-    spacing: 1em;
-    padding-bottom: 1em;
-  }
+.prompt-dialog-password-box {
+  spacing: 1em;
+  padding-bottom: 1em;
+}
 
-  .prompt-dialog-error-label {
-    font-size: 1em;
-    color: $error_color;
-    padding-bottom: 8px;
-  }
+.prompt-dialog-error-label {
+  font-size: 1em;
+  color: $error_color;
+  padding-bottom: 8px;
+}
 
-  .prompt-dialog-info-label {
-    font-size: 1em;
-    padding-bottom: 8px;
-  }
+.prompt-dialog-info-label {
+  font-size: 1em;
+  padding-bottom: 8px;
+}
 
-  .hidden {
-    color: rgba(0,0,0,0);
-  }
+.hidden {
+  color: rgba(0,0,0,0);
+}
 
-  .prompt-dialog-null-label {
-    font-size: 1em;
-    padding-bottom: 8px;
-  }
+.prompt-dialog-null-label {
+  font-size: 1em;
+  padding-bottom: 8px;
+}
 
 
 /* Polkit Dialog */
-
 .polkit-dialog-user-layout {
   padding-left: 10px;
   spacing: 10px;
@@ -529,50 +526,50 @@ $mdbt_radius: 100px;
   }
 }
 
-  .polkit-dialog-user-root-label {
-    color: $warning_color;
-  }
+.polkit-dialog-user-root-label {
+  color: $warning_color;
+}
 
-  .polkit-dialog-user-icon {
-    border-radius: 5px;
-    background-size: contain;
-    width: 48px;
-    height: 48px;
-  }
+.polkit-dialog-user-icon {
+  border-radius: 5px;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+}
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
   spacing: 30px;
 }
 
-  .audio-selection-content {
-    spacing: 20px;
-    padding: 24px;
-  }
+.audio-selection-content {
+  spacing: 20px;
+  padding: 24px;
+}
 
-  .audio-selection-title {
-    font-weight: bold;
-    text-align: center;
-  }
+.audio-selection-title {
+  font-weight: bold;
+  text-align: center;
+}
 
-  .audio-selection-box {
-    spacing: 20px;
-  }
+.audio-selection-box {
+  spacing: 20px;
+}
 
-  .audio-selection-device {
-    border: 1px solid $border_color;
-    border-radius: $button_radius;
-    &:active,&:hover,&:focus { background-color: $primary_color; }
-  }
+.audio-selection-device {
+  border: 1px solid $border_color;
+  border-radius: $button_radius;
+  &:active,&:hover,&:focus { background-color: $primary_color; }
+}
 
-  .audio-selection-device-box {
-    padding: 20px;
-    spacing: 20px;
-  }
+.audio-selection-device-box {
+  padding: 20px;
+  spacing: 20px;
+}
 
-  .audio-selection-device-icon {
-    icon-size: 64px;
-  }
+.audio-selection-device-icon {
+  icon-size: 64px;
+}
 
 /* Access Dialog */
 .access-dialog {
@@ -797,7 +794,7 @@ $mdbt_radius: 100px;
   box-shadow: none;
 
   .popup-menu-content {
-    margin: $container_padding 10px 16px;
+    margin-left: $container_padding * 1.5;
     background-color: $menu_bg_color;
     border-radius: $button_radius;
     box-shadow: $shadow_3;
@@ -2691,22 +2688,60 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   text-align: left;
   padding-left: 15px;
 }
-  .user-widget-label {
-    &:ltr { padding-left: 18px; }
-    &:rtl { padding-right: 18px; }
+
+.user-widget-label {
+  &:ltr { padding-left: 18px; }
+  &:rtl { padding-right: 18px; }
+}
+
+// User icon
+.user-icon {
+  background-size: contain;
+  color: $inverse_secondary_fg_color;
+  border-radius: $circular_radius;
+  border: none;
+
+  &:hover {
+    color: $inverse_fg_color;
   }
 
+  & StIcon {
+    background-color: $inverse_divider_color;
+    border-radius: $circular_radius;
+  }
+}
+
+.user-widget.vertical .user-icon {
+  icon-size: 128px;
+
+  & StIcon {
+    padding: 20px;
+    padding-top: 18px;
+    padding-bottom: 22px;
+    width: 88px; height:  88px;
+  }
+}
+
+.user-widget.horizontal .user-icon {
+  icon-size: 64px;
+
+  & StIcon {
+    padding: 12px;
+    width: 40px; height: 40px;
+  }
+}
+
 .login-dialog-prompt-layout {
-    padding-top: 24px;
-    padding-bottom: 12px;
-    spacing: 8px;
-    width: 23em;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  spacing: 8px;
+  width: 23em;
 }
 
 .login-dialog-prompt-label {
-    color: $inverse_hint_fg_color;
-    font-size: 1em;
-    padding-top: 1em;
+  color: $inverse_hint_fg_color;
+  font-size: 1em;
+  padding-top: 1em;
 }
 
 .login-dialog-session-list-button StIcon {
@@ -2714,23 +2749,23 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .login-dialog-session-list-button {
-    color: $inverse_secondary_fg_color;
-    &:hover,&:focus { color: $inverse_fg_color; }
-    &:active { color: $inverse_fg_color; }
+  color: $inverse_secondary_fg_color;
+  &:hover,&:focus { color: $inverse_fg_color; }
+  &:active { color: $inverse_fg_color; }
 }
 
 //SCREEN SHIELD
 
 .screen-shield-arrows {
-    padding-bottom: 3em;
+  padding-bottom: 3em;
 }
 
 .screen-shield-arrows Gjs_Arrow {
-    color: white;
-    width: 80px;
-    height: 48px;
-    -arrow-thickness: 12px;
-    -arrow-shadow: $shadow_1;
+  color: white;
+  width: 80px;
+  height: 48px;
+  -arrow-thickness: 12px;
+  -arrow-shadow: $shadow_1;
 }
 
 .screen-shield-clock {

@@ -401,6 +401,23 @@ treeview entry {
   }
 }
 
+%button-flat-linked {
+  @include button(flat-normal);
+  background-color: $fill;
+
+  &:focus { @include button(flat-focus); }
+
+  &:hover { @include button(flat-hover); }
+
+  &:active { @include button(flat-active); }
+
+  &:disabled { @include button(flat-disabled); }
+
+  &:checked, &:checked:hover { @include button(checked); }
+
+  &:checked:disabled { @include button(checked-disabled); }
+}
+
 %button,
 button {
   @at-root %button_basic, & {
@@ -488,16 +505,18 @@ button {
 
     .linked:not(.vertical) > & {
       @extend %linked;
+      @extend %button-flat-linked;
 
-      &:focus { box-shadow: 0 0 0 1px $solid-border; }
+      // &:focus { box-shadow: 0 0 0 1px $solid-border; }
 
       &.image-button:not(.text-button) { @extend %linked-image-button; }
     }
 
     .linked.vertical > & {
       @extend %linked-vertical;
+      @extend %button-flat-linked;
 
-      &:focus { box-shadow: 0 0 0 1px $solid-border; }
+      // &:focus { box-shadow: 0 0 0 1px $solid-border; }
 
       &.image-button:not(.text-button) { @extend %linked-vertical-image-button; }
     }
@@ -714,6 +733,10 @@ button {
     border-radius: $circular-radius;
   }
 }
+
+// Linking stuff
+
+
 
 /* menu buttons */
 modelbutton.flat,
@@ -1045,6 +1068,11 @@ toolbar {
       &:not(:last-child) { margin-right: 0; }
     }
 
+    stackswitcher {
+      margin-top: $container-padding / 2;
+      button { margin: 0; }
+    }
+
     spinbutton {
       entry,
       button { margin: 0; }
@@ -1228,10 +1256,16 @@ searchbar > revealer > box {
     padding: 0;
 
     button:not(.suggested-action):not(.destructive-action).text-button {
+      margin: 0;
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $titlebar-indicator 0%,
                                     transparent 0%)
                                     0 0 0 / 0 0 0px;
+
+      &:hover {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+      }
 
       &:checked {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
@@ -1239,6 +1273,7 @@ searchbar > revealer > box {
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
         background-color: transparent;
+        color: $titlebar-text;
       }
     }
   }
@@ -1415,9 +1450,9 @@ headerbar {
 
 // FIXME: Ugly overriding
 stackswitcher {
-  background-color: $titlebar-fill;
+  background-color: $fill;
   border-radius: $window-radius;
-  padding: 0 $container-padding;
+  padding: 0;
 
   button:not(.suggested-action):not(.destructive-action).text-button {
     min-width: 120px - 8px * 2;

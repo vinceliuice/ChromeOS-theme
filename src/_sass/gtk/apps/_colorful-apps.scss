@@ -655,6 +655,28 @@ dialog.background.csd {
 
   @include color_theme($theme_color:$theme_pink);
 
+  scale {
+    slider {
+      color: $theme_pink;
+
+      @each $s, $as in ('', '') {
+        &#{$s} {
+          $_url: 'assets/scale-slider#{$as}#{$asset-suffix}-pink';
+
+          background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                            radial-gradient(circle, transparent 10%, transparent 0%);
+        }
+      }
+
+      &:active {
+        $_url: 'assets/scale-slider#{$asset-suffix}-pink';
+        background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                          radial-gradient(circle, $overlay-active 10%, transparent 0%);
+        background-size: auto, 0% 0%;
+      }
+    }
+  }
+
   .linked.path-bar > button {
     @extend %button-flat;
 

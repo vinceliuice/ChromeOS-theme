@@ -27,3 +27,8 @@ scale-horz-marks-before-slider-cyan
 scale-horz-marks-after-slider-cyan
 scale-vert-marks-before-slider-cyan
 scale-vert-marks-after-slider-cyan
+scale-slider-pink
+scale-horz-marks-before-slider-pink
+scale-horz-marks-after-slider-pink
+scale-vert-marks-before-slider-pink
+scale-vert-marks-after-slider-pink
