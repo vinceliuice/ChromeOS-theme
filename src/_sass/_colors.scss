@@ -65,13 +65,6 @@ $titlebar-backdrop:                     if($topbar == 'dark', darken(#3266D4, 5%
 $titlebar-decoration:                   if($topbar == 'dark', #244FAE, #d2cdcd);
 $titlebar-decoration-backdrop:          if($topbar == 'dark', darken(#244FAE, 2%), #c4bebe);
 
-// @if $variant == 'dark' {
-//   $titlebar:                            darken(#3266D4, 5%);
-//   $titlebar-backdrop:                   darken(#0c7cd4, 5%);
-//   $titlebar-decoration:                 darken(#244FAE, 2%);
-//   $titlebar-decoration-backdrop:        darken(#176cbd, 5%);
-// }
-
 $panel:                                 if($topbar == 'dark', #1F1F1F, $scrim);
 $panel-solid:                           if($topbar == 'dark', #1F1F1F, #CCCCCC); // for Unity panel which doesn't allow translucent colors
 

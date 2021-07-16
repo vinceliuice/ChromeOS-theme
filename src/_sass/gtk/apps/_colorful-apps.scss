@@ -28,6 +28,7 @@ $theme_green_grey:  #3b4342;
 // Some color theme stuff
 @mixin color_theme($check_rules: 'true',
                    $switch_rules: 'true',
+                   $view_rules: 'true',
                    $entry_rules: 'true',
                    $button_rules: 'true',
                    $scale_rules: 'true',
@@ -70,6 +71,12 @@ $theme_green_grey:  #3b4342;
     }
   }
 
+  @if $view_rules=='true' {
+    .view {
+      &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($theme_color, 0.08); }
+    }
+  }
+
   @if $entry_rules=='true' {
     entry, spinbutton:not(.vertical) {
       &:focus { @include entry(checked, $fc: $theme_color); }
@@ -86,10 +93,28 @@ $theme_green_grey:  #3b4342;
         background-color: $theme_color;
       }
     }
+
+    headerbar {
+      entry, spinbutton:not(.vertical) {
+        &:focus { @include entry(checked, $fc: $theme_indicator); }
+
+        selection {
+          color: if($topbar == 'dark', $theme_color, on($theme_color));
+          background-color: if($topbar == 'dark', white, $theme_color);
+        }
+      }
+
+      label {
+        selection {
+          color: if($topbar == 'dark', $theme_color, on($theme_color));
+          background-color: if($topbar == 'dark', white, $theme_color);
+        }
+      }
+    }
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
+    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -105,11 +130,15 @@ $theme_green_grey:  #3b4342;
     }
 
     button.combo {
-      &:checked { @include entry(checked, $fc: $theme_color); }
+      &:checked {
+        @include entry(checked, $fc: $theme_color);
+        background-color: $fill;
+        color: $text;
+      }
     }
 
     headerbar.titlebar {
-      > button:not(.flat):not(.combo):not(.title-button) { // reset headerbar buttons
+      button:not(.flat):not(.combo):not(.title-button) { // reset headerbar buttons
         &:checked {
           background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
           color: $titlebar-text;
@@ -120,6 +149,18 @@ $theme_green_grey:  #3b4342;
         }
       }
 
+      button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio {
+        &:checked {
+          background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
+          color: $titlebar-text;
+        }
+
+        &:focus:not(:hover) {
+          box-shadow: none;
+        }
+      }
+
+      viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action),
       stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button).radio { // reset stackswitcher buttons
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $theme_indicator 0%,
@@ -131,12 +172,12 @@ $theme_green_grey:  #3b4342;
                                         $theme_indicator 100%,
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
-          background-color: transparent;
+          background-color: $titlebar-fill;
           color: $titlebar-text;
         }
 
         &:focus:not(:hover) {
-          box-shadow: 0 0 0 2px transparent;
+          box-shadow: none;
         }
       }
     }
@@ -224,10 +265,6 @@ window.org-gnome-gedit {
       background-image: image($gedit_header);
       border-top: 1px solid transparent;
     }
-
-    // > headerbar {
-    //   background-color: $theme_deep_purple;
-    // }
   }
 
   notebook {
@@ -262,20 +299,40 @@ window.org-gnome-gedit {
 //
 // Gnome Contacts
 //
-// headerbar.titlebar.contacts-left-header-bar,
-// headerbar.titlebar.contacts-right-header-bar { // 3.22
-//   background-color: $theme_indigo;
-// }
+
+$contacts_header: if($topbar == 'light', $titlebar, $theme_indigo);
+
+headerbar.titlebar.contacts-left-header-bar,
+headerbar.titlebar.contacts-right-header-bar { // 3.22
+  background-color: $contacts_header;
+}
+
+window.background.csd {
+  > deck > box > leaflet {
+    > headerbar {
+      background-color: $contacts_header;
+
+      &:backdrop { background-color: darken($contacts_header, 2%); }
+    }
+
+    > separator.sidebar {
+      background-color: $contacts_header;
+      box-shadow: inset 0 -1px $divider;
+
+      &:backdrop { background-color: darken($contacts_header, 2%); }
+    }
+  }
+}
 
 hdyleaflet, leaflet {
   > stack > frame,
   clamp.medium {
     entry {
-      &:focus { @include entry(checked, $fc: $theme_cyan); }
+      &:focus { @include entry(checked, $fc: $theme_indigo); }
 
       selection {
-        color: on($theme_cyan);
-        background-color: $theme_cyan;
+        color: on($theme_indigo);
+        background-color: $theme_indigo;
       }
     }
   }
@@ -288,16 +345,18 @@ hdyleaflet, leaflet {
 $calendar_header: if($topbar == 'light', $titlebar, $theme_green);
 
 window.org-gnome-Calendar {
+  @include color_theme($theme_color: $theme_green);
+
   headerbar.titlebar {
     background-color: $calendar_header;
     box-shadow: inset 0 1px highlight($calendar_header), inset 0 -1px $divider;
 
-    &:backdrop { background-color: darken($theme_green, 2%); }
+    &:backdrop { background-color: darken($calendar_header, 2%); }
   }
 
   > overlay,
   > popover {
-    @include color_theme($theme_color:$theme_green);
+    @include color_theme($theme_color: $theme_green);
   }
 
   mouthcell {
@@ -312,6 +371,7 @@ window.org-gnome-Calendar {
 $tweak_header: if($topbar == 'light', $titlebar, $theme_brown);
 
 window.background.csd {
+  > leaflet.titlebar, // >= 40.0
   > hdyleaflet.titlebar {
     > headerbar.titlebar.tweak-titlebar-left,
     > headerbar.titlebar.tweak-titlebar-right {
@@ -339,19 +399,6 @@ window.background.csd {
   > hdyleaflet > box.vertical {
     > stack.main-container {
       @include color_theme($theme_color:$theme_brown);
-    }
-  }
-
-  > hdyleaflet > box.vertical {
-    > searchbar { // on Tweak sidebar
-      entry.search {
-        &:focus { @include entry(checked, $fc: $theme_brown); }
-
-        selection {
-          color: on($theme_brown);
-          background-color: $theme_brown;
-        }
-      }
     }
   }
 }
@@ -482,9 +529,15 @@ window.background.csd {
   }
 
   > leaflet > box.vertical {
-    > searchbar { // on control center sidebar
+    > searchbar { // on control center sidebar (also on gnome tweaks)
       entry.search {
-        &:focus { @include entry(checked, $fc: $theme_cyan); }
+        &, &:focus {
+          border-image: none;
+          box-shadow: none;
+          border-radius: $corner-radius;
+        }
+
+        &:focus { background-color: $divider; }
 
         selection {
           color: on($theme_cyan);
@@ -537,7 +590,7 @@ window.background.csd.org-gnome-Builder {
 $monitor_header: if($topbar == 'light', $titlebar, $theme_teal);
 
 window#gnome-system-monitor {
-  @include color_theme($theme_color:$theme_teal);
+  @include color_theme($theme_color: $theme_teal);
 
   headerbar.titlebar {
     background-color: $monitor_header;
@@ -610,7 +663,7 @@ $geary_header: if($topbar == 'light', $titlebar, $theme_red);
 
 window#GearyMainWindow,
 window.geary-main-window { // > 3.36.0
-  > .titlebar {
+  headerbar {
     background-color: $geary_header;
     box-shadow: inset 0 1px highlight($geary_header), inset 0 -1px $divider;
 
@@ -621,7 +674,20 @@ window.geary-main-window { // > 3.36.0
     }
   }
 
-  @include color_theme($theme_color:$theme_red);
+  @include color_theme($theme_color: $theme_red);
+}
+
+window.geary-main-window {
+  > deck > overlay > box > leaflet > separator.sidebar,
+  > deck > overlay > box > leaflet > leaflet > headerbar + separator.sidebar {
+    background-color: $geary_header;
+    box-shadow: inset 0 -1px $divider;
+    transition: background-color $duration $ease-out,
+                color $duration $ease-out,
+                box-shadow $duration $ease-out;
+
+    &:backdrop { background-color: darken($geary_header, 2%); }
+  }
 }
 
 //

@@ -1,3 +1,6 @@
+
+@import 'tweaks';
+
 $asset_suffix: if($variant == 'dark', '-dark', '');
 $extra_background_clip: if($variant == 'light', padding-box, border-box);
 
@@ -26,14 +29,15 @@ $medium_size: if($laptop == 'false', 36px, 32px);
 $large_size: if($laptop == 'false', 48px, 44px);
 
 $container_padding: if($laptop == 'false', 6px, 4px);
-$minimum-hpadding: if($laptop == 'false', 4px, 2px);
+$container_margin: if($laptop == 'false', 4px, 2px);
+$minimum_hpadding: if($laptop == 'false', 4px, 2px);
 
 $bar_size: 4px;
 $menuitem_size: if($laptop == 'false', 32px, 28px);
 
 // radiuses
-$material_radius: 8px;
-$button_radius: 12px;
+$material_radius: 5px;
+$buttons_radius: 12px;
 $circular_radius: 9999px;
 
 // durations

@@ -1,0 +1,60 @@
+
+%circular_list {
+  margin: $container-padding 4px;
+  border-radius: $corner-radius;
+  box-shadow: $shadow-z2;
+  border: none;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd {
+  > stack, // GameMode setting
+  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
+  > box > stack > scrolledwindow > viewport > box {
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  stack stack stack frame, // ArcMenu setting
+  > stack > stack > box > frame, // Night Theme Switcher setting
+  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
+  > stack > box > stack > box > frame, // ArcMenu setting
+  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
+  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
+  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
+    border: none;
+
+    > border { border: none; }
+
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  > stack > box > box > list { // ArcMenu setting sidebar
+    border-bottom-left-radius: $corner-radius;
+  }
+}

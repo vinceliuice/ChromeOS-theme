@@ -1383,6 +1383,55 @@ searchbar > revealer > box {
     .background:not(.csd) & button.titlebutton:active { background-size: 1000% 1000%; }
   }
 
+  &.windowhandle {
+    viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+      border-radius: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+      min-width: 120px;
+
+      label { margin-right: 12px; }
+      image { margin-left: 12px; }
+
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $titlebar-indicator 0%,
+                                    transparent 0%)
+                                    0 0 0 / 0 0 0px;
+
+      &:checked {
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $titlebar-indicator 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+        background-color: $titlebar-fill;
+      }
+
+      &:focus { box-shadow: none; }
+    }
+
+    > button.popup {
+      label, image { min-height: 0; }
+    }
+
+    viewswitchertitle > squeezer {
+      margin-top: 0;
+      margin-bottom: 0;
+      background: none;
+
+      > viewswitcher {
+        margin: 0 0;
+        background: none;
+
+        > box.horizontal > button.radio {
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
   .solid-csd & {
     &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;

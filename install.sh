@@ -1,6 +1,5 @@
 #!/bin/bash
 set -ueo pipefail
-#set -x
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 SRC_DIR="$REPO_DIR/src"
@@ -18,6 +17,18 @@ fi
 THEME_NAME=ChromeOS
 COLOR_VARIANTS=('' '-dark' '-light')
 SIZE_VARIANTS=('' '-compact')
+
+if [[ "$(command -v gnome-shell)" ]]; then
+  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
+  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+    GS_VERSION="new"
+  else
+    GS_VERSION="old"
+  fi
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="new"
+fi
 
 usage() {
   cat << EOF
@@ -72,10 +83,23 @@ install() {
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "${THEME_DIR}/index.theme"
 
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}"/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell${ELSE_DARK:-}$size.css"                      "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp -ur "${SRC_DIR}/gnome-shell/pad-osd.css"                                             "${THEME_DIR}/gnome-shell"
   cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
+
+  if [[ "$panel" == 'compact' || "$opacity" == 'solid' ]]; then
+    if [[ "${GS_VERSION:-}" == 'new' ]]; then
+      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
+    else
+      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
+    fi
+  else
+    if [[ "${GS_VERSION:-}" == 'new' ]]; then
+      cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
+    else
+      cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
+    fi
+  fi
 
   cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -95,12 +119,21 @@ install() {
   [[ "$color" != '-dark' ]] && \
   cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                    "$THEME_DIR/gtk-3.0/gtk-dark.css"
 
+  mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
+  ln -s ../gtk-assets                                                           "$THEME_DIR/gtk-4.0/assets"
+  cp -r "$SRC_DIR/gtk/4.0/gtk$color$size.css"                                   "$THEME_DIR/gtk-4.0/gtk.css"
+  [[ "$color" != '-dark' ]] && \
+  cp -r "$SRC_DIR/gtk/4.0/gtk-dark$size.css"                                    "$THEME_DIR/gtk-4.0/gtk-dark.css"
+
   mkdir -p                                                                      "$THEME_DIR/plank"
   cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"
 }
 
 colors=()
 sizes=()
+opacity=""
+panel=""
+
 while [[ "$#" -gt 0 ]]; do
   case "${1:-}" in
     -d|--dest)
@@ -111,6 +144,29 @@ while [[ "$#" -gt 0 ]]; do
     -n|--name)
       _name="$2"
       shift 2
+      ;;
+    --tweaks)
+      shift
+      for tweaks in $@; do
+        case "$tweaks" in
+          solid)
+            opacity="solid"
+            shift
+            ;;
+          compact)
+            panel="compact"
+            shift
+            ;;
+          -*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized panel variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
       ;;
     -c|--color)
       shift
