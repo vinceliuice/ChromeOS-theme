@@ -114,7 +114,7 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle) {
+    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -134,6 +134,26 @@ $theme_green_grey:  #3b4342;
         @include entry(checked, $fc: $theme_color);
         background-color: $fill;
         color: $text;
+      }
+    }
+
+    stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) { // reset stackswitcher buttons
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $theme_color 0%,
+                                    transparent 0%)
+                                    0 0 0 / 0 0 0px;
+
+      &:checked {
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $theme_color 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+        background-color: $fill;
+        color: $text;
+      }
+
+      &:focus:not(:hover) {
+        box-shadow: none;
       }
     }
 
@@ -161,7 +181,7 @@ $theme_green_grey:  #3b4342;
       }
 
       viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action),
-      stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button).radio { // reset stackswitcher buttons
+      stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) { // reset stackswitcher buttons
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $theme_indicator 0%,
                                       transparent 0%)
