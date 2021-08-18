@@ -9779,7 +9779,7 @@ calendar.raven-calendar:selected {
   background-color: #FFFFFF;
 }
 
-.budgie-run-dialog decoration, .budgie-polkit-dialog decoration, .budgie-session-dialog decoration {
+.background.csd.budgie-run-dialog, .background.csd.budgie-polkit-dialog, .background.csd.budgie-session-dialog, .budgie-run-dialog decoration, .budgie-polkit-dialog decoration, .budgie-session-dialog decoration {
   border-radius: 6px;
 }
 
