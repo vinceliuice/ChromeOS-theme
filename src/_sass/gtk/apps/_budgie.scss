@@ -26,7 +26,9 @@
   box-shadow: $shadow-z4;
   background-color: $surface;
 
-  .container { padding: 2px; }
+  .container { padding: 0; }
+
+  separator { margin: $container-padding / 2 0; }
 
   border { border: none; }
 
@@ -36,6 +38,10 @@
     padding: 0;
 
     &:hover { box-shadow: none; }
+
+    button {
+      @extend %button-flat-simple;
+    }
   }
 
   button.flat:not(.image-button) {
@@ -45,6 +51,56 @@
     font-weight: normal;
 
     &:disabled { color: $text-disabled; }
+  }
+
+  treeview.view.sidebar { //AppMenu (budgie)
+    // min-height: 36px;
+    background: none;
+    border-right: none;
+    color: $text;
+
+    label { padding: $container-padding / 2 $container-padding * 1.5; }
+
+    &:hover { background-color: $divider; }
+  }
+
+  scrolledwindow.sidebar.categories { // AppMenu
+    background-color: $fill;
+  }
+
+  scrolledwindow.sidebar:not(.categories) { //AppMenu (Elementary)
+    // min-height: 36px;
+    background: none;
+    border-right: none;
+
+    &, row.activatable {
+      color: $text;
+      padding: $container-padding $container-padding / 2;
+      border-radius: $corner-radius;
+
+      label { padding: $container-padding / 2 $container-padding; }
+
+      &:hover { background-color: $divider; }
+
+      &:active { background-color: $overlay-active; }
+
+      &:selected, &:selected:hover {
+        background-color: $overlay-checked;
+      }
+    }
+  }
+
+  > frame.container > grid.horizontal > grid.horizontal {
+    > widget > grid.horizontal > stack {
+      border-top: 1px solid $divider;
+    }
+  }
+
+  &.bottom > frame.container > grid.horizontal > grid.horizontal {
+    > widget > grid.horizontal > stack {
+      border-top: none;
+      border-bottom: 1px solid $divider;
+    }
   }
 
   &.budgie-menu {
@@ -76,13 +132,7 @@
   }
 
   &.user-menu {
-    .container { padding: 8px; }
-
-    separator { margin: 4px 0; }
-
-    // frame.container {
-    //   separator { min-height: 0; } // hide separator
-    // }
+    .container { padding: $container-padding; }
 
     list,
     row { // reset styling
@@ -108,20 +158,18 @@
   }
 
   &.sound-popover {
-    separator { margin: 3px 0; }
   }
 
   &.night-light-indicator {
-    .container { padding: 8px; }
+    .container { padding: $container-padding; }
+  }
+
+  &.caffeine-popover {
+    .container { padding: $container-padding; }
   }
 
   &.places-menu {
-    .container { padding: 8px; }
-
-    // FIXME: untested
-    // .message-bar {
-    //   margin-bottom: 4px;
-    // }
+    .container { padding: $container-padding; }
 
     .name-button {
       image {
@@ -135,20 +183,11 @@
       padding: 0;
     }
 
-    // .places-section-header { }
-
     .places-list:not(.always-expand) {
-      margin-top: 4px;
-      padding-top: 4px;
+      margin-top: $container-padding / 2;
+      padding-top: $container-padding / 2;
       border-top: 1px solid $divider;
     }
-
-    // FIXME: untested
-    // .unlock-area {
-    //   entry { }
-    //
-    //   button { }
-    // }
 
     // use such sizes for consistency with other hard-coded dim-label sizes
     .alternative-label {
@@ -158,9 +197,7 @@
   }
 
   &.workspace-popover {
-    .container { padding: 8px; }
-
-    separator { margin: 4px 0; }
+    .container { padding: $container-padding; }
 
     flowboxchild { padding: 0; }
   }
@@ -237,7 +274,7 @@
     padding: 0;
     margin: 0;
     background-size: 32px 32px;
-    border-radius: 100px;
+    border-radius: $circular-radius;
     background-image: image(on($panel, divider));
   }
 
@@ -264,19 +301,19 @@
   background-color: $panel;
   color: on($panel, secondary);
   font-weight: 500;
-  padding-left: 10px;
-  padding-right: 10px;
+  // padding-left: 10px;
+  // padding-right: 10px;
 
   &.transparent { background-color: $scrim; }
 
-  @each $pos, $p_radius in (top,    0 0 16px 16px),
-                           (bottom, 16px 16px 0 0),
-                           (left,   0 16px 16px 0),
-                           (right,  16px 0 0 16px) {
-    .#{$pos} &.transparent {
-      border-radius: $p_radius;
-    }
-  }
+  // @each $pos, $p_radius in (top,    0 0 16px 16px),
+  //                          (bottom, 16px 16px 0 0),
+  //                          (left,   0 16px 16px 0),
+  //                          (right,  16px 0 0 16px) {
+  //   .#{$pos} &.transparent {
+  //     border-radius: $p_radius;
+  //   }
+  // }
 
   button {
     @extend %button-flat;
@@ -290,7 +327,7 @@
     // Menu Button
     &.budgie-menu-launcher {
       // padding: 0 2px;
-      @extend %panel_circlebutton;
+      // @extend %panel_circlebutton;
 
       &:focus { // Fixed issues when global menubar item is hovering
         background: none;
@@ -301,43 +338,38 @@
     }
 
     // Raven Trigger
-    &.raven-trigger {
-      background-image: -gtk-scaled(url("assets/scalable/circle-bg.svg"));
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-      background-clip: padding-box;
-
-      &, &:hover, &:focus, &:active, &:active:hover {
-        background-color: transparent;
-        box-shadow: none;
-        animation: none;
-        background-size: auto;
-      }
-
-      &:hover:not(:active) {
-        background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
-      }
-
-      &:active, &:active:hover {
-        background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
-      }
-    }
+    // &.raven-trigger {
+    //   background-image: -gtk-scaled(url("assets/scalable/circle-bg.svg"));
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   background-size: auto;
+    //   background-clip: padding-box;
+    //
+    //   &, &:hover, &:focus, &:active, &:active:hover {
+    //     background-color: transparent;
+    //     box-shadow: none;
+    //     animation: none;
+    //     background-size: auto;
+    //   }
+    //
+    //   &:hover:not(:active) {
+    //     background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
+    //   }
+    //
+    //   &:active, &:active:hover {
+    //     background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
+    //   }
+    // }
   }
 
-  &.horizontal button { padding: 0 4px; }
+  &.horizontal button { padding: 0 $container-padding; }
 
-  &.vertical button { padding: 4px 0; }
+  &.vertical button { padding: $container-padding 0; }
 
   separator { background-color: on($panel, track); }
 
   // used to indicate unread notifications
   .alert { color: $destructive; }
-
-  // End Section needs to be fancy
-  // .end-region {
-  //   background-color: rgba(0,0,0,0.2);
-  // }
 
   // budgie-pixel-saver-applet
   .titlebar:not(headerbar) {
@@ -466,6 +498,11 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   > box { margin-bottom: -10px; } // remove extra space between box and .raven-header.bottom
 
+  stackswitcher {
+    background: none;
+    padding: 0 $container-padding;
+  }
+
   stackswitcher.linked > button {
     @extend %button-flat;
 
@@ -588,6 +625,43 @@ calendar.raven-calendar {
     padding: ($large-size - 24px) / 2;
 
     @extend %button-on-dark-flat;
+  }
+}
+
+// notification list
+.raven-notifications-view {
+  > .raven-background > viewport.frame {
+    padding: 0; // reset padding for full-width list node
+
+    > list > row.activatable {
+      margin-left: -$container-padding;
+      margin-right: -$container-padding / 2;
+
+      .raven-notifications-group-header { padding: 0 $container-padding * 2; }
+
+      // sub-list rows grouping
+      list {
+        padding: $container-padding;
+        background: none;
+
+        > row.activatable {
+          border: none;
+          padding: $container-padding $container-padding $container-padding $container-padding * 2;
+          margin: $container-padding / 2;
+          border-radius: $corner-radius;
+          background-color: $fill;
+
+          &:hover, &:selected {
+            background-color: $divider;
+          }
+        }
+      }
+
+      &:selected, &:selected:hover, &:hover, &:active, &:focus {
+        background: none;
+        box-shadow: none;
+      }
+    }
   }
 }
 
