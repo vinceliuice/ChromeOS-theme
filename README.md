@@ -1,4 +1,4 @@
-# ChromeOS theme
+![1](https://images.pling.com/img/00/00/32/24/44/1335019/a904f566f527ca301f475cce53c13e7c21c9.jpg)
 
 ChromeOS is a [Material Design](https://material.io) theme for GNOME/GTK based desktop environments.
 Based on nana-4 -- [materia-theme](https://github.com/nana-4/materia-theme)
@@ -61,6 +61,3 @@ To connect the theme to all apps which have available plugs to gtk-common-themes
 
 ![01](src/firefox/preview01.png?raw=true)
 ![02](src/firefox/preview02.png?raw=true)
-
-## Preview
-![1](https://cdn.pling.com/img/9/2/b/e/0f3bbcad86f2b4baee71ca3f12117ebf4d5a.jpg?raw=true)
