@@ -32,6 +32,7 @@ $theme_green_grey:  #3b4342;
                    $entry_rules: 'true',
                    $button_rules: 'true',
                    $scale_rules: 'true',
+                   $link_rules: 'true',
                    $theme_color: $primary,
                    $theme_indicator: if($topbar == 'dark', currentColor, $theme_color)) {
   @if $check_rules=='true' {
@@ -114,7 +115,7 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio) {
+    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -223,6 +224,16 @@ $theme_green_grey:  #3b4342;
       slider { color: $theme_color; }
     }
   }
+
+  @if $link_rules=='true' {
+    *:link {
+      color: $theme_color;
+    }
+
+    *:visited {
+      color: $text-secondary-disabled;
+    }
+  }
 }
 
 //
@@ -232,7 +243,7 @@ $theme_green_grey:  #3b4342;
 $terminal_header: if($topbar == 'light', $titlebar, $theme_sea_green);
 
 terminal-window {
-  @include color_theme($theme_color:$theme_sea_green);
+  @include color_theme($theme_color: $theme_sea_green);
 
   > headerbar.titlebar {
     background-color: $terminal_header;
@@ -313,7 +324,7 @@ window.org-gnome-gedit {
     }
   }
 
-  @include color_theme($theme_color:$theme_amber);
+  @include color_theme($theme_color: $theme_amber);
 }
 
 //
@@ -418,7 +429,7 @@ window.background.csd {
   > leaflet > box.vertical,
   > hdyleaflet > box.vertical {
     > stack.main-container {
-      @include color_theme($theme_color:$theme_brown);
+      @include color_theme($theme_color: $theme_brown);
     }
   }
 }
@@ -495,7 +506,7 @@ window.background.csd {
 
   > leaflet > stack.background,
   > hdyleaflet > stack.background {
-    @include color_theme($theme_color:$theme_cyan);
+    @include color_theme($theme_color: $theme_cyan);
 
     scale {
       slider {
@@ -600,7 +611,7 @@ window.background.csd.org-gnome-Builder {
     }
   }
 
-  @include color_theme($theme_color:$theme_grey);
+  @include color_theme($theme_color: $theme_grey);
 }
 
 //
@@ -642,7 +653,7 @@ window.org-gnome-Todo {
     &:backdrop { background-color: darken($todo_header, 2%); }
   }
 
-  @include color_theme($theme_color:$theme_deep_orange);
+  @include color_theme($theme_color: $theme_deep_orange);
 }
 
 //
@@ -659,7 +670,7 @@ window.dconf-editor {
     &:backdrop { background-color: darken($dconf_header, 2%); }
   }
 
-  @include color_theme($theme_color:$theme_purple);
+  @include color_theme($theme_color: $theme_purple);
 }
 
 //
@@ -724,7 +735,7 @@ window.background.csd.budgie-settings-window {
     &:backdrop { background-color: darken($budgie_header, 2%); }
   }
 
-  @include color_theme($theme_color:$theme_blue_grey);
+  @include color_theme($theme_color: $theme_blue_grey);
 }
 
 //Dialogs
@@ -737,9 +748,11 @@ dialog.background.csd {
     box-shadow: inset 0 1px highlight($dialog_header), inset 0 -1px $divider;
 
     &:backdrop { background-color: darken($dialog_header, 2%); }
+
+    button.suggested-action { background-color: $purple-500; }
   }
 
-  @include color_theme($theme_color:$theme_pink);
+  @include color_theme($theme_color: $theme_pink);
 
   scale {
     slider {

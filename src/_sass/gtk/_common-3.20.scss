@@ -44,7 +44,7 @@
   color: $text;
 
   &.csd { // Set csd windows botttom border radius
-    border-radius: 0 0 $corner-radius $corner-radius;
+    border-radius: 0 0 $window-radius $window-radius;
   }
 
   &.maximized, &.solid-csd { // No radius when windows maximized
@@ -1819,17 +1819,15 @@ menuitem {
  ************/
 popover.background {
   transition: $transition-shadow;
-  padding: 2px;
+  padding: 0;
   box-shadow: $shadow-z4; // TODO: this should really have a highlight
   background-color: $surface;
 
   &:backdrop { box-shadow: $shadow-z2; }
 
   &, .csd & {
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
-    border-radius: $corner-radius + 1px;
+    border: none;
+    border-radius: $corner-radius + $container-padding;
   }
 
   > stack { margin: -4px; } // remove extra padding from menu style popovers
@@ -3671,7 +3669,7 @@ colorchooser .popover.osd {
  **********************/
 decoration {
   transition: $transition-shadow;
-  border-radius: $corner-radius;
+  border-radius: $window-radius;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
   // FIXME rationalize shadows
@@ -3706,12 +3704,12 @@ decoration {
   }
 
   tooltip.csd & {
-    border-radius: $corner-radius;
+    border-radius: $window-radius;
     box-shadow: none;
   }
 
   messagedialog.csd & {
-    border-radius: $corner-radius;
+    border-radius: $window-radius;
     // box-shadow: $shadow-z24, 0 24px (38px * .6) 3px transparent, 0 9px (46px * .6) 8px transparent;
 
     // &:backdrop { box-shadow: $shadow-z4, 0 24px (38px * .6) 3px transparent, 0 9px (46px * .6) 8px transparent; }

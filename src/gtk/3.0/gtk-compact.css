@@ -50,7 +50,7 @@
 }
 
 .background.csd {
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 8px 8px;
 }
 
 .background.maximized, .background.solid-csd {
@@ -156,6 +156,18 @@ XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treev
 filechooser stack.view scrolledwindow .content-view treeview.view rubberband,
 filechooser stack.view scrolledwindow .content-view treeview.view XfdesktopIconView.view .rubberband,
 XfdesktopIconView.view filechooser stack.view scrolledwindow .content-view treeview.view .rubberband,
+.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
+.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
+XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
+filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
+filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
+XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
+.content-view filechooser stack.view scrolledwindow treeview.view rubberband,
+.content-view filechooser stack.view scrolledwindow treeview.view XfdesktopIconView.view .rubberband,
+XfdesktopIconView.view .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
+filechooser stack.view scrolledwindow treeview.view .content-view rubberband,
+filechooser stack.view scrolledwindow treeview.view .content-view XfdesktopIconView.view .rubberband,
+XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
 filechooser stack.view scrolledwindow treeview.view .content-view .rubberband,
 .content-view filechooser stack.view scrolledwindow treeview.view .rubberband,
 flowbox rubberband,
@@ -824,7 +836,7 @@ button.text-button.image-button image:not(:only-child) {
   border-radius: 6px;
 }
 
-.linked:not(.vertical) > button.flat:not(:only-child).image-button:not(.text-button), .linked.vertical > button.flat:not(:only-child).image-button:not(.text-button) {
+.linked:not(.vertical) > button.flat.image-button:not(:only-child):not(.text-button), .linked.vertical > button.flat.image-button:not(:only-child):not(.text-button) {
   border-radius: 9999px;
 }
 
@@ -1412,7 +1424,7 @@ searchbar > revealer > box {
  ***************/
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
-  border-radius: 4px 4px 0 0;
+  border-radius: 8px 8px 0 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: #3266D4;
   color: white;
@@ -1568,23 +1580,23 @@ searchbar > revealer > box {
   padding: 0;
 }
 
-.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
+.titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
   margin: 0;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:hover {
+.titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):hover {
   background-color: transparent;
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.15);
 }
 
-.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked {
+.titlebar stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
   color: white;
 }
 
-.titlebar .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
+.titlebar .path-bar button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 0;
   padding-left: 4px;
   padding-right: 4px;
@@ -1808,11 +1820,11 @@ headerbar .entry-tag, headerbar .photos-entry-tag, headerbar .documents-entry-ta
 
 stackswitcher {
   background-color: rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0;
 }
 
-stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
+stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 104px;
   border-radius: 6px;
   box-shadow: none;
@@ -1820,17 +1832,17 @@ stackswitcher button:not(.suggested-action):not(.destructive-action).text-button
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:hover {
+stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked {
+stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.87);
 }
 
-stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked:hover {
+stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked:hover {
   box-shadow: none;
 }
 
@@ -1914,11 +1926,11 @@ treeview.view:drop(active), filechooser stack.view scrolledwindow treeview.view:
   border-color: alpha(currentColor, 0.08);
 }
 
-treeview.view:drop(active).after, filechooser stack.view scrolledwindow treeview.view:drop(active).after {
+treeview.view.after:drop(active), filechooser stack.view scrolledwindow treeview.view.after:drop(active) {
   border-top-style: none;
 }
 
-treeview.view:drop(active).before, filechooser stack.view scrolledwindow treeview.view:drop(active).before {
+treeview.view.before:drop(active), filechooser stack.view scrolledwindow treeview.view.before:drop(active) {
   border-bottom-style: none;
 }
 
@@ -2188,7 +2200,7 @@ menuitem:disabled accelerator {
  ************/
 popover.background {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  padding: 2px;
+  padding: 0;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
 }
@@ -2198,10 +2210,8 @@ popover.background:backdrop {
 }
 
 popover.background, .csd popover.background {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
-  border-radius: 7px;
+  border: none;
+  border-radius: 10px;
 }
 
 popover.background > stack {
@@ -2449,7 +2459,7 @@ notebook > header tab:checked:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-notebook > header tab:checked.reorderable-page {
+notebook > header tab.reorderable-page:checked {
   border-color: rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
 }
@@ -2608,19 +2618,19 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
   background-color: rgba(0, 0, 0, 0.26);
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) slider {
   min-width: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal button {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) button {
   min-width: 8px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) slider {
   min-height: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical button {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) button {
   min-height: 8px;
 }
 
@@ -3675,7 +3685,7 @@ filechooser stack.view scrolledwindow list {
   background-color: transparent;
 }
 
-filechooser stack.view scrolledwindow treeview.view {
+filechooser stack.view scrolledwindow treeview.view, filechooser stack.view scrolledwindow treeview.view {
   background-color: transparent;
 }
 
@@ -3700,12 +3710,12 @@ filechooser stack.view > placesview > actionbar, filechooser stack.view > places
   background-color: #FAFAFA;
 }
 
-stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:not(separator):dir(ltr), .sidebar:not(separator).left {
+stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:not(separator):dir(ltr), .sidebar.left:not(separator) {
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   border-left-style: none;
 }
 
-stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:not(separator):dir(rtl), .sidebar:not(separator).right {
+stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:not(separator):dir(rtl), .sidebar.right:not(separator) {
   border-left: 1px solid rgba(0, 0, 0, 0.12);
   border-right-style: none;
 }
@@ -4109,7 +4119,7 @@ colorchooser .popover.osd:backdrop {
  **********************/
 decoration {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
   margin: 8px;
 }
@@ -4136,12 +4146,12 @@ decoration:backdrop {
 }
 
 tooltip.csd decoration {
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: none;
 }
 
 messagedialog.csd decoration {
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .solid-csd decoration {
@@ -4451,16 +4461,16 @@ popover.emoji-completion .emoji:hover {
   margin-right: 0;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button {
+.path-bar-box .linked.nautilus-path-bar button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 0;
   border-radius: 1000px;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button {
+.path-bar-box .linked.nautilus-path-bar button.text-button.image-button:not(.suggested-action):not(.destructive-action) {
   border-radius: 1000px;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button image:not(:only-child) {
+.path-bar-box .linked.nautilus-path-bar button.text-button.image-button:not(.suggested-action):not(.destructive-action) image:not(:only-child) {
   margin: 0;
 }
 
@@ -5020,7 +5030,7 @@ stack.view.polari-entry-area {
   border-bottom-right-radius: 6px;
 }
 
-stack:disabled.view.polari-entry-area, filechooser stack.view scrolledwindow treeview.view:disabled.polari-entry-area {
+stack.view.polari-entry-area:disabled, filechooser stack.view scrolledwindow treeview.view.polari-entry-area:disabled {
   background-image: image(#F2F2F2);
 }
 
@@ -5543,7 +5553,7 @@ window.background > box.vertical > box.horizontal > frame > border {
 }
 
 window.background > box.vertical > box.horizontal > frame > scrolledwindow > viewport.frame list {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 8px;
 }
 
 window.background > box.vertical > box.horizontal > stack > widget > notebook.frame {
@@ -5551,7 +5561,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 }
 
 window.background > box.vertical > box.horizontal > stack > widget > notebook.frame > stack {
-  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 8px;
 }
 
 /*********
@@ -5797,7 +5807,7 @@ window.background.csd.unified > decoration-overlay {
 window.background.csd.unified,
 window.background.csd.unified > decoration,
 window.background.csd.unified > decoration-overlay {
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 window.background.csd.unified.tiled > decoration-overlay, window.background.csd.unified.tiled-top > decoration-overlay, window.background.csd.unified.tiled-right > decoration-overlay, window.background.csd.unified.tiled-bottom > decoration-overlay, window.background.csd.unified.tiled-left > decoration-overlay, window.background.csd.unified.maximized > decoration-overlay, window.background.csd.unified.fullscreen > decoration-overlay {
@@ -5875,16 +5885,16 @@ terminal-window headerbar label selection {
   background-color: white;
 }
 
-terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #6ab878;
 }
 
-terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(106, 184, 120, 0.28);
 }
 
-terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+terminal-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -5919,12 +5929,12 @@ terminal-window headerbar.titlebar button:not(.flat):not(.combo):not(.title-butt
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-terminal-window headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+terminal-window headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-terminal-window headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+terminal-window headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -5963,6 +5973,14 @@ terminal-window scale highlight {
 
 terminal-window scale slider {
   color: #6ab878;
+}
+
+terminal-window *:link {
+  color: #6ab878;
+}
+
+terminal-window *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 terminal-window > headerbar.titlebar {
@@ -6081,16 +6099,16 @@ window.org-gnome-gedit headerbar label selection {
   background-color: white;
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 160, 0, 0.28);
 }
 
-window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.org-gnome-gedit button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6125,12 +6143,12 @@ window.org-gnome-gedit headerbar.titlebar button:not(.flat):not(.combo):not(.tit
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-gedit headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.org-gnome-gedit headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-gedit headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.org-gnome-gedit headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -6169,6 +6187,14 @@ window.org-gnome-gedit scale highlight {
 
 window.org-gnome-gedit scale slider {
   color: #FFA000;
+}
+
+window.org-gnome-gedit *:link {
+  color: #FFA000;
+}
+
+window.org-gnome-gedit *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 headerbar.titlebar.contacts-left-header-bar,
@@ -6259,16 +6285,16 @@ window.org-gnome-Calendar headerbar label selection {
   background-color: white;
 }
 
-window.org-gnome-Calendar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.org-gnome-Calendar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #4CAF50;
 }
 
-window.org-gnome-Calendar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.org-gnome-Calendar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.28);
 }
 
-window.org-gnome-Calendar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.org-gnome-Calendar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6303,12 +6329,12 @@ window.org-gnome-Calendar headerbar.titlebar button:not(.flat):not(.combo):not(.
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-Calendar headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.org-gnome-Calendar headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-Calendar headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.org-gnome-Calendar headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -6347,6 +6373,14 @@ window.org-gnome-Calendar scale highlight {
 
 window.org-gnome-Calendar scale slider {
   color: #4CAF50;
+}
+
+window.org-gnome-Calendar *:link {
+  color: #4CAF50;
+}
+
+window.org-gnome-Calendar *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window.org-gnome-Calendar headerbar.titlebar {
@@ -6432,19 +6466,19 @@ window.org-gnome-Calendar > popover headerbar label selection {
   background-color: white;
 }
 
-window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked,
-window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #4CAF50;
 }
 
-window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover),
-window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.28);
 }
 
-window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled,
-window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.org-gnome-Calendar > overlay button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled,
+window.org-gnome-Calendar > popover button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6485,14 +6519,14 @@ window.org-gnome-Calendar > popover headerbar.titlebar button:not(.flat):not(.co
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-Calendar > overlay headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked,
-window.org-gnome-Calendar > popover headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.org-gnome-Calendar > overlay headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.org-gnome-Calendar > popover headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-Calendar > overlay headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover),
-window.org-gnome-Calendar > popover headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.org-gnome-Calendar > overlay headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.org-gnome-Calendar > popover headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -6543,6 +6577,16 @@ window.org-gnome-Calendar > popover scale highlight {
 window.org-gnome-Calendar > overlay scale slider,
 window.org-gnome-Calendar > popover scale slider {
   color: #4CAF50;
+}
+
+window.org-gnome-Calendar > overlay *:link,
+window.org-gnome-Calendar > popover *:link {
+  color: #4CAF50;
+}
+
+window.org-gnome-Calendar > overlay *:visited,
+window.org-gnome-Calendar > popover *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window.org-gnome-Calendar mouthcell {
@@ -6658,19 +6702,19 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container headerb
   background-color: white;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #6D4C41;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(109, 76, 65, 0.28);
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.background.csd > leaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6711,14 +6755,14 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container headerb
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked,
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover),
-window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.background.csd > leaflet > box.vertical > stack.main-container headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.background.csd > hdyleaflet > box.vertical > stack.main-container headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -6771,6 +6815,16 @@ window.background.csd > hdyleaflet > box.vertical > stack.main-container scale s
   color: #6D4C41;
 }
 
+window.background.csd > leaflet > box.vertical > stack.main-container *:link,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container *:link {
+  color: #6D4C41;
+}
+
+window.background.csd > leaflet > box.vertical > stack.main-container *:visited,
+window.background.csd > hdyleaflet > box.vertical > stack.main-container *:visited {
+  color: rgba(0, 0, 0, 0.38);
+}
+
 .tweak-category:selected {
   color: #6D4C41;
 }
@@ -6792,28 +6846,28 @@ window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:backdrop {
 
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child:not(:only-child),
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
-  border-top-left-radius: 4px;
+  border-top-left-radius: 8px;
 }
 
 window.background.csd > headerbar.titlebar > leaflet > headerbar:last-child:not(:only-child),
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:not(:only-child) {
-  border-top-right-radius: 4px;
+  border-top-right-radius: 8px;
 }
 
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child:only-child, window.background.csd > headerbar.titlebar > leaflet > headerbar:last-child:only-child,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:only-child,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:only-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
-window.background.csd > headerbar.titlebar > leaflet > headerbar > stackswitcher button:not(.suggested-action):not(.destructive-action).text-button,
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button:not(.suggested-action):not(.destructive-action).text-button {
+window.background.csd > headerbar.titlebar > leaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action),
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.background.csd > headerbar.titlebar > leaflet > headerbar > stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked,
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked {
+window.background.csd > headerbar.titlebar > leaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked,
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar > stackswitcher button.text-button:not(.suggested-action):not(.destructive-action):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), currentColor 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
 }
@@ -6909,19 +6963,19 @@ window.background.csd > hdyleaflet > stack.background headerbar label selection 
   background-color: white;
 }
 
-window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked,
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #5E35B1;
 }
 
-window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(94, 53, 177, 0.28);
 }
 
-window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled,
-window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.background.csd > leaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled,
+window.background.csd > hdyleaflet > stack.background button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -6962,14 +7016,14 @@ window.background.csd > hdyleaflet > stack.background headerbar.titlebar button:
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd > leaflet > stack.background headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked,
-window.background.csd > hdyleaflet > stack.background headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.background.csd > leaflet > stack.background headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd > leaflet > stack.background headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover),
-window.background.csd > hdyleaflet > stack.background headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.background.csd > leaflet > stack.background headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.background.csd > hdyleaflet > stack.background headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -7020,6 +7074,16 @@ window.background.csd > hdyleaflet > stack.background scale highlight {
 window.background.csd > leaflet > stack.background scale slider,
 window.background.csd > hdyleaflet > stack.background scale slider {
   color: #5E35B1;
+}
+
+window.background.csd > leaflet > stack.background *:link,
+window.background.csd > hdyleaflet > stack.background *:link {
+  color: #5E35B1;
+}
+
+window.background.csd > leaflet > stack.background *:visited,
+window.background.csd > hdyleaflet > stack.background *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window.background.csd > leaflet > stack.background scale slider,
@@ -7149,16 +7213,16 @@ window.background.csd.org-gnome-Builder headerbar label selection {
   background-color: white;
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #424242;
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(66, 66, 66, 0.28);
 }
 
-window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.background.csd.org-gnome-Builder button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7193,12 +7257,12 @@ window.background.csd.org-gnome-Builder headerbar.titlebar button:not(.flat):not
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd.org-gnome-Builder headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.background.csd.org-gnome-Builder headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd.org-gnome-Builder headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.background.csd.org-gnome-Builder headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -7237,6 +7301,14 @@ window.background.csd.org-gnome-Builder scale highlight {
 
 window.background.csd.org-gnome-Builder scale slider {
   color: #424242;
+}
+
+window.background.csd.org-gnome-Builder *:link {
+  color: #424242;
+}
+
+window.background.csd.org-gnome-Builder *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window#gnome-system-monitor check:checked, window#gnome-system-monitor check:indeterminate, window#gnome-system-monitor radio:checked, window#gnome-system-monitor radio:indeterminate {
@@ -7292,16 +7364,16 @@ window#gnome-system-monitor headerbar label selection {
   background-color: white;
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #188c75;
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(24, 140, 117, 0.28);
 }
 
-window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window#gnome-system-monitor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7336,12 +7408,12 @@ window#gnome-system-monitor headerbar.titlebar button:not(.flat):not(.combo):not
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window#gnome-system-monitor headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window#gnome-system-monitor headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window#gnome-system-monitor headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window#gnome-system-monitor headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -7380,6 +7452,14 @@ window#gnome-system-monitor scale highlight {
 
 window#gnome-system-monitor scale slider {
   color: #188c75;
+}
+
+window#gnome-system-monitor *:link {
+  color: #188c75;
+}
+
+window#gnome-system-monitor *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window#gnome-system-monitor headerbar.titlebar {
@@ -7461,16 +7541,16 @@ window.org-gnome-Todo headerbar label selection {
   background-color: white;
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #F4511E;
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(244, 81, 30, 0.28);
 }
 
-window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.org-gnome-Todo button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7505,12 +7585,12 @@ window.org-gnome-Todo headerbar.titlebar button:not(.flat):not(.combo):not(.titl
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.org-gnome-Todo headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.org-gnome-Todo headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.org-gnome-Todo headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.org-gnome-Todo headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -7549,6 +7629,14 @@ window.org-gnome-Todo scale highlight {
 
 window.org-gnome-Todo scale slider {
   color: #F4511E;
+}
+
+window.org-gnome-Todo *:link {
+  color: #F4511E;
+}
+
+window.org-gnome-Todo *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window.dconf-editor headerbar.titlebar {
@@ -7613,16 +7701,16 @@ window.dconf-editor headerbar label selection {
   background-color: white;
 }
 
-window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #9C27B0;
 }
 
-window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.28);
 }
 
-window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.dconf-editor button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7657,12 +7745,12 @@ window.dconf-editor headerbar.titlebar button:not(.flat):not(.combo):not(.title-
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.dconf-editor headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.dconf-editor headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.dconf-editor headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.dconf-editor headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -7701,6 +7789,14 @@ window.dconf-editor scale highlight {
 
 window.dconf-editor scale slider {
   color: #9C27B0;
+}
+
+window.dconf-editor *:link {
+  color: #9C27B0;
+}
+
+window.dconf-editor *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 headerbar.titlebar.event_toolbar {
@@ -7802,19 +7898,19 @@ window.geary-main-window headerbar label selection {
   background-color: white;
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked,
-window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #D93025;
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover),
-window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.28);
 }
 
-window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled,
-window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window#GearyMainWindow button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled,
+window.geary-main-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -7855,14 +7951,14 @@ window.geary-main-window headerbar.titlebar button:not(.flat):not(.combo):not(.t
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window#GearyMainWindow headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked,
-window.geary-main-window headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window#GearyMainWindow headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked,
+window.geary-main-window headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window#GearyMainWindow headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover),
-window.geary-main-window headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window#GearyMainWindow headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover),
+window.geary-main-window headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -7913,6 +8009,16 @@ window.geary-main-window scale highlight {
 window#GearyMainWindow scale slider,
 window.geary-main-window scale slider {
   color: #D93025;
+}
+
+window#GearyMainWindow *:link,
+window.geary-main-window *:link {
+  color: #D93025;
+}
+
+window#GearyMainWindow *:visited,
+window.geary-main-window *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 window.geary-main-window > deck > overlay > box > leaflet > separator.sidebar,
@@ -7989,16 +8095,16 @@ window.background.csd.budgie-settings-window headerbar label selection {
   background-color: white;
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #37474F;
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(55, 71, 79, 0.28);
 }
 
-window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+window.background.csd.budgie-settings-window button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -8033,12 +8139,12 @@ window.background.csd.budgie-settings-window headerbar.titlebar button:not(.flat
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-window.background.csd.budgie-settings-window headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+window.background.csd.budgie-settings-window headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-window.background.csd.budgie-settings-window headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+window.background.csd.budgie-settings-window headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -8079,6 +8185,14 @@ window.background.csd.budgie-settings-window scale slider {
   color: #37474F;
 }
 
+window.background.csd.budgie-settings-window *:link {
+  color: #37474F;
+}
+
+window.background.csd.budgie-settings-window *:visited {
+  color: rgba(0, 0, 0, 0.38);
+}
+
 dialog.background.csd > headerbar.titlebar {
   background-color: #E91E63;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 0 -1px rgba(0, 0, 0, 0.12);
@@ -8086,6 +8200,10 @@ dialog.background.csd > headerbar.titlebar {
 
 dialog.background.csd > headerbar.titlebar:backdrop {
   background-color: #e6175d;
+}
+
+dialog.background.csd > headerbar.titlebar button.suggested-action {
+  background-color: #9C27B0;
 }
 
 dialog.background.csd check:checked, dialog.background.csd check:indeterminate, dialog.background.csd radio:checked, dialog.background.csd radio:indeterminate {
@@ -8141,16 +8259,16 @@ dialog.background.csd headerbar label selection {
   background-color: white;
 }
 
-dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked {
+dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   color: white;
   background-color: #E91E63;
 }
 
-dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):focus:not(:hover) {
+dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.28);
 }
 
-dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):not(.radio):checked:disabled {
+dialog.background.csd button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -8185,12 +8303,12 @@ dialog.background.csd headerbar.titlebar button:not(.flat):not(.combo):not(.titl
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 
-dialog.background.csd headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:checked {
+dialog.background.csd headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
 }
 
-dialog.background.csd headerbar.titlebar button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio:focus:not(:hover) {
+dialog.background.csd headerbar.titlebar button.radio:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle):focus:not(:hover) {
   box-shadow: none;
 }
 
@@ -8229,6 +8347,14 @@ dialog.background.csd scale highlight {
 
 dialog.background.csd scale slider {
   color: #E91E63;
+}
+
+dialog.background.csd *:link {
+  color: #E91E63;
+}
+
+dialog.background.csd *:visited {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 dialog.background.csd scale slider {
@@ -8598,11 +8724,11 @@ tooltip.background.chromium {
  * Lollypop *
  ************/
 window.background.csd > grid.vertical > overlay > grid.vertical > grid.horizontal > .sidebar {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 8px;
 }
 
 window.background.csd > grid.vertical > overlay > grid.vertical > grid.horizontal > paned.horizontal > stack {
-  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 8px;
 }
 
 /*********
@@ -8653,7 +8779,7 @@ UnityDecoration .menuitem:hover {
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17);
 }
 
-.background:not(.csd) headerbar:not(.titlebar).inline-toolbar {
+.background:not(.csd) headerbar.inline-toolbar:not(.titlebar) {
   border-style: none;
 }
 
@@ -9498,7 +9624,7 @@ MsdOsdWindow.background.osd .progressbar {
 .budgie-panel menubar > menuitem > window.background.popup > menu,
 .budgie-panel .menubar > menuitem > window.background.popup > decoration,
 .budgie-panel .menubar > menuitem > window.background.popup > menu {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 8px 8px;
 }
 
 .budgie-panel #tasklist-button {
@@ -9956,7 +10082,7 @@ XfdesktopIconView.view .rubberband {
 }
 
 window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 8px;
 }
 
 window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane treeview.view:not(:hover):not(:selected), filechooser stack.view window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane treeview.view:not(:hover):not(:selected) {
