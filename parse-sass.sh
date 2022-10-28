@@ -8,9 +8,9 @@ fi
 
 SASSC_OPT=('-M' '-t' 'expanded')
 
-_COLOR_VARIANTS=('' '-dark' '-light')
-_BCOLOR_VARIANTS=('' '-dark')
-_SIZE_VARIANTS=('' '-compact')
+_COLOR_VARIANTS=('' '-Dark' '-Light')
+_BCOLOR_VARIANTS=('' '-Dark')
+_SIZE_VARIANTS=('' '-Compact')
 
 if [[ -n "${COLOR_VARIANTS:-}" ]]; then
   IFS=', ' read -r -a _COLOR_VARIANTS <<< "${COLOR_VARIANTS:-}"

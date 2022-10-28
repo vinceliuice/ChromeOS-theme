@@ -171,7 +171,7 @@ label {
   }
 }
 
-.dim-label { color: $text-secondary; }
+.dim-label { color: $text-disabled; }
 
 assistant {
   .sidebar {
@@ -563,8 +563,7 @@ button {
       &:disabled { @include button(disabled); }
 
       &:hover {
-        box-shadow: inset 0 0 0 9999px transparent,
-                    0 2px (4px * .6) -1px rgba($b_color, 0.2),
+        box-shadow: 0 2px (4px * .6) -1px rgba($b_color, 0.2),
                     0 4px (5px * .6) 0 rgba($b_color, 0.14),
                     0 1px (10px * .6) 0 rgba($b_color, 0.12);
       }
@@ -572,8 +571,7 @@ button {
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
 
       &:checked:hover {
-        box-shadow: inset 0 0 0 9999px transparent,
-                    0 3px 3px -3px rgba($b_color, 0.3),
+        box-shadow: 0 3px 3px -3px rgba($b_color, 0.3),
                     0 2px 3px -1px rgba($b_color, 0.24),
                     0 2px 5px 0 rgba($b_color, 0.12);
       }
@@ -810,21 +808,18 @@ spinbutton {
     button {
       @extend %button-flat-simple;
       @extend %small_button;
-
-      // margin: $container-padding;
-      border: solid $container-padding transparent;
+      margin: $container-padding;
 
       // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active):not(:disabled) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
+      &:focus {
+        box-shadow: none;
       }
 
       &.up:dir(ltr),
-      &.down:dir(rtl) { margin-left: -$container-padding / 2; }
+      &.down:dir(rtl) { margin-left: $container-padding / 2; }
 
       &.up:dir(rtl),
-      &.down:dir(ltr) { margin-right: -$container-padding / 2; }
+      &.down:dir(ltr) { margin-right: $container-padding / 2; }
     }
   }
 
@@ -858,7 +853,6 @@ spinbutton {
 
       // Remove unwanted focus indicator
       &:focus:not(:hover):not(:active) {
-        box-shadow: inset 0 0 0 9999px transparent;
         color: $text-secondary;
       }
 
@@ -1198,11 +1192,11 @@ searchbar > revealer > box {
     &:focus { box-shadow: 0 0 0 2px $titlebar-divider; }
 
     &:hover {
-      box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
     }
 
     &:active {
-      box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
       background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 0%);
     }
 
@@ -1213,7 +1207,7 @@ searchbar > revealer > box {
       color: $titlebar-text;
 
       &:hover {
-        box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
+        background-color: if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
       }
 
       &:disabled {
@@ -1257,8 +1251,7 @@ searchbar > revealer > box {
                                     0 0 0 / 0 0 0px;
 
       &:hover {
-        background-color: transparent;
-        box-shadow: inset 0 0 0 9999px if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+        background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
       }
 
       &:checked {
@@ -1508,7 +1501,7 @@ stackswitcher {
                                   0 0 0 / 0 0 0px;
 
     &:hover {
-      box-shadow: inset 0 0 0 9999px $overlay-hover;
+      background-color: $overlay-hover;
     }
 
     &:checked {
@@ -1530,7 +1523,6 @@ stackswitcher {
 %pathbar_button,
 .path-bar.linked:not(.vertical) > button {
   @extend %button-flat;
-
   padding-left: ($medium-size - 24px) / 2;
   padding-right: ($medium-size - 24px) / 2;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
@@ -1548,19 +1540,14 @@ stackswitcher {
     &, &:disabled { background-color: transparent; }
   }
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 0; }
-
-    &:last-child { margin-right: 0; }
-  }
-
-  &.text-button {
-    min-width: 0;
+  label, image {
+    margin-left: $container-padding / 2;
+    margin-right: $container-padding / 2;
   }
 
   &.slider-button {
-    padding-left: (24px - 16px) / 2;
-    padding-right: (24px - 16px) / 2;
+    padding-left: ($small-size - 16px) / 2;
+    padding-right: ($small-size - 16px) / 2;
   }
 }
 
@@ -1873,6 +1860,51 @@ popover.background {
 /*************
  * Notebooks *
  *************/
+
+%tabs_tab {
+  transition: $transition,
+              background-size 0ms,
+              background-image 0ms;
+  min-height: $small-size;
+  min-width: $small-size;
+  padding: $container-padding 12px;
+  border-width: 1px;         // for reorderable tabs
+  border-color: transparent; //
+  outline: none;
+  background-image: radial-gradient(circle, rgba($primary, 0.35) 10%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0% 0%;
+  background-clip: border-box;
+  color: $text-secondary;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $overlay-hover;
+    color: $text;
+  }
+
+  &:disabled { color: $text-secondary-disabled; }
+
+  &:checked {
+    transition: $transition,
+                background-size $ripple-fade-in-duration $ease-out,
+                background-image $ripple-fade-in-duration + $ripple-fade-out-duration $ease-out;
+    background-color: transparent;
+    background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+    background-size: 1000% 1000%;
+    background-clip: padding-box;
+    color: $text;
+
+    &:disabled { color: $text-disabled; }
+
+    &.reorderable-page {
+      border-color: $frame;
+      background-color: $base;
+    }
+  }
+}
+
 notebook {
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
@@ -2014,50 +2046,7 @@ notebook {
     }
 
     tab {
-      transition: $transition,
-                  background-size 0ms,
-                  background-image 0ms;
-      min-height: $small-size;
-      min-width: $small-size;
-      padding: $container-padding 12px;
-
-      border-width: 1px;         // for reorderable tabs
-      border-color: transparent; //
-
-      outline: none;
-      background-image: radial-gradient(circle, rgba($primary, 0.35) 10%, transparent 0%);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 0% 0%;
-      background-clip: border-box;
-
-      color: $text-secondary;
-      font-weight: 500;
-
-      &:hover {
-        background-color: $overlay-hover;
-        color: $text;
-      }
-
-      &:disabled { color: $text-secondary-disabled; }
-
-      &:checked {
-        transition: $transition,
-                    background-size $ripple-fade-in-duration $ease-out,
-                    background-image $ripple-fade-in-duration + $ripple-fade-out-duration $ease-out;
-        background-color: transparent;
-        background-image: radial-gradient(circle, transparent 10%, transparent 0%);
-        background-size: 1000% 1000%;
-        background-clip: padding-box;
-        color: $text;
-
-        &:disabled { color: $text-disabled; }
-
-        &.reorderable-page {
-          border-color: $frame;
-          background-color: $base;
-        }
-      }
+      @extend %tabs_tab;
 
       // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
       > box {
@@ -3093,7 +3082,6 @@ messagedialog { // Message Dialog styling
   .titlebar {
     min-height: $small-size;
     border-style: none;
-    box-shadow: inset 0 1px highlight($surface);
     background-color: $surface;
     color: $text;
 
@@ -3106,8 +3094,14 @@ messagedialog { // Message Dialog styling
   &.csd { // rounded bottom border styling for csd version
     &.background {
       // bigger radius for better antialiasing
-      border-bottom-left-radius: $corner-radius;
-      border-bottom-right-radius: $corner-radius;
+      border-bottom-left-radius: $corner-radius + $container-padding;
+      border-bottom-right-radius: $corner-radius + $container-padding;
+    }
+
+    .titlebar {
+      border-top-left-radius: $corner-radius + $container-padding;
+      border-top-right-radius: $corner-radius + $container-padding;
+      box-shadow: inset 0 1px highlight($surface);
     }
 
     .dialog-action-box {

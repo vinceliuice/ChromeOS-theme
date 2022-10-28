@@ -1337,6 +1337,17 @@ box.vertical > revealer > toolbar.search-bar {
   }
 }
 
+/*************
+ * Gnome Web *
+ *************/
+
+.entry-icon {
+  color: $titlebar-text-secondary;
+
+  &:hover {
+    color: $titlebar-text;
+  }
+}
 
 /*************
  * Documents *
@@ -1726,6 +1737,24 @@ dialog.background.csd {
       > stack {
         border-radius: 0 0 $corner-radius $corner-radius;
       }
+    }
+  }
+
+  stack scrolledwindow {
+    &.frame {
+      border-radius: $corner-radius;
+
+      textview.view {
+        border-radius: $corner-radius;
+
+        > text {
+          background: none;
+        }
+      }
+    }
+
+    viewport.frame {
+      &.view { border-radius: $corner-radius; }
     }
   }
 }

@@ -88,6 +88,10 @@ $theme_green_grey:  #3b4342;
       }
     }
 
+    entry progress {
+      border-color: $theme_color;
+    }
+
     label {
       selection {
         color: on($theme_color);
@@ -105,6 +109,10 @@ $theme_green_grey:  #3b4342;
         }
       }
 
+      entry progress {
+        border-color: $theme_indicator;
+      }
+
       label {
         selection {
           color: if($topbar == 'dark', $theme_color, on($theme_color));
@@ -115,7 +123,7 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle) {
+    button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
       &:checked {
         color: on($theme_color);
         background-color: $theme_color;
@@ -138,7 +146,7 @@ $theme_green_grey:  #3b4342;
       }
     }
 
-    stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) { // reset stackswitcher buttons
+    stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset stackswitcher buttons
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $theme_color 0%,
                                     transparent 0%)
@@ -149,7 +157,7 @@ $theme_green_grey:  #3b4342;
                                       $theme_color 100%,
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
-        background-color: $fill;
+        background-color: transparent;
         color: $text;
       }
 
@@ -159,7 +167,7 @@ $theme_green_grey:  #3b4342;
     }
 
     headerbar.titlebar {
-      button:not(.flat):not(.combo):not(.title-button) { // reset headerbar buttons
+      button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset headerbar buttons
         &:checked {
           background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
           color: $titlebar-text;
@@ -170,19 +178,8 @@ $theme_green_grey:  #3b4342;
         }
       }
 
-      button:not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):not(.toggle).radio {
-        &:checked {
-          background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
-          color: $titlebar-text;
-        }
-
-        &:focus:not(:hover) {
-          box-shadow: none;
-        }
-      }
-
-      viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action),
-      stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.title-button) { // reset stackswitcher buttons
+      viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up),
+      stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset stackswitcher buttons
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $theme_indicator 0%,
                                       transparent 0%)
@@ -193,7 +190,7 @@ $theme_green_grey:  #3b4342;
                                         $theme_indicator 100%,
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
-          background-color: $titlebar-fill;
+          background-color: transparent;
           color: $titlebar-text;
         }
 
@@ -203,7 +200,7 @@ $theme_green_grey:  #3b4342;
       }
     }
 
-    .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo) { // reset path-bar buttons
+    .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset path-bar buttons
       &:focus:not(:hover) {
         box-shadow: 0 0 0 2px transparent;
       }
@@ -352,18 +349,16 @@ window.background.csd {
 
       &:backdrop { background-color: darken($contacts_header, 2%); }
     }
-  }
-}
 
-hdyleaflet, leaflet {
-  > stack > frame,
-  clamp.medium {
-    entry {
-      &:focus { @include entry(checked, $fc: $theme_indigo); }
+    > stack > frame,
+    clamp.medium {
+      entry {
+        &:focus { @include entry(checked, $fc: $theme_indigo); }
 
-      selection {
-        color: on($theme_indigo);
-        background-color: $theme_indigo;
+        selection {
+          color: on($theme_indigo);
+          background-color: $theme_indigo;
+        }
       }
     }
   }
@@ -640,6 +635,67 @@ window#gnome-system-monitor {
 }
 
 //
+// Gnome Web
+//
+
+$web_header: if($topbar == 'light', $titlebar, $theme_deep_purple);
+
+fullscreenbox {
+  windowhandle > .titlebar > headerbar {
+    background-color: $web_header;
+  }
+
+  @include color_theme($theme_color: $theme_deep_purple);
+}
+
+$preferences_header: if($topbar == 'light', $titlebar, $theme_dark_cyan);
+
+window.preferences {
+  headerbar.titlebar {
+    background-color: $preferences_header;
+  }
+
+  @include color_theme($theme_color: $theme_dark_cyan);
+}
+
+/* incognito mode */
+.incognito-mode fullscreenbox windowhandle > .titlebar > headerbar,
+.incognito-mode searchbar > revealer > box,
+.incognito-mode tabbar > revealer > box,
+.incognito-mode actionbar > revealer > box {
+  background-color: if($topbar == 'light', $light-blue-50, $cyan-500);
+}
+
+.incognito-mode fullscreenbox windowhandle > .titlebar > headerbar:backdrop,
+.incognito-mode searchbar:backdrop > revealer > box,
+.incognito-mode tabbar:backdrop > revealer > box,
+.incognito-mode actionbar:backdrop > revealer > box {
+  background-color: if($topbar == 'light', $light-blue-100, $cyan-600);
+}
+
+.incognito-mode #title-box-container {
+  background: cross-fade(60% -gtk-icontheme('user-not-tracked-symbolic'), image(transparent)) 16px 0 / 64px 64px no-repeat;
+}
+
+tabbox {
+  background-color: $background;
+  box-shadow: inset 0 -1px $divider;
+
+  > tab {
+    @extend %tabs_tab;
+    border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2 / 0 0 2px;
+
+    &:checked { border-image-source: linear-gradient(to top, $theme_deep_purple 2px, $frame 2px); }
+
+    > button.tab-close-button {
+      @extend %button-flat-simple;
+      @extend %circular_button;
+      @extend %small_button;
+    }
+  }
+}
+
+//
 // Gnome-Todo
 //
 
@@ -705,6 +761,8 @@ window.geary-main-window { // > 3.36.0
     }
   }
 
+  progressbar progress { background-color: $theme_red; }
+
   @include color_theme($theme_color: $theme_red);
 }
 
@@ -738,7 +796,9 @@ window.background.csd.budgie-settings-window {
   @include color_theme($theme_color: $theme_blue_grey);
 }
 
-//Dialogs
+//
+// Dialogs
+//
 
 $dialog_header: if($topbar == 'light', $titlebar, $theme_pink);
 
@@ -772,6 +832,33 @@ dialog.background.csd {
         background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
                           radial-gradient(circle, $overlay-active 10%, transparent 0%);
         background-size: auto, 0% 0%;
+      }
+    }
+
+    @each $dir_class, $dir_infix in ('horizontal', 'horz'),
+                                    ('vertical', 'vert') {
+      @each $marks_infix, $marks_class in ('marks-before', 'marks-before:not(.marks-after)'),
+                                          ('marks-after', 'marks-after:not(.marks-before)') {
+        &.#{$dir_class}.#{$marks_class} {
+          slider {
+            @each $state, $state_infix in ('', ''),
+                                          (':disabled', '-disabled') {
+              &#{$state} {
+                $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}-pink';
+
+                background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png')),
+                                  radial-gradient(circle, transparent 10%, transparent 0%);
+              }
+            }
+
+            &:active {
+              $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider-pink';
+
+              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png')),
+                                radial-gradient(circle, $overlay-active 10%, transparent 0%);
+            }
+          }
+        }
       }
     }
   }

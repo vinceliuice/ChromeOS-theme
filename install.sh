@@ -15,8 +15,8 @@ else
 fi
 
 THEME_NAME=ChromeOS
-COLOR_VARIANTS=('' '-dark' '-light')
-SIZE_VARIANTS=('' '-compact')
+COLOR_VARIANTS=('' '-Dark' '-Light')
+SIZE_VARIANTS=('' '-Compact')
 
 if [[ "$(command -v gnome-shell)" ]]; then
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
@@ -57,8 +57,8 @@ install() {
   local color="$3"
   local size="$4"
 
-  [[ "$color" == '-dark' ]] && local ELSE_DARK="$color"
-  [[ "$color" == '-light' ]] && local ELSE_LIGHT="$color"
+  [[ "$color" == '-Dark' ]] && local ELSE_DARK="$color"
+  [[ "$color" == '-Light' ]] && local ELSE_LIGHT="$color"
 
   local THEME_DIR="$dest/$name$color$size"
 
@@ -82,10 +82,10 @@ install() {
   echo "CursorTheme=Adwaita" >>                                                 "${THEME_DIR}/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "${THEME_DIR}/index.theme"
 
-  mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/pad-osd.css"                                             "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
-  cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
+  mkdir -p                                                                      "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}/gnome-shell/pad-osd.css"                                   "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                 "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                    "${THEME_DIR}/gnome-shell/assets"
 
   if [[ "$panel" == 'compact' || "$opacity" == 'solid' ]]; then
     if [[ "${GS_VERSION:-}" == 'new' ]]; then
@@ -95,9 +95,9 @@ install() {
     fi
   else
     if [[ "${GS_VERSION:-}" == 'new' ]]; then
-      cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
+      cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.css" "$THEME_DIR/gnome-shell/gnome-shell.css"
     else
-      cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
+      cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.css" "$THEME_DIR/gnome-shell/gnome-shell.css"
     fi
   fi
 
@@ -117,13 +117,18 @@ install() {
   ln -s ../gtk-assets                                                           "$THEME_DIR/gtk-3.0/assets"
   cp -r "$SRC_DIR/gtk/3.0/gtk$color$size.css"                                   "$THEME_DIR/gtk-3.0/gtk.css"
   [[ "$color" != '-dark' ]] && \
-  cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                    "$THEME_DIR/gtk-3.0/gtk-dark.css"
+  cp -r "$SRC_DIR/gtk/3.0/gtk-Dark$size.css"                                    "$THEME_DIR/gtk-3.0/gtk-dark.css"
 
   mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
   ln -s ../gtk-assets                                                           "$THEME_DIR/gtk-4.0/assets"
   cp -r "$SRC_DIR/gtk/4.0/gtk$color$size.css"                                   "$THEME_DIR/gtk-4.0/gtk.css"
   [[ "$color" != '-dark' ]] && \
-  cp -r "$SRC_DIR/gtk/4.0/gtk-dark$size.css"                                    "$THEME_DIR/gtk-4.0/gtk-dark.css"
+  cp -r "$SRC_DIR/gtk/4.0/gtk-Dark$size.css"                                    "$THEME_DIR/gtk-4.0/gtk-dark.css"
+
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
+  ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk.css"                                         "${HOME}/.config/gtk-4.0/gtk.css"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css"                                    "${HOME}/.config/gtk-4.0/gtk-dark.css"
 
   mkdir -p                                                                      "$THEME_DIR/plank"
   cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"

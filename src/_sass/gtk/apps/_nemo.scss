@@ -29,9 +29,9 @@
       padding-right: 4px;
     }
 
-    > toolitem > .linked.raised > button.image-button {
+    > toolitem button {
       @extend %button-flat;
-      @include linked-button($r: $circular-radius);
+
       margin-left: 2px;
       margin-right: 2px;
     }

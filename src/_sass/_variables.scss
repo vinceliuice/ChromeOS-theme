@@ -17,8 +17,8 @@ $menuitem-size: 28px;
 // Radii
 //
 
-$window-radius: 8px;
 $corner-radius: 6px;
+$window-radius: $corner-radius + $container-padding / 2;
 $circular-radius: 9999px;
 
 //

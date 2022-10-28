@@ -1,60 +1,295 @@
 
-%circular_list {
-  margin: $container-padding 4px;
-  border-radius: $corner-radius;
-  box-shadow: $shadow-z2;
+//
+// Nautilus
+//
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  border-radius: $circular-radius;
+
+  &, &:hover, &:active, &:focus-within {
+    border-image: none;
+    box-shadow: none;
+  }
+
+  > menubutton {
+    margin: 0;
+
+    > button {
+      min-width: 16px;
+      min-height: 16px;
+      margin: $container-padding / 2 0;
+    }
+  }
+
+  > text { margin: 0; }
+
+  #NautilusQueryEditorTag {
+    border-radius: $circular-radius;
+
+    > button {
+      margin: 0;
+      padding: 0;
+      min-height: $small-size - 2px;
+      min-width: $small-size - 2px;
+    }
+  }
+}
+
+#NautilusPathBar {
+  background-color: $titlebar-fill;
+  border-radius: $circular-radius;
+  margin: $container-padding 0;
+
+  #NautilusPathButton {
+    margin: 0 $container-padding / 2;
+    border-radius: $circular-radius;
+
+    &.current-dir {
+      color: $titlebar-text;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+
+    &:first-child { margin-left: 0; }
+  }
+
+  > menubutton {
+    margin: 0;
+
+    > button {
+      border-radius: $circular-radius;
+    }
+  }
+}
+
+//
+// Calendar
+//
+
+datechooser.view {
+  button.flat.pill, button.circular.day {
+    min-height: $small-size;
+    min-width: $small-size;
+    padding: $container-padding;
+    border-radius: $circular-radius;
+  }
+
+  button.circular.day {
+    @extend %button-flat;
+
+    &:selected {
+      @extend %selected_items_primary;
+    }
+  }
+}
+
+//
+// Gnome Software
+//
+
+flowboxchild > button.card {
+  &.category-tile {
+    padding: $container-padding * 3.5;
+  }
+
+  &.category-tile-iconless {
+    padding: $container-padding * 1.5 $container-padding * 2.5;
+  }
+}
+
+app-context-bar {
+  > box:not(:first-child) > button.flat {
+    border-radius: 0;
+
+    &:last-child {
+      border-radius: 0 $corner-radius $corner-radius 0;
+    }
+  }
+
+  > box:first-child > button.flat {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $corner-radius 0 0 $corner-radius;
+    }
+  }
+
+  > box > button.flat {
+    border-left-color: $divider;
+  }
+}
+
+carousel.card {
   border: none;
 }
 
-%circular_row {
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-top-right-radius: $corner-radius;
+.context-tile-lozenge {
+  min-height: 28px;
+  min-width: 28px;
+  padding: $container-padding;
+}
+
+screenshot-carousel box.frame.view {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+/* Styling for specific category buttons. */
+.category-tile.category-create {
+  background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
   }
 
-  &:last-child { // Not use ?
-    border-bottom-left-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $corner-radius;
+  &:active {
+    background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
   }
 }
 
-/**************
- * Extensions *
- **************/
-window.background.csd {
-  > stack, // GameMode setting
-  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
-  > box > stack > scrolledwindow > viewport > box {
-    > list {
-      @extend %circular_list;
+.category-tile.category-develop {
+  background: #5e5c64;
+  color: white;
 
-      row.activatable { @extend %circular_row; }
+  &:hover {
+    background: shade(#5e5c64, 1.2);
+  }
+
+  &:active {
+    background-color: shade(#5e5c64, .95);
+  }
+}
+
+.category-tile.category-learn {
+  background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+  }
+}
+
+.category-tile.category-play {
+  background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
+  color: #393484;
+
+  &:hover {
+    background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+}
+
+.category-tile.category-socialize {
+  background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
+  color: $text-secondary;
+
+  &:hover {
+    background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+  }
+}
+
+.category-tile.category-work {
+  color: #1c71d8;
+  background-color: #fdf8d7;
+  background-image: linear-gradient($divider 1px, transparent 1px),
+                    linear-gradient(90deg, $divider 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px;
+  background-position: -1px -4px, center -1px;
+
+  &:hover {
+    background-color: lighten(#fdf8d7, 5%);
+    background-image: linear-gradient($divider 1px, transparent 1px),
+                      linear-gradient(90deg, $divider 1px, transparent 1px);
+  }
+
+  &:active {
+    background-color: darken(#fdf8d7, 5%);
+    background-image: linear-gradient($divider 1px, transparent 1px),
+                      linear-gradient(90deg, $divider 1px, transparent 1px);
+  }
+}
+
+//
+// Gnome Control Center
+//
+
+window.background {
+  > contents > leaflet {
+    stack.background {
+      background-color: transparent;
+    }
+  }
+}
+
+preferencesgroup > box {
+  button.background-preview-button {
+    padding: 0;
+
+    &, &:hover, &:active, &:checked, &:checked:hover {
+      background-color: transparent;
+      background-image: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    > background-preview {
+      outline: 2px solid transparent;
+      outline-offset: $container-padding / 2;
+      border-radius: $corner-radius;
+    }
+
+    &:hover > background-preview {
+      outline-color: $text-secondary-disabled;
+    }
+
+    &:active > background-preview {
+      outline-color: $text-disabled;
+    }
+
+    &:checked > background-preview {
+      outline-color: $primary;
     }
   }
 
-  stack stack stack frame, // ArcMenu setting
-  > stack > stack > box > frame, // Night Theme Switcher setting
-  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
-  > stack > box > stack > box > frame, // ArcMenu setting
-  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
-  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
-  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
-    border: none;
+  flowbox.background-flowbox > flowboxchild {
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    border-radius: $corner-radius + $container-padding / 2;
+    padding: $container-padding / 2;
 
-    > border { border: none; }
-
-    > list {
-      @extend %circular_list;
-
-      row.activatable { @extend %circular_row; }
+    &:hover {
+      outline-color: $text-secondary-disabled;
     }
-  }
 
-  > stack > box > box > list { // ArcMenu setting sidebar
-    border-bottom-left-radius: $corner-radius;
+    &:active {
+      outline-color: $text-disabled;
+    }
+
+    &:selected {
+      outline-color: $primary;
+      background-color: transparent;
+    }
   }
 }

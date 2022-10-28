@@ -4,11 +4,15 @@
 // ripple effect animations
 
 @keyframes ripple {
-  to { background-size: 1000% 1000%; }
+  to {
+    background-size: 1000% 1000%;
+  }
 }
 
 @keyframes ripple-on-slider {
-  to { background-size: auto, 1000% 1000%; }
+  to {
+    background-size: auto, 1000% 1000%;
+  }
 }
 
 @keyframes ripple-on-headerbar {
@@ -17,7 +21,7 @@
   }
 
   to {
-    background-image: radial-gradient(circle, $primary 100%, transparent 0%);
+    background-image: radial-gradient(circle, $primary 100%, transparent 100%);
   }
 }
 
@@ -31,27 +35,39 @@
 //
 
   @if $t == normal {
-    transition: $transition, box-shadow $ripple-fade-in-duration $ease-out;
-    box-shadow: inset 0 0 0 9999px transparent, inset 0 -1px if($fc == $primary, $track, $fc);
+    transition: $transition, border-image $ripple-fade-in-duration $ease-out;
+    border-image: radial-gradient( circle closest-corner at center calc(100% - 1px), $fc 0%, transparent 0%) 2 / 0 0 0px;
+    box-shadow: inset 0 -1px if($fc == $primary, $track, $fc);
+    background-color: $fill;
+    color: $text;
+    outline: none;
+    caret-color: $fc;
+  }
+
+  @if $t == hover {
+    box-shadow: inset 0 -2px if($fc == $primary, $track, $fc);
+    background-color: $overlay-hover;
+    outline: none;
+    color: $text;
+  }
+
+  @if $t == focus {
+    box-shadow: inset 0 -1px if($fc == $primary, $track, $fc);
+    background-color: $overlay-focus;
+    outline: none;
+    color: $text;
+  }
+
+  @if $t == checked {
+    border-image: radial-gradient( circle closest-corner at center calc(100% - 1px), $fc 100%, transparent 0%) 2 / 0 0 2px;
+    box-shadow: inset 0 -2px $fc;
     background-color: $fill;
     color: $text;
   }
 
-  @if $t == hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover, inset 0 -1px if($fc == $primary, $track, $fc);
-  }
-
-  @if $t == focus {
-    box-shadow: inset 0 0 0 9999px $overlay-focus, inset 0 -1px if($fc == $primary, $track, $fc);
-  }
-
-  @if $t == checked {
-    box-shadow: inset 0 0 0 9999px transparent, inset 0 -2px $fc;
-  }
-
   @if $t == disabled {
     box-shadow: inset 0 0 0 9999px transparent, inset 0 -1px $track-disabled;
-    background-color: $fill;
+    background-color: $overlay-normal;
     color: $text-disabled;
   }
 
@@ -79,6 +95,22 @@
   }
 }
 
+%ripple {
+  transition-property: all, border-image, background-size, background-image, font-weight, outline;
+  transition-duration: $duration, $ripple-fade-in-duration, $ripple-fade-out-duration, $ripple-fade-out-opacity-duration, 0ms, 0ms;
+  transition-timing-function: $ease-out;
+  background-image: radial-gradient(circle, transparent 10%, transparent 10%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000% 1000%;
+
+  &:active {
+    transition-duration: $duration, $ripple-fade-in-duration, 0ms, 0ms, 0ms, 0ms;
+    animation: ripple $ripple-fade-in-duration $ease-out forwards;
+    background-image: radial-gradient(circle, $overlay-active 10%, transparent 10%);
+    background-size: 0% 0%;
+  }
+}
 
 @mixin button($t) {
 //
@@ -88,91 +120,108 @@
 //
 
   @if $t == normal {
-    transition: $transition;
-    outline: none;
-    box-shadow: 0 0 0 1px $solid-border;
-    background-color: $surface;
     color: $text;
+    background-color: $surface;
+
+    @if $variant == 'light' {
+      outline: 1px solid $divider;
+      outline-offset: -1px;
+    }
   }
 
   @if $t == hover {
-    box-shadow: inset 0 0 0 9999px transparent, $shadow-z4;
+    box-shadow: $shadow-z4;
+    outline: none;
+    background-color: $surface;
   }
 
   @if $t == focus {
-    box-shadow: 0 0 0 2px rgba($primary, 0.35);
+    outline: 2px solid rgba($primary, 0.35);
+    outline-offset: 0;
+    box-shadow: none;
+    transition: none;
   }
 
   @if $t == active {
-    transition: $transition;
-    box-shadow: inset 0 0 0 9999px $overlay-active, $shadow-z8;
+    box-shadow: $shadow-z8;
+    background-color: $overlay-hover;
+    background-image: radial-gradient(circle, $overlay-active 10%, transparent 10%);
   }
 
   @if $t == disabled {
     box-shadow: none;
     background-color: $fill;
     color: $text-disabled;
+
+    @if $variant == 'light' {
+      outline-color: $fill;
+    }
   }
 
   @if $t == checked {
     box-shadow: none;
-    // box-shadow: inset 0 0 0 9999px transparent, $shadow-z2;
     background-color: $primary;
     color: on($primary);
+    outline: none;
   }
 
   @if $t == checked-hover {
-    box-shadow: inset 0 0 0 9999px transparent,
-                0 3px 3px -3px rgba($primary, 0.3),
+    box-shadow: 0 3px 3px -3px rgba($primary, 0.3),
                 0 2px 3px -1px rgba($primary, 0.24),
                 0 2px 5px 0 rgba($primary, 0.12);
   }
 
   @if $t == checked-disabled {
-    box-shadow: inset 0 0 0 9999px $overlay-checked;
     background-color: $fill;
     color: $text-disabled;
+    outline: none;
   }
 
   @if $t == flat-normal {
-    transition: $transition;
     outline: none;
-    box-shadow: inset 0 0 0 9999px transparent;
     background-color: transparent;
     color: $text-secondary;
+    box-shadow: none;
   }
 
   @if $t == flat-hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
+    box-shadow: none;
+    background-color: $overlay-hover;
     color: $text;
+    outline: none;
   }
 
   @if $t == flat-focus {
-    box-shadow: 0 0 0 2px $overlay-focus;
+    box-shadow: none;
     color: $text;
+
+    &:not(:hover) {
+      outline: 2px solid $overlay-focus;
+      outline-offset: -2px;
+    }
   }
 
   @if $t == flat-active {
-    transition: $transition,
-                box-shadow $ripple-fade-in-duration $ease-out;
-    box-shadow: inset 0 0 0 9999px $overlay-active;
+    background-image: radial-gradient(circle, $overlay-active 10%, transparent 10%);
     color: $text;
+    box-shadow: none;
+  }
+
+  @if $t == flat-checked {
+    background-color: $overlay-checked;
+    color: $text;
+    box-shadow: none;
+  }
+
+  @if $t == flat-checked-disabled {
+    background-color: $overlay-checked;
+    color: $text-disabled;
   }
 
   @if $t == flat-disabled {
     box-shadow: none;
     background-color: transparent;
     color: $text-secondary-disabled;
-  }
-
-  @if $t == flat-checked {
-    background-color: $overlay-checked;
-    color: $text;
-  }
-
-  @if $t == flat-checked-disabled {
-    background-color: $overlay-checked;
-    color: $text-disabled;
   }
 }
 
@@ -227,8 +276,8 @@
   background-image:
     radial-gradient(
       farthest-side at $p,
-      rgba($primary, .24) 99%,
-      rgba($primary, 0) 100%
+      rgba($text, 0.15) 99%,
+      rgba($text, 0) 100%
     );
 
   background-repeat: no-repeat;
