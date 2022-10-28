@@ -26,8 +26,8 @@ $theme_green_grey:  #3b4342;
 // /***** color-palette *****/
 
 // Some color theme stuff
-@mixin color_theme($check_rules: 'true',
-                   $headerbar_rules: 'true',
+@mixin color_theme($headerbar_rules: 'true',
+                   $check_rules: 'true',
                    $switch_rules: 'true',
                    $view_rules: 'true',
                    $entry_rules: 'true',
@@ -35,40 +35,31 @@ $theme_green_grey:  #3b4342;
                    $scale_rules: 'true',
                    $link_rules: 'true',
                    $theme_color: $primary,
-                   $header_color: if($topbar == 'light', $titlebar, $theme_color),
+                   $header_color: if($topbar == 'light', mix($theme_color, $background, 5%), $theme_color),
                    $theme_indicator: if($topbar == 'dark', currentColor, $theme_color)) {
+  @if $headerbar_rules=='true' {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      $header_color,
+                                      $header_color $large-size,
+                                      $background $large-size,
+                                      $background);
+
+    &:backdrop {
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,
+                                        darken($header_color, 2%),
+                                        darken($header_color, 2%) $large-size,
+                                        $background $large-size,
+                                        $background);
+    }
+  }
+
   @if $check_rules=='true' {
     check, radio {
       &:checked, &:indeterminate {
         color: $theme_color;
       }
-    }
-
-    radio {
-      & {
-        border-image-source: -gtk-gradient(radial,
-                                           center center, 0,
-                                           center center, 0.001,
-                                           to($theme_color),
-                                           to(transparent));
-      }
-
-      &:checked:not(:indeterminate) {
-        border-image-source: -gtk-gradient(radial,
-                                           center center, 0,
-                                           center center, (10px / $check_radio_size / 2),
-                                           to($theme_color),
-                                           to(transparent));
-      }
-    }
-  }
-
-  @if $headerbar_rules=='true' {
-    headerbar {
-      background-color: $header_color;
-      box-shadow: inset 0 -1px $header_color;
-
-      &:backdrop { background-color: darken($header_color, 2%); }
     }
   }
 
@@ -85,12 +76,14 @@ $theme_green_grey:  #3b4342;
 
   @if $view_rules=='true' {
     .view {
-      &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($theme_color, 0.08); }
+      &:selected { color: $theme_color; }
     }
   }
 
   @if $entry_rules=='true' {
     entry, spinbutton:not(.vertical) {
+      caret-color: $theme_color;
+
       &:focus-within { @include entry(checked, $fc: $theme_color); }
 
       selection {
@@ -188,38 +181,6 @@ $theme_green_grey:  #3b4342;
           box-shadow: 0 0 0 2px rgba($titlebar-text, 0.15);
         }
       }
-
-      viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up),
-      stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset stackswitcher buttons
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $theme_indicator 0%,
-                                      transparent 0%)
-                                      0 0 0 / 0 0 0px;
-
-        &:checked {
-          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                        $theme_indicator 100%,
-                                        transparent 0%)
-                                        0 0 2 / 0 0 2px;
-          background-color: transparent;
-          color: $titlebar-text;
-        }
-
-        &:focus:not(:hover) {
-          box-shadow: none;
-        }
-      }
-    }
-
-    .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset path-bar buttons
-      &:focus:not(:hover) {
-        box-shadow: none;
-      }
-
-      &:checked {
-        color: $text;
-        &, &:disabled { background-color: transparent; }
-      }
     }
   }
 
@@ -234,13 +195,46 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $link_rules=='true' {
-    *:link {
+    link {
       color: $theme_color;
+
+      &:visited {
+        color: $text-secondary-disabled;
+      }
     }
 
-    *:visited {
-      color: $text-secondary-disabled;
+    button.link {
+      &:link {
+        &, &:focus, &:hover, &:active { color: $theme_color; }
+      }
+
+      &:visited {
+        &, &:focus, &:hover, &:active { color: $text-secondary-disabled; }
+      }
     }
+  }
+}
+
+//
+// Nautilus
+//
+
+$nautilus-header:          if($topbar == 'dark', #3266D4, mix(#3266D4, $background, 5%));
+$nautilus-header-backdrop: if($topbar == 'dark', darken(#3266D4, 2%), mix(darken(#3266D4, 2%), $background, 5%));
+
+window.background.nautilus-window:not(.about) {
+  background-image: linear-gradient(to bottom,
+                                    $nautilus-header,
+                                    $nautilus-header $large-size,
+                                    $background $large-size,
+                                    $background);
+
+  &:backdrop {
+    background-image: linear-gradient(to bottom,
+                                      $nautilus-header-backdrop,
+                                      $nautilus-header-backdrop $large-size,
+                                      $background $large-size,
+                                      $background);
   }
 }
 
@@ -248,7 +242,7 @@ $theme_green_grey:  #3b4342;
 // Text Editor
 //
 
-window.org-gnome-TextEditor {
+window.background.org-gnome-TextEditor:not(.about) {
   @include color_theme($theme_color: $theme_amber);
 }
 
@@ -256,9 +250,13 @@ window.org-gnome-TextEditor {
 // Gnome Contacts / Gnome Calender
 //
 
-window.background.csd {
+window.background.csd:not(.about) {
   > contents > toastoverlay > leaflet {
-    @include color_theme($theme_color: $theme_indigo);
+    @include color_theme($theme_color: $theme_orange);
+
+    .navigation-sidebar > row {
+      &:selected { &, label, image { color: $theme_cyan; }}
+    }
   }
 }
 
@@ -269,5 +267,9 @@ window.background.csd {
 window.background.csd {
   > contents > leaflet {
     @include color_theme($theme_color: $theme_cyan);
+
+    .navigation-sidebar > row {
+      &:selected { &, label, image { color: $theme_cyan; }}
+    }
   }
 }

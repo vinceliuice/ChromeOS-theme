@@ -3,6 +3,11 @@
 // Nautilus
 //
 
+// window.background.nautilus-window {
+//   headerbar {
+//   }
+// }
+
 #NautilusViewCell {
   clamp box {
     margin: 0;
@@ -12,10 +17,19 @@
 
 #NautilusQueryEditor { // search entry
   border-radius: $circular-radius;
+  background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+
+  &:focus-within {
+    background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
+  }
 
   &, &:hover, &:active, &:focus-within {
     border-image: none;
     box-shadow: none;
+  }
+
+  > image {
+    margin: 0;
   }
 
   > menubutton {
@@ -24,7 +38,7 @@
     > button {
       min-width: 16px;
       min-height: 16px;
-      margin: $container-padding / 2 0;
+      margin: 0;
     }
   }
 
@@ -43,7 +57,7 @@
 }
 
 #NautilusPathBar {
-  background-color: $titlebar-fill;
+  background-color: rgba(black, 0.1);
   border-radius: $circular-radius;
   margin: $container-padding 0;
 

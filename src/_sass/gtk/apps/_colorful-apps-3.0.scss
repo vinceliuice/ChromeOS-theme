@@ -74,7 +74,7 @@ $theme_green_grey:  #3b4342;
 
   @if $view_rules=='true' {
     .view {
-      &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($theme_color, 0.08); }
+      &:selected { color: $theme_color; }
     }
   }
 

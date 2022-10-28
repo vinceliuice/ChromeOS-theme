@@ -30,9 +30,19 @@ treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
   background-color: $base;
   color: $text;
 
+  // &:hover { background-color: $overlay-hover; }
+  // &:active { background-color: $overlay-active; }
+
   &:disabled { color: $text-disabled; }
 
-  &:selected { background-color: $primary; }
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
+
+    &:hover {
+      background-color: $overlay-focus-hover;
+    }
+  }
 }
 
 textview {
@@ -137,11 +147,7 @@ text > selection { @extend %selected_items_primary; }
 window.assistant {
   .sidebar {
     padding: 4px 0;
-    // background-color: $base;
-    // border-top: 1px solid $divider;
   }
-
-  // &.csd .sidebar { border-top-style: none; }
 
   .sidebar label {
     min-height: $medium-size;
@@ -795,6 +801,19 @@ button.link {
  * GtkSpinButton *
  *****************/
 spinbutton {
+  &:not(.vertical) > button,
+  &.vertical > button {
+    @extend %button-flat-simple;
+    @extend %small_button;
+    margin: $container-padding;
+
+    // Remove unwanted focus indicator
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
   &:not(.vertical) {
     // in this horizontal configuration, the whole spinbutton
     // behaves as the entry, so we extend the entry styling
@@ -816,23 +835,11 @@ spinbutton {
     }
 
     > button {
-      @extend %button-flat-simple;
-      @extend %small_button;
-
-      // margin: $container-padding;
-      border: solid $container-padding transparent;
-
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active):not(:disabled) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-      }
-
       &.up:dir(ltr),
-      &.down:dir(rtl) { margin-left: -$container-padding / 2; }
+      &.down:dir(rtl) { margin-left: $container-padding / 2; }
 
       &.up:dir(rtl),
-      &.down:dir(ltr) { margin-right: -$container-padding / 2; }
+      &.down:dir(ltr) { margin-right: $container-padding / 2; }
     }
   }
 
@@ -857,21 +864,7 @@ spinbutton {
     }
 
     > button {
-      @extend %button-flat-simple;
-      @extend %small_button;
-      padding: 0;
-
-      border: solid $container-padding transparent;
-
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-      }
-
-      &.up { margin: 0 $container-padding / 2; }
-
-      &.down { margin: 0 $container-padding / 2; }
+      margin: $container-padding $container-padding * 1.5;
     }
   }
 
@@ -1065,14 +1058,14 @@ headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
   border-radius: 0;
   box-shadow: inset 0 -1px $divider;
-  background-color: $titlebar;
+  background-color: transparent;
   color: $titlebar-text;
   min-height: $large-size;
   padding: 0;
   margin: 0;
 
   &:backdrop {
-    background-color: $titlebar-backdrop;
+    background-color: transparent;
     color: $titlebar-text-secondary;
   }
 
@@ -1084,6 +1077,12 @@ headerbar {
     &:backdrop {
       background-color: transparent;
       color: $text-secondary;
+    }
+
+    @if $variant == 'light' and $topbar == 'dark' {
+      button:not(.suggested-action):not(.destructive-action) {
+        @extend %button-flat;
+      }
     }
   }
 
@@ -1120,6 +1119,7 @@ headerbar {
   spinbutton,
   button,
   menubutton,
+  splitbutton,
   separator {
     margin-top: $container-padding;
     margin-bottom: $container-padding;
@@ -1191,8 +1191,23 @@ headerbar {
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }
 
   splitbutton.image-button {
+    &:hover {
+      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+    }
+
     &, & > button {
       border-radius: $circular-radius;
+    }
+  }
+
+  menubutton.title-menu-button {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > button.toggle:not(.suggested-action):not(.destructive-action) {
+      border-radius: 0;
+      min-height: 0;
+      padding: $container-padding / 2 $container-padding * 1.5;
     }
   }
 
@@ -1208,7 +1223,10 @@ headerbar {
 
     &:focus, &:hover, &:active, &:checked, &:checked:hover { color: $titlebar-text; }
 
-    &:focus { outline-color: $titlebar-divider; }
+    &:focus {
+      outline-color: $titlebar-divider;
+      outline-offset: -2px;
+    }
 
     &:hover {
       background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
@@ -1257,17 +1275,13 @@ headerbar {
     }
   }
 
-  // FIXME: Ugly overriding
   stackswitcher {
     background: none;
     padding: 0;
 
     > button:not(.suggested-action):not(.destructive-action).text-button {
-      margin: 0;
-      border-radius: 0;
       box-shadow: none;
       outline: none;
-      @extend %ripple;
       color: $titlebar-text-secondary;
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $titlebar-indicator 0%,
@@ -1275,21 +1289,22 @@ headerbar {
                                     0 0 0 / 0 0 0px;
 
       &:hover {
-        background-color: $overlay-hover;
+        background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
       }
 
       &:active {
+        background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+        background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 10%);
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $titlebar-indicator 100%,
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
-        background-color: $overlay-active;
         color: $titlebar-text;
       }
 
       &:checked, &:checked:hover {
-        background-color: $overlay-selected;
         box-shadow: inset 0 -2px $titlebar-indicator;
+        border-radius: $corner-radius $corner-radius 0 0;
         color: $titlebar-text;
       }
 
@@ -1624,12 +1639,6 @@ columnview.view,
 treeview.view {
   border-left-color: $solid-border; // this is actually the tree lines color,
   border-top-color: $solid-border; // while this is the grid lines color, better then nothing
-
-  // FIXME: Avoid transparency background-color being slightly darker
-  &:selected {
-    background-color: $base;
-    background-image: image($overlay-checked);
-  }
 
   > rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
 
@@ -2913,6 +2922,18 @@ actionbar > revealer > box {
   background-clip: border-box;
   border-spacing: $container-padding;
   box-shadow: none;
+
+  entry, button, menubutton, splitbutton {
+    margin: 0;
+  }
+
+  button:not(.destructive-action):not(.suggested-action):not(.flat) {
+    @extend %button-flat;
+  }
+
+  .linked > button {
+    @extend %list-button;
+  }
 }
 
 statusbar {
@@ -3333,6 +3354,31 @@ window.dialog.message { // Message Dialog styling
   }
 }
 
+window.about.background {
+  .large-icons {
+    -gtk-icon-size: 128px;
+  }
+
+  headerbar {
+    color: $text;
+    box-shadow: none;
+
+    .subtitle {
+      color: $text-secondary;
+    }
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %button-flat;
+    }
+  }
+}
+
+window.aboutdialog.background {
+  .large-icons {
+    -gtk-icon-size: 128px;
+  }
+}
+
 filechooser {
   .dialog-action-box { border-top: 1px solid $divider; }
 
@@ -3458,9 +3504,9 @@ separator.sidebar {
     image { opacity: 0.7; }
 
     &:selected {
-      @extend %selected_items_color;
+      background-color: $overlay-checked;
 
-      label, image { color: $primary; }
+      &, label, image { color: $primary; }
 
       &:hover {
         background-color: $overlay-focus-hover;
@@ -3502,11 +3548,7 @@ placessidebar {
     > revealer.sidebar-revealer { padding: 0 $container-padding; }
 
     &:selected {
-      background-color: $overlay-checked;
-      color: $primary;
       font-weight: 500;
-
-      image.sidebar-icon, label.sidebar-label { color: $primary; }
     }
 
     &:disabled { color: $text-disabled; }
@@ -3873,8 +3915,9 @@ colorchooser .popover.osd {
  **********************/
 window {
   transition: $transition-shadow;
-  outline: 1px solid rgba(white, 0.1);
-  outline-offset: -1px;
+  outline: none;
+  // outline: 1px solid rgba(white, 0.1);
+  // outline-offset: -1px;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
   &:backdrop {
@@ -3882,13 +3925,22 @@ window {
   }
 
   @if $topbar == 'dark' {
-    &.background:not(.message) {
+    &.background:not(.message):not(.about) {
       background-color: transparent;
       background-image: linear-gradient(to bottom,
                                         $titlebar,
                                         $titlebar $large-size,
                                         $background $large-size,
                                         $background);
+
+      &:backdrop {
+        background-color: transparent;
+        background-image: linear-gradient(to bottom,
+                                          $titlebar-backdrop,
+                                          $titlebar-backdrop $large-size,
+                                          $background $large-size,
+                                          $background);
+      }
     }
   }
 

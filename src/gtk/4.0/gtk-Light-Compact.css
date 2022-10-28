@@ -20,7 +20,7 @@
 }
 
 emoji-completion-row, popover.emoji-picker emoji, calendar > grid > label.day-number, expander, row.activatable, check,
-radio, notebook > header > tabs > tab, notebook > header > tabs > arrow, popover.menu modelbutton, menubar > item, headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action),
+radio, notebook > header > tabs > tab, notebook > header > tabs > arrow, popover.menu modelbutton, menubar > item,
 button, spinbutton:not(.vertical) > image,
 entry > image, gridview > child:selected {
   transition-property: all, border-image, background-size, background-image, font-weight, outline;
@@ -33,7 +33,7 @@ entry > image, gridview > child:selected {
 }
 
 emoji-completion-row:active, popover.emoji-picker emoji:active, calendar > grid > label.day-number:active, expander:active, row.activatable:active, check:active,
-radio:active, notebook > header > tabs > tab:active, notebook > header > tabs > arrow:active, popover.menu modelbutton:active, menubar > item:active, headerbar stackswitcher > button.text-button:active:not(.suggested-action):not(.destructive-action),
+radio:active, notebook > header > tabs > tab:active, notebook > header > tabs > arrow:active, popover.menu modelbutton:active, menubar > item:active,
 button:active, spinbutton:not(.vertical) > image:active,
 entry > image:active, gridview > child:active:selected {
   transition-duration: 75ms, 225ms, 0ms, 0ms, 0ms, 0ms;
@@ -81,7 +81,12 @@ treeview.expander:disabled {
 }
 
 .view:selected {
-  background-color: #1A73E8;
+  background-color: alpha(currentColor, 0.1);
+  color: #1A73E8;
+}
+
+.view:selected:hover {
+  background-color: alpha(currentColor, 0.16);
 }
 
 textview text {
@@ -623,7 +628,7 @@ button:drop(active) {
 
 button.sidebar-button, calendar > header > button, check,
 radio, notebook > header > tabs > arrow, popover.menu modelbutton, columnview.view > header > button,
-treeview.view > header > button, spinbutton.vertical > button, spinbutton:not(.vertical) > button, datechooser.view button.circular.day, infobar.error > revealer > box button, infobar.error:backdrop > revealer > box button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, infobar.action > revealer > box button, infobar.action:backdrop > revealer > box button, infobar.question > revealer > box button, infobar.question:backdrop > revealer > box button, infobar.info > revealer > box button, infobar.info:hover > revealer > box button, infobar.info:backdrop > revealer > box button, filechooser #pathbarbox > stack > box > button, window.dialog.message .dialog-action-area button, .app-notification button, popover.background.menu button,
+treeview.view > header > button, spinbutton:not(.vertical) > button, spinbutton.vertical > button, datechooser.view button.circular.day, infobar.error > revealer > box button, infobar.error:backdrop > revealer > box button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, infobar.action > revealer > box button, infobar.action:backdrop > revealer > box button, infobar.question > revealer > box button, infobar.question:backdrop > revealer > box button, infobar.info > revealer > box button, infobar.info:hover > revealer > box button, infobar.info:backdrop > revealer > box button, filechooser #pathbarbox > stack > box > button, window.about.background headerbar button:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button, .app-notification button, actionbar > revealer > box button:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button,
 popover.background button.model,
 pathbar > button, viewswitcherbar actionbar > revealer > box button.toggle, .toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child),
@@ -636,7 +641,7 @@ button.flat {
 
 button.sidebar-button:focus, calendar > header > button:focus, check:focus,
 radio:focus, notebook > header > tabs > arrow:focus, popover.menu modelbutton:focus, columnview.view > header > button:focus,
-treeview.view > header > button:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, datechooser.view button.circular.day:focus, infobar.error > revealer > box button:focus, infobar.warning > revealer > box button:focus, infobar.action > revealer > box button:focus, infobar.question > revealer > box button:focus, infobar.info > revealer > box button:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message .dialog-action-area button:focus, .app-notification button:focus, popover.background.menu button:focus,
+treeview.view > header > button:focus, spinbutton:not(.vertical) > button:focus, spinbutton.vertical > button:focus, datechooser.view button.circular.day:focus, infobar.error > revealer > box button:focus, infobar.warning > revealer > box button:focus, infobar.action > revealer > box button:focus, infobar.question > revealer > box button:focus, infobar.info > revealer > box button:focus, filechooser #pathbarbox > stack > box > button:focus, window.about.background headerbar button:focus:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:focus,
 popover.background button.model:focus,
 pathbar > button:focus, viewswitcherbar actionbar > revealer > box button.toggle:focus, .toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:only-child),
@@ -647,7 +652,7 @@ button.flat:focus {
 
 button.sidebar-button:focus:not(:hover), calendar > header > button:focus:not(:hover), check:focus:not(:hover),
 radio:focus:not(:hover), notebook > header > tabs > arrow:focus:not(:hover), popover.menu modelbutton:focus:not(:hover), columnview.view > header > button:focus:not(:hover),
-treeview.view > header > button:focus:not(:hover), spinbutton.vertical > button:focus:not(:hover), spinbutton:not(.vertical) > button:focus:not(:hover), datechooser.view button.circular.day:focus:not(:hover), infobar.error > revealer > box button:focus:not(:hover), infobar.warning > revealer > box button:focus:not(:hover), infobar.action > revealer > box button:focus:not(:hover), infobar.question > revealer > box button:focus:not(:hover), infobar.info > revealer > box button:focus:not(:hover), filechooser #pathbarbox > stack > box > button:focus:not(:hover), window.dialog.message .dialog-action-area button:focus:not(:hover), .app-notification button:focus:not(:hover), popover.background.menu button:focus:not(:hover),
+treeview.view > header > button:focus:not(:hover), spinbutton:not(.vertical) > button:focus:not(:hover), spinbutton.vertical > button:focus:not(:hover), datechooser.view button.circular.day:focus:not(:hover), infobar.error > revealer > box button:focus:not(:hover), infobar.warning > revealer > box button:focus:not(:hover), infobar.action > revealer > box button:focus:not(:hover), infobar.question > revealer > box button:focus:not(:hover), infobar.info > revealer > box button:focus:not(:hover), filechooser #pathbarbox > stack > box > button:focus:not(:hover), window.about.background headerbar button:focus:not(:hover):not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:focus:not(:hover), .app-notification button:focus:not(:hover), actionbar > revealer > box button:focus:not(:hover):not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:focus:not(:hover),
 popover.background button.model:focus:not(:hover),
 pathbar > button:focus:not(:hover), viewswitcherbar actionbar > revealer > box button.toggle:focus:not(:hover), .toolbar button:focus:not(:hover), dropdown > .linked:not(.vertical) > button:focus:not(:hover):not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:hover):not(:only-child),
@@ -658,7 +663,7 @@ button.flat:focus:not(:hover) {
 
 button.sidebar-button:hover, calendar > header > button:hover, check:hover,
 radio:hover, notebook > header > tabs > arrow:hover, popover.menu modelbutton:hover, columnview.view > header > button:hover,
-treeview.view > header > button:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, datechooser.view button.circular.day:hover, infobar.error > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.action > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.info > revealer > box button:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message .dialog-action-area button:hover, .app-notification button:hover, popover.background.menu button:hover,
+treeview.view > header > button:hover, spinbutton:not(.vertical) > button:hover, spinbutton.vertical > button:hover, datechooser.view button.circular.day:hover, infobar.error > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.action > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.info > revealer > box button:hover, filechooser #pathbarbox > stack > box > button:hover, window.about.background headerbar button:hover:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:hover,
 popover.background button.model:hover,
 pathbar > button:hover, viewswitcherbar actionbar > revealer > box button.toggle:hover, .toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child),
@@ -671,7 +676,7 @@ button.flat:hover {
 
 button.sidebar-button:active, calendar > header > button:active, check:active,
 radio:active, notebook > header > tabs > arrow:active, popover.menu modelbutton:active, columnview.view > header > button:active,
-treeview.view > header > button:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, datechooser.view button.circular.day:active, infobar.error > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.action > revealer > box button:active, infobar.question > revealer > box button:active, infobar.info > revealer > box button:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message .dialog-action-area button:active, .app-notification button:active, popover.background.menu button:active,
+treeview.view > header > button:active, spinbutton:not(.vertical) > button:active, spinbutton.vertical > button:active, datechooser.view button.circular.day:active, infobar.error > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.action > revealer > box button:active, infobar.question > revealer > box button:active, infobar.info > revealer > box button:active, filechooser #pathbarbox > stack > box > button:active, window.about.background headerbar button:active:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:active,
 popover.background button.model:active,
 pathbar > button:active, viewswitcherbar actionbar > revealer > box button.toggle:active, .toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child),
@@ -683,7 +688,7 @@ button.flat:active {
 
 button.sidebar-button:disabled, calendar > header > button:disabled, check:disabled,
 radio:disabled, notebook > header > tabs > arrow:disabled, popover.menu modelbutton:disabled, columnview.view > header > button:disabled,
-treeview.view > header > button:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, datechooser.view button.circular.day:disabled, infobar.error > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.action > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.info > revealer > box button:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message .dialog-action-area button:disabled, .app-notification button:disabled, popover.background.menu button:disabled,
+treeview.view > header > button:disabled, spinbutton:not(.vertical) > button:disabled, spinbutton.vertical > button:disabled, datechooser.view button.circular.day:disabled, infobar.error > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.action > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.info > revealer > box button:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.about.background headerbar button:disabled:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:disabled,
 popover.background button.model:disabled,
 pathbar > button:disabled, viewswitcherbar actionbar > revealer > box button.toggle:disabled, .toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:disabled:not(:only-child),
@@ -693,7 +698,7 @@ button.flat:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
-datechooser.view button.circular.day:checked, infobar.error > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.action > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.info > revealer > box button:checked, filechooser #pathbarbox > stack > box > button:checked, window.dialog.message .dialog-action-area button:checked, .app-notification button:checked, popover.background.menu button:checked,
+datechooser.view button.circular.day:checked, infobar.error > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.action > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.info > revealer > box button:checked, filechooser #pathbarbox > stack > box > button:checked, window.about.background headerbar button:checked:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:checked,
 popover.background button.model:checked,
 pathbar > button:checked, viewswitcherbar actionbar > revealer > box button.toggle:checked, .toolbar button:checked, dropdown > .linked:not(.vertical) > button:checked:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child),
@@ -704,7 +709,7 @@ button.flat:checked:hover {
   box-shadow: none;
 }
 
-datechooser.view button.circular.day:checked:disabled, infobar.error > revealer > box button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, infobar.action > revealer > box button:checked:disabled, infobar.question > revealer > box button:checked:disabled, infobar.info > revealer > box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, window.dialog.message .dialog-action-area button:checked:disabled, .app-notification button:checked:disabled, popover.background.menu button:checked:disabled,
+datechooser.view button.circular.day:checked:disabled, infobar.error > revealer > box button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, infobar.action > revealer > box button:checked:disabled, infobar.question > revealer > box button:checked:disabled, infobar.info > revealer > box button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, window.about.background headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), window.dialog.message .dialog-action-area button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.destructive-action):not(.suggested-action):not(.flat), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled,
 pathbar > button:checked:disabled, viewswitcherbar actionbar > revealer > box button.toggle:checked:disabled, .toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
@@ -954,7 +959,7 @@ button.circular {
   border-radius: 9999px;
 }
 
-button.sidebar-button, notebook > header > tabs > tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
+button.sidebar-button, notebook > header > tabs > tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton:not(.vertical) > button, spinbutton.vertical > button {
   min-height: 24px;
   min-width: 24px;
   padding: 0;
@@ -1075,6 +1080,15 @@ button.link > label {
 /*****************
  * GtkSpinButton *
  *****************/
+spinbutton:not(.vertical) > button, spinbutton.vertical > button {
+  margin: 4px;
+}
+
+spinbutton:not(.vertical) > button:focus, spinbutton.vertical > button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 spinbutton:not(.vertical) {
   padding: 0;
   border-spacing: 0;
@@ -1090,21 +1104,12 @@ spinbutton:not(.vertical) > text {
   background-color: transparent;
 }
 
-spinbutton:not(.vertical) > button {
-  border: solid 4px transparent;
-}
-
-spinbutton:not(.vertical) > button:focus:not(:hover):not(:active):not(:disabled) {
-  box-shadow: inset 0 0 0 9999px transparent;
-  color: rgba(0, 0, 0, 0.6);
-}
-
 spinbutton:not(.vertical) > button.up:dir(ltr), spinbutton:not(.vertical) > button.down:dir(rtl) {
-  margin-left: -2px;
+  margin-left: 2px;
 }
 
 spinbutton:not(.vertical) > button.up:dir(rtl), spinbutton:not(.vertical) > button.down:dir(ltr) {
-  margin-right: -2px;
+  margin-right: 2px;
 }
 
 spinbutton.vertical {
@@ -1129,21 +1134,7 @@ spinbutton.vertical > text {
 }
 
 spinbutton.vertical > button {
-  padding: 0;
-  border: solid 4px transparent;
-}
-
-spinbutton.vertical > button:focus:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 9999px transparent;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-spinbutton.vertical > button.up {
-  margin: 0 2px;
-}
-
-spinbutton.vertical > button.down {
-  margin: 0 2px;
+  margin: 4px 6px;
 }
 
 treeview spinbutton:not(.vertical), row spinbutton:not(.vertical) {
@@ -1350,7 +1341,7 @@ headerbar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 0;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-  background-color: #E0E0E0;
+  background-color: transparent;
   color: rgba(0, 0, 0, 0.87);
   min-height: 40px;
   padding: 0;
@@ -1358,7 +1349,7 @@ headerbar {
 }
 
 headerbar:backdrop {
-  background-color: #D6D6D6;
+  background-color: transparent;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -1408,6 +1399,7 @@ headerbar entry,
 headerbar spinbutton,
 headerbar button,
 headerbar menubutton,
+headerbar splitbutton,
 headerbar separator {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -1483,8 +1475,23 @@ headerbar .linked:not(.vertical) > entry:not(:only-child) {
   border-radius: 6px 6px 0 0;
 }
 
+headerbar splitbutton.image-button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
 headerbar splitbutton.image-button, headerbar splitbutton.image-button > button {
   border-radius: 9999px;
+}
+
+headerbar menubutton.title-menu-button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+headerbar menubutton.title-menu-button > button.toggle:not(.suggested-action):not(.destructive-action) {
+  border-radius: 0;
+  min-height: 0;
+  padding: 2px 6px;
 }
 
 headerbar button:not(.suggested-action):not(.destructive-action) {
@@ -1504,6 +1511,7 @@ headerbar button:not(.suggested-action):not(.destructive-action):focus, headerba
 
 headerbar button:not(.suggested-action):not(.destructive-action):focus {
   outline-color: rgba(0, 0, 0, 0.12);
+  outline-offset: -2px;
 }
 
 headerbar button:not(.suggested-action):not(.destructive-action):hover {
@@ -1564,8 +1572,6 @@ headerbar stackswitcher {
 }
 
 headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action) {
-  margin: 0;
-  border-radius: 0;
   box-shadow: none;
   outline: none;
   color: rgba(0, 0, 0, 0.6);
@@ -1573,18 +1579,19 @@ headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destruc
 }
 
 headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):hover {
-  background-color: alpha(currentColor, 0.08);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):active {
+  background-color: rgba(0, 0, 0, 0.08);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 10%, transparent 10%);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 0 0 2/0 0 2px;
-  background-color: alpha(currentColor, 0.12);
   color: rgba(0, 0, 0, 0.87);
 }
 
 headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):checked, headerbar stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):checked:hover {
-  background-color: alpha(currentColor, 0.06);
   box-shadow: inset 0 -2px #1A73E8;
+  border-radius: 6px 6px 0 0;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -1901,12 +1908,6 @@ columnview.view,
 treeview.view {
   border-left-color: lightgray;
   border-top-color: lightgray;
-}
-
-columnview.view:selected,
-treeview.view:selected {
-  background-color: #FFFFFF;
-  background-image: image(alpha(currentColor, 0.1));
 }
 
 columnview.view.separator,
@@ -3300,6 +3301,10 @@ actionbar > revealer > box {
   box-shadow: none;
 }
 
+actionbar > revealer > box entry, actionbar > revealer > box button, actionbar > revealer > box menubutton, actionbar > revealer > box splitbutton {
+  margin: 0;
+}
+
 statusbar {
   padding: 4px 12px;
 }
@@ -3512,47 +3517,47 @@ list.frame {
   border-radius: 6px;
 }
 
-row button {
+row button, actionbar > revealer > box .linked > button {
   outline: none;
   box-shadow: none;
   border: none;
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down) {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down), actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down) {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):hover {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):hover, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):hover {
   box-shadow: none;
   background-color: alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
   outline: none;
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):focus {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):focus, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):focus {
   box-shadow: none;
   color: rgba(0, 0, 0, 0.87);
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):focus:not(:hover) {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):focus:not(:hover), actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):focus:not(:hover) {
   outline: 2px solid alpha(currentColor, 0.08);
   outline-offset: -2px;
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):active {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):active, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):active {
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 10%);
   color: rgba(0, 0, 0, 0.87);
   box-shadow: none;
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):checked {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):checked, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):checked {
   box-shadow: none;
   background-color: #1A73E8;
   color: white;
   outline: none;
 }
 
-row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):disabled {
+row button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):disabled, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):not(.up):not(.down):disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
@@ -3811,6 +3816,23 @@ window.dialog.message .dialog-action-area button.destructive-action:not(:disable
   color: #D93025;
 }
 
+window.about.background .large-icons {
+  -gtk-icon-size: 128px;
+}
+
+window.about.background headerbar {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: none;
+}
+
+window.about.background headerbar .subtitle {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+window.aboutdialog.background .large-icons {
+  -gtk-icon-size: 128px;
+}
+
 filechooser .dialog-action-box {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -3919,7 +3941,11 @@ separator.sidebar {
   opacity: 0.7;
 }
 
-.navigation-sidebar > row:selected label, .navigation-sidebar > row:selected image {
+.navigation-sidebar > row:selected {
+  background-color: alpha(currentColor, 0.1);
+}
+
+.navigation-sidebar > row:selected, .navigation-sidebar > row:selected label, .navigation-sidebar > row:selected image {
   color: #1A73E8;
 }
 
@@ -3965,13 +3991,7 @@ placessidebar .navigation-sidebar > row > revealer.sidebar-revealer {
 }
 
 placessidebar .navigation-sidebar > row:selected {
-  background-color: alpha(currentColor, 0.1);
-  color: #1A73E8;
   font-weight: 500;
-}
-
-placessidebar .navigation-sidebar > row:selected image.sidebar-icon, placessidebar .navigation-sidebar > row:selected label.sidebar-label {
-  color: #1A73E8;
 }
 
 placessidebar .navigation-sidebar > row:disabled {
@@ -4306,8 +4326,7 @@ colorchooser .popover.osd:backdrop {
  **********************/
 window {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  outline: 1px solid rgba(255, 255, 255, 0.1);
-  outline-offset: -1px;
+  outline: none;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
 }
 
@@ -4367,7 +4386,7 @@ gridview > child:selected, popover.menu modelbutton:selected, row:selected, cale
   background-color: alpha(currentColor, 0.06);
 }
 
-flowbox > flowboxchild:selected, calendar > grid > label.today, .navigation-sidebar > row:selected {
+flowbox > flowboxchild:selected, calendar > grid > label.today {
   color: #1A73E8;
   background-color: rgba(138, 180, 248, 0.2);
 }
@@ -4531,11 +4550,20 @@ popover.entry-completion > contents {
 
 #NautilusQueryEditor {
   border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+#NautilusQueryEditor:focus-within {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #NautilusQueryEditor, #NautilusQueryEditor:hover, #NautilusQueryEditor:active, #NautilusQueryEditor:focus-within {
   border-image: none;
   box-shadow: none;
+}
+
+#NautilusQueryEditor > image {
+  margin: 0;
 }
 
 #NautilusQueryEditor > menubutton {
@@ -4545,7 +4573,7 @@ popover.entry-completion > contents {
 #NautilusQueryEditor > menubutton > button {
   min-width: 16px;
   min-height: 16px;
-  margin: 2px 0;
+  margin: 0;
 }
 
 #NautilusQueryEditor > text {
@@ -4564,7 +4592,7 @@ popover.entry-completion > contents {
 }
 
 #NautilusPathBar {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 9999px;
   margin: 4px 0;
 }
@@ -4782,98 +4810,103 @@ preferencesgroup > box flowbox.background-flowbox > flowboxchild:selected {
   background-color: transparent;
 }
 
-window.org-gnome-TextEditor check:checked, window.org-gnome-TextEditor check:indeterminate, window.org-gnome-TextEditor radio:checked, window.org-gnome-TextEditor radio:indeterminate {
+window.background.nautilus-window:not(.about) {
+  background-image: linear-gradient(to bottom, #e8ebf1, #e8ebf1 40px, #F2F2F2 40px, #F2F2F2);
+}
+
+window.background.nautilus-window:not(.about):backdrop {
+  background-image: linear-gradient(to bottom, #e8ebf0, #e8ebf0 40px, #F2F2F2 40px, #F2F2F2);
+}
+
+window.background.org-gnome-TextEditor:not(.about) {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #f3eee6, #f3eee6 40px, #F2F2F2 40px, #F2F2F2);
+}
+
+window.background.org-gnome-TextEditor:not(.about):backdrop {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #f0e9df, #f0e9df 40px, #F2F2F2 40px, #F2F2F2);
+}
+
+window.background.org-gnome-TextEditor:not(.about) check:checked, window.background.org-gnome-TextEditor:not(.about) check:indeterminate, window.background.org-gnome-TextEditor:not(.about) radio:checked, window.background.org-gnome-TextEditor:not(.about) radio:indeterminate {
   color: #FFA000;
 }
 
-window.org-gnome-TextEditor radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#FFA000), to(transparent));
-}
-
-window.org-gnome-TextEditor radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#FFA000), to(transparent));
-}
-
-window.org-gnome-TextEditor headerbar {
-  background-color: #E0E0E0;
-  box-shadow: inset 0 -1px #E0E0E0;
-}
-
-window.org-gnome-TextEditor headerbar:backdrop {
-  background-color: #dbdbdb;
-}
-
-window.org-gnome-TextEditor switch:checked {
+window.background.org-gnome-TextEditor:not(.about) switch:checked {
   background-color: rgba(255, 160, 0, 0.5);
 }
 
-window.org-gnome-TextEditor switch:checked slider {
+window.background.org-gnome-TextEditor:not(.about) switch:checked slider {
   background-color: #FFA000;
   color: #FFA000;
 }
 
-window.org-gnome-TextEditor .view:selected:hover {
-  box-shadow: inset 0 0 0 9999px rgba(255, 160, 0, 0.08);
+window.background.org-gnome-TextEditor:not(.about) .view:selected {
+  color: #FFA000;
 }
 
-window.org-gnome-TextEditor entry:focus-within, window.org-gnome-TextEditor spinbutton:not(.vertical):focus-within {
+window.background.org-gnome-TextEditor:not(.about) entry, window.background.org-gnome-TextEditor:not(.about) spinbutton:not(.vertical) {
+  caret-color: #FFA000;
+}
+
+window.background.org-gnome-TextEditor:not(.about) entry:focus-within, window.background.org-gnome-TextEditor:not(.about) spinbutton:not(.vertical):focus-within {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 2/0 0 2px;
   box-shadow: inset 0 -2px #FFA000;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.org-gnome-TextEditor entry selection, window.org-gnome-TextEditor spinbutton:not(.vertical) selection {
+window.background.org-gnome-TextEditor:not(.about) entry selection, window.background.org-gnome-TextEditor:not(.about) spinbutton:not(.vertical) selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-TextEditor entry progress {
+window.background.org-gnome-TextEditor:not(.about) entry progress {
   border-color: #FFA000;
 }
 
-window.org-gnome-TextEditor label selection {
+window.background.org-gnome-TextEditor:not(.about) label selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-TextEditor headerbar entry:focus-within, window.org-gnome-TextEditor headerbar spinbutton:not(.vertical):focus-within {
+window.background.org-gnome-TextEditor:not(.about) headerbar entry:focus-within, window.background.org-gnome-TextEditor:not(.about) headerbar spinbutton:not(.vertical):focus-within {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 2/0 0 2px;
   box-shadow: inset 0 -2px #FFA000;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.org-gnome-TextEditor headerbar entry selection, window.org-gnome-TextEditor headerbar spinbutton:not(.vertical) selection {
+window.background.org-gnome-TextEditor:not(.about) headerbar entry selection, window.background.org-gnome-TextEditor:not(.about) headerbar spinbutton:not(.vertical) selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-TextEditor headerbar entry progress {
+window.background.org-gnome-TextEditor:not(.about) headerbar entry progress {
   border-color: #FFA000;
 }
 
-window.org-gnome-TextEditor headerbar label selection {
+window.background.org-gnome-TextEditor:not(.about) headerbar label selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-TextEditor button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
+window.background.org-gnome-TextEditor:not(.about) button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFA000;
 }
 
-window.org-gnome-TextEditor button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
+window.background.org-gnome-TextEditor:not(.about) button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(255, 160, 0, 0.28);
 }
 
-window.org-gnome-TextEditor button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
+window.background.org-gnome-TextEditor:not(.about) button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
   outline: none;
 }
 
-window.org-gnome-TextEditor button.combo:checked {
+window.background.org-gnome-TextEditor:not(.about) button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 2/0 0 2px;
   box-shadow: inset 0 -2px #FFA000;
   background-color: rgba(0, 0, 0, 0.04);
@@ -4882,261 +4915,213 @@ window.org-gnome-TextEditor button.combo:checked {
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.org-gnome-TextEditor stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
+window.background.org-gnome-TextEditor:not(.about) stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.org-gnome-TextEditor stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
+window.background.org-gnome-TextEditor:not(.about) stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.org-gnome-TextEditor stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
+window.background.org-gnome-TextEditor:not(.about) stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: none;
 }
 
-window.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
+window.background.org-gnome-TextEditor:not(.about) headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   background-color: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
+window.background.org-gnome-TextEditor:not(.about) headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
 }
 
-window.org-gnome-TextEditor headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up),
-window.org-gnome-TextEditor headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 0%, transparent 0%) 0 0 0/0 0 0px;
-}
-
-window.org-gnome-TextEditor headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
-window.org-gnome-TextEditor headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 0 0 2/0 0 2px;
-  background-color: transparent;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-window.org-gnome-TextEditor headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
-window.org-gnome-TextEditor headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: none;
-}
-
-window.org-gnome-TextEditor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: none;
-}
-
-window.org-gnome-TextEditor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-window.org-gnome-TextEditor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked, window.org-gnome-TextEditor .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
-  background-color: transparent;
-}
-
-window.org-gnome-TextEditor scale highlight {
+window.background.org-gnome-TextEditor:not(.about) scale highlight {
   background-image: image(#FFA000);
 }
 
-window.org-gnome-TextEditor scale slider {
+window.background.org-gnome-TextEditor:not(.about) scale slider {
   color: #FFA000;
 }
 
-window.org-gnome-TextEditor *:link {
+window.background.org-gnome-TextEditor:not(.about) link {
   color: #FFA000;
 }
 
-window.org-gnome-TextEditor *:visited {
+window.background.org-gnome-TextEditor:not(.about) link:visited {
   color: rgba(0, 0, 0, 0.26);
 }
 
-window.background.csd > contents > toastoverlay > leaflet check:checked, window.background.csd > contents > toastoverlay > leaflet check:indeterminate, window.background.csd > contents > toastoverlay > leaflet radio:checked, window.background.csd > contents > toastoverlay > leaflet radio:indeterminate {
-  color: #3949AB;
+window.background.org-gnome-TextEditor:not(.about) button.link:link, window.background.org-gnome-TextEditor:not(.about) button.link:link:focus, window.background.org-gnome-TextEditor:not(.about) button.link:link:hover, window.background.org-gnome-TextEditor:not(.about) button.link:link:active {
+  color: #FFA000;
 }
 
-window.background.csd > contents > toastoverlay > leaflet radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#3949AB), to(transparent));
+window.background.org-gnome-TextEditor:not(.about) button.link:visited, window.background.org-gnome-TextEditor:not(.about) button.link:visited:focus, window.background.org-gnome-TextEditor:not(.about) button.link:visited:hover, window.background.org-gnome-TextEditor:not(.about) button.link:visited:active {
+  color: rgba(0, 0, 0, 0.26);
 }
 
-window.background.csd > contents > toastoverlay > leaflet radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#3949AB), to(transparent));
+window.background.csd:not(.about) > contents > toastoverlay > leaflet {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #f3ebe6, #f3ebe6 40px, #F2F2F2 40px, #F2F2F2);
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar {
-  background-color: #E0E0E0;
-  box-shadow: inset 0 -1px #E0E0E0;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet:backdrop {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #f0e5df, #f0e5df 40px, #F2F2F2 40px, #F2F2F2);
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar:backdrop {
-  background-color: #dbdbdb;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet check:checked, window.background.csd:not(.about) > contents > toastoverlay > leaflet check:indeterminate, window.background.csd:not(.about) > contents > toastoverlay > leaflet radio:checked, window.background.csd:not(.about) > contents > toastoverlay > leaflet radio:indeterminate {
+  color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet switch:checked {
-  background-color: rgba(57, 73, 171, 0.5);
+window.background.csd:not(.about) > contents > toastoverlay > leaflet switch:checked {
+  background-color: rgba(255, 109, 0, 0.5);
 }
 
-window.background.csd > contents > toastoverlay > leaflet switch:checked slider {
-  background-color: #3949AB;
-  color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet switch:checked slider {
+  background-color: #FF6D00;
+  color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet .view:selected:hover {
-  box-shadow: inset 0 0 0 9999px rgba(57, 73, 171, 0.08);
+window.background.csd:not(.about) > contents > toastoverlay > leaflet .view:selected {
+  color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet entry:focus-within, window.background.csd > contents > toastoverlay > leaflet spinbutton:not(.vertical):focus-within {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet entry, window.background.csd:not(.about) > contents > toastoverlay > leaflet spinbutton:not(.vertical) {
+  caret-color: #FF6D00;
+}
+
+window.background.csd:not(.about) > contents > toastoverlay > leaflet entry:focus-within, window.background.csd:not(.about) > contents > toastoverlay > leaflet spinbutton:not(.vertical):focus-within {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 2/0 0 2px;
+  box-shadow: inset 0 -2px #FF6D00;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.background.csd > contents > toastoverlay > leaflet entry selection, window.background.csd > contents > toastoverlay > leaflet spinbutton:not(.vertical) selection {
-  color: white;
-  background-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet entry selection, window.background.csd:not(.about) > contents > toastoverlay > leaflet spinbutton:not(.vertical) selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet entry progress {
-  border-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet entry progress {
+  border-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet label selection {
-  color: white;
-  background-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet label selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar entry:focus-within, window.background.csd > contents > toastoverlay > leaflet headerbar spinbutton:not(.vertical):focus-within {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar entry:focus-within, window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar spinbutton:not(.vertical):focus-within {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 2/0 0 2px;
+  box-shadow: inset 0 -2px #FF6D00;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar entry selection, window.background.csd > contents > toastoverlay > leaflet headerbar spinbutton:not(.vertical) selection {
-  color: white;
-  background-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar entry selection, window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar spinbutton:not(.vertical) selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar entry progress {
-  border-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar entry progress {
+  border-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar label selection {
-  color: white;
-  background-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar label selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  color: white;
-  background-color: #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: 0 0 0 2px rgba(57, 73, 171, 0.28);
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
+  box-shadow: 0 0 0 2px rgba(255, 109, 0, 0.28);
 }
 
-window.background.csd > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
   outline: none;
 }
 
-window.background.csd > contents > toastoverlay > leaflet button.combo:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #3949AB;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button.combo:checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 2/0 0 2px;
+  box-shadow: inset 0 -2px #FF6D00;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.background.csd > contents > toastoverlay > leaflet stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 0%, transparent 0%) 0 0 0/0 0 0px;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-window.background.csd > contents > toastoverlay > leaflet stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 100%, transparent 0%) 0 0 2/0 0 2px;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.background.csd > contents > toastoverlay > leaflet stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: none;
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
   background-color: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.87);
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up),
-window.background.csd > contents > toastoverlay > leaflet headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 0%, transparent 0%) 0 0 0/0 0 0px;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet scale highlight {
+  background-image: image(#FF6D00);
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
-window.background.csd > contents > toastoverlay > leaflet headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3949AB 100%, transparent 0%) 0 0 2/0 0 2px;
-  background-color: transparent;
-  color: rgba(0, 0, 0, 0.87);
+window.background.csd:not(.about) > contents > toastoverlay > leaflet scale slider {
+  color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
-window.background.csd > contents > toastoverlay > leaflet headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: none;
+window.background.csd:not(.about) > contents > toastoverlay > leaflet link {
+  color: #FF6D00;
 }
 
-window.background.csd > contents > toastoverlay > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: none;
-}
-
-window.background.csd > contents > toastoverlay > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-window.background.csd > contents > toastoverlay > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked, window.background.csd > contents > toastoverlay > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
-  background-color: transparent;
-}
-
-window.background.csd > contents > toastoverlay > leaflet scale highlight {
-  background-image: image(#3949AB);
-}
-
-window.background.csd > contents > toastoverlay > leaflet scale slider {
-  color: #3949AB;
-}
-
-window.background.csd > contents > toastoverlay > leaflet *:link {
-  color: #3949AB;
-}
-
-window.background.csd > contents > toastoverlay > leaflet *:visited {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet link:visited {
   color: rgba(0, 0, 0, 0.26);
+}
+
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:link, window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:link:focus, window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:link:hover, window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:link:active {
+  color: #FF6D00;
+}
+
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:visited, window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:visited:focus, window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:visited:hover, window.background.csd:not(.about) > contents > toastoverlay > leaflet button.link:visited:active {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+window.background.csd:not(.about) > contents > toastoverlay > leaflet .navigation-sidebar > row:selected, window.background.csd:not(.about) > contents > toastoverlay > leaflet .navigation-sidebar > row:selected label, window.background.csd:not(.about) > contents > toastoverlay > leaflet .navigation-sidebar > row:selected image {
+  color: #5E35B1;
+}
+
+window.background.csd > contents > leaflet {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #ebe9ef, #ebe9ef 40px, #F2F2F2 40px, #F2F2F2);
+}
+
+window.background.csd > contents > leaflet:backdrop {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #e6e3eb, #e6e3eb 40px, #F2F2F2 40px, #F2F2F2);
 }
 
 window.background.csd > contents > leaflet check:checked, window.background.csd > contents > leaflet check:indeterminate, window.background.csd > contents > leaflet radio:checked, window.background.csd > contents > leaflet radio:indeterminate {
   color: #5E35B1;
-}
-
-window.background.csd > contents > leaflet radio {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#5E35B1), to(transparent));
-}
-
-window.background.csd > contents > leaflet radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.125, to(#5E35B1), to(transparent));
-}
-
-window.background.csd > contents > leaflet headerbar {
-  background-color: #E0E0E0;
-  box-shadow: inset 0 -1px #E0E0E0;
-}
-
-window.background.csd > contents > leaflet headerbar:backdrop {
-  background-color: #dbdbdb;
 }
 
 window.background.csd > contents > leaflet switch:checked {
@@ -5148,8 +5133,12 @@ window.background.csd > contents > leaflet switch:checked slider {
   color: #5E35B1;
 }
 
-window.background.csd > contents > leaflet .view:selected:hover {
-  box-shadow: inset 0 0 0 9999px rgba(94, 53, 177, 0.08);
+window.background.csd > contents > leaflet .view:selected {
+  color: #5E35B1;
+}
+
+window.background.csd > contents > leaflet entry, window.background.csd > contents > leaflet spinbutton:not(.vertical) {
+  caret-color: #5E35B1;
 }
 
 window.background.csd > contents > leaflet entry:focus-within, window.background.csd > contents > leaflet spinbutton:not(.vertical):focus-within {
@@ -5241,35 +5230,6 @@ window.background.csd > contents > leaflet headerbar button:not(.suggested-actio
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
 }
 
-window.background.csd > contents > leaflet headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up),
-window.background.csd > contents > leaflet headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 0%, transparent 0%) 0 0 0/0 0 0px;
-}
-
-window.background.csd > contents > leaflet headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked,
-window.background.csd > contents > leaflet headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 0 0 2/0 0 2px;
-  background-color: transparent;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-window.background.csd > contents > leaflet headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover),
-window.background.csd > contents > leaflet headerbar stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: none;
-}
-
-window.background.csd > contents > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):focus:not(:hover) {
-  box-shadow: none;
-}
-
-window.background.csd > contents > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-window.background.csd > contents > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked, window.background.csd > contents > leaflet .path-bar.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up):checked:disabled {
-  background-color: transparent;
-}
-
 window.background.csd > contents > leaflet scale highlight {
   background-image: image(#5E35B1);
 }
@@ -5278,12 +5238,24 @@ window.background.csd > contents > leaflet scale slider {
   color: #5E35B1;
 }
 
-window.background.csd > contents > leaflet *:link {
+window.background.csd > contents > leaflet link {
   color: #5E35B1;
 }
 
-window.background.csd > contents > leaflet *:visited {
+window.background.csd > contents > leaflet link:visited {
   color: rgba(0, 0, 0, 0.26);
+}
+
+window.background.csd > contents > leaflet button.link:link, window.background.csd > contents > leaflet button.link:link:focus, window.background.csd > contents > leaflet button.link:link:hover, window.background.csd > contents > leaflet button.link:link:active {
+  color: #5E35B1;
+}
+
+window.background.csd > contents > leaflet button.link:visited, window.background.csd > contents > leaflet button.link:visited:focus, window.background.csd > contents > leaflet button.link:visited:hover, window.background.csd > contents > leaflet button.link:visited:active {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+window.background.csd > contents > leaflet .navigation-sidebar > row:selected, window.background.csd > contents > leaflet .navigation-sidebar > row:selected label, window.background.csd > contents > leaflet .navigation-sidebar > row:selected image {
+  color: #5E35B1;
 }
 
 /* GTK NAMED COLORS
