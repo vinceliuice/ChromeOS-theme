@@ -194,11 +194,8 @@
   @if $t == flat-focus {
     box-shadow: none;
     color: $text;
-
-    &:not(:hover) {
-      outline: 2px solid $overlay-focus;
-      outline-offset: -2px;
-    }
+    outline: 2px solid $overlay-focus;
+    outline-offset: -2px;
   }
 
   @if $t == flat-active {

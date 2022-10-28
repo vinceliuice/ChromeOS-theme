@@ -128,17 +128,13 @@ $theme_green_grey:  #3b4342;
 
   @if $button_rules=='true' {
     button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
-      &:checked {
+      &:checked:not(:disabled) {
         color: on($theme_color);
         background-color: $theme_color;
       }
 
-      &:focus:not(:hover) {
-        box-shadow: 0 0 0 2px rgba($theme_color, 0.28);
-      }
-
-      &:checked:disabled {
-        @include button(checked-disabled);
+      &:focus {
+        outline-color: rgba($theme_color, 0.28);
       }
     }
 
@@ -164,21 +160,13 @@ $theme_green_grey:  #3b4342;
         background-color: transparent;
         color: $text;
       }
-
-      &:focus:not(:hover) {
-        box-shadow: none;
-      }
     }
 
     headerbar {
       button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset headerbar buttons
-        &:checked {
+        &:checked:not(:disabled) {
           background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
           color: $titlebar-text;
-        }
-
-        &:focus:not(:hover) {
-          box-shadow: 0 0 0 2px rgba($titlebar-text, 0.15);
         }
       }
     }

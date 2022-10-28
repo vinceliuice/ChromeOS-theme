@@ -3092,7 +3092,7 @@ list.frame { border-radius: $corner-radius; }
     background-color: $fill;
 
     &:hover { @include button(flat-hover); }
-    &:focus { @include button(flat-focus); }
+    &:focus { outline: none; }
     &:active { @include button(flat-active); }
     &:checked { @include button(checked); }
     &:disabled { @include button(flat-disabled); }
