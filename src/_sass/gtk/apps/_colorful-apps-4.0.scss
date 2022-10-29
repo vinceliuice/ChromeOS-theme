@@ -39,20 +39,30 @@ $theme_green_grey:  #3b4342;
                    $header_color: if($topbar == 'light', mix($theme_color, $background, 5%), $theme_color),
                    $theme_indicator: if($topbar == 'dark', currentColor, $theme_color)) {
   @if $headerbar_rules=='true' {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom,
-                                      $header_color,
-                                      $header_color $large-size,
-                                      $background $large-size,
-                                      $background);
+    @if $topbar == 'dark' {
+      &:not(.message):not(.about) {
+        background-image: linear-gradient(to bottom,
+                                          $header_color,
+                                          $header_color $large-size,
+                                          $background $large-size,
+                                          $background);
 
-    &:backdrop {
-      background-color: transparent;
-      background-image: linear-gradient(to bottom,
-                                        darken($header_color, 2%),
-                                        darken($header_color, 2%) $large-size,
-                                        $background $large-size,
-                                        $background);
+        &:backdrop {
+          background-image: linear-gradient(to bottom,
+                                            darken($header_color, 2%),
+                                            darken($header_color, 2%) $large-size,
+                                            $background $large-size,
+                                            $background);
+        }
+      }
+    }
+
+    headerbar:not(.flat) {
+      background-color: $header_color;
+
+      &:backdrop {
+        background-color: darken($header_color, 2%);
+      }
     }
   }
 
@@ -199,13 +209,19 @@ $theme_green_grey:  #3b4342;
     }
 
     headerbar {
+      splitbutton.image-button {
+        &:hover {
+          background-color: if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08));
+        }
+      }
+
       button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
       button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat { // reset headerbar buttons
         background-color: transparent;
         color: $titlebar-text;
 
         &:hover {
-          background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+          background-color: if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08));
           box-shadow: none;
         }
 
@@ -215,16 +231,16 @@ $theme_green_grey:  #3b4342;
         }
 
         &:active {
-          background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-          background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 0%);
+          background-color: if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08));
+          background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08)) 10%, transparent 0%);
         }
 
         &:checked:not(:disabled) {
-          background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
+          background-color: if($topbar == 'dark', rgba(black, 0.16), rgba(black, 0.1));
           color: $titlebar-text;
 
           &:hover {
-            background-color: if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
+            background-color: if($topbar == 'dark', rgba(black, 0.22), rgba(black, 0.15));
             box-shadow: none;
           }
         }
@@ -281,18 +297,72 @@ $nautilus-header:          if($topbar == 'dark', #3266D4, mix(#3266D4, $backgrou
 $nautilus-header-backdrop: if($topbar == 'dark', darken(#3266D4, 2%), mix(darken(#3266D4, 2%), $background, 5%));
 
 window.background.nautilus-window {
-  background-image: linear-gradient(to bottom,
-                                    $nautilus-header,
-                                    $nautilus-header $large-size,
-                                    $background $large-size,
-                                    $background);
+  @if $topbar == 'dark' {
+    &:not(.message):not(.about) {
+      background-image: linear-gradient(to bottom,
+                                        $nautilus-header,
+                                        $nautilus-header $large-size,
+                                        $background $large-size,
+                                        $background);
 
-  &:backdrop {
-    background-image: linear-gradient(to bottom,
-                                      $nautilus-header-backdrop,
-                                      $nautilus-header-backdrop $large-size,
-                                      $background $large-size,
-                                      $background);
+      &:backdrop {
+        background-image: linear-gradient(to bottom,
+                                          $nautilus-header-backdrop,
+                                          $nautilus-header-backdrop $large-size,
+                                          $background $large-size,
+                                          $background);
+      }
+    }
+  }
+
+  headerbar {
+    background-color: $nautilus-header;
+
+    &:backdrop {
+      background-color: $nautilus-header-backdrop;
+    }
+
+    splitbutton.image-button {
+      &:hover {
+        background-color: if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08));
+      }
+    }
+
+    button:not(.suggested-action):not(.destructive-action) { // reset headerbar buttons
+      background-color: transparent;
+      color: $titlebar-text;
+
+      &:hover {
+        background-color: if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08));
+        box-shadow: none;
+      }
+
+      &:focus {
+        outline-color: $overlay-selected;
+        color: $titlebar-text;
+      }
+
+      &:active {
+        background-color: if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08));
+        background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.12), rgba(black, 0.08)) 10%, transparent 0%);
+      }
+
+      &:checked:not(:disabled) {
+        background-color: if($topbar == 'dark', rgba(black, 0.16), rgba(black, 0.1));
+        color: $titlebar-text;
+
+        &:hover {
+          background-color: if($topbar == 'dark', rgba(black, 0.22), rgba(black, 0.15));
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  indicatorbin {
+    > indicator {
+      background: $titlebar-indicator;
+    }
   }
 }
 
