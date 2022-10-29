@@ -83,7 +83,7 @@
     button {
       margin: (32px - $small-size) / 2;
 
-      @extend %small_button;
+      @extend %small-button;
     }
   }
 
@@ -122,7 +122,7 @@
   animation: nautilus-operations-button-needs-attention $ripple-fade-out-duration $ease 6 alternate;
 }
 
-.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(:only-child).disclosure-button { @extend %circular_button; }
+.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(:only-child).disclosure-button { @extend %circular-button; }
 
 // Path bar
 
@@ -294,7 +294,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 }
 
 // Make operations button circular
-.nautilus-window headerbar revealer > button { @extend %circular_button; }
+.nautilus-window headerbar revealer > button { @extend %circular-button; }
 
 // Ensure paned separator rendering. See issue #84 for details.
 .nautilus-window paned > separator { background-color: $base-alt; }
@@ -333,7 +333,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
     margin-top: 8px;
     margin-bottom: 8px;
 
-    @extend %small_button;
+    @extend %small-button;
   }
 }
 
@@ -394,7 +394,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
     border-radius: $circular-radius;
 
     @extend %button-flat-simple;
-    @extend %small_button;
+    @extend %small-button;
 
     &:last-child:dir(ltr),
     &:not(:first-child):dir(rtl) { margin-left: -$container-padding / 2; }
@@ -794,7 +794,7 @@ window.solid-csd > box.vertical > box.vertical {
 
     > toolitem > .linked > button,
     > toolitem > box.horizontal > button {
-      @extend %circular_button;
+      @extend %circular-button;
       @extend %image_button;
     }
   }
@@ -812,20 +812,20 @@ window.solid-csd > box.vertical > box.vertical {
 window.background > box.vertical > toolbar.primary-toolbar {
   > toolitem {
     > .linked > button.image-button.raised { // 'shuffle/repeat'
-      @extend %circular_button;
+      @extend %circular-button;
       @extend %image_button;
 
       > widget > box > image { padding: 0; }
     }
 
     button.flat.scale { // 'volume'
-      @extend %circular_button;
+      @extend %circular-button;
       @extend %image_button;
     }
 
     > box.horizontal:not(.linked) > button.toggle,
     > .linked > button:not(.toggle):not(.raised):not(.flat) {
-      @extend %circular_button;
+      @extend %circular-button;
       @extend %image_button;
     }
   }
@@ -912,7 +912,7 @@ layouttab {
   }
 
   // Close button styling for layouttab.
-  // > box > button.close { @extend %circular_button; }
+  // > box > button.close { @extend %circular-button; }
 }
 
 layout {

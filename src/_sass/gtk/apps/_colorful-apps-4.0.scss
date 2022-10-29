@@ -33,6 +33,7 @@ $theme_green_grey:  #3b4342;
                    $entry_rules: 'true',
                    $button_rules: 'true',
                    $scale_rules: 'true',
+                   $progress_rules: 'true',
                    $link_rules: 'true',
                    $theme_color: $primary,
                    $header_color: if($topbar == 'light', mix($theme_color, $background, 5%), $theme_color),
@@ -77,6 +78,16 @@ $theme_green_grey:  #3b4342;
   @if $view_rules=='true' {
     .view {
       &:selected { color: $theme_color; }
+    }
+
+    treeview.view {
+      &.expander {
+        &:selected { color: $theme_color; }
+      }
+
+      &.progressbar {
+        border-color: $theme_color;
+      }
     }
   }
 
@@ -127,47 +138,102 @@ $theme_green_grey:  #3b4342;
   }
 
   @if $button_rules=='true' {
-    button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) {
+    button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
       &:checked:not(:disabled) {
         color: on($theme_color);
         background-color: $theme_color;
+
+        &:hover {
+          box-shadow: 0 3px 3px -3px rgba($theme_color, 0.3),
+                      0 2px 3px -1px rgba($theme_color, 0.24),
+                      0 2px 5px 0 rgba($theme_color, 0.12);
+        }
       }
 
       &:focus {
         outline-color: rgba($theme_color, 0.28);
       }
-    }
 
-    button.combo {
-      &:checked {
-        @include entry(checked, $fc: $theme_color);
-        background-color: $fill;
-        color: $text;
+      &.flat {
+        &:checked:not(:disabled) {
+          @include button(flat-checked);
+        }
       }
     }
 
-    stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset stackswitcher buttons
+    button.combo {
+      &:checked:not(:disabled) {
+        @include entry(checked, $fc: $theme_color);
+        background-color: $fill;
+        color: $text;
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+    }
+
+    stackswitcher > button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) { // reset stackswitcher buttons
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $theme_color 0%,
                                     transparent 0%)
                                     0 0 0 / 0 0 0px;
 
-      &:checked {
+      &:active {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $theme_color 100%,
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
-        background-color: transparent;
         color: $text;
+      }
+
+      &:checked:not(:disabled), &:checked:hover {
+        box-shadow: inset 0 -2px $theme_color;
+        color: $text;
+        background-color: transparent;
+
+        &:hover {
+          box-shadow: none;
+        }
       }
     }
 
     headerbar {
-      button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.popup):not(.title-button):not(.down):not(.up) { // reset headerbar buttons
+      button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
+      button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat { // reset headerbar buttons
+        background-color: transparent;
+        color: $titlebar-text;
+
+        &:hover {
+          background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+          box-shadow: none;
+        }
+
+        &:focus {
+          outline-color: $overlay-selected;
+          color: $titlebar-text;
+        }
+
+        &:active {
+          background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+          background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 0%);
+        }
+
         &:checked:not(:disabled) {
           background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
           color: $titlebar-text;
+
+          &:hover {
+            background-color: if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
+            box-shadow: none;
+          }
         }
+      }
+    }
+
+    indicatorbin {
+      > indicator {
+        background: $titlebar-indicator;
       }
     }
   }
@@ -180,6 +246,10 @@ $theme_green_grey:  #3b4342;
 
       slider { color: $theme_color; }
     }
+  }
+
+  @if $progress_rules=='true' {
+    progressbar > trough > progress { background-color: $theme_color; }
   }
 
   @if $link_rules=='true' {
@@ -210,7 +280,7 @@ $theme_green_grey:  #3b4342;
 $nautilus-header:          if($topbar == 'dark', #3266D4, mix(#3266D4, $background, 5%));
 $nautilus-header-backdrop: if($topbar == 'dark', darken(#3266D4, 2%), mix(darken(#3266D4, 2%), $background, 5%));
 
-window.background.nautilus-window:not(.about) {
+window.background.nautilus-window {
   background-image: linear-gradient(to bottom,
                                     $nautilus-header,
                                     $nautilus-header $large-size,
@@ -230,8 +300,16 @@ window.background.nautilus-window:not(.about) {
 // Text Editor
 //
 
-window.background.org-gnome-TextEditor:not(.about) {
+window.background.org-gnome-TextEditor {
   @include color_theme($theme_color: $theme_amber);
+
+  tabbar tab {
+    border-image: radial-gradient( circle closest-corner at center calc(100% - 1px), $theme_amber 0%, transparent 0%) 2 / 0 0 0px;
+
+    &:selected, &:checked {
+      border-image: radial-gradient( circle closest-corner at center calc(100% - 1px), $theme_amber 100%, transparent 0%) 2 / 0 0 2px;
+    }
+  }
 }
 
 //
@@ -243,7 +321,30 @@ window.background.csd:not(.about) {
     @include color_theme($theme_color: $theme_orange);
 
     .navigation-sidebar > row {
-      &:selected { &, label, image { color: $theme_cyan; }}
+      &:selected { &, label, image { color: $theme_orange; }}
+    }
+
+    label.primary-label, label.accent, label.month-name {
+      color: $theme_orange;
+    }
+
+    monthcell {
+      &:selected {
+        background-color: rgba($theme_orange, 0.1);
+      }
+
+      &.today {
+        background-color: rgba($theme_orange, 0.25);
+      }
+    }
+
+    .now-strip {
+      background-color: rgba($theme_orange, 0.65);
+    }
+
+    button.day:selected {
+      background-color: $theme_orange;
+      color: on($theme_orange);
     }
   }
 }
@@ -258,6 +359,121 @@ window.background.csd {
 
     .navigation-sidebar > row {
       &:selected { &, label, image { color: $theme_cyan; }}
+    }
+  }
+}
+
+//
+// Gnome Software
+//
+
+window.background.csd {
+  > contents > stack > overlay {
+    > leaflet {
+      @include color_theme($theme_color: $theme_green);
+    }
+
+    progressbar > trough > progress { background-color: $theme_green; }
+  }
+}
+
+//
+// Gnome Calculator
+//
+
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) {
+  > contents > box {
+    @include color_theme($theme_color: $theme_deep_orange);
+
+    .math-buttons button.suggested-action.text-button {
+      background-color: $theme_deep_orange;
+      color: on($theme_deep_orange);
+
+      &:hover {
+        box-shadow: 0 3px 3px -3px rgba($theme_deep_orange, 0.3),
+                    0 2px 3px -1px rgba($theme_deep_orange, 0.24),
+                    0 2px 5px 0 rgba($theme_deep_orange, 0.12);
+      }
+    }
+  }
+}
+
+//
+// Dialogs
+//
+
+window.background.dialog {
+  @include color_theme($theme_color: $theme_pink);
+
+  headerbar.titlebar {
+    button.suggested-action { background-color: $purple-500; }
+  }
+
+  .navigation-sidebar > row {
+    &:selected { &, label, image { color: $theme_pink; }}
+  }
+
+  scale {
+    slider {
+      color: $theme_pink;
+
+      @each $s, $as in ('', '') {
+        &#{$s} {
+          $_url: 'assets/scale-slider#{$as}#{$asset-suffix}-pink';
+
+          background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                            radial-gradient(circle, transparent 10%, transparent 0%);
+        }
+      }
+
+      &:active {
+        $_url: 'assets/scale-slider#{$asset-suffix}-pink';
+        background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                          radial-gradient(circle, $overlay-active 10%, transparent 0%);
+        background-size: auto, 0% 0%;
+      }
+    }
+
+    @each $dir_class, $dir_infix in ('horizontal', 'horz'),
+                                    ('vertical', 'vert') {
+      @each $marks_infix, $marks_class in ('marks-before', 'marks-before:not(.marks-after)'),
+                                          ('marks-after', 'marks-after:not(.marks-before)') {
+        &.#{$dir_class}.#{$marks_class} {
+          slider {
+            @each $state, $state_infix in ('', ''),
+                                          (':disabled', '-disabled') {
+              &#{$state} {
+                $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}-pink';
+
+                background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png')),
+                                  radial-gradient(circle, transparent 10%, transparent 0%);
+              }
+            }
+
+            &:active {
+              $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider-pink';
+
+              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png')),
+                                radial-gradient(circle, $overlay-active 10%, transparent 0%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  pathbar > button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $theme_pink 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0px;
+
+    &:checked:not(:disabled) {
+      background-color: $fill;
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $theme_pink 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
     }
   }
 }

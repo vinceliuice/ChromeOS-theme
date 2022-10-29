@@ -330,6 +330,11 @@ entry {
 
   // Vertically linked entries
   .linked.vertical > & { @extend %linked-vertical; }
+
+  // Linking stuff
+  .linked > & + button {
+    @extend %flat-linked-button;
+  }
 }
 
 %entry_raised {
@@ -428,16 +433,43 @@ editablelabel > stack > text {
   background-color: $fill;
 
   &:focus { @include button(flat-focus); }
-
   &:hover { @include button(flat-hover); }
-
   &:active { @include button(flat-active); }
-
   &:disabled { @include button(flat-disabled); }
-
   &:checked, &:checked:hover { @include button(checked); }
-
   &:checked:disabled { @include button(checked-disabled); }
+}
+
+%button-flat-theme {
+  outline: none;
+  box-shadow: none;
+  border: none;
+
+  &:not(.destructive-action):not(.suggested-action) {
+    background-color: $fill;
+
+    &:hover { @include button(flat-hover); }
+    &:focus { outline: none; }
+    &:active { @include button(flat-active); }
+    &:checked, &:checked:hover { @include button(checked); }
+    &:disabled { @include button(flat-disabled); }
+  }
+}
+
+%flat-linked-button {
+  outline: none;
+  box-shadow: none;
+  border: none;
+
+  &:not(.destructive-action):not(.suggested-action) {
+    background-color: $fill;
+
+    &:hover { @include button(flat-hover); }
+    &:focus { outline: none; }
+    &:active { @include button(flat-active); }
+    &:checked, &:checked:hover { @include button(flat-checked); }
+    &:disabled { @include button(flat-disabled); }
+  }
 }
 
 %button,
@@ -502,7 +534,7 @@ button {
       min-width: 24px;
       padding: ($medium-size - 24px) / 2;
 
-      @extend %circular_button;
+      @extend %circular-button;
     }
 
     // NOTE: Some image-only buttons use this as well
@@ -528,7 +560,7 @@ button {
 
     .linked:not(.vertical) > & {
       @extend %linked;
-      @extend %button-flat-linked;
+      // @extend %button-flat-theme;
 
       // &:focus { box-shadow: 0 0 0 1px $solid-border; }
 
@@ -537,7 +569,7 @@ button {
 
     .linked.vertical > & {
       @extend %linked-vertical;
-      @extend %button-flat-linked;
+      // @extend %button-flat-theme;
 
       // &:focus { box-shadow: 0 0 0 1px $solid-border; }
 
@@ -551,8 +583,6 @@ button {
 
         &.image-button:not(.text-button) { border-radius: $circular-radius; }
       }
-
-      &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
     }
   }
 
@@ -661,7 +691,7 @@ button {
   &.font,
   &.file { separator { @extend %hide_separators; }}
 
-  @at-root %circular_button,
+  @at-root %circular-button,
   &.close,
   &.circular { // The Bloody Circul Button
     border-radius: $circular-radius;
@@ -669,7 +699,7 @@ button {
     // label { padding: 0; }
   }
 
-  @at-root %small_button {
+  @at-root %small-button {
     min-height: $small-size;
     min-width: $small-size;
     padding: 0;
@@ -688,6 +718,23 @@ splitbutton:disabled {
   border: none;
   background-color: $surface;
   outline: none;
+  color: $text-secondary;
+
+  &.activatable {
+    @extend %ripple;
+
+    &:hover {
+      background-color: mix($text, $surface, 10%);
+    }
+
+    &:active {
+      background-color: mix($text, $surface, 20%);
+    }
+
+    &:checked {
+      background-color: mix($text, $surface, 15%);
+    }
+  }
 
   .large & {
     margin-bottom: $container-padding;
@@ -804,7 +851,7 @@ spinbutton {
   &:not(.vertical) > button,
   &.vertical > button {
     @extend %button-flat-simple;
-    @extend %small_button;
+    @extend %small-button;
     margin: $container-padding;
 
     // Remove unwanted focus indicator
@@ -943,7 +990,7 @@ combobox {
 
   > .linked:not(.vertical) > button:not(:only-child) {
     @extend %button-flat;
-    // @extend %small_button;
+    // @extend %small-button;
 
     min-height: 16px;
     min-width: 16px;
@@ -1133,12 +1180,6 @@ headerbar {
     margin-bottom: 0;
   }
 
-  .linked:not(.vertical) > button {
-    &.image-button:not(.text-button) {
-      @include linked-button($r: $circular-radius);
-    }
-  }
-
   switch {
     margin-top: ($large-size - 24px) / 2;
     margin-bottom: ($large-size - 24px) / 2;
@@ -1200,7 +1241,8 @@ headerbar {
     }
   }
 
-  menubutton.title-menu-button {
+  menubutton.title-menu-button,
+  menubutton.sources-button {
     margin-top: 0;
     margin-bottom: 0;
 
@@ -1212,43 +1254,19 @@ headerbar {
   }
 
   button:not(.suggested-action):not(.destructive-action) {
+    @extend %button-flat;
     color: $titlebar-text-secondary;
-    outline: none;
-    box-shadow: none;
-    background-color: transparent;
 
-    &.image-button, &.toggle {
+    &:not(.text-button):not(.image-text-button) {
       border-radius: $circular-radius;
     }
 
     &:focus, &:hover, &:active, &:checked, &:checked:hover { color: $titlebar-text; }
 
-    &:focus {
-      outline-color: $titlebar-divider;
-      outline-offset: -2px;
-    }
-
-    &:hover {
-      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-    }
-
-    &:active {
-      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-      background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 10%);
-    }
-
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
     &:checked {
-      background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
-      color: $titlebar-text;
-
-      &:hover {
-        background-color: if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
-      }
-
       &:disabled {
-        background-color: transparent;
         color: $titlebar-text-disabled;
       }
     }
@@ -1256,13 +1274,11 @@ headerbar {
     &:backdrop {
       color: $titlebar-text-disabled;
 
-      &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
+      &:focus, &:hover, &:active, &:checked { color: $titlebar-text-secondary; }
 
       &:disabled { color: $titlebar-text-secondary-disabled; }
 
       &:checked {
-        color: $titlebar-text-secondary;
-
         &:disabled { color: $titlebar-text-secondary-disabled; }
       }
     }
@@ -1275,43 +1291,28 @@ headerbar {
     }
   }
 
-  stackswitcher {
-    background: none;
-    padding: 0;
+  .linked:not(.vertical) > button {
+    &.image-button:not(.text-button) {
+      @include linked-button($r: $circular-radius);
+    }
+  }
 
-    > button:not(.suggested-action):not(.destructive-action).text-button {
-      box-shadow: none;
-      outline: none;
-      color: $titlebar-text-secondary;
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $titlebar-indicator 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0px;
+  popover.background {
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %button-flat-theme;
 
-      &:hover {
-        background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
+      &.flat {
+        @extend %button-flat;
       }
+    }
 
-      &:active {
-        background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-        background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 10%);
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $titlebar-indicator 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-        color: $titlebar-text;
-      }
+    .linked:not(.vertical) > button {
+      border-radius: $corner-radius;
+      @extend %linked;
+    }
 
-      &:checked, &:checked:hover {
-        box-shadow: inset 0 -2px $titlebar-indicator;
-        border-radius: $corner-radius $corner-radius 0 0;
-        color: $titlebar-text;
-      }
-
-      &:focus:not(:hover):not(:active):not(:checked) {
-        box-shadow: none;
-        outline: none;
-      }
+    entry {
+      @extend %entry_basic;
     }
   }
 
@@ -1403,47 +1404,6 @@ headerbar {
     }
   }
 
-  &.windowhandle {
-    viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
-      border-radius: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0;
-      min-width: 120px;
-
-      label { margin-right: 12px; }
-      image { margin-left: 12px; }
-
-      &:checked {
-        background-color: $titlebar-fill;
-        box-shadow: inset 0 -2px $titlebar-indicator;
-      }
-
-      &:focus { box-shadow: none; }
-    }
-
-    > button.popup {
-      label, image { min-height: 0; }
-    }
-
-    viewswitchertitle > squeezer {
-      margin-top: 0;
-      margin-bottom: 0;
-      background: none;
-
-      > viewswitcher {
-        margin: 0 0;
-        background: none;
-
-        > box.horizontal > button.radio {
-          margin: 0;
-          padding: 0;
-          border-radius: 0;
-        }
-      }
-    }
-  }
-
   .solid-csd & {
     &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;
@@ -1477,8 +1437,8 @@ window.devel {
 
 // stackswitcher
 stackswitcher {
-  background-color: $fill;
-  border-radius: $window-radius;
+  background-color: transparent;
+  // border-radius: $window-radius;
   padding: 0;
 
   > button:not(.suggested-action):not(.destructive-action).text-button {
@@ -1487,19 +1447,32 @@ stackswitcher {
     box-shadow: none;
     background-color: transparent;
     outline: none;
-
-    &:hover {
-      background-color: $overlay-hover;
-    }
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $primary 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0px;
 
     &:focus {
       box-shadow: none;
       outline: none;
     }
 
+    &:hover {
+      background-color: $overlay-hover;
+    }
+
+    &:active {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $primary 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+      color: $titlebar-text;
+    }
+
     &:checked, &:checked:hover {
       background-color: transparent;
       box-shadow: inset 0 -2px $primary;
+      border-radius: $corner-radius $corner-radius 0 0;
       color: $text;
     }
   }
@@ -1601,33 +1574,48 @@ indicatorbin {
 /************
  * Pathbars *
  ************/
-%pathbar_button,
-pathbar > button {
-  @extend %button-flat;
 
-  padding-left: ($medium-size - 24px) / 2;
-  padding-right: ($medium-size - 24px) / 2;
-  border-radius: $corner-radius;
+pathbar {
+  > button {
+    @extend %button-flat;
+    border-spacing: $container-padding;
+    padding-left: ($medium-size - 24px) / 2;
+    padding-right: ($medium-size - 24px) / 2;
+    border-radius: $corner-radius;
+    margin: 0;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $primary 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0px;
 
-  &:checked {
-    box-shadow: inset 0 -2px $primary;
+    &:checked {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $primary 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
 
-    &, &:disabled { background-color: transparent; }
-  }
+      &:hover {
+        box-shadow: none;
+      }
+    }
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 0; }
+    &:focus {
+      outline: none;
+    }
 
-    &:last-child { margin-right: 0; }
-  }
+    &, &:checked, &:disabled {
+      background-color: $fill;
+    }
 
-  &.text-button {
-    min-width: 0;
-  }
+    label, image {
+      margin-left: $container-padding / 2;
+      margin-right: $container-padding / 2;
+    }
 
-  &.slider-button {
-    padding-left: (24px - 16px) / 2;
-    padding-right: (24px - 16px) / 2;
+    &.slider-button {
+      padding-left: (24px - 16px) / 2;
+      padding-right: (24px - 16px) / 2;
+    }
   }
 }
 
@@ -1675,9 +1663,11 @@ treeview.view {
 
     color: $text-secondary;
 
-    &:hover, &:active { color: $text; }
+    &:hover { color: $text; }
 
     &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
+
+    &:selected { color: $primary; }
 
     &:disabled { color: $text-secondary-disabled; }
   }
@@ -1785,14 +1775,17 @@ popover.menu {
     padding: 0 $container-padding;
 
     button.image-button.model {
-      min-height: $menuitem-size;
-      min-width: $menuitem-size;
+      min-height: $medium-size;
+      min-width: $medium-size;
       padding: 0;
-      border: none;
-      outline: none;
-      transition: none;
+      @extend %button-flat;
+    }
 
-      &:selected { background: image($overlay-selected); }
+    button.image-button.flat {
+      min-height: $medium-size;
+      min-width: $medium-size;
+      padding: 0;
+      border-radius: $corner-radius;
     }
   }
 
@@ -1800,12 +1793,11 @@ popover.menu {
     padding: $container-padding;
 
     button.circular.image-button.model {
-      @extend %small_button;
-      padding: $container-padding;
-
-      &:focus {
-        background-color: $overlay-selected;
-      }
+      min-height: $medium-size;
+      min-width: $medium-size;
+      padding: 0;
+      @extend %circular-button;
+      @extend %button-flat;
     }
   }
 
@@ -1823,32 +1815,6 @@ popover.menu {
     margin-right: 0;
   }
 
-  modelbutton {
-    min-height: $menuitem-size - $container-padding;
-    min-width: $menuitem-size * 2;
-    padding: $container-padding / 2 $container-padding * 1.5;
-    color: $text;
-    border-radius: $corner-radius;
-    font: initial;
-    text-shadow: none;
-    @extend %button-flat-simple;
-    @extend %ripple;
-
-    &:selected {
-      @extend %selected_items;
-    }
-
-    &:hover, &:selected, &:focus {
-      transition: none;
-      outline: none;
-    }
-
-    arrow {
-      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
-    }
-  }
-
   label.title {
     font-weight: bold;
     padding: 4px ($container-padding + 20px); //this will fall apart with font sizing
@@ -1861,6 +1827,8 @@ popover.menu {
  ************/
 popover.background {
   font: initial;
+  color: $text;
+  padding: 0;
 
   &, &:backdrop {
     background-color: transparent;
@@ -1874,6 +1842,7 @@ popover.background {
     background-color: $surface;
     border: none;
     border-radius: $window-radius;
+    color: $text;
   }
 
   &:backdrop {
@@ -1922,7 +1891,33 @@ popover.background {
 
   .linked > button {
     @extend %linked;
-    background-color: $fill;
+    @extend %button-flat-theme;
+  }
+
+  modelbutton {
+    min-height: $menuitem-size - $container-padding;
+    min-width: $menuitem-size * 2;
+    padding: $container-padding / 2 $container-padding * 2;
+    color: $text;
+    border-radius: $corner-radius;
+    font: initial;
+    text-shadow: none;
+    @extend %button-flat-simple;
+    @extend %ripple;
+
+    &:selected {
+      @extend %selected_items;
+    }
+
+    &:hover, &:selected, &:focus {
+      transition: none;
+      outline: none;
+    }
+
+    arrow {
+      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
+      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
+    }
   }
 
   &.menu button,
@@ -2143,7 +2138,7 @@ notebook {
 
       // colors the button like the label, overridden otherwise
       button.flat {
-        @extend %small_button;
+        @extend %small-button;
 
         &:last-child {
           margin-left: $container-padding;
@@ -2193,6 +2188,114 @@ notebook {
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
     background-color: $base;
   }
+}
+
+//
+// tab-view
+//
+
+tabbar {
+  .box {
+    min-height: $menuitem-size;
+    background-color: $background;
+    color: $text-secondary;
+    padding: 0;
+    box-shadow: inset 0 -1px $divider;
+    border-bottom: none;
+  }
+
+  tabbox {
+    > tabboxchild {
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    > separator {
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    > revealer > indicator {
+      min-width: 2px;
+      border-radius: 2px;
+      margin: $container-padding * 1.5 $container-padding;
+      background: gtkalpha($primary, 0.5);
+    }
+  }
+
+  tab {
+    border-radius: 0;
+    border: none;
+    color: $text-secondary;
+    padding: $container-padding $container-padding * 2;
+    border-image: radial-gradient( circle closest-corner at center calc(100% - 1px), $primary 0%, transparent 0%) 2 / 0 0 0px;
+    @extend %ripple;
+
+    &:hover {
+      background-color: $overlay-hover;
+      color: $text;
+    }
+
+    &:disabled { color: $text-secondary-disabled; }
+
+    &:selected, &:checked {
+      background-color: transparent;
+      color: $text;
+      border-image: radial-gradient( circle closest-corner at center calc(100% - 1px), $primary 100%, transparent 0%) 2 / 0 0 2px;
+    }
+  }
+
+  .start-action,
+  .end-action {
+    padding: $container-padding;
+  }
+
+  .start-action:dir(ltr),
+  .end-action:dir(rtl) {
+    padding-right: 0;
+  }
+
+  .start-action:dir(rtl),
+  .end-action:dir(ltr) {
+    padding-left: 0;
+  }
+}
+
+tabview > stack { background-color: $base; }
+
+dnd tab {
+  background-color: $background;
+  color: $text-secondary;
+  box-shadow: none;
+  margin: $container-padding * 4;
+}
+
+tabbar,
+dnd {
+  tab {
+    button.image-button {
+      padding: 0;
+      margin: 0;
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: $circular-radius;
+      border: none;
+      @extend %button-flat;
+    }
+
+    indicator {
+      min-height: 2px;
+      border-radius: 2px;
+      background: gtkalpha($primary, 0.5);
+    }
+  }
+}
+
+tabview:drop(active),
+tabbox:drop(active) {
+  box-shadow: none;
 }
 
 
@@ -2416,7 +2519,7 @@ radio {
   background-color: transparent;
   color: $text-secondary;
   @extend %button-flat-simple;
-  @extend %circular_button;
+  @extend %circular-button;
   @extend %ripple;
 
   &:checked, &:indeterminate {
@@ -2726,6 +2829,20 @@ scale {
     }
   }
 
+  &.marks-before:not(.marks-after),
+  &.marks-after:not(.marks-before) {
+    > trough > slider {
+      transform: none;
+      box-shadow: none;
+      border: none;
+      transition: $transition;
+
+      &:disabled {
+        box-shadow: none;
+      }
+    }
+  }
+
   // *WARNING* scale with marks madness following
 
   @each $dir_class, $dir_infix in ('horizontal', 'horz'),
@@ -2813,11 +2930,13 @@ progressbar {
   color: $text-secondary;
   font-size: smaller;
 
-  trough { background-color: $track-disabled; }
+  > trough {
+    background-color: $track-disabled;
 
-  progress { background-color: $primary; }
+    > progress { background-color: $primary; }
+  }
 
-  trough.empty progress { all: unset; } // makes the progress indicator disappear, when the fraction is 0
+  > trough.empty > progress { all: unset; } // makes the progress indicator disappear, when the fraction is 0
 }
 
 
@@ -2922,6 +3041,7 @@ actionbar > revealer > box {
   background-clip: border-box;
   border-spacing: $container-padding;
   box-shadow: none;
+  color: $text;
 
   entry, button, menubutton, splitbutton {
     margin: 0;
@@ -2932,7 +3052,7 @@ actionbar > revealer > box {
   }
 
   .linked > button {
-    @extend %list-button;
+    @extend %button-flat-theme;
   }
 }
 
@@ -3083,22 +3203,6 @@ list {
 
 list.frame { border-radius: $corner-radius; }
 
-%list-button {
-  outline: none;
-  box-shadow: none;
-  border: none;
-
-  &:not(.destructive-action):not(.suggested-action):not(.up):not(.down) {
-    background-color: $fill;
-
-    &:hover { @include button(flat-hover); }
-    &:focus { outline: none; }
-    &:active { @include button(flat-active); }
-    &:checked { @include button(checked); }
-    &:disabled { @include button(flat-disabled); }
-  }
-}
-
 row {
   &.activatable {
     outline: none;
@@ -3124,7 +3228,7 @@ row {
   }
 
   button {
-    @extend %list-button;
+    @extend %button-flat;
   }
 
   button:hover &, button:active &, button:checked &, button:checked:hover & {
@@ -3355,6 +3459,10 @@ window.dialog.message { // Message Dialog styling
 }
 
 window.about.background {
+  &, &:backdrop {
+    background-image: none;
+  }
+
   .large-icons {
     -gtk-icon-size: 128px;
   }
@@ -3388,7 +3496,7 @@ filechooser {
 
     > stack > box > button { // The new folder button
       @extend %button-flat;
-      @extend %circular_button;
+      @extend %circular-button;
     }
   }
 }
@@ -3569,7 +3677,7 @@ placessidebar {
 
     @at-root button.sidebar-button {
       @extend %button-flat-simple;
-      @extend %small_button;
+      @extend %small-button;
     }
 
     &.sidebar-placeholder-row { background-color: $overlay-hover; }
@@ -3687,9 +3795,11 @@ video {
 
    &.info {
      & > revealer > box,
-     &:hover > revealer > box,
      &:backdrop > revealer > box {
        background-color: $base;
+       color: $text;
+       box-shadow: inset 0 -1px $divider;
+       border: none;
 
        button {
          @extend %button-flat;
@@ -3711,10 +3821,10 @@ video {
 
          &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
        }
-     }
 
-     &:hover > revealer > box {
-       background-color: if($variant == 'light', lighten($primary, 5%), darken($primary, 5%));
+       link, .link:link {
+         color: on($primary, secondary);
+       }
      }
    }
 
@@ -3731,11 +3841,9 @@ video {
          &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($warning); }
        }
 
-       *:link { color: on($warning); }
-     }
-
-     &:hover > revealer > box {
-       background-color: if($variant == 'light', lighten($warning, 5%), darken($warning, 5%));
+       link, .link:link {
+         color: on($warning, secondary);
+       }
      }
    }
 
@@ -3751,11 +3859,9 @@ video {
          &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($error); }
        }
 
-       *:link { color: on($error); }
-     }
-
-     &:hover > revealer > box {
-       background-color: if($variant == 'light', lighten($error, 5%), darken($error, 5%));
+       link, .link:link {
+         color: on($error, secondary);
+       }
      }
    }
  }
@@ -3918,13 +4024,14 @@ window {
   outline: none;
   // outline: 1px solid rgba(white, 0.1);
   // outline-offset: -1px;
+
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
   &:backdrop {
     box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
   }
 
-  @if $topbar == 'dark' {
+  @if $topbar == 'dark' and $variant == 'light' {
     &.background:not(.message):not(.about) {
       background-color: transparent;
       background-image: linear-gradient(to bottom,
@@ -3994,7 +4101,7 @@ windowcontrols {
   }
 
   button:not(.suggested-action):not(.destructive-action) {
-    @extend %circular_button;
+    @extend %circular-button;
 
     image {
       padding: 0;
@@ -4094,15 +4201,15 @@ stackswitcher button.text-button.circular { // FIXME aggregate with buttons
 /*************
  * App Icons *
  *************/
-// Outline for low res icons
-.lowres-icon {
-  // -gtk-icon-shadow: none;
-}
-
-// Drapshadow for large icons
-.icon-dropshadow {
-  // -gtk-icon-shadow: none;
-}
+// // Outline for low res icons
+// .lowres-icon {
+//   -gtk-icon-shadow: none;
+// }
+//
+// // Drapshadow for large icons
+// .icon-dropshadow {
+//   -gtk-icon-shadow: none;
+// }
 
 
 /*********

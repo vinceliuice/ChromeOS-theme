@@ -411,15 +411,10 @@ treeview entry {
   background-color: $fill;
 
   &:focus { @include button(flat-focus); }
-
   &:hover { @include button(flat-hover); }
-
   &:active { @include button(flat-active); }
-
   &:disabled { @include button(flat-disabled); }
-
   &:checked, &:checked:hover { @include button(checked); }
-
   &:checked:disabled { @include button(checked-disabled); }
 }
 
@@ -479,7 +474,7 @@ button {
     min-width: 24px;
     padding: ($medium-size - 24px) / 2;
 
-    @extend %circular_button;
+    @extend %circular-button;
   }
 
   // NOTE: Some image-only buttons use this as well
@@ -635,12 +630,12 @@ button {
   .inline-toolbar & {
     // @extend %button-flat;
 
-    &:not(.text-button) { @extend %circular_button; }
+    &:not(.text-button) { @extend %circular-button; }
   }
 
   .primary-toolbar & { -gtk-icon-shadow: none; } // tango icons don't need shadows
 
-  @at-root %circular_button,
+  @at-root %circular-button,
   &.close,
   &.circular { // The Bloody Circul Button
     border-radius: $circular-radius;
@@ -648,7 +643,7 @@ button {
     // label { padding: 0; }
   }
 
-  @at-root %small_button {
+  @at-root %small-button {
     min-height: $small-size;
     min-width: $small-size;
     padding: 0;
@@ -812,7 +807,7 @@ spinbutton {
 
     button {
       @extend %button-flat-simple;
-      @extend %small_button;
+      @extend %small-button;
       margin: $container-padding;
 
       // Remove unwanted focus indicator
@@ -950,7 +945,7 @@ combobox {
 
   > .linked:not(.vertical) > button:not(:only-child) {
     @extend %button-flat;
-    // @extend %small_button;
+    // @extend %small-button;
 
     min-height: 16px;
     min-width: 16px;
@@ -1187,36 +1182,20 @@ searchbar > revealer > box {
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }
 
-  @at-root %titlebar-button, & button:not(.suggested-action):not(.destructive-action) {
+  button:not(.suggested-action):not(.destructive-action) {
     @extend %button-flat;
     color: $titlebar-text-secondary;
-    border-radius: $circular-radius;
+
+    &:not(.text-button) {
+      border-radius: $circular-radius;
+    }
 
     &:focus, &:hover, &:active, &:checked, &:checked:hover { color: $titlebar-text; }
-
-    &:focus { box-shadow: 0 0 0 2px $titlebar-divider; }
-
-    &:hover {
-      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-    }
-
-    &:active {
-      background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-      background-image: radial-gradient(circle, if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08)) 10%, transparent 0%);
-    }
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
 
     &:checked {
-      background-color: if($topbar == 'dark', rgba(black, 0.2), rgba(black, 0.1));
-      color: $titlebar-text;
-
-      &:hover {
-        background-color: if($topbar == 'dark', rgba(black, 0.25), rgba(black, 0.12));
-      }
-
       &:disabled {
-        background-color: transparent;
         color: $titlebar-text-disabled;
       }
     }
@@ -1224,13 +1203,11 @@ searchbar > revealer > box {
     &:backdrop {
       color: $titlebar-text-disabled;
 
-      &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
+      &:focus, &:hover, &:active, &:checked  { color: $titlebar-text-secondary; }
 
       &:disabled { color: $titlebar-text-secondary-disabled; }
 
       &:checked {
-        color: $titlebar-text-secondary;
-
         &:disabled { color: $titlebar-text-secondary-disabled; }
       }
     }
@@ -1240,33 +1217,6 @@ searchbar > revealer > box {
     &:disabled {
       background-color: $titlebar-fill;
       color: $titlebar-text-disabled;
-    }
-  }
-
-  // FIXME: Ugly overriding
-  stackswitcher {
-    background: none;
-    padding: 0;
-
-    button:not(.suggested-action):not(.destructive-action).text-button {
-      margin: 0;
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $titlebar-indicator 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0px;
-
-      &:hover {
-        background-color: if($topbar == 'dark', rgba(black, 0.15), rgba(black, 0.08));
-      }
-
-      &:checked {
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $titlebar-indicator 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-        background-color: transparent;
-        color: $titlebar-text;
-      }
     }
   }
 
@@ -1387,13 +1337,13 @@ searchbar > revealer > box {
       image { margin-left: 12px; }
 
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $titlebar-indicator 0%,
+                                    $primary 0%,
                                     transparent 0%)
                                     0 0 0 / 0 0 0px;
 
       &:checked {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $titlebar-indicator 100%,
+                                      $primary 100%,
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
         background-color: $titlebar-fill;
@@ -1489,35 +1439,45 @@ headerbar {
 // Development versions of apps to use a differently styled headerbar
 // window.devel .titlebar:not(.selection-mode) { }
 
-// FIXME: Ugly overriding
 stackswitcher {
-  background-color: $fill;
-  border-radius: $window-radius;
+  background-color: transparent;
+  // border-radius: $window-radius;
   padding: 0;
 
-  button:not(.suggested-action):not(.destructive-action).text-button {
+  > button:not(.suggested-action):not(.destructive-action).text-button {
     min-width: 120px - 8px * 2;
     border-radius: $corner-radius;
     box-shadow: none;
     background-color: transparent;
+    outline: none;
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                   $primary 0%,
                                   transparent 0%)
                                   0 0 0 / 0 0 0px;
 
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
     &:hover {
       background-color: $overlay-hover;
     }
 
-    &:checked {
+    &:active {
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $primary 100%,
                                     transparent 0%)
                                     0 0 2 / 0 0 2px;
-      background-color: transparent;
-      color: $text;
+      color: $titlebar-text;
+      border-radius: $corner-radius $corner-radius 0 0;
+    }
 
-      &:hover { box-shadow: none; }
+    &:checked, &:checked:hover {
+      background-color: transparent;
+      box-shadow: inset 0 -2px $primary;
+      border-radius: $corner-radius $corner-radius 0 0;
+      color: $text;
     }
   }
 }
@@ -1602,12 +1562,13 @@ treeview.view {
   &.expander {
     -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     -gtk-icon-transform: rotate(-90deg);
+    color: $text-secondary;
 
     &:dir(rtl) { -gtk-icon-transform: rotate(90deg); }
 
     &:checked { -gtk-icon-transform: unset; }
 
-    color: $text-secondary;
+    &:selected { color: $primary; }
 
     &:hover, &:active { color: $text; }
 
@@ -1632,10 +1593,9 @@ treeview.view {
     &:selected:hover { box-shadow: none; }
   }
 
-  header {
-    button {
+  > header {
+    > button {
       @extend %row_activatable;
-
       padding: 2px 6px;
       border-style: none solid solid none;
       border-width: 1px;
@@ -1644,6 +1604,8 @@ treeview.view {
       background-clip: border-box;
 
       &:not(:focus):not(:hover):not(:active) { color: $text-secondary; }
+
+      &:focus, &:active:focus, &:checked:focus { box-shadow: none; }
 
       &, &:disabled { background-color: $base; }
 
@@ -2067,7 +2029,7 @@ notebook {
 
       // colors the button like the label, overridden otherwise
       button.flat {
-        @extend %small_button;
+        @extend %small-button;
 
         &:last-child {
           margin-left: $container-padding;
@@ -2349,7 +2311,7 @@ radio {
   padding: ($check_radio_size - 24px) / 2;
 
   @extend %button-flat-simple;
-  @extend %circular_button;
+  @extend %circular-button;
 
   &:checked, &:indeterminate {
     color: $primary;
@@ -3138,7 +3100,7 @@ filechooser {
 
     > stack > box > button { // The new folder button
       @extend %button-flat;
-      @extend %circular_button;
+      @extend %circular-button;
     }
   }
 
@@ -3310,7 +3272,7 @@ placessidebar.sidebar {
 
     @at-root button.sidebar-button {
       @extend %button-flat-simple;
-      @extend %small_button;
+      @extend %small-button;
     }
 
     &.sidebar-placeholder-row { background-color: $overlay-hover; }
@@ -3416,9 +3378,10 @@ paned {
 
    &.info {
      & > revealer > box,
-     &:hover > revealer > box,
      &:backdrop > revealer > box {
        background-color: $base;
+       box-shadow: inset 0 -1px $divider;
+       border: none;
 
        button {
          @extend %button-flat;
@@ -3441,10 +3404,6 @@ paned {
          &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
        }
      }
-
-     &:hover > revealer > box {
-       background-color: if($variant == 'light', lighten($primary, 5%), darken($primary, 5%));
-     }
    }
 
    &.warning {
@@ -3462,10 +3421,6 @@ paned {
 
        *:link { color: on($warning); }
      }
-
-     &:hover > revealer > box {
-       background-color: if($variant == 'light', lighten($warning, 5%), darken($warning, 5%));
-     }
    }
 
    &.error {
@@ -3481,10 +3436,6 @@ paned {
        }
 
        *:link { color: on($error); }
-     }
-
-     &:hover > revealer > box {
-       background-color: if($variant == 'light', lighten($error, 5%), darken($error, 5%));
      }
    }
  }
@@ -3729,7 +3680,7 @@ decoration {
 button.titlebutton {
   // @extend %button-flat-simple;
 
-  @extend %circular_button;
+  @extend %circular-button;
 
   // .selection-mode & { }
 }

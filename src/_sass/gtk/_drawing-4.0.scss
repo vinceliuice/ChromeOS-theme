@@ -122,10 +122,13 @@
   @if $t == normal {
     color: $text;
     background-color: $surface;
+    border: none;
 
     @if $variant == 'light' {
       outline: 1px solid $divider;
       outline-offset: -1px;
+    } @else {
+      outline: none;
     }
   }
 
