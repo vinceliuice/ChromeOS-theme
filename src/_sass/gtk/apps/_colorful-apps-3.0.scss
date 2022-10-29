@@ -193,7 +193,7 @@ $theme_green_grey:  #3b4342;
       }
     }
 
-    headerbar.titlebar {
+    headerbar, .titlebar {
       button:not(.suggested-action):not(.destructive-action):not(.flat):not(.combo):not(.down):not(.up) { // reset headerbar buttons
         background-color: transparent;
 
