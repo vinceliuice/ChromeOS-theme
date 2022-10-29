@@ -4,16 +4,31 @@
 // main list
 .message-list {
   width: 31.5em;
-  padding: 0 $container_padding * 2;
+  padding: 0;
   color: $secondary_fg_color;
   text-shadow: none;
+  border: none;
 
-  .message-list-placeholder { spacing: 12px; }
+  // padding and margins to account for scrollbar
+  &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }
+  &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
+
+  .message-list-placeholder {
+    spacing: $container_padding * 2;
+    color: $disabled_secondary_fg_color;
+
+    // icon size and color
+    > StIcon {
+      icon-size: 48px; // 48px
+      margin-bottom: $container_margin * 3;
+      -st-icon-style: symbolic;
+    }
+  }
 }
 
 .message-list-sections {
   spacing: $container_padding;
-  margin: 0 $container_margin * 4; // to account for scrollbar
+  margin: 0 $container_margin * 4 0 $container_margin + $container_padding; // to account for scrollbar
 }
 
 .message-list-section,
@@ -33,7 +48,7 @@
 .message {
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   border: none;
-  border-radius: $buttons_radius;
+  border-radius: $material_radius;
   color: $secondary_fg_color;
   text-shadow: none;
 
@@ -44,13 +59,16 @@
 
   // icon container
   .message-icon-bin {
-  padding: $container_padding*2  0px $container_padding*2 $container_padding*2;
+    padding: $container_padding * 3;
+    padding-right: $container_padding;
 
-  &:rtl { padding: $container_padding*2 $container_padding*2 $container_padding*2 0px; }
+    &:rtl {
+      padding-left: $container_padding;
+    }
 
     // icon size and color
     > StIcon {
-      icon-size: 32px; // 32px
+      icon-size: 36px;
       -st-icon-style: symbolic;
     }
 
@@ -63,14 +81,18 @@
 
   // content
   .message-content {
-    padding: $container_padding + $container_margin * 2;
-    spacing: $container_margin;
+    spacing: 4px;
+    padding: $container_padding * 1.5;
+    margin-bottom: $container_margin * 2;
     color: $secondary_fg_color;
   }
 
   // title
   .message-title {
     font-weight: bold;
+    padding-top: 0.57em;
+    color: $secondary_fg_color;
+    // margin-top: $container_padding;
   }
 
   // secondary container in title box
@@ -80,7 +102,7 @@
     // notification time stamp
     > .event-time {
       color: $secondary_fg_color;
-      font-size: 1em;
+      font-size: 0.9em;
       padding-bottom: 0.13em;
 
       &:ltr { text-align: right };
@@ -90,15 +112,15 @@
 
   // close button
   .message-close-button {
-  color: $secondary_fg_color;
-  padding: 0;
-  height: 24px;
-  width: 24px;
-  border-radius: 100px;
+    color: $secondary_fg_color;
+    padding: 0;
+    height: $menuitem-size - 4px;
+    width: $menuitem-size - 4px;
+    border-radius: $circular_radius;
 
-  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
-  &:active { color: $fg_color; background-color: $track_color; }
-  &:insensitive { color: $disabled_secondary_fg_color; }
+    &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
+    &:active { color: $fg_color; background-color: $track_color; }
+    &:insensitive { color: $disabled_secondary_fg_color; }
   }
 
   // body
@@ -114,29 +136,31 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: 16px 4px;
-  padding: 8px;
-  border-radius: 100px;
+  margin: ($container_padding * 2 + 10px) 4px;
+  padding: $container_padding * 2;
+  border-radius: $circular_radius;
   color: $secondary_fg_color;
-  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
   &:active { color: $fg_color; background-color: $track_color; }
   &:insensitive { color: $disabled_secondary_fg_color; }
 
-  &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
-  &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+  &:last-child:ltr { margin-right: 16px; }
+  &:last-child:rtl { margin-left: 16px; }
 }
 
 // album-art
 .media-message-cover-icon {
-  icon-size: 32px !important; // 48px
-  border-radius: $buttons_radius;
+  icon-size: 32px !important;
+  margin: 0;
+  padding: 0;
 
   // when there is no artwork
   &.fallback {
-    color: $hint_fg_color;
     background-color: $divider_color;
-    border: 1px solid transparent;
+    padding: $container_padding * 2;
+    color: $hint_fg_color;
+    border: none;
     border-radius: $buttons_radius;
-    icon-size: 32px !important;
+    icon-size: 24px !important;
   }
 }

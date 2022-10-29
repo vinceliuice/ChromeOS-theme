@@ -32,7 +32,7 @@ $dash_border_radius: $circular_radius;
 .dash-background {
   background-color: $dash_background_color;
   margin-bottom: $dash_bottom_margin;
-  padding: $dash_padding;
+  padding: $dash_padding + $dash_spacing $dash_padding;
   border-radius: $dash_border_radius;
 }
 

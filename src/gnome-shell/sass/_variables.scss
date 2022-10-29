@@ -1,6 +1,4 @@
 
-@import 'tweaks';
-
 $asset_suffix: if($variant == 'dark', '-dark', '');
 $extra_background_clip: if($variant == 'light', padding-box, border-box);
 
@@ -36,8 +34,9 @@ $bar_size: 4px;
 $menuitem_size: if($laptop == 'false', 32px, 28px);
 
 // radiuses
-$material_radius: 5px;
-$buttons_radius: 12px;
+$popup_radius: 12px + $container_padding + 2px;
+$material_radius: 10px;
+$buttons_radius: 8px;
 $circular_radius: 9999px;
 
 // durations

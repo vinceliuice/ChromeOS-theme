@@ -1,20 +1,21 @@
 /* Modal Dialogs */
 
-$mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
+$mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
 
 .headline { @include font(title); }
 
 .modal-dialog {
-  border-radius: $buttons_radius * 2;
+  border-radius: 20px + $container_padding;
   color: $fg_color;
   background-color: $base_color;
-  border: 0 solid $mdborder_color;
-  box-shadow: $shadow_0;
+  border: 0 none $mdborder_color;
+  box-shadow: inset 0 1px rgba(white, 0.1);
 
   .modal-dialog-content-box {
     margin: 32px 40px;
     spacing: 32px;
     max-width: 28em;
+    background-color: $base_color;
   }
 
   .modal-dialog-linked-button {
@@ -39,7 +40,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
     }
 
     &:active {
-      color: white;
+      color: white !important;
       background-color: darken($destructive_color, 5%);
     }
   }
@@ -115,7 +116,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
     color: $destructive_color;
 
     &:active {
-      color: white;
+      color: white !important;
       background-color: $destructive_color;
     }
   }
@@ -130,7 +131,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
     }
 
     &:active {
-      color: white;
+      color: white !important;
       background-color: darken($suggested_color, 5%);
     }
 
@@ -142,6 +143,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 
   .modal-dialog-content-box {
     margin-bottom: 24px;
+     background-color: $base_color;
   }
 }
 

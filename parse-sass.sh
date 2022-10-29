@@ -37,5 +37,6 @@ for color in "${_BCOLOR_VARIANTS[@]}"; do
   for size in "${_SIZE_VARIANTS[@]}"; do
     sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-3-28/gnome-shell$color$size."{scss,css}
     sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-40-0/gnome-shell$color$size."{scss,css}
+    sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-42-0/gnome-shell$color$size."{scss,css}
   done
 done
