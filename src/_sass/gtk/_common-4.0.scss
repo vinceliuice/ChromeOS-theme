@@ -1231,13 +1231,6 @@ headerbar {
 
       &:disabled { color: $titlebar-text-disabled; }
     }
-
-    @if $topbar == 'dark' and $variant == 'light' {
-      selection {
-        color: $titlebar;
-        background-color: white;
-      }
-    }
   }
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius $corner-radius 0 0; }

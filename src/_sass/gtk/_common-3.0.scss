@@ -1149,15 +1149,6 @@ searchbar > revealer > box {
     background-color: $titlebar-fill;
     color: $titlebar-text;
 
-    @if $topbar == 'dark' {
-      &:focus {
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      white 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-    }
-
     &:disabled {
       box-shadow: inset 0 -1px $titlebar-track-disabled;
       background-color: $titlebar-fill;
@@ -1170,13 +1161,6 @@ searchbar > revealer > box {
       &:hover, &:active { color: $titlebar-text; }
 
       &:disabled { color: $titlebar-text-disabled; }
-    }
-
-    @if $topbar == 'dark' and $variant == 'light' {
-      selection {
-        color: $titlebar;
-        background-color: white;
-      }
     }
   }
 
@@ -1469,7 +1453,6 @@ stackswitcher {
                                     $primary 100%,
                                     transparent 0%)
                                     0 0 2 / 0 0 2px;
-      color: $titlebar-text;
       border-radius: $corner-radius $corner-radius 0 0;
     }
 
@@ -1477,7 +1460,6 @@ stackswitcher {
       background-color: transparent;
       box-shadow: inset 0 -2px $primary;
       border-radius: $corner-radius $corner-radius 0 0;
-      color: $text;
     }
   }
 }

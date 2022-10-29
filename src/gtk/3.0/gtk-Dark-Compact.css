@@ -1431,10 +1431,6 @@ searchbar > revealer > box {
   color: white;
 }
 
-.titlebar entry:focus {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), white 100%, transparent 0%) 0 0 2/0 0 2px;
-}
-
 .titlebar entry:disabled {
   box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   background-color: rgba(255, 255, 255, 0.04);
@@ -1745,7 +1741,6 @@ stackswitcher > button.text-button:not(.suggested-action):not(.destructive-actio
 
 stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):active {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #8AB4F8 100%, transparent 0%) 0 0 2/0 0 2px;
-  color: white;
   border-radius: 6px 6px 0 0;
 }
 
@@ -1753,7 +1748,6 @@ stackswitcher > button.text-button:not(.suggested-action):not(.destructive-actio
   background-color: transparent;
   box-shadow: inset 0 -2px #8AB4F8;
   border-radius: 6px 6px 0 0;
-  color: white;
 }
 
 /************

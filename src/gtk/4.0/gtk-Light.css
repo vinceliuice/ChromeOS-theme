@@ -280,9 +280,11 @@ entry {
   padding: 0 8px;
   border-radius: 6px 6px 0 0;
   caret-color: currentColor;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  transition-property: all, border-image, box-shadow;
+  transition-duration: 75ms, 225ms, 225ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 0%, transparent 0%) 2/0 0 0px;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26), inset 0 -2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   outline: none;
@@ -293,8 +295,8 @@ spinbutton:not(.vertical) headerbar popover.background entry:hover, headerbar po
 entry headerbar popover.background entry:hover,
 headerbar popover.background entry entry:hover,
 entry:hover {
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.26);
-  background-color: alpha(currentColor, 0.08);
+  box-shadow: inset 0 -1px transparent, inset 0 -2px rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.04);
   outline: none;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -303,8 +305,10 @@ spinbutton:not(.vertical) headerbar popover.background entry:focus-within, heade
 entry headerbar popover.background entry:focus-within,
 headerbar popover.background entry entry:focus-within,
 entry:focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #1A73E8;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#1A73E8, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -313,8 +317,8 @@ spinbutton:not(.vertical) headerbar popover.background entry:drop(active), heade
 entry headerbar popover.background entry:drop(active),
 headerbar popover.background entry entry:drop(active),
 entry:drop(active) {
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.26);
-  background-color: alpha(currentColor, 0.08);
+  box-shadow: inset 0 -1px transparent, inset 0 -2px rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.04);
   outline: none;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -323,7 +327,7 @@ spinbutton:not(.vertical) headerbar popover.background entry:disabled, headerbar
 entry headerbar popover.background entry:disabled,
 headerbar popover.background entry entry:disabled,
 entry:disabled {
-  box-shadow: inset 0 0 0 9999px transparent, inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
 }
@@ -415,9 +419,11 @@ spinbutton:not(.vertical) headerbar popover.background entry.error, headerbar po
 entry headerbar popover.background entry.error,
 headerbar popover.background entry entry.error,
 entry.error {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  transition-property: all, border-image, box-shadow;
+  transition-duration: 75ms, 225ms, 225ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #D93025 0%, transparent 0%) 2/0 0 0px;
-  box-shadow: inset 0 -1px #D93025;
+  box-shadow: inset 0 -1px #D93025, inset 0 -2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   outline: none;
@@ -428,8 +434,10 @@ spinbutton:not(.vertical) headerbar popover.background entry.error:focus-within,
 entry headerbar popover.background entry.error:focus-within,
 headerbar popover.background entry entry.error:focus-within,
 entry.error:focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #D93025 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #D93025;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#D93025, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -438,7 +446,7 @@ spinbutton:not(.vertical) headerbar popover.background entry.error:disabled, hea
 entry headerbar popover.background entry.error:disabled,
 headerbar popover.background entry entry.error:disabled,
 entry.error:disabled {
-  box-shadow: inset 0 0 0 9999px transparent, inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
 }
@@ -447,9 +455,11 @@ spinbutton:not(.vertical) headerbar popover.background entry.warning, headerbar 
 entry headerbar popover.background entry.warning,
 headerbar popover.background entry entry.warning,
 entry.warning {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  transition-property: all, border-image, box-shadow;
+  transition-duration: 75ms, 225ms, 225ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4B400 0%, transparent 0%) 2/0 0 0px;
-  box-shadow: inset 0 -1px #F4B400;
+  box-shadow: inset 0 -1px #F4B400, inset 0 -2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   outline: none;
@@ -460,8 +470,10 @@ spinbutton:not(.vertical) headerbar popover.background entry.warning:focus-withi
 entry headerbar popover.background entry.warning:focus-within,
 headerbar popover.background entry entry.warning:focus-within,
 entry.warning:focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4B400 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #F4B400;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#F4B400, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -470,7 +482,7 @@ spinbutton:not(.vertical) headerbar popover.background entry.warning:disabled, h
 entry headerbar popover.background entry.warning:disabled,
 headerbar popover.background entry entry.warning:disabled,
 entry.warning:disabled {
-  box-shadow: inset 0 0 0 9999px transparent, inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
 }
@@ -529,9 +541,11 @@ treeview entry.flat, treeview entry.flat:focus-within, treeview entry, treeview 
 }
 
 editablelabel > stack > text {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  transition-property: all, border-image, box-shadow;
+  transition-duration: 75ms, 225ms, 225ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 0%, transparent 0%) 2/0 0 0px;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26), inset 0 -2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   outline: none;
@@ -1316,9 +1330,11 @@ combobox > .linked:not(.vertical) > button:not(:only-child) {
 button.combo:only-child {
   border-radius: 6px 6px 0 0;
   font-weight: normal;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  transition-property: all, border-image, box-shadow;
+  transition-duration: 75ms, 225ms, 225ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 0%, transparent 0%) 2/0 0 0px;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26), inset 0 -2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   outline: none;
@@ -1327,27 +1343,29 @@ button.combo:only-child {
 
 button.combo:only-child:focus {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.26);
-  background-color: alpha(currentColor, 0.08);
+  background-color: rgba(0, 0, 0, 0.04);
   outline: none;
   color: rgba(0, 0, 0, 0.87);
 }
 
 button.combo:only-child:hover {
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.26);
-  background-color: alpha(currentColor, 0.08);
+  box-shadow: inset 0 -1px transparent, inset 0 -2px rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.04);
   outline: none;
   color: rgba(0, 0, 0, 0.87);
 }
 
 button.combo:only-child:checked {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #1A73E8;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#1A73E8, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
 button.combo:only-child:disabled {
-  box-shadow: inset 0 0 0 9999px transparent, inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
 }
@@ -4970,8 +4988,10 @@ window.background.org-gnome-TextEditor entry, window.background.org-gnome-TextEd
 }
 
 window.background.org-gnome-TextEditor entry:focus-within, window.background.org-gnome-TextEditor spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #FFA000;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#FFA000, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -4991,8 +5011,10 @@ window.background.org-gnome-TextEditor label selection {
 }
 
 window.background.org-gnome-TextEditor headerbar entry:focus-within, window.background.org-gnome-TextEditor headerbar spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #FFA000;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#FFA000, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5031,8 +5053,10 @@ window.background.org-gnome-TextEditor button.flat:not(.suggested-action):not(.d
 }
 
 window.background.org-gnome-TextEditor button.combo:checked:not(:disabled) {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA000 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #FFA000;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#FFA000, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
@@ -5180,8 +5204,10 @@ window.background.csd:not(.about) > contents > toastoverlay > leaflet entry, win
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet entry:focus-within, window.background.csd:not(.about) > contents > toastoverlay > leaflet spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #FF6D00;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#FF6D00, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5201,8 +5227,10 @@ window.background.csd:not(.about) > contents > toastoverlay > leaflet label sele
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar entry:focus-within, window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #FF6D00;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#FF6D00, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5241,8 +5269,10 @@ window.background.csd:not(.about) > contents > toastoverlay > leaflet button.fla
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet button.combo:checked:not(:disabled) {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FF6D00 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #FF6D00;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#FF6D00, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
@@ -5407,8 +5437,10 @@ window.background.csd > contents > leaflet entry, window.background.csd > conten
 }
 
 window.background.csd > contents > leaflet entry:focus-within, window.background.csd > contents > leaflet spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #5E35B1;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#5E35B1, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5428,8 +5460,10 @@ window.background.csd > contents > leaflet label selection {
 }
 
 window.background.csd > contents > leaflet headerbar entry:focus-within, window.background.csd > contents > leaflet headerbar spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #5E35B1;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#5E35B1, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5468,8 +5502,10 @@ window.background.csd > contents > leaflet button.flat:not(.suggested-action):no
 }
 
 window.background.csd > contents > leaflet button.combo:checked:not(:disabled) {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5E35B1 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #5E35B1;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#5E35B1, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
@@ -5613,8 +5649,10 @@ window.background.csd > contents > stack > overlay > leaflet entry, window.backg
 }
 
 window.background.csd > contents > stack > overlay > leaflet entry:focus-within, window.background.csd > contents > stack > overlay > leaflet spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #4CAF50;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#4CAF50, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5634,8 +5672,10 @@ window.background.csd > contents > stack > overlay > leaflet label selection {
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar entry:focus-within, window.background.csd > contents > stack > overlay > leaflet headerbar spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #4CAF50;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#4CAF50, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5674,8 +5714,10 @@ window.background.csd > contents > stack > overlay > leaflet button.flat:not(.su
 }
 
 window.background.csd > contents > stack > overlay > leaflet button.combo:checked:not(:disabled) {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #4CAF50 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #4CAF50;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#4CAF50, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
@@ -5819,8 +5861,10 @@ window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > conte
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box entry:focus-within, window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #F4511E;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#F4511E, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5840,8 +5884,10 @@ window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > conte
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar entry:focus-within, window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #F4511E;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#F4511E, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -5880,8 +5926,10 @@ window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > conte
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box button.combo:checked:not(:disabled) {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F4511E 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #F4511E;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#F4511E, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
@@ -6030,8 +6078,10 @@ window.background.dialog entry, window.background.dialog spinbutton:not(.vertica
 }
 
 window.background.dialog entry:focus-within, window.background.dialog spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #E91E63;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#E91E63, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -6051,8 +6101,10 @@ window.background.dialog label selection {
 }
 
 window.background.dialog headerbar entry:focus-within, window.background.dialog headerbar spinbutton:not(.vertical):focus-within {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #E91E63;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#E91E63, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -6091,8 +6143,10 @@ window.background.dialog button.flat:not(.suggested-action):not(.destructive-act
 }
 
 window.background.dialog button.combo:checked:not(:disabled) {
+  transition-duration: 75ms, 225ms, 225ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #E91E63 100%, transparent 0%) 2/0 0 2px;
-  box-shadow: inset 0 -2px #E91E63;
+  box-shadow: inset 0 -1px transparent, inset 0 -2px alpha(#E91E63, 0.2);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);

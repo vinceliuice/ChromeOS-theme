@@ -1736,7 +1736,6 @@ stackswitcher > button.text-button:not(.suggested-action):not(.destructive-actio
 
 stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):active {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #1A73E8 100%, transparent 0%) 0 0 2/0 0 2px;
-  color: rgba(0, 0, 0, 0.87);
   border-radius: 6px 6px 0 0;
 }
 
@@ -1744,7 +1743,6 @@ stackswitcher > button.text-button:not(.suggested-action):not(.destructive-actio
   background-color: transparent;
   box-shadow: inset 0 -2px #1A73E8;
   border-radius: 6px 6px 0 0;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 /************
