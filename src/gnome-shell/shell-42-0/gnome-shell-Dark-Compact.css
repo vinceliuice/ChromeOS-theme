@@ -1395,7 +1395,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-settings {
   padding: 12px !important;
-  border-radius: 32px !important;
+  border-radius: 28px !important;
   margin-top: 2px !important;
   border: none;
 }
