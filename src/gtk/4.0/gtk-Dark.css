@@ -851,7 +851,7 @@ button.text-button.image-button image:not(:only-child) {
   border-radius: 6px;
 }
 
-.linked:not(.vertical) > button.flat.image-button:not(:only-child):not(.text-button), .linked.vertical > button.flat.image-button:not(:only-child):not(.text-button) {
+.linked:not(.vertical) > button.flat:not(:only-child).image-button:not(.text-button), .linked.vertical > button.flat:not(:only-child).image-button:not(.text-button) {
   border-radius: 9999px;
 }
 
@@ -1746,7 +1746,7 @@ stackswitcher {
   padding: 0;
 }
 
-stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action) {
+stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button {
   min-width: 104px;
   border-radius: 6px;
   box-shadow: none;
@@ -1755,21 +1755,21 @@ stackswitcher > button.text-button:not(.suggested-action):not(.destructive-actio
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #8AB4F8 0%, transparent 0%) 0 0 0/0 0 0px;
 }
 
-stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):focus {
+stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:focus {
   box-shadow: none;
   outline: none;
 }
 
-stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):hover {
+stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:hover {
   background-color: alpha(currentColor, 0.08);
 }
 
-stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):active {
+stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:active {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #8AB4F8 100%, transparent 0%) 0 0 2/0 0 2px;
   color: white;
 }
 
-stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):checked, stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):checked:hover {
+stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:checked, stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:checked:hover {
   background-color: transparent;
   box-shadow: inset 0 -2px #8AB4F8;
   border-radius: 6px 6px 0 0;
@@ -1915,13 +1915,13 @@ treeview.view:drop(active) {
   box-shadow: none;
 }
 
-columnview.view.after:drop(active),
-treeview.view.after:drop(active) {
+columnview.view:drop(active).after,
+treeview.view:drop(active).after {
   border-top-style: none;
 }
 
-columnview.view.before:drop(active),
-treeview.view.before:drop(active) {
+columnview.view:drop(active).before,
+treeview.view:drop(active).before {
   border-bottom-style: none;
 }
 
@@ -1932,13 +1932,13 @@ treeview.view > dndtarget:drop(active) {
   border-color: alpha(currentColor, 0.06);
 }
 
-columnview.view > dndtarget.after:drop(active),
-treeview.view > dndtarget.after:drop(active) {
+columnview.view > dndtarget:drop(active).after,
+treeview.view > dndtarget:drop(active).after {
   border-top-style: none;
 }
 
-columnview.view > dndtarget.before:drop(active),
-treeview.view > dndtarget.before:drop(active) {
+columnview.view > dndtarget:drop(active).before,
+treeview.view > dndtarget:drop(active).before {
   border-bottom-style: none;
 }
 
@@ -2432,7 +2432,7 @@ notebook > header > tabs > tab:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-notebook > header > tabs > tab.reorderable-page:checked {
+notebook > header > tabs > tab:checked.reorderable-page {
   border-color: rgba(0, 0, 0, 0.26);
   background-color: #2C2C2C;
 }
@@ -2661,11 +2661,11 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > sli
   outline: none;
 }
 
-scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) > range > trough > slider {
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal > range > trough > slider {
   min-width: 24px;
 }
 
-scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) > range > trough > slider {
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical > range > trough > slider {
   min-height: 24px;
 }
 
@@ -4435,11 +4435,11 @@ windowcontrols {
   border-spacing: 6px;
 }
 
-windowcontrols.start:not(.empty):dir(ltr), windowcontrols.end:not(.empty):dir(rtl) {
+windowcontrols:not(.empty).start:dir(ltr), windowcontrols:not(.empty).end:dir(rtl) {
   margin-right: 6px;
 }
 
-windowcontrols.start:not(.empty):dir(rtl), windowcontrols.end:not(.empty):dir(ltr) {
+windowcontrols:not(.empty).start:dir(rtl), windowcontrols:not(.empty).end:dir(ltr) {
   margin-left: 6px;
 }
 
@@ -5077,7 +5077,7 @@ window.background.org-gnome-TextEditor button:not(.suggested-action):not(.destru
   outline-color: rgba(255, 160, 0, 0.28);
 }
 
-window.background.org-gnome-TextEditor button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.org-gnome-TextEditor button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: alpha(currentColor, 0.1);
   color: white;
   box-shadow: none;
@@ -5122,37 +5122,37 @@ window.background.org-gnome-TextEditor headerbar splitbutton.image-button:hover 
 }
 
 window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
-window.background.org-gnome-TextEditor headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat {
   background-color: transparent;
   color: white;
 }
 
 window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover,
-window.background.org-gnome-TextEditor headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover {
+window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:hover {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
 }
 
 window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus,
-window.background.org-gnome-TextEditor headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus {
+window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:focus {
   outline-color: alpha(currentColor, 0.06);
   color: white;
 }
 
 window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active,
-window.background.org-gnome-TextEditor headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active {
+window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:active {
   background-color: rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
 }
 
 window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled),
-window.background.org-gnome-TextEditor headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.16);
   color: white;
 }
 
 window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover,
-window.background.org-gnome-TextEditor headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover {
+window.background.org-gnome-TextEditor headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.22);
   box-shadow: none;
 }
@@ -5301,7 +5301,7 @@ window.background.csd:not(.about) > contents > toastoverlay > leaflet button:not
   outline-color: rgba(255, 109, 0, 0.28);
 }
 
-window.background.csd:not(.about) > contents > toastoverlay > leaflet button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: alpha(currentColor, 0.1);
   color: white;
   box-shadow: none;
@@ -5346,37 +5346,37 @@ window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar 
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
-window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat {
   background-color: transparent;
   color: white;
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover,
-window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:hover {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus,
-window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:focus {
   outline-color: alpha(currentColor, 0.06);
   color: white;
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active,
-window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:active {
   background-color: rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled),
-window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.16);
   color: white;
 }
 
 window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover,
-window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover {
+window.background.csd:not(.about) > contents > toastoverlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.22);
   box-shadow: none;
 }
@@ -5542,7 +5542,7 @@ window.background.csd > contents > leaflet button:not(.suggested-action):not(.de
   outline-color: rgba(94, 53, 177, 0.28);
 }
 
-window.background.csd > contents > leaflet button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd > contents > leaflet button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: alpha(currentColor, 0.1);
   color: white;
   box-shadow: none;
@@ -5587,37 +5587,37 @@ window.background.csd > contents > leaflet headerbar splitbutton.image-button:ho
 }
 
 window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
-window.background.csd > contents > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat {
   background-color: transparent;
   color: white;
 }
 
 window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover,
-window.background.csd > contents > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover {
+window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:hover {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
 }
 
 window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus,
-window.background.csd > contents > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus {
+window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:focus {
   outline-color: alpha(currentColor, 0.06);
   color: white;
 }
 
 window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active,
-window.background.csd > contents > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active {
+window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:active {
   background-color: rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
 }
 
 window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled),
-window.background.csd > contents > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.16);
   color: white;
 }
 
 window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover,
-window.background.csd > contents > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover {
+window.background.csd > contents > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.22);
   box-shadow: none;
 }
@@ -5762,7 +5762,7 @@ window.background.csd > contents > stack > overlay > leaflet button:not(.suggest
   outline-color: rgba(76, 175, 80, 0.28);
 }
 
-window.background.csd > contents > stack > overlay > leaflet button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd > contents > stack > overlay > leaflet button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: alpha(currentColor, 0.1);
   color: white;
   box-shadow: none;
@@ -5807,37 +5807,37 @@ window.background.csd > contents > stack > overlay > leaflet headerbar splitbutt
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
-window.background.csd > contents > stack > overlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat {
   background-color: transparent;
   color: white;
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover,
-window.background.csd > contents > stack > overlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover {
+window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:hover {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus,
-window.background.csd > contents > stack > overlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus {
+window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:focus {
   outline-color: alpha(currentColor, 0.06);
   color: white;
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active,
-window.background.csd > contents > stack > overlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active {
+window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:active {
   background-color: rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled),
-window.background.csd > contents > stack > overlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.16);
   color: white;
 }
 
 window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover,
-window.background.csd > contents > stack > overlay > leaflet headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover {
+window.background.csd > contents > stack > overlay > leaflet headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.22);
   box-shadow: none;
 }
@@ -5982,7 +5982,7 @@ window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > conte
   outline-color: rgba(244, 81, 30, 0.28);
 }
 
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: alpha(currentColor, 0.1);
   color: white;
   box-shadow: none;
@@ -6027,37 +6027,37 @@ window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > conte
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat {
   background-color: transparent;
   color: white;
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover,
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:hover {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus,
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:focus {
   outline-color: alpha(currentColor, 0.06);
   color: white;
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active,
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:active {
   background-color: rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled),
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.16);
   color: white;
 }
 
 window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover,
-window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover {
+window.background.csd:not(.org-gnome-TextEditor):not(.org-gnome-Builder) > contents > box headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.22);
   box-shadow: none;
 }
@@ -6207,7 +6207,7 @@ window.background.dialog button:not(.suggested-action):not(.destructive-action):
   outline-color: rgba(233, 30, 99, 0.28);
 }
 
-window.background.dialog button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.dialog button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: alpha(currentColor, 0.1);
   color: white;
   box-shadow: none;
@@ -6252,37 +6252,37 @@ window.background.dialog headerbar splitbutton.image-button:hover {
 }
 
 window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up),
-window.background.dialog headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up) {
+window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat {
   background-color: transparent;
   color: white;
 }
 
 window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover,
-window.background.dialog headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):hover {
+window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:hover {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
 }
 
 window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus,
-window.background.dialog headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):focus {
+window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:focus {
   outline-color: alpha(currentColor, 0.06);
   color: white;
 }
 
 window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active,
-window.background.dialog headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):active {
+window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:active {
   background-color: rgba(0, 0, 0, 0.12);
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
 }
 
 window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled),
-window.background.dialog headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled) {
+window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.16);
   color: white;
 }
 
 window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover,
-window.background.dialog headerbar button.flat:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up):checked:not(:disabled):hover {
+window.background.dialog headerbar button:not(.suggested-action):not(.destructive-action):not(.combo):not(.down):not(.up).flat:checked:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.22);
   box-shadow: none;
 }
