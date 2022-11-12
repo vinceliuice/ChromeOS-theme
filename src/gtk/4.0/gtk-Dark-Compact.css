@@ -564,41 +564,41 @@ editablelabel > stack > text {
   }
 }
 
-actionbar > revealer > box .linked > button, popover.background .linked > button, headerbar popover.background button:not(.suggested-action):not(.destructive-action) {
+row .linked > button, actionbar > revealer > box .linked > button, popover.background .linked > button, headerbar popover.background button:not(.suggested-action):not(.destructive-action) {
   outline: none;
   box-shadow: none;
   border: none;
 }
 
-actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action), popover.background .linked > button:not(.destructive-action):not(.suggested-action), headerbar popover.background button:not(.destructive-action):not(.suggested-action) {
+row .linked > button:not(.destructive-action):not(.suggested-action), actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action), popover.background .linked > button:not(.destructive-action):not(.suggested-action), headerbar popover.background button:not(.destructive-action):not(.suggested-action) {
   background-color: rgba(255, 255, 255, 0.04);
 }
 
-actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):hover, popover.background .linked > button:not(.destructive-action):not(.suggested-action):hover, headerbar popover.background button:not(.destructive-action):not(.suggested-action):hover {
+row .linked > button:not(.destructive-action):not(.suggested-action):hover, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):hover, popover.background .linked > button:not(.destructive-action):not(.suggested-action):hover, headerbar popover.background button:not(.destructive-action):not(.suggested-action):hover {
   box-shadow: none;
   background-color: alpha(currentColor, 0.08);
   color: white;
   outline: none;
 }
 
-actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):focus, popover.background .linked > button:not(.destructive-action):not(.suggested-action):focus, headerbar popover.background button:not(.destructive-action):not(.suggested-action):focus {
+row .linked > button:not(.destructive-action):not(.suggested-action):focus, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):focus, popover.background .linked > button:not(.destructive-action):not(.suggested-action):focus, headerbar popover.background button:not(.destructive-action):not(.suggested-action):focus {
   outline: none;
 }
 
-actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):active, popover.background .linked > button:not(.destructive-action):not(.suggested-action):active, headerbar popover.background button:not(.destructive-action):not(.suggested-action):active {
+row .linked > button:not(.destructive-action):not(.suggested-action):active, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):active, popover.background .linked > button:not(.destructive-action):not(.suggested-action):active, headerbar popover.background button:not(.destructive-action):not(.suggested-action):active {
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 10%);
   color: white;
   box-shadow: none;
 }
 
-actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):checked, popover.background .linked > button:not(.destructive-action):not(.suggested-action):checked, headerbar popover.background button:not(.destructive-action):not(.suggested-action):checked {
+row .linked > button:not(.destructive-action):not(.suggested-action):checked, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):checked, popover.background .linked > button:not(.destructive-action):not(.suggested-action):checked, headerbar popover.background button:not(.destructive-action):not(.suggested-action):checked {
   box-shadow: none;
   background-color: #8AB4F8;
   color: rgba(0, 0, 0, 0.87);
   outline: none;
 }
 
-actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):disabled, popover.background .linked > button:not(.destructive-action):not(.suggested-action):disabled, headerbar popover.background button:not(.destructive-action):not(.suggested-action):disabled {
+row .linked > button:not(.destructive-action):not(.suggested-action):disabled, actionbar > revealer > box .linked > button:not(.destructive-action):not(.suggested-action):disabled, popover.background .linked > button:not(.destructive-action):not(.suggested-action):disabled, headerbar popover.background button:not(.destructive-action):not(.suggested-action):disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.3);

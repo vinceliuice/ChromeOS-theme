@@ -3235,6 +3235,10 @@ row {
     @extend %button-flat;
   }
 
+  .linked > button {
+    @extend %button-flat-theme;
+  }
+
   button:hover &, button:active &, button:checked &, button:checked:hover & {
     &, &:hover, &:active, &:selected {
       background-color: transparent;
