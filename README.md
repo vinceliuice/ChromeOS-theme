@@ -57,7 +57,7 @@ To connect the theme to all apps which have available plugs to gtk-common-themes
 ```
 
 ## Firefox theme
-[Intall Firefox theme](src/firefox)
+[Install Firefox theme](src/firefox)
 
 ![01](src/firefox/preview01.png?raw=true)
 ![02](src/firefox/preview02.png?raw=true)
