@@ -25,8 +25,14 @@ Usage: $0 [OPTION]...
 OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-  -c, --color VARIANT...  Specify color variant(s) [standard|dark|light] (Default: All variants)
+  -c, --color VARIANT     Specify color variant(s) [standard|dark|light] (Default: All variants)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
+
+  --tweaks                Tweaks for themes [solid|compact|normal]
+                          solid     Solid gnome-shell panel version
+                          compact   Compact gnome-shell Panel version
+                          normal    Normal headerbar color version
+
   -h, --help              Show help
 
 INSTALLATION EXAMPLES:
@@ -142,11 +148,15 @@ while [[ "$#" -gt 0 ]]; do
             panel="compact"
             shift
             ;;
+          normal)
+            normal="true"
+            shift
+            ;;
           -*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized panel variant '$1'."
+            echo "ERROR: Unrecognized tweaks variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
