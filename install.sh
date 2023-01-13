@@ -18,6 +18,8 @@ THEME_NAME=ChromeOS
 COLOR_VARIANTS=('' '-Dark' '-Light')
 SIZE_VARIANTS=('' '-Compact')
 
+SASSC_OPT="-M -t expanded"
+
 usage() {
   cat << EOF
 Usage: $0 [OPTION]...
